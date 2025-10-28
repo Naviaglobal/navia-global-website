@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! - Navia Global</title>
+    <meta name="robots" content="noindex"> <!-- Para que Google no indexe esta página -->
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Poppins & Inter del Brief) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    
+    <!-- 
+      ===================================================
+      PASO 1: Google Analytics (GA4)
+      ID: G-1RNV31B1EM
+      ¡LISTO!
+      ===================================================
+    -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1RNV31B1EM');
+    </script>
+
+    <!-- 
+      ===================================================
+      PASO 2: Meta Píxel (Facebook/Instagram Ads)
+      ID: 1118856203755274
+      ¡LISTO!
+      ===================================================
+    -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1118856203755274');
+    fbq('track', 'PageView');
+    
+    /*
+      ================================================================
+      ¡EVENTO DE CONVERSIÓN "LEAD"!
+      Esto le dice a Facebook que el usuario llenó el formulario.
+      ================================================================
+    */
+    fbq('track', 'Lead');
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1118856203755274&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- FIN DE META PIXEL -->
+
+    <style>
+        /* Definición de la Paleta de Colores Oficial (del Brief) */
+        :root {
+            --azul-principal: #1B4B8C;
+            --turquesa-acento: #1ABC9C;
+            --gris-texto: #2C3E50;
+            --gris-claro: #ECF0F1;
+            --blanco: #FFFFFF;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gris-texto);
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .cta-principal {
+            background-color: var(--azul-principal);
+            color: var(--blanco);
+            font-weight: 600; /* Poppins SemiBold */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .cta-principal:hover {
+            background-color: var(--azul-secundario);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen" style="background-color: var(--gris-claro);">
+
+    <main class="text-center bg-white p-10 md:p-16 rounded-xl shadow-2xl max-w-lg mx-auto">
+        <!-- Icono de Check (Turquesa) -->
+        <svg class="w-20 h-20 mx-auto mb-6" style="color: var(--turquesa-acento);" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        
+        <h1 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Poppins', sans-serif;">¡Gracias por contactarnos!</h1>
+        
+        <p class="text-lg text-gray-600 mb-8">
+            Hemos recibido tu solicitud. Uno de nuestros asesores expertos se pondrá en contacto contigo en menos de 24 horas hábiles.
+        </p>
+
+        <p class="text-lg text-gray-600 mb-8">
+            Tu viaje para diseñar tu futuro global comienza ahora.
+        </p>
+        
+        <a href="https://naviaglobal.co" class="px-8 py-3 text-lg rounded-lg cta-principal shadow-lg">
+            Volver al inicio
+        </a>
+    </main>
+
+</body>
+</html>
+
