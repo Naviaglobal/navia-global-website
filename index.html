@@ -2,46 +2,137 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-<!-- ... (código existente sin cambios) ... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Navia Global | Estudia en el Exterior | Más de 8 Años de Experiencia</title>
+    <meta name="description" content="Agencia de estudios en el exterior con más de 8 años de experiencia. Australia, Canadá, Irlanda, Malta, Dubai, USA, Nueva Zelanda, Reino Unido. Asesoría 100% gratuita.">
+    <meta name="keywords" content="estudiar en el exterior, cursos de inglés, estudiar en australia, estudiar en canadá, visa de estudiante, agencia de estudios">
+    <meta name="author" content="Navia Global Education SAS">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naviaglobal.co/">
+    <meta property="og:title" content="Navia Global | Tu Futuro Global Comienza Aquí">
+    <meta property="og:description" content="Acompañamiento integral para estudiar en el exterior. +8 años de experiencia, +500 estudiantes felices.">
+    <meta property="og:image" content="https://naviaglobal.co/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://naviaglobal.co/">
+    <meta property="twitter:title" content="Navia Global | Tu Futuro Global Comienza Aquí">
+    <meta property="twitter:description" content="Acompañamiento integral para estudiar en el exterior.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1RNV31B1EM');
+    </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1118856203755274');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1118856203755274&ev=PageView&noscript=1"
+    /></noscript>
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-<!-- ... (código existente sin cambios) ... -->
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2C3E50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
         }
 
         /* ========== NAVBAR ========== */
         .navbar {
-<!-- ... (código existente sin cambios) ... -->
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            /* Se mantiene el padding y alineación del <a> */
-            text-decoration: none;
             display: flex;
-            flex-direction: row; /* <-- CAMBIADO DE 'column' A 'row' */
-            align-items: center; /* <-- AÑADIDO para centrar verticalmente */
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
             transition: all 0.3s;
-        }
-        
-        .logo img {
-            height: 48px; /* 1.2 * 40px (h-12 de Tailwind) */
-            width: auto;
-            border-radius: 8px; /* Coincide con el estilo de la web */
         }
 
         .logo:hover {
             transform: scale(1.03);
         }
 
-        /* El CSS original para el texto del logo ahora se aplica con estilos inline en el HTML */
-        /* para mayor control del lockup (imagen + texto) */
-        .logo span {
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1B4B8C;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
             color: #1ABC9C;
             font-size: 0.85rem;
             font-weight: 500;
@@ -50,30 +141,1646 @@
             letter-spacing: 0.5px;
         }
 
+        .logo:hover .logo-name {
+            color: #296AB8;
+        }
+
         .nav-links {
-<!-- ... (código existente sin cambios) ... -->
+            display: flex;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:not(.nav-cta):hover {
+            color: #1ABC9C;
+            transform: translateY(-1px);
+        }
+
+        .nav-links a:not(.nav-cta)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #1ABC9C, #16A085);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:not(.nav-cta):hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #1ABC9C, #16A085) !important;
+            color: white !important;
+            padding: 14px 32px !important;
+            border-radius: 30px !important;
+            font-weight: 700 !important;
+            font-size: 1.05rem !important;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.35) !important;
+            border: none !important;
+            letter-spacing: 0.3px !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: linear-gradient(135deg, #16A085, #138D75) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(26,188,156,0.45) !important;
+        }
+
+        /* Efecto de resaltado al cargar la página */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 8px;
+            background: transparent;
+            border: none;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background: #1B4B8C;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 15px 20px;
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background: #f8f9fa;
+            color: #1ABC9C;
+            padding-left: 30px;
+        }
+
+        .mobile-nav .nav-cta {
+            background: #1ABC9C !important;
+            color: white !important;
+            border-radius: 10px !important;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .mobile-nav .nav-cta:hover {
+            background: #16A085 !important;
+            padding-left: 20px !important;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #1B4B8C 0%, #296AB8 100%);
+            padding: 120px 40px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            background: rgba(26,188,156,0.25);
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 35px;
+            margin-bottom: 35px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: white;
+            border: 2px solid rgba(26,188,156,0.4);
+            backdrop-filter: blur(10px);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.2);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            opacity: 0.98;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-flags {
+            font-size: 2.5rem;
+            margin: 35px 0;
+            letter-spacing: 15px;
+            animation: wave 3s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero-cta {
+            margin-top: 50px;
+        }
+
+        .btn-primary {
+            background: #1ABC9C;
+            color: white;
+            padding: 22px 50px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: inline-block;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 35px rgba(26,188,156,0.4);
+            border: 3px solid rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: #16A085;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(26,188,156,0.6);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 70px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.05rem;
+            background: rgba(255,255,255,0.1);
+            padding: 18px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        .trust-badge span {
+            font-size: 2rem;
+        }
+
+        .trust-badge div {
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* ========== DESTINOS ========== */
+        .destinos {
+            padding: 120px 40px;
+            background: #FFFFFF;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1B4B8C;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #7f8c8d;
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .destinos-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .destino-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+        }
+
+        .destino-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .destino-header {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: linear-gradient(135deg, #ECF0F1, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destino-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(27,75,140,0.05), rgba(41,106,184,0.05));
+        }
+
+        .destino-content {
+            padding: 35px 30px;
+        }
+
+        .destino-content h3 {
+            font-size: 1.9rem;
+            color: #1B4B8C;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .destino-tagline {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .destino-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .destino-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1ABC9C;
+            margin-bottom: 25px;
+        }
+
+        .destino-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .destino-features li {
+            padding: 10px 0;
+            color: #555;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .destino-features li::before {
+            content: '✓';
+            color: #1ABC9C;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .destino-btn {
+            display: block;
+            text-align: center;
+            background: #1B4B8C;
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .destino-btn:hover {
+            background: #296AB8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(27,75,140,0.3);
+        }
+
+        /* ========== SERVICIOS ========== */
+        .servicios {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .servicios-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 45px;
+            margin-top: 70px;
+        }
+
+        .servicio-card {
+            background: white;
+            padding: 45px 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .servicio-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+        }
+
+        .servicio-card h3 {
+            font-size: 1.6rem;
+            color: #1B4B8C;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .servicio-card p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .servicio-list {
+            list-style: none;
+        }
+
+        .servicio-list li {
+            padding: 10px 0;
+            color: #555;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .servicio-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #1ABC9C;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ========== EXPERIENCIA ========== */
+        .experiencia {
+            padding: 100px 20px;
+            background: #1B4B8C;
+            color: white;
+            text-align: center;
+        }
+
+        .experiencia h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .experiencia p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        .stats {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-top: 70px;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1ABC9C;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(26,188,156,0.3);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* ========== CONTACTO/FORMULARIO ========== */
+        .contacto {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #1B4B8C;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .form-container .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2C3E50;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1ABC9C;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(26,188,156,0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #1ABC9C;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+        }
+
+        .submit-btn:hover {
+            background: #16A085;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(26,188,156,0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .form-note a {
+            color: #1ABC9C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #2C3E50;
+            color: white;
+            padding: 70px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h4 {
+            color: #1ABC9C;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #1ABC9C;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(26,188,156,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #1ABC9C;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ========== WHATSAPP FLOTANTE ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(37,211,102,0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(37,211,102,0.7);
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        
+        /* Tablets grandes y laptops pequeñas */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 30px;
+            }
+
+            .nav-links {
+                gap: 30px;
+            }
+
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .destinos-grid,
+            .servicios-grid {
+                gap: 30px;
+            }
+        }
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 1.7rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-name {
+                font-size: 1.6rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                padding: 100px 25px 80px;
+                margin-top: 75px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .hero-flags {
+                font-size: 1.8rem;
+                letter-spacing: 8px;
+            }
+
+            .btn-primary {
+                padding: 18px 40px;
+                font-size: 1.05rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.15rem;
+                margin-bottom: 60px;
+            }
+
+            .destinos,
+            .servicios {
+                padding: 80px 25px;
+            }
+
+            .destinos-grid,
+            .servicios-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 45px 30px;
+            }
+
+            .form-container h2 {
+                font-size: 2.2rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+            }
+
+            .experiencia {
+                padding: 80px 25px;
+            }
+
+            .experiencia h2 {
+                font-size: 2.5rem;
+            }
+
+            .experiencia p {
+                font-size: 1.15rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+
+            .trust-badge {
+                font-size: 0.95rem;
+                padding: 15px 25px;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .destino-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .servicio-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Móviles */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .logo-name {
+                font-size: 1.4rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-badge {
+                font-size: 0.9rem;
+                padding: 12px 25px;
+            }
+
+            .hero-flags {
+                font-size: 1.5rem;
+                letter-spacing: 5px;
+            }
+
+            .btn-primary {
+                padding: 16px 35px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .destinos,
+            .servicios,
+            .experiencia {
+                padding: 60px 20px;
+            }
+
+            .destino-header {
+                height: 180px;
+                font-size: 4rem;
+            }
+
+            .servicio-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 35px 20px;
+            }
+
+            .form-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ========== ANIMACIONES ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <!-- LOGO - ACTUALIZADO CON IMAGEN + TEXTO -->
             <a href="/" class="logo">
-                <!-- Col 1: Imagen del Logo -->
-                <img src="a-minimalist-flat-design-logo-featuring-_8PQSPkpcTkmXfgvU0lv8ZA_BYP87N9BRGyLxafgD95lJg.jpeg" 
-                     alt="Navia Global Logo Provisional" 
-                     style="height: 48px; width: auto; border-radius: 8px; margin-right: 12px;">
-                
-                <!-- Col 2: Texto del Logo (apilado) -->
-                <div style="display: flex; flex-direction: column; line-height: 1.1;">
-                    <span style="font-size: 2.2rem; font-weight: 800; color: #1B4B8C; letter-spacing: -0.5px;">
-                        NAVIA GLOBAL
-                    </span>
-                    <span style="color: #1ABC9C; font-size: 0.85rem; font-weight: 500; font-style: italic; letter-spacing: 0.5px; margin-top: 4px;">
-                        Tu puente al mundo
-                    </span>
+                <img src="a-minimalist-flat-design-logo-featuring-_8PQSPkpcTkmXfgvU0lv8ZA_BYP87N9BRGyLxafgD95lJg.jpeg" alt="Navia Global - Estudia en el Exterior">
+                <div class="logo-text">
+                    <span class="logo-name">NAVIA GLOBAL</span>
+                    <span class="logo-tagline">Tu puente al mundo</span>
                 </div>
             </a>
-            
             <div class="nav-links">
                 <a href="#destinos">Destinos</a>
-<!-- ... (código existente sin cambios) ... -->
-</html>
+                <a href="#servicios">Servicios</a>
+                <a href="#experiencia">Nosotros</a>
+                <a href="#contacto" class="nav-cta">📅 Asesoría Gratis</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
+    <!-- MOBILE MENU -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#destinos">Destinos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#experiencia">Nosotros</a>
+        <a href="#contacto" class="nav-cta">📅 Asesoría Gratis</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⛵ Más de 8 años navegando futuros</div>
+            <h1>Diseña Tu Futuro Global:<br>Estudia Idiomas en el Exterior</h1>
+            <p>Te acompañamos desde la primera asesoría hasta tu graduación</p>
+            <div class="hero-flags">🇦🇺 🇨🇦 🇮🇪 🇲🇹 🇦🇪 🇺🇸 🇳🇿 🇬🇧</div>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn-primary">📅 Agenda Tu Asesoría Gratuita</a>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span>✓</span>
+                    <div>+10 años de<br>experiencia</div>
+                </div>
+                <div class="trust-badge">
+                    <span>✓</span>
+                    <div>+500 estudiantes<br>felices</div>
+                </div>
+                <div class="trust-badge">
+                    <span>✓</span>
+                    <div>Asesoría 100%<br>personalizada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section class="destinos" id="destinos">
+        <h2 class="section-title">Elige Tu Horizonte</h2>
+        <p class="section-subtitle">8 destinos increíbles | Infinitas posibilidades</p>
+        
+        <div class="destinos-grid">
+            <!-- AUSTRALIA -->
+            <div class="destino-card">
+                <div class="destino-header">🇦🇺</div>
+                <div class="destino-content">
+                    <h3>Australia</h3>
+                    <p class="destino-tagline">"El destino favorito de estudiantes internacionales"</p>
+                    <p><strong>Ciudades principales:</strong> Sydney, Melbourne, Brisbane, Perth, Gold Coast</p>
+                    <div class="destino-price">Desde USD $5,000 / 6 meses</div>
+                    <ul class="destino-features">
+                        <li><strong>Trabaja legal:</strong> 48hrs quincenales estudiando + ilimitado en vacaciones</li>
+                        <li><strong>Salario mínimo:</strong> $24.10 AUD/hora (~$16 USD)</li>
+                        <li><strong>Visa de estudiante:</strong> Fácil obtención, alta tasa de aprobación</li>
+                        <li><strong>Post-estudio:</strong> Visa de trabajo temporal (485) de 2-4 años</li>
+                        <li><strong>Nivel de inglés:</strong> Desde básico</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Solicitar Información</a>
+                </div>
+            </div>
+
+            <!-- CANADÁ -->
+            <div class="destino-card">
+                <div class="destino-header">🇨🇦</div>
+                <div class="destino-content">
+                    <h3>Canadá</h3>
+                    <p class="destino-tagline">"Seguridad, multiculturalidad, futuro"</p>
+                    <p>El destino más seguro. Excelente educación y oportunidades reales de trabajo post-estudio.</p>
+                    <div class="destino-price">Desde USD $15,000 / Año</div>
+                    <ul class="destino-features">
+                        <li>Permiso de trabajo post-graduación</li>
+                        <li>Pathway a residencia más accesible</li>
+                        <li>Educación de calidad mundial</li>
+                        <li>Sociedad multicultural y acogedora</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- IRLANDA -->
+            <div class="destino-card">
+                <div class="destino-header">🇮🇪</div>
+                <div class="destino-content">
+                    <h3>Irlanda</h3>
+                    <p class="destino-tagline">"Tech hub europeo y amabilidad"</p>
+                    <p>Centro tecnológico de Europa. Google, Facebook y Apple tienen sus sedes aquí.</p>
+                    <div class="destino-price">Desde USD $10,000 / Año</div>
+                    <ul class="destino-features">
+                        <li>Hub tecnológico de Europa</li>
+                        <li>Trabaja mientras estudias</li>
+                        <li>Puerta de entrada a Europa</li>
+                        <li>Cultura acogedora y vibrante</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- MALTA -->
+            <div class="destino-card">
+                <div class="destino-header">🇲🇹</div>
+                <div class="destino-content">
+                    <h3>Malta</h3>
+                    <p class="destino-tagline">"Inglés + Mediterráneo + Historia"</p>
+                    <p>El secreto mejor guardado. Inglés, clima perfecto y costos accesibles en el Mediterráneo.</p>
+                    <div class="destino-price">Desde USD $3,000 / 6 meses</div>
+                    <ul class="destino-features">
+                        <li>Inglés como idioma oficial</li>
+                        <li>Clima mediterráneo todo el año</li>
+                        <li>Costos más accesibles</li>
+                        <li>Historia milenaria europea</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- DUBAI -->
+            <div class="destino-card">
+                <div class="destino-header">🇦🇪</div>
+                <div class="destino-content">
+                    <h3>Dubai</h3>
+                    <p class="destino-tagline">"Lujo, innovación, Oriente Medio"</p>
+                    <p>Ciudad del futuro. Sin impuestos, máximo lujo y oportunidades únicas en el mundo.</p>
+                    <div class="destino-price">Desde USD $4,000 / 6 meses</div>
+                    <ul class="destino-features">
+                        <li>0% impuestos sobre ingresos</li>
+                        <li>Ciudad ultra moderna</li>
+                        <li>Hub de negocios internacionales</li>
+                        <li>Seguridad excepcional</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- USA -->
+            <div class="destino-card">
+                <div class="destino-header">🇺🇸</div>
+                <div class="destino-content">
+                    <h3>Estados Unidos</h3>
+                    <p class="destino-tagline">"El sueño americano, innovación"</p>
+                    <p>Las mejores universidades del mundo. Silicon Valley, Wall Street, el epicentro global.</p>
+                    <div class="destino-price">Desde USD $20,000 / Año</div>
+                    <ul class="destino-features">
+                        <li>Top universidades del mundo</li>
+                        <li>Oportunidades ilimitadas</li>
+                        <li>Epicentro de innovación</li>
+                        <li>Diversidad cultural extrema</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- NUEVA ZELANDA -->
+            <div class="destino-card">
+                <div class="destino-header">🇳🇿</div>
+                <div class="destino-content">
+                    <h3>Nueva Zelanda</h3>
+                    <p class="destino-tagline">"Naturaleza + calidad educativa"</p>
+                    <p>Paisajes de película, sociedad amigable y sistema educativo de primer nivel.</p>
+                    <div class="destino-price">Desde USD $5,000 / 6 meses</div>
+                    <ul class="destino-features">
+                        <li>Paisajes impresionantes</li>
+                        <li>Educación personalizada</li>
+                        <li>Calidad de vida top mundial</li>
+                        <li>Población acogedora</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+
+            <!-- REINO UNIDO -->
+            <div class="destino-card">
+                <div class="destino-header">🇬🇧</div>
+                <div class="destino-content">
+                    <h3>Reino Unido</h3>
+                    <p class="destino-tagline">"Tradición, prestigio, historia"</p>
+                    <p>Oxford, Cambridge, Londres. Educación centenaria de élite mundial en el corazón de Europa.</p>
+                    <div class="destino-price">Desde USD $16,000 / Año</div>
+                    <ul class="destino-features">
+                        <li>Universidades históricas de élite</li>
+                        <li>Títulos reconocidos globalmente</li>
+                        <li>Londres: capital cultural</li>
+                        <li>Conexión con toda Europa</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn">Más Información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Te acompañamos en cada paso del camino</p>
+        
+        <div class="servicios-grid">
+            <!-- SERVICIO 1 -->
+            <div class="servicio-card">
+                <div class="servicio-icon">📋</div>
+                <h3>1. Asesoría y Perfilamiento</h3>
+                <p>Evaluamos tu perfil académico y profesional para diseñar el plan perfecto según tus metas, presupuesto y timeline.</p>
+                <ul class="servicio-list">
+                    <li>Análisis de perfil académico</li>
+                    <li>Definición de objetivos</li>
+                    <li>Plan personalizado paso a paso</li>
+                    <li>Asesoría 100% gratuita</li>
+                </ul>
+            </div>
+
+            <!-- SERVICIO 2 -->
+            <div class="servicio-card">
+                <div class="servicio-icon">🎓</div>
+                <h3>2. Convenios Institucionales</h3>
+                <p>Conexión directa con las mejores instituciones de educación en el exterior. Sin intermediarios innecesarios.</p>
+                <ul class="servicio-list">
+                    <li>Universidades y colleges certificados</li>
+                    <li>Escuelas de idiomas reconocidas</li>
+                    <li>Programas técnicos y vocacionales</li>
+                    <li>Descuentos exclusivos por convenio</li>
+                </ul>
+            </div>
+
+            <!-- SERVICIO 3 -->
+            <div class="servicio-card">
+                <div class="servicio-icon">📄</div>
+                <h3>3. Trámites de Visa</h3>
+                <p>Preparación experta de documentación y presentación de trámites. 95% de tasa de aprobación.</p>
+                <ul class="servicio-list">
+                    <li>Revisión exhaustiva de documentos</li>
+                    <li>Preparación para entrevista</li>
+                    <li>Presentación y seguimiento</li>
+                    <li>Acompañamiento hasta aprobación</li>
+                </ul>
+            </div>
+
+            <!-- SERVICIO 4 -->
+            <div class="servicio-card">
+                <div class="servicio-icon">✈️</div>
+                <h3>4. Tiquetes y Seguros</h3>
+                <p>Asesoría en compra de tiquetes aéreos y contratación de seguros médicos internacionales obligatorios.</p>
+                <ul class="servicio-list">
+                    <li>Mejores tarifas aéreas</li>
+                    <li>Seguros médicos certificados</li>
+                    <li>Asesoría en equipaje</li>
+                    <li>Preparación pre-viaje</li>
+                </ul>
+            </div>
+
+            <!-- SERVICIO 5 -->
+            <div class="servicio-card">
+                <div class="servicio-icon">🏠</div>
+                <h3>5. Apoyo en Destino</h3>
+                <p>No te dejamos solo al llegar. Soporte en alojamiento, orientación y establecimiento en tu nuevo país.</p>
+                <ul class="servicio-list">
+                    <li>Búsqueda de alojamiento</li>
+                    <li>Orientación al llegar</li>
+                    <li>Apertura de cuenta bancaria</li>
+                    <li>Soporte continuo durante tu estadía</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="experiencia" id="experiencia">
+        <h2>Más de 8 Años Navegando Futuros</h2>
+        <p>Somos expertos en diseñar el viaje perfecto hacia tu futuro internacional. Con más de 500 estudiantes felices, sabemos exactamente cómo convertir tu sueño en realidad.</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Estudiantes Felices</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Destinos Top</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Tasa de Aprobación</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO/FORMULARIO -->
+    <section class="contacto" id="contacto">
+        <div class="form-container">
+            <h2>Da El Primer Paso Hacia Tu Futuro Global</h2>
+            <p class="subtitle">Completa este formulario y uno de nuestros asesores expertos se comunicará contigo en menos de 24 horas.</p>
+            
+            <form action="https://formspree.io/f/xdkpereb" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+57 300 123 4567">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" name="edad" placeholder="Ej: 25">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="interes">¿Qué te interesa? *</label>
+                        <select id="interes" name="interes" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Cursos de Inglés">Cursos de Inglés</option>
+                            <option value="Pregrado">Estudiar Pregrado</option>
+                            <option value="Postgrado">Estudiar Postgrado/Maestría</option>
+                            <option value="Certificados Técnicos">Certificados Técnicos</option>
+                            <option value="No estoy seguro">No estoy seguro aún</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destino">Destino de Interés</label>
+                        <select id="destino" name="destino">
+                            <option value="">Selecciona un destino</option>
+                            <option value="Australia">🇦🇺 Australia</option>
+                            <option value="Canadá">🇨🇦 Canadá</option>
+                            <option value="Irlanda">🇮🇪 Irlanda</option>
+                            <option value="Malta">🇲🇹 Malta</option>
+                            <option value="Dubai">🇦🇪 Dubai</option>
+                            <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
+                            <option value="Nueva Zelanda">🇳🇿 Nueva Zelanda</option>
+                            <option value="Reino Unido">🇬🇧 Reino Unido</option>
+                            <option value="No estoy seguro">No estoy seguro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Cuéntanos más sobre tus planes (Opcional)</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Ej: Me gustaría estudiar inglés por 6 meses y trabajar mientras estudio..."></textarea>
+                </div>
+
+                <!-- Campo oculto para redirección -->
+                <input type="hidden" name="_next" value="https://naviaglobal.co/gracias.html">
+                <input type="hidden" name="_subject" value="Nuevo Lead desde Navia Global">
+                <input type="hidden" name="_cc" value="samuel.sanchez@naviaglobal.co">
+
+                <button type="submit" class="submit-btn">✈️ Quiero Mi Asesoría Gratuita</button>
+                
+                <p class="form-note">
+                    Al enviar este formulario aceptas nuestra <a href="/politica-privacidad">Política de Privacidad</a> y <a href="/tratamiento-datos-personales">Tratamiento de Datos Personales</a>. 
+                    Nos comprometemos a no compartir tu información con terceros.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Navia Global</h4>
+                <p>Tu puente al mundo. Más de 8 años ayudando a estudiantes colombianos a cumplir su sueño de estudiar en el exterior.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/naviaglobal" target="_blank">📷</a>
+                    <a href="https://www.facebook.com/naviaglobal" target="_blank">📘</a>
+                    <a href="https://www.tiktok.com/@naviaglobal" target="_blank">🎵</a>
+                    <a href="https://www.linkedin.com/company/naviaglobal" target="_blank">💼</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Destinos</h4>
+                <ul>
+                    <li><a href="#contacto">Australia</a></li>
+                    <li><a href="#contacto">Canadá</a></li>
+                    <li><a href="#contacto">Irlanda</a></li>
+                    <li><a href="#contacto">Malta</a></li>
+                    <li><a href="#contacto">Dubai</a></li>
+                    <li><a href="#contacto">Estados Unidos</a></li>
+                    <li><a href="#contacto">Nueva Zelanda</a></li>
+                    <li><a href="#contacto">Reino Unido</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#experiencia">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
+                    <li><a href="/politica-privacidad">Política de Privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📧 info@naviaglobal.co</p>
+                <p>📧 samuel.sanchez@naviaglobal.co</p>
+                <p>📱 WhatsApp: +57 324 763 5425</p>
+                <p>📍 Bogotá, Colombia</p>
+                <p>🕒 Lun-Vie: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Navia Global Education SAS. Todos los derechos reservados. | NIT: Pendiente | Diseñado con ❤️ para estudiantes colombianos</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/573247635425?text=Hola,%20estoy%20interesado%20en%20estudiar%20en%20el%20exterior.%20¿Pueden%20ayudarme?" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Cerrar menú al hacer click fuera
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileNav.contains(event.target);
+            const isClickOnButton = mobileMenuBtn.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton && mobileNav.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission tracking
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function() {
+                // Google Analytics Event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'Contact',
+                        'event_label': 'Homepage Contact Form'
+                    });
+                }
+                
+                // Meta Pixel Event
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead');
+                }
+            });
+        }
+
+        // Animation on scroll (opcional - mejora UX)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar cards de destinos
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.destino-card, .servicio-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
+
+</body>
+</html>
