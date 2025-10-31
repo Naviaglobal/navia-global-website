@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+  <input type="hidden" name="_next" value="./gracias.html">
+```
+
+5. **Commit changes**
+
+---
+
+## 🎯 **¿POR QUÉ FUNCIONA ESTO?**
+
+La URL relativa `./gracias.html` le dice a Formspree:
+- "Redirige a gracias.html en el mismo dominio desde donde se envió"
+- No necesita aprobación previa
+- Funciona siempre (Vercel o dominio personalizado)
+
+---
+
+## ✅ **DESPUÉS DEL CAMBIO:**
+
+1. Espera 1-2 min que Vercel despliegue
+2. Prueba el formulario nuevamente
+3. **Ahora SÍ debería funcionar** ✨
+
+---
+
+## 🆘 **SI SIGUE SIN FUNCIONAR:**
+
+Entonces necesitamos verificar si `gracias.html` está correctamente desplegado:
+
+**Prueba ir directamente a:**
+```
+https://navia-global-website-bjqtv9ud-navia-globals-projects.vercel.app/gracias.html
+¿Qué ves?
+
+✅ Tu página de gracias → El archivo está bien
+❌ Error 404 → Falta subir gracias.html a GitHub
+
+
+Haz el cambio a ./gracias.html y prueba. Dime qué pasa. 🚀ReintentarSdame el codigo para el archivo gracias para reemplazarlo📄 CÓDIGO COMPLETO DE GRACIAS.HTML:
+Aquí está el código limpio y completo:
+html<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +56,6 @@
         gtag('js', new Date());
         gtag('config', 'G-1RNV31B1EM');
         
-        // Event de conversión
         gtag('event', 'conversion', {
             'send_to': 'G-1RNV31B1EM',
             'event_category': 'Lead',
@@ -398,7 +436,6 @@
     </div>
 
     <script>
-        // Crear confetti animado
         function createConfetti() {
             const colors = ['#1ABC9C', '#1B4B8C', '#296AB8', '#ECF0F1'];
             for (let i = 0; i < 50; i++) {
