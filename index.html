@@ -323,6 +323,156 @@
             color: white;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
+        }
+
+        /* Hero Background Slideshow */
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            animation: kenBurns 20s ease-out;
+        }
+
+        /* Ken Burns Effect - Zoom suave */
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.15);
+            }
+        }
+
+        /* Flechas de navegación */
+        .hero-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 4;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero-nav:hover {
+            background: rgba(26,188,156,0.9);
+            border-color: rgba(26,188,156,1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(26,188,156,0.4);
+        }
+
+        .hero-nav-prev {
+            left: 30px;
+        }
+
+        .hero-nav-next {
+            right: 30px;
+        }
+
+        /* Indicadores (dots) */
+        .hero-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            gap: 12px;
+        }
+
+        .hero-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            border: 2px solid rgba(255,255,255,0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-indicator:hover {
+            background: rgba(255,255,255,0.7);
+            transform: scale(1.2);
+        }
+
+        .hero-indicator.active {
+            background: #1ABC9C;
+            border-color: #1ABC9C;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Responsive para flechas */
+        @media (max-width: 768px) {
+            .hero-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .hero-nav-prev {
+                left: 15px;
+            }
+
+            .hero-nav-next {
+                right: 15px;
+            }
+
+            .hero-indicators {
+                bottom: 20px;
+            }
+
+            .hero-indicator {
+                width: 10px;
+                height: 10px;
+            }
+
+            .hero-indicator.active {
+                width: 24px;
+            }
+        }
+
+        /* Overlay oscuro sobre las imágenes para legibilidad */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(27,75,140,0.85) 0%, rgba(41,106,184,0.85) 100%);
+            z-index: 1;
         }
 
         .hero::before {
@@ -334,6 +484,7 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
             opacity: 0.3;
+            z-index: 2;
             animation: float 20s ease-in-out infinite;
         }
 
@@ -346,7 +497,7 @@
             max-width: 1100px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 3;
         }
 
         .hero-badge {
@@ -1264,6 +1415,29 @@
 
     <!-- HERO -->
     <section class="hero">
+        <!-- Slideshow de imágenes de fondo -->
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=90');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&q=90');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1920&q=90');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90');"></div>
+        </div>
+        
+        <!-- Flechas de navegación -->
+        <div class="hero-nav hero-nav-prev" onclick="changeSlide(-1)">‹</div>
+        <div class="hero-nav hero-nav-next" onclick="changeSlide(1)">›</div>
+        
+        <!-- Indicadores (dots) -->
+        <div class="hero-indicators">
+            <div class="hero-indicator active" onclick="goToSlide(0)"></div>
+            <div class="hero-indicator" onclick="goToSlide(1)"></div>
+            <div class="hero-indicator" onclick="goToSlide(2)"></div>
+            <div class="hero-indicator" onclick="goToSlide(3)"></div>
+        </div>
+        
+        <!-- Overlay oscuro para legibilidad -->
+        <div class="hero-overlay"></div>
+        
         <div class="hero-content">
             <div class="hero-badge">⛵ Más de 8 años navegando futuros</div>
             <h1>Diseña Tu Futuro Global:<br>Estudia Idiomas en el Exterior</h1>
@@ -1297,7 +1471,11 @@
         <div class="destinos-grid">
             <!-- AUSTRALIA -->
             <div class="destino-card">
-                <div class="destino-header">🇦🇺</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&q=85" alt="Sydney Opera House - Australia" loading="lazy">
+                    <span class="destino-flag">🇦🇺</span>
+                    <span class="destino-badge">⭐ Más Popular</span>
+                </div>
                 <div class="destino-content">
                     <h3>Australia</h3>
                     <p class="destino-tagline">"El destino favorito de estudiantes internacionales"</p>
@@ -1316,7 +1494,11 @@
 
             <!-- CANADÁ -->
             <div class="destino-card">
-                <div class="destino-header">🇨🇦</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=85" alt="Toronto CN Tower - Canadá" loading="lazy">
+                    <span class="destino-flag">🇨🇦</span>
+                    <span class="destino-badge">🔥 Top Calidad</span>
+                </div>
                 <div class="destino-content">
                     <h3>Canadá</h3>
                     <p class="destino-tagline">"Seguridad, multiculturalidad, futuro"</p>
@@ -1334,7 +1516,11 @@
 
             <!-- IRLANDA -->
             <div class="destino-card">
-                <div class="destino-header">🇮🇪</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800&q=85" alt="Dublin Temple Bar - Irlanda" loading="lazy">
+                    <span class="destino-flag">🇮🇪</span>
+                    <span class="destino-badge">💼 Tech Hub</span>
+                </div>
                 <div class="destino-content">
                     <h3>Irlanda</h3>
                     <p class="destino-tagline">"Tech hub europeo y amabilidad"</p>
@@ -1352,7 +1538,11 @@
 
             <!-- MALTA -->
             <div class="destino-card">
-                <div class="destino-header">🇲🇹</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1562707182-13eb5943adf4?w=800&q=85" alt="Valletta Malta - Mediterráneo" loading="lazy">
+                    <span class="destino-flag">🇲🇹</span>
+                    <span class="destino-badge">☀️ Mejor Clima</span>
+                </div>
                 <div class="destino-content">
                     <h3>Malta</h3>
                     <p class="destino-tagline">"Inglés + Mediterráneo + Historia"</p>
@@ -1370,7 +1560,11 @@
 
             <!-- DUBAI -->
             <div class="destino-card">
-                <div class="destino-header">🇦🇪</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=85" alt="Burj Khalifa Dubai - Emiratos" loading="lazy">
+                    <span class="destino-flag">🇦🇪</span>
+                    <span class="destino-badge">✨ Lujo Total</span>
+                </div>
                 <div class="destino-content">
                     <h3>Dubai</h3>
                     <p class="destino-tagline">"Lujo, innovación, Oriente Medio"</p>
@@ -1388,7 +1582,11 @@
 
             <!-- USA -->
             <div class="destino-card">
-                <div class="destino-header">🇺🇸</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&q=85" alt="New York City - Estados Unidos" loading="lazy">
+                    <span class="destino-flag">🇺🇸</span>
+                    <span class="destino-badge">🎓 Top Unis</span>
+                </div>
                 <div class="destino-content">
                     <h3>Estados Unidos</h3>
                     <p class="destino-tagline">"El sueño americano, innovación"</p>
@@ -1406,7 +1604,11 @@
 
             <!-- NUEVA ZELANDA -->
             <div class="destino-card">
-                <div class="destino-header">🇳🇿</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800&q=85" alt="Milford Sound - Nueva Zelanda" loading="lazy">
+                    <span class="destino-flag">🇳🇿</span>
+                    <span class="destino-badge">🏔️ Naturaleza</span>
+                </div>
                 <div class="destino-content">
                     <h3>Nueva Zelanda</h3>
                     <p class="destino-tagline">"Naturaleza + calidad educativa"</p>
@@ -1424,7 +1626,11 @@
 
             <!-- REINO UNIDO -->
             <div class="destino-card">
-                <div class="destino-header">🇬🇧</div>
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=85" alt="London Big Ben - Reino Unido" loading="lazy">
+                    <span class="destino-flag">🇬🇧</span>
+                    <span class="destino-badge">👑 Prestigio</span>
+                </div>
                 <div class="destino-content">
                     <h3>Reino Unido</h3>
                     <p class="destino-tagline">"Tradición, prestigio, historia"</p>
@@ -1800,7 +2006,96 @@
                 card.style.transition = 'all 0.6s ease-out';
                 observer.observe(card);
             });
+
+            // Hero Slideshow
+            initHeroSlideshow();
         });
+
+        // Hero Image Slideshow
+        let currentSlide = 0;
+        let slides = [];
+        let indicators = [];
+        let autoPlayInterval;
+
+        function initHeroSlideshow() {
+            slides = document.querySelectorAll('.hero-slide');
+            indicators = document.querySelectorAll('.hero-indicator');
+
+            // Iniciar autoplay
+            startAutoPlay();
+
+            // Pausar al hacer hover
+            const hero = document.querySelector('.hero');
+            hero.addEventListener('mouseenter', stopAutoPlay);
+            hero.addEventListener('mouseleave', startAutoPlay);
+
+            // Soporte para teclado (flechas)
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') changeSlide(-1);
+                if (e.key === 'ArrowRight') changeSlide(1);
+            });
+
+            // Soporte para swipe en móvil
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            hero.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            hero.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
+                if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
+            }
+        }
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+
+            // Reiniciar autoplay
+            stopAutoPlay();
+            startAutoPlay();
+        }
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+
+            // Reiniciar autoplay
+            stopAutoPlay();
+            startAutoPlay();
+        }
+
+        function nextSlide() {
+            changeSlide(1);
+        }
+
+        function startAutoPlay() {
+            stopAutoPlay(); // Limpiar cualquier intervalo existente
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+            }
+        }
     </script>
 
 </body>
