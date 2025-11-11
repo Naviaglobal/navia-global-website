@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/terminos-y-condiciones",
+      "dest": "/terminos-y-condiciones.html"
+    },
+    {
+      "src": "/politica-de-privacidad",
+      "dest": "/politica-de-privacidad.html"
+    },
+    {
+      "src": "/politica-de-cookies",
+      "dest": "/politica-de-cookies.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
