@@ -1893,6 +1893,7 @@
 
                 <input type="hidden" name="_subject" value="Nuevo Lead desde Navia Global">
                 <input type="hidden" name="_cc" value="samuel.sanchez@naviaglobal.co">
+                <input type="hidden" name="_next" value="https://naviaglobal.co/gracias.html">
 
                 <button type="submit" class="submit-btn">✈️ Quiero Mi Asesoría Gratuita</button>
                 
@@ -2039,24 +2040,33 @@
         // Form submission tracking
         const form = document.getElementById('contactForm');
         if (form) {
-            form.addEventListener('submit', function(e) {
-                // Validar consentimientos obligatorios
-                const consentTerms = document.getElementById('consent-terms');
-                const consentData = document.getElementById('consent-data');
-                const consentTransfer = document.getElementById('consent-transfer');
+           form.addEventListener('submit', function(e) {
+    // Validar consentimientos obligatorios
+    const consentTerms = document.getElementById('consent-terms');
+    const consentData = document.getElementById('consent-data');
+    const consentTransfer = document.getElementById('consent-transfer');
 
-                if (!consentTerms.checked || !consentData.checked || !consentTransfer.checked) {
-                    e.preventDefault();
-                    alert('Por favor acepta todos los consentimientos obligatorios para continuar.');
-                    return false;
-                }
+    if (!consentTerms.checked || !consentData.checked || !consentTransfer.checked) {
+        e.preventDefault();
+        alert('⚠️ Por favor acepta todos los consentimientos obligatorios para continuar.');
+        return false;
+    }
 
-                // Google Analytics Event
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submission', {
-                        'event_category': 'Contact',
-                        'event_label': 'Homepage Contact Form'
-                    });
+    // Google Analytics Event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submission', {
+            'event_category': 'Contact',
+            'event_label': 'Homepage Contact Form'
+        });
+    }
+    
+    // Meta Pixel Event
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+    }
+    
+    // Formspree manejará la redirección automáticamente usando el campo _next
+});
                 }
                 
                 // Meta Pixel Event
