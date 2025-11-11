@@ -206,7 +206,6 @@
             box-shadow: 0 8px 25px rgba(26,188,156,0.45) !important;
         }
 
-        /* Efecto de resaltado al cargar la página */
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -252,7 +251,6 @@
             transform: rotate(-45deg) translate(8px, -8px);
         }
 
-        /* Mobile Menu */
         .mobile-nav {
             display: none;
             position: fixed;
@@ -326,7 +324,6 @@
             min-height: 600px;
         }
 
-        /* Hero Background Slideshow */
         .hero-slideshow {
             position: absolute;
             top: 0;
@@ -354,7 +351,6 @@
             animation: kenBurns 20s ease-out;
         }
 
-        /* Ken Burns Effect - Zoom suave */
         @keyframes kenBurns {
             0% {
                 transform: scale(1);
@@ -364,7 +360,6 @@
             }
         }
 
-        /* Flechas de navegación */
         .hero-nav {
             position: absolute;
             top: 50%;
@@ -401,7 +396,6 @@
             right: 30px;
         }
 
-        /* Indicadores (dots) */
         .hero-indicators {
             position: absolute;
             bottom: 30px;
@@ -434,37 +428,6 @@
             border-radius: 6px;
         }
 
-        /* Responsive para flechas */
-        @media (max-width: 768px) {
-            .hero-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .hero-nav-prev {
-                left: 15px;
-            }
-
-            .hero-nav-next {
-                right: 15px;
-            }
-
-            .hero-indicators {
-                bottom: 20px;
-            }
-
-            .hero-indicator {
-                width: 10px;
-                height: 10px;
-            }
-
-            .hero-indicator.active {
-                width: 24px;
-            }
-        }
-
-        /* Overlay oscuro sobre las imágenes para legibilidad */
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -657,23 +620,38 @@
 
         .destino-header {
             height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            background: linear-gradient(135deg, #ECF0F1, #ffffff);
             position: relative;
             overflow: hidden;
         }
 
-        .destino-header::before {
-            content: '';
+        .destino-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .destino-flag {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(27,75,140,0.05), rgba(41,106,184,0.05));
+            top: 15px;
+            left: 15px;
+            font-size: 2.5rem;
+            z-index: 2;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .destino-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #1ABC9C;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 2;
         }
 
         .destino-content {
@@ -949,6 +927,62 @@
             min-height: 120px;
         }
 
+        /* Estilos para checkboxes de consentimiento */
+        .consent-section {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .consent-section h4 {
+            color: #1B4B8C;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            cursor: pointer;
+        }
+
+        .consent-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .consent-checkbox label {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2C3E50;
+            cursor: pointer;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .consent-checkbox label a {
+            color: #1ABC9C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .consent-checkbox label a:hover {
+            text-decoration: underline;
+        }
+
+        .required-text {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
         .submit-btn {
             width: 100%;
             background: #1ABC9C;
@@ -968,6 +1002,12 @@
             background: #16A085;
             transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(26,188,156,0.4);
+        }
+
+        .submit-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-note {
@@ -1089,18 +1129,8 @@
             box-shadow: 0 12px 35px rgba(37,211,102,0.6);
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 8px 25px rgba(37,211,102,0.4);
-            }
-            50% {
-                box-shadow: 0 8px 35px rgba(37,211,102,0.7);
-            }
-        }
-
         /* ========== RESPONSIVE ========== */
         
-        /* Tablets grandes y laptops pequeñas */
         @media (max-width: 1024px) {
             .nav-container {
                 padding: 0 30px;
@@ -1128,7 +1158,6 @@
             }
         }
 
-        /* Tablets */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1266,9 +1295,35 @@
             .servicio-card h3 {
                 font-size: 1.5rem;
             }
+
+            .hero-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .hero-nav-prev {
+                left: 15px;
+            }
+
+            .hero-nav-next {
+                right: 15px;
+            }
+
+            .hero-indicators {
+                bottom: 20px;
+            }
+
+            .hero-indicator {
+                width: 10px;
+                height: 10px;
+            }
+
+            .hero-indicator.active {
+                width: 24px;
+            }
         }
 
-        /* Móviles */
         @media (max-width: 480px) {
             .logo {
                 font-size: 1.5rem;
@@ -1329,7 +1384,6 @@
 
             .destino-header {
                 height: 180px;
-                font-size: 4rem;
             }
 
             .servicio-icon {
@@ -1362,7 +1416,6 @@
             }
         }
 
-        /* ========== ANIMACIONES ========== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1415,7 +1468,6 @@
 
     <!-- HERO -->
     <section class="hero">
-        <!-- Slideshow de imágenes de fondo -->
         <div class="hero-slideshow">
             <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=90');"></div>
             <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&q=90');"></div>
@@ -1423,11 +1475,9 @@
             <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90');"></div>
         </div>
         
-        <!-- Flechas de navegación -->
         <div class="hero-nav hero-nav-prev" onclick="changeSlide(-1)">‹</div>
         <div class="hero-nav hero-nav-next" onclick="changeSlide(1)">›</div>
         
-        <!-- Indicadores (dots) -->
         <div class="hero-indicators">
             <div class="hero-indicator active" onclick="goToSlide(0)"></div>
             <div class="hero-indicator" onclick="goToSlide(1)"></div>
@@ -1435,7 +1485,6 @@
             <div class="hero-indicator" onclick="goToSlide(3)"></div>
         </div>
         
-        <!-- Overlay oscuro para legibilidad -->
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
@@ -1536,10 +1585,10 @@
                 </div>
             </div>
 
-            <!-- MALTA -->
+            <!-- MALTA - IMAGEN CORREGIDA -->
             <div class="destino-card">
                 <div class="destino-header">
-                    <img src="https://images.unsplash.com/photo-1562707182-13eb5943adf4?w=800&q=85" alt="Valletta Malta - Mediterráneo" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=85" alt="Valletta Malta - Mediterráneo" loading="lazy">
                     <span class="destino-flag">🇲🇹</span>
                     <span class="destino-badge">☀️ Mejor Clima</span>
                 </div>
@@ -1654,7 +1703,6 @@
         <p class="section-subtitle">Te acompañamos en cada paso del camino</p>
         
         <div class="servicios-grid">
-            <!-- SERVICIO 1 -->
             <div class="servicio-card">
                 <div class="servicio-icon">📋</div>
                 <h3>1. Asesoría y Perfilamiento</h3>
@@ -1667,7 +1715,6 @@
                 </ul>
             </div>
 
-            <!-- SERVICIO 2 -->
             <div class="servicio-card">
                 <div class="servicio-icon">🎓</div>
                 <h3>2. Convenios Institucionales</h3>
@@ -1680,7 +1727,6 @@
                 </ul>
             </div>
 
-            <!-- SERVICIO 3 -->
             <div class="servicio-card">
                 <div class="servicio-icon">📄</div>
                 <h3>3. Trámites de Visa</h3>
@@ -1693,7 +1739,6 @@
                 </ul>
             </div>
 
-            <!-- SERVICIO 4 -->
             <div class="servicio-card">
                 <div class="servicio-icon">✈️</div>
                 <h3>4. Tiquetes y Seguros</h3>
@@ -1706,7 +1751,6 @@
                 </ul>
             </div>
 
-            <!-- SERVICIO 5 -->
             <div class="servicio-card">
                 <div class="servicio-icon">🏠</div>
                 <h3>5. Apoyo en Destino</h3>
@@ -1746,7 +1790,7 @@
         </div>
     </section>
 
-    <!-- CONTACTO/FORMULARIO -->
+    <!-- CONTACTO/FORMULARIO CON CONSENTIMIENTOS -->
     <section class="contacto" id="contacto">
         <div class="form-container">
             <h2>Da El Primer Paso Hacia Tu Futuro Global</h2>
@@ -1809,20 +1853,57 @@
                     <textarea id="mensaje" name="mensaje" placeholder="Ej: Me gustaría estudiar inglés por 6 meses y trabajar mientras estudio..."></textarea>
                 </div>
 
+                <!-- SECCIÓN DE CONSENTIMIENTOS OBLIGATORIOS -->
+                <div class="consent-section">
+                    <h4>🔒 Consentimientos Requeridos <span class="required-text">*</span></h4>
+                    
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent-terms" name="consent_terms" required>
+                        <label for="consent-terms">
+                            He leído y acepto los <a href="/terminos-y-condiciones" target="_blank">Términos y Condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">Política de Privacidad</a> de Navia Global. <span class="required-text">*</span>
+                        </label>
+                    </div>
+
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent-data" name="consent_data" required>
+                        <label for="consent-data">
+                            Autorizo expresamente a Navia Global para recopilar, almacenar y tratar mis datos personales con el propósito de brindarme asesoría educativa, gestionar mi proceso de aplicación y realizar seguimiento, según la Ley 1581 de 2012. <span class="required-text">*</span>
+                        </label>
+                    </div>
+
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent-transfer" name="consent_transfer" required>
+                        <label for="consent-transfer">
+                            Autorizo la transferencia internacional de mis datos personales a instituciones educativas y autoridades migratorias en los países de destino, necesaria para la prestación del servicio. <span class="required-text">*</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CONSENTIMIENTO OPCIONAL -->
+                <div class="consent-section" style="background: #f0fdf4; border-color: #10b981;">
+                    <h4 style="color: #059669;">💌 Consentimiento Opcional</h4>
+                    
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent-marketing" name="consent_marketing">
+                        <label for="consent-marketing">
+                            Deseo recibir información sobre nuevos destinos, programas educativos, promociones especiales y contenido relevante de Navia Global por correo electrónico y WhatsApp.
+                        </label>
+                    </div>
+                </div>
+
                 <input type="hidden" name="_subject" value="Nuevo Lead desde Navia Global">
                 <input type="hidden" name="_cc" value="samuel.sanchez@naviaglobal.co">
 
                 <button type="submit" class="submit-btn">✈️ Quiero Mi Asesoría Gratuita</button>
                 
                 <p class="form-note">
-                    Al enviar este formulario aceptas nuestra <a href="/politica-privacidad">Política de Privacidad</a> y <a href="/tratamiento-datos-personales">Tratamiento de Datos Personales</a>. 
-                    Nos comprometemos a no compartir tu información con terceros.
+                    <strong>Tu privacidad es importante.</strong> Tus datos serán tratados con total confidencialidad según nuestra <a href="/politica-de-privacidad">Política de Privacidad</a>. Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición en cualquier momento. Conoce más sobre el <a href="/politica-de-cookies">uso de cookies</a> en nuestro sitio.
                 </p>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER CON ENLACES LEGALES ACTUALIZADOS -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -1874,7 +1955,8 @@
                     <li><a href="#contacto">Contacto</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
-                    <li><a href="/politica-privacidad">Política de Privacidad</a></li>
+                    <li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
+                    <li><a href="/politica-de-cookies">Política de Cookies</a></li>
                 </ul>
             </div>
 
@@ -1919,7 +2001,6 @@
             mobileNav.classList.toggle('active');
         });
 
-        // Cerrar menú al hacer click en un enlace
         const mobileLinks = mobileNav.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -1928,7 +2009,6 @@
             });
         });
 
-        // Cerrar menú al hacer click fuera
         document.addEventListener('click', function(event) {
             const isClickInsideMenu = mobileNav.contains(event.target);
             const isClickOnButton = mobileMenuBtn.contains(event.target);
@@ -1956,12 +2036,21 @@
             });
         });
 
-        // Form submission tracking y redirección
+        // Form submission tracking
         const form = document.getElementById('contactForm');
         if (form) {
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
+                // Validar consentimientos obligatorios
+                const consentTerms = document.getElementById('consent-terms');
+                const consentData = document.getElementById('consent-data');
+                const consentTransfer = document.getElementById('consent-transfer');
+
+                if (!consentTerms.checked || !consentData.checked || !consentTransfer.checked) {
+                    e.preventDefault();
+                    alert('Por favor acepta todos los consentimientos obligatorios para continuar.');
+                    return false;
+                }
+
                 // Google Analytics Event
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'form_submission', {
@@ -1974,31 +2063,10 @@
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'Lead');
                 }
-
-                // Enviar formulario
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    if (response.ok) {
-                        // Redirigir a página de gracias
-                        window.location.href = '/gracias.html';
-                    } else {
-                        alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
-                    }
-                }).catch(error => {
-                    console.error('Error:', error);
-                    alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
-                });
             });
         }
 
-        // Animation on scroll (opcional - mejora UX)
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -2013,7 +2081,6 @@
             });
         }, observerOptions);
 
-        // Observar cards de destinos
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.destino-card, .servicio-card');
             cards.forEach(card => {
@@ -2023,11 +2090,10 @@
                 observer.observe(card);
             });
 
-            // Hero Slideshow
             initHeroSlideshow();
         });
 
-        // Hero Image Slideshow
+        // Hero Slideshow
         let currentSlide = 0;
         let slides = [];
         let indicators = [];
@@ -2036,22 +2102,17 @@
         function initHeroSlideshow() {
             slides = document.querySelectorAll('.hero-slide');
             indicators = document.querySelectorAll('.hero-indicator');
-
-            // Iniciar autoplay
             startAutoPlay();
 
-            // Pausar al hacer hover
             const hero = document.querySelector('.hero');
             hero.addEventListener('mouseenter', stopAutoPlay);
             hero.addEventListener('mouseleave', startAutoPlay);
 
-            // Soporte para teclado (flechas)
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'ArrowLeft') changeSlide(-1);
                 if (e.key === 'ArrowRight') changeSlide(1);
             });
 
-            // Soporte para swipe en móvil
             let touchStartX = 0;
             let touchEndX = 0;
 
@@ -2065,21 +2126,17 @@
             });
 
             function handleSwipe() {
-                if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
-                if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
+                if (touchEndX < touchStartX - 50) changeSlide(1);
+                if (touchEndX > touchStartX + 50) changeSlide(-1);
             }
         }
 
         function changeSlide(direction) {
             slides[currentSlide].classList.remove('active');
             indicators[currentSlide].classList.remove('active');
-
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
-
             slides[currentSlide].classList.add('active');
             indicators[currentSlide].classList.add('active');
-
-            // Reiniciar autoplay
             stopAutoPlay();
             startAutoPlay();
         }
@@ -2087,13 +2144,9 @@
         function goToSlide(index) {
             slides[currentSlide].classList.remove('active');
             indicators[currentSlide].classList.remove('active');
-
             currentSlide = index;
-
             slides[currentSlide].classList.add('active');
             indicators[currentSlide].classList.add('active');
-
-            // Reiniciar autoplay
             stopAutoPlay();
             startAutoPlay();
         }
@@ -2103,7 +2156,7 @@
         }
 
         function startAutoPlay() {
-            stopAutoPlay(); // Limpiar cualquier intervalo existente
+            stopAutoPlay();
             autoPlayInterval = setInterval(nextSlide, 5000);
         }
 
@@ -2113,6 +2166,9 @@
             }
         }
     </script>
+
+    <!-- BANNER DE CONSENTIMIENTO DE COOKIES -->
+    <script src="/js/cookie-consent.js"></script>
 
 </body>
 </html>
