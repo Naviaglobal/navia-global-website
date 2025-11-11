@@ -3,45 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias por Contactarnos! | Navia Global</title>
+    <title>¡Gracias por contactarnos! | Navia Global</title>
     <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script>
+    <!-- Google Analytics Event -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-1RNV31B1EM');
-        
-        // Event de conversión
-        gtag('event', 'conversion', {
-            'send_to': 'G-1RNV31B1EM',
-            'event_category': 'Lead',
-            'event_label': 'Form Submission Success'
-        });
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'event_category': 'Form',
+                'event_label': 'Thank You Page'
+            });
+        }
     </script>
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Conversion -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1118856203755274');
-        fbq('track', 'PageView');
-        fbq('track', 'Lead');
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'CompleteRegistration');
+        }
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1118856203755274&ev=PageView&noscript=1"
-    /></noscript>
     
     <style>
         * {
@@ -58,34 +44,15 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.3;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
         }
 
         .container {
-            max-width: 700px;
             background: white;
-            border-radius: 30px;
+            border-radius: 25px;
             padding: 60px 50px;
+            max-width: 700px;
             text-align: center;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
             animation: slideUp 0.6s ease-out;
         }
 
@@ -100,7 +67,7 @@
             }
         }
 
-        .icon {
+        .success-icon {
             width: 120px;
             height: 120px;
             background: linear-gradient(135deg, #1ABC9C, #16A085);
@@ -108,112 +75,132 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             margin: 0 auto 30px;
+            font-size: 60px;
+            animation: scaleIn 0.5s ease-out 0.3s backwards;
             box-shadow: 0 10px 30px rgba(26,188,156,0.3);
-            animation: checkmark 0.8s ease-out 0.3s both;
         }
 
-        @keyframes checkmark {
-            0% {
+        @keyframes scaleIn {
+            from {
                 transform: scale(0);
-                opacity: 0;
             }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
+            to {
                 transform: scale(1);
-                opacity: 1;
             }
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-family: 'Poppins', sans-serif;
             color: #1B4B8C;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             font-weight: 800;
         }
 
         .subtitle {
-            font-size: 1.3rem;
-            color: #2C3E50;
-            margin-bottom: 15px;
-            font-weight: 600;
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, rgba(26,188,156,0.1), rgba(26,188,156,0.2));
-            padding: 25px;
+        .message {
+            background: #f8f9fa;
+            padding: 30px;
             border-radius: 15px;
             margin: 30px 0;
             border-left: 4px solid #1ABC9C;
         }
 
-        .highlight strong {
+        .message h3 {
             color: #1B4B8C;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .message p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .message strong {
+            color: #1ABC9C;
         }
 
         .next-steps {
             text-align: left;
-            margin: 35px 0;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
+            margin: 30px 0;
         }
 
         .next-steps h3 {
             color: #1B4B8C;
+            font-size: 1.4rem;
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
         }
 
-        .next-steps ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .next-steps li {
-            padding: 12px 0;
-            color: #555;
+        .step {
             display: flex;
             align-items: start;
-            gap: 12px;
-            font-size: 1rem;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
-        .next-steps li::before {
-            content: '✓';
-            color: #1ABC9C;
-            font-weight: bold;
-            font-size: 1.3rem;
-            flex-shrink: 0;
+        .step:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
         }
 
-        .cta-buttons {
+        .step-number {
+            background: #1ABC9C;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             display: flex;
-            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-top: 40px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .btn {
-            padding: 18px 40px;
+            padding: 18px 35px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-family: 'Poppins', sans-serif;
         }
 
@@ -225,12 +212,12 @@
 
         .btn-primary:hover {
             background: #16A085;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(26,188,156,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,188,156,0.4);
         }
 
         .btn-secondary {
-            background: white;
+            background: transparent;
             color: #1B4B8C;
             border: 2px solid #1B4B8C;
         }
@@ -238,264 +225,215 @@
         .btn-secondary:hover {
             background: #1B4B8C;
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(27,75,140,0.3);
+            transform: translateY(-2px);
         }
 
         .whatsapp-cta {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .whatsapp-cta h4 {
+            color: #059669;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .whatsapp-cta p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-whatsapp {
             background: #25D366;
             color: white;
-            padding: 20px 30px;
-            border-radius: 20px;
-            margin: 35px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            padding: 15px 30px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-size: 1.1rem;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(37,211,102,0.3);
         }
 
-        .whatsapp-cta:hover {
+        .btn-whatsapp:hover {
             background: #20ba5a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
         }
 
-        .social-links {
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid #e9ecef;
+            flex-wrap: wrap;
         }
 
-        .social-links p {
-            margin-bottom: 20px;
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1ABC9C;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .proof-label {
             color: #7f8c8d;
-            font-size: 0.95rem;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #1B4B8C, #296AB8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(27,75,140,0.4);
-        }
-
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #1ABC9C;
-            position: absolute;
-            animation: confetti-fall 3s linear infinite;
-        }
-
-        @keyframes confetti-fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
             .container {
-                padding: 40px 20px;
-                border-radius: 20px;
+                padding: 40px 30px;
             }
 
             h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.05rem;
+            }
+
+            .success-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 50px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .social-proof {
+                gap: 30px;
+            }
+
+            .proof-number {
                 font-size: 1.8rem;
-                line-height: 1.3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
             }
 
             .subtitle {
                 font-size: 1rem;
             }
 
-            p {
-                font-size: 0.95rem;
-            }
-
-            .icon {
-                width: 90px;
-                height: 90px;
-                font-size: 2.5rem;
-                margin-bottom: 25px;
-            }
-
-            .highlight {
+            .message {
                 padding: 20px;
-                margin: 25px 0;
             }
 
-            .highlight strong {
-                font-size: 1rem;
-            }
-
-            .next-steps {
-                padding: 25px 20px;
-                margin: 30px 0;
-            }
-
-            .next-steps h3 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-
-            .next-steps li {
-                font-size: 0.9rem;
-                padding: 10px 0;
-            }
-
-            .whatsapp-cta {
-                padding: 16px 25px;
-                font-size: 1rem;
-                margin: 30px 0;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-                margin-top: 30px;
-            }
-
-            .btn {
-                width: 100%;
-                padding: 16px 30px;
-                font-size: 1rem;
-            }
-
-            .social-links {
-                margin-top: 35px;
-                padding-top: 25px;
-            }
-
-            .social-links p {
-                font-size: 0.85rem;
-            }
-
-            .social-icons a {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            .icon {
-                width: 80px;
-                height: 80px;
-                font-size: 2rem;
-            }
-
-            .next-steps h3 {
-                font-size: 1.2rem;
+            .step {
+                padding: 12px;
             }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="icon">✅</div>
+        <div class="success-icon">✓</div>
         
-        <h1>¡Gracias por Contactarnos!</h1>
-        <p class="subtitle">Tu futuro global está cada vez más cerca</p>
-        
-        <p>Hemos recibido tu solicitud exitosamente. Nuestro equipo de asesores expertos está revisando tu información y se pondrá en contacto contigo <strong>en menos de 24 horas hábiles</strong>.</p>
-        
-        <div class="highlight">
-            <p><strong>📧 Revisa tu correo electrónico</strong><br>
-            Te hemos enviado un correo de confirmación con información importante sobre los próximos pasos.</p>
+        <h1>¡Mensaje Recibido con Éxito!</h1>
+        <p class="subtitle">Gracias por confiar en Navia Global para tu futuro internacional</p>
+
+        <div class="message">
+            <h3>📧 Tu solicitud está en nuestras manos</h3>
+            <p>Hemos recibido tu información y uno de nuestros asesores expertos revisará tu perfil detalladamente.</p>
+            <p><strong>Te contactaremos en menos de 24 horas</strong> para comenzar a diseñar tu plan personalizado.</p>
         </div>
 
         <div class="next-steps">
-            <h3>¿Qué sigue ahora?</h3>
-            <ul>
-                <li>Uno de nuestros asesores certificados se comunicará contigo por WhatsApp o llamada</li>
-                <li>Agendaremos una videollamada para conocer tu perfil en detalle</li>
-                <li>Diseñaremos juntos el plan perfecto para tu futuro internacional</li>
-                <li>Te acompañaremos en cada paso del proceso hasta tu graduación</li>
-            </ul>
-        </div>
+            <h3>📋 ¿Qué sigue ahora?</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <p><strong>Revisión de tu perfil</strong> - Nuestro equipo analizará tu información para entender tus objetivos y necesidades.</p>
+                </div>
+            </div>
 
-        <p style="color: #1B4B8C; font-weight: 600; font-size: 1.15rem;">¿Tienes alguna pregunta urgente?</p>
-        
-        <a href="https://wa.me/573014430722?text=Hola,%20acabo%20de%20llenar%20el%20formulario%20y%20tengo%20algunas%20preguntas" class="whatsapp-cta" target="_blank">
-            💬 Escríbenos por WhatsApp Ahora
-        </a>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <p><strong>Contacto personalizado</strong> - Te llamaremos o escribiremos por WhatsApp en las próximas 24 horas.</p>
+                </div>
+            </div>
 
-        <div class="cta-buttons">
-            <a href="/" class="btn btn-primary">🏠 Volver al Inicio</a>
-            <a href="/#destinos" class="btn btn-secondary">🌍 Ver Destinos</a>
-        </div>
-
-        <div class="social-links">
-            <p>Mientras esperas, síguenos en redes sociales y descubre historias inspiradoras</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/naviaglobal" target="_blank" aria-label="Instagram">📷</a>
-                <a href="https://www.facebook.com/naviaglobal" target="_blank" aria-label="Facebook">📘</a>
-                <a href="https://www.tiktok.com/@naviaglobal" target="_blank" aria-label="TikTok">🎵</a>
-                <a href="https://www.linkedin.com/company/naviaglobal" target="_blank" aria-label="LinkedIn">💼</a>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <p><strong>Asesoría gratuita</strong> - Diseñaremos juntos el plan perfecto para tu futuro en el exterior.</p>
+                </div>
             </div>
         </div>
 
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #7f8c8d; font-size: 0.85rem; text-align: center;">
-            <p>© 2025 Navia Global Education SAS | NIT: 902.003.125-8</p>
+        <div class="whatsapp-cta">
+            <h4>💬 ¿Prefieres hablar ahora mismo?</h4>
+            <p>Si tienes alguna pregunta urgente o simplemente quieres comenzar la conversación ya, ¡escríbenos por WhatsApp!</p>
+            <a href="https://wa.me/573014430722?text=Hola,%20acabo%20de%20enviar%20el%20formulario%20y%20me%20gustaría%20comenzar%20mi%20asesoría" class="btn-whatsapp" target="_blank">
+                💬 Chatear por WhatsApp
+            </a>
+        </div>
+
+        <div class="buttons">
+            <a href="/" class="btn btn-primary">
+                🏠 Volver al Inicio
+            </a>
+            <a href="/#destinos" class="btn btn-secondary">
+                🌍 Ver Destinos
+            </a>
+        </div>
+
+        <div class="social-proof">
+            <div class="proof-item">
+                <div class="proof-number">500+</div>
+                <div class="proof-label">Estudiantes Felices</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">95%</div>
+                <div class="proof-label">Visas Aprobadas</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">8+</div>
+                <div class="proof-label">Años de Experiencia</div>
+            </div>
         </div>
     </div>
 
+    <!-- Confetti Animation (opcional) -->
     <script>
-        // Crear confetti animado
-        function createConfetti() {
-            const colors = ['#1ABC9C', '#1B4B8C', '#296AB8', '#ECF0F1'];
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.animationDelay = Math.random() * 3 + 's';
-                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => confetti.remove(), 5000);
-                }, i * 30);
-            }
-        }
-
-        window.addEventListener('load', createConfetti);
+        // Agregar un pequeño efecto de celebración
+        setTimeout(function() {
+            console.log('¡Gracias por contactarnos! 🎉');
+        }, 500);
     </script>
-
 </body>
 </html>
