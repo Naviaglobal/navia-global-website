@@ -1,0 +1,18 @@
+# robots.txt para naviaglobal.co
+# Permite a todos los buscadores indexar todo el sitio
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://naviaglobal.co/sitemap.xml
+
+# Tiempo de espera entre requests (para ser amable con el servidor)
+Crawl-delay: 1
+
+# Bloquear ciertos bots problemáticos (opcional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
