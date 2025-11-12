@@ -640,8 +640,9 @@
             padding: 8px 12px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            display: block;
+            display: inline-block;
             line-height: 1;
+            font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
         }
 
         .destino-badge {
@@ -1908,7 +1909,7 @@
 
                 <input type="hidden" name="_subject" value="Nuevo Lead desde Navia Global">
                 <input type="hidden" name="_cc" value="samuel.sanchez@naviaglobal.co">
-                <input type="hidden" name="_next" value="https://naviaglobal.co/gracias">
+                <input type="hidden" name="_next" value="https://naviaglobal.co/gracias.html">
 
                 <button type="submit" class="submit-btn">✈️ Quiero Mi Asesoría Gratuita</button>
                 
@@ -2112,7 +2113,7 @@
                 }).then(response => {
                     if (response.ok) {
                         // ✅ Éxito - Redirigir a página de gracias
-                        window.location.href = '/gracias';
+                        window.location.href = '/gracias.html';
                     } else {
                         // Error en el servidor
                         response.json().then(data => {
