@@ -500,10 +500,23 @@
         }
 
         .hero-flags {
-            font-size: 2.5rem;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
             margin: 35px 0;
-            letter-spacing: 15px;
             animation: wave 3s ease-in-out infinite;
+            flex-wrap: wrap;
+        }
+
+        .hero-flags img {
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-flags img:hover {
+            transform: scale(1.1) translateY(-5px);
         }
 
         @keyframes wave {
@@ -1211,8 +1224,12 @@
             }
 
             .hero-flags {
-                font-size: 1.8rem;
-                letter-spacing: 8px;
+                gap: 15px;
+            }
+
+            .hero-flags img {
+                width: 40px;
+                height: 30px;
             }
 
             .btn-primary {
@@ -1377,8 +1394,12 @@
             }
 
             .hero-flags {
-                font-size: 1.5rem;
-                letter-spacing: 5px;
+                gap: 10px;
+            }
+
+            .hero-flags img {
+                width: 32px;
+                height: 24px;
             }
 
             .btn-primary {
@@ -1520,7 +1541,16 @@
             <div class="hero-badge">⛵ Más de 8 años navegando futuros</div>
             <h1>Diseña Tu Futuro Global:<br>Estudia Idiomas en el Exterior</h1>
             <p>Te acompañamos desde la primera asesoría hasta tu graduación</p>
-            <div class="hero-flags">🇦🇺 🇨🇦 🇮🇪 🇲🇹 🇦🇪 🇺🇸 🇳🇿 🇬🇧</div>
+            <div class="hero-flags">
+                <img src="https://flagcdn.com/w80/au.png" width="50" height="38" alt="Australia">
+                <img src="https://flagcdn.com/w80/ca.png" width="50" height="38" alt="Canadá">
+                <img src="https://flagcdn.com/w80/ie.png" width="50" height="38" alt="Irlanda">
+                <img src="https://flagcdn.com/w80/mt.png" width="50" height="38" alt="Malta">
+                <img src="https://flagcdn.com/w80/ae.png" width="50" height="38" alt="Dubai">
+                <img src="https://flagcdn.com/w80/us.png" width="50" height="38" alt="USA">
+                <img src="https://flagcdn.com/w80/nz.png" width="50" height="38" alt="Nueva Zelanda">
+                <img src="https://flagcdn.com/w80/gb.png" width="50" height="38" alt="Reino Unido">
+            </div>
             <div class="hero-cta">
                 <a href="#contacto" class="btn-primary">📅 Agenda Tu Asesoría Gratuita</a>
             </div>
