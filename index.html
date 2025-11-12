@@ -624,6 +624,10 @@
             transition: all 0.4s ease;
             cursor: pointer;
             border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 700px;
         }
 
         .destino-card:hover {
@@ -632,9 +636,10 @@
         }
 
         .destino-header {
-            height: 200px;
+            height: 220px;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .destino-header img {
@@ -678,6 +683,9 @@
 
         .destino-content {
             padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .destino-content h3 {
@@ -690,26 +698,36 @@
         .destino-tagline {
             font-style: italic;
             color: #7f8c8d;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 0.95rem;
+            min-height: 25px;
         }
 
-        .destino-content p {
+        .destino-content > p {
             color: #555;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            min-height: 48px;
         }
 
         .destino-price {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #1ABC9C;
-            margin-bottom: 25px;
+            margin: 15px 0;
+            padding: 12px;
+            background: #f0fdf4;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #1ABC9C;
         }
 
         .destino-features {
             list-style: none;
-            margin-bottom: 25px;
+            margin: 15px 0;
+            flex-grow: 1;
+            padding: 0;
         }
 
         .destino-features li {
@@ -719,6 +737,7 @@
             display: flex;
             align-items: start;
             gap: 10px;
+            line-height: 1.6;
         }
 
         .destino-features li::before {
@@ -729,19 +748,29 @@
             flex-shrink: 0;
         }
 
+        .destino-features li strong {
+            color: #1B4B8C;
+        }
+
         .destino-btn {
             display: block;
             text-align: center;
-            background: #1B4B8C;
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
             color: white;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+            margin-top: auto;
         }
 
         .destino-btn:hover {
+            background: linear-gradient(135deg, #16A085, #1ABC9C);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,188,156,0.4);
+        }
             background: #296AB8;
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(27,75,140,0.3);
@@ -1480,6 +1509,944 @@
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
+
+        /* ========== VIDEO SECTION ========== */
+        .video-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-container h2 {
+            font-size: 3rem;
+            color: #1B4B8C;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .video-container p {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 50px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq-section {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #1ABC9C;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px 30px;
+            background: white;
+            border: none;
+            text-align: left;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1B4B8C;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question.active {
+            background: #f0fdf4;
+            color: #1ABC9C;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1ABC9C;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ========== CALCULADORA ========== */
+        .calculadora-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #1B4B8C, #296AB8);
+            color: white;
+        }
+
+        .calc-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .calc-container h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .calc-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .calc-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .calc-form select,
+        .calc-form input {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .calc-form select:focus,
+        .calc-form input:focus {
+            outline: none;
+            border-color: #1ABC9C;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .calc-form select option {
+            background: #1B4B8C;
+            color: white;
+        }
+
+        .calc-button {
+            background: #1ABC9C;
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 15px;
+        }
+
+        .calc-button:hover {
+            background: #16A085;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26,188,156,0.4);
+        }
+
+        .calc-result {
+            margin-top: 40px;
+            background: white;
+            color: #2C3E50;
+            padding: 40px;
+            border-radius: 20px;
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .calc-result.active {
+            display: block;
+        }
+
+        .calc-info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid #1B4B8C;
+        }
+
+        .calc-info-box h4 {
+            color: #1B4B8C;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .calc-info-box p {
+            color: #555;
+            line-height: 1.7;
+            margin: 8px 0;
+        }
+
+        .calc-disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+        }
+
+        .calc-disclaimer p {
+            color: #856404;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .calc-disclaimer strong {
+            color: #1B4B8C;
+        }
+
+        .calc-promo-box {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(16, 185, 129, 0.5);
+            }
+        }
+
+        .promo-icon {
+            font-size: 4rem;
+            flex-shrink: 0;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .promo-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .promo-content p {
+            margin: 8px 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .highlight-discount {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            display: inline-block;
+        }
+
+        .btn-calc-cta {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            font-size: 1.2rem !important;
+            padding: 20px 30px !important;
+            font-weight: 800 !important;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .btn-calc-cta:hover {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5) !important;
+        }
+
+        .calc-result h3 {
+            color: #1B4B8C;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .precio-total {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1ABC9C;
+            margin: 30px 0;
+            text-shadow: 0 2px 10px rgba(26,188,156,0.2);
+        }
+
+        .calc-desglose {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .calc-desglose-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 1.1rem;
+        }
+
+        .calc-desglose-item:last-child {
+            border-bottom: none;
+        }
+
+        .calc-desglose-label {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .calc-desglose-valor {
+            color: #1B4B8C;
+            font-weight: 700;
+        }
+
+        /* ========== COMPARADOR ========== */
+        .comparador-section {
+            padding: 100px 40px;
+            background: #f8f9fa;
+        }
+
+        .comparador-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparador-selects {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .comparador-select {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .comparador-select select {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .comparador-select select:focus {
+            outline: none;
+            border-color: #1ABC9C;
+            box-shadow: 0 0 0 4px rgba(26,188,156,0.1);
+        }
+
+        .vs-badge {
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+        }
+
+        .comparador-button {
+            display: block;
+            margin: 0 auto;
+            background: #1B4B8C;
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .comparador-button:hover {
+            background: #296AB8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(27,75,140,0.3);
+        }
+
+        .comparacion-resultado {
+            margin-top: 50px;
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .comparacion-resultado.active {
+            display: block;
+        }
+
+        .comparacion-table {
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .comparacion-table thead {
+            background: linear-gradient(135deg, #1B4B8C, #296AB8);
+            color: white;
+        }
+
+        .comparacion-table th {
+            padding: 25px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .comparacion-table td {
+            padding: 20px 25px;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .comparacion-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .comparacion-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .winner-badge {
+            background: #1ABC9C;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* ========== INSTITUCIONES ========== */
+        .instituciones-section {
+            padding: 80px 40px;
+            background: white;
+            border-top: 1px solid #f0f0f0;
+            overflow: hidden;
+        }
+
+        .instituciones-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #1B4B8C;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .logos-carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .logos-carousel {
+            display: flex;
+            animation: scroll 60s linear infinite;
+            width: max-content;
+        }
+
+        .logos-carousel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-item {
+            flex: 0 0 250px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin: 0 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .logo-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .logo-item img {
+            max-width: 180px;
+            max-height: 70px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* ========== POR QUÉ NOSOTROS ========== */
+        .por-que-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .por-que-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ventajas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .ventaja-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .ventaja-card:hover {
+            transform: translateY(-10px);
+            border-color: #1ABC9C;
+            box-shadow: 0 15px 40px rgba(26,188,156,0.15);
+        }
+
+        .ventaja-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .ventaja-card h4 {
+            font-size: 1.4rem;
+            color: #1B4B8C;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .ventaja-card p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* ========== BLOG PREVIEW ========== */
+        .blog-preview-section {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .blog-grid {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: #1ABC9C;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            color: #1B4B8C;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-link {
+            color: #1ABC9C;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .blog-link:hover {
+            gap: 12px;
+            color: #16A085;
+        }
+
+        /* ========== PROOF ELEMENTS ========== */
+        .live-stats {
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .stats-row {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-box {
+            padding: 20px;
+        }
+
+        .stat-number-live {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-label-live {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Notification Popup */
+        .notification-popup {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: white;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            align-items: center;
+            gap: 15px;
+            z-index: 998;
+            animation: slideInLeft 0.5s ease-out;
+            max-width: 350px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .notification-popup.show {
+            display: flex;
+        }
+
+        .notification-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1ABC9C, #16A085);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-content strong {
+            color: #1B4B8C;
+            font-size: 0.95rem;
+        }
+
+        .notification-content p {
+            color: #555;
+            font-size: 0.85rem;
+            margin: 5px 0 0 0;
+        }
+
+        .notification-time {
+            color: #7f8c8d;
+            font-size: 0.75rem;
+        }
+
+        /* ========== URGENCY BANNER ========== */
+        .urgency-banner {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 18px 30px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* ========== RESPONSIVE PREMIUM ========== */
+        @media (max-width: 768px) {
+            .video-section,
+            .faq-section,
+            .calculadora-section,
+            .comparador-section,
+            .por-que-section,
+            .blog-preview-section {
+                padding: 60px 25px;
+            }
+
+            .video-container h2,
+            .calc-container h2 {
+                font-size: 2.2rem;
+            }
+
+            .calc-container {
+                padding: 35px 25px;
+            }
+
+            .precio-total {
+                font-size: 3rem;
+            }
+
+            .comparador-selects {
+                flex-direction: column;
+            }
+
+            .vs-badge {
+                padding: 10px 20px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .notification-popup {
+                bottom: 80px;
+                left: 15px;
+                right: 15px;
+                max-width: none;
+            }
+
+            .logos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .calc-promo-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+
+            .promo-icon {
+                font-size: 3rem;
+            }
+
+            .promo-content h4 {
+                font-size: 1.3rem;
+            }
+
+            .promo-content p {
+                font-size: 0.95rem;
+            }
+
+            .highlight-discount {
+                font-size: 1.1rem;
+            }
+
+            .btn-calc-cta {
+                font-size: 1rem !important;
+                padding: 16px 20px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1588,7 +2555,7 @@
                     <h3>Australia</h3>
                     <p class="destino-tagline">"El destino favorito de estudiantes internacionales"</p>
                     <p><strong>Ciudades principales:</strong> Sydney, Melbourne, Brisbane, Perth, Gold Coast</p>
-                    <div class="destino-price">Desde USD $5,000 / 6 meses</div>
+                    <div class="destino-price">Desde USD $4,200 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li><strong>Trabaja legal:</strong> 48hrs quincenales estudiando + ilimitado en vacaciones</li>
                         <li><strong>Salario mínimo:</strong> $24.10 AUD/hora (~$16 USD)</li>
@@ -1611,7 +2578,7 @@
                     <h3>Canadá</h3>
                     <p class="destino-tagline">"Seguridad, multiculturalidad, futuro"</p>
                     <p>El destino más seguro. Excelente educación y oportunidades reales de trabajo post-estudio.</p>
-                    <div class="destino-price">Desde USD $15,000 / Año</div>
+                    <div class="destino-price">Desde USD $6,700 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>Permiso de trabajo post-graduación</li>
                         <li>Pathway a residencia más accesible</li>
@@ -1633,7 +2600,7 @@
                     <h3>Irlanda</h3>
                     <p class="destino-tagline">"Tech hub europeo y amabilidad"</p>
                     <p>Centro tecnológico de Europa. Google, Facebook y Apple tienen sus sedes aquí.</p>
-                    <div class="destino-price">Desde USD $10,000 / Año</div>
+                    <div class="destino-price">Desde USD $3,800 / 25 semanas (Visa estudiante)</div>
                     <ul class="destino-features">
                         <li>Hub tecnológico de Europa</li>
                         <li>Trabaja mientras estudias</li>
@@ -1655,7 +2622,7 @@
                     <h3>Malta</h3>
                     <p class="destino-tagline">"Inglés + Mediterráneo + Historia"</p>
                     <p>El secreto mejor guardado. Inglés, clima perfecto y costos accesibles en el Mediterráneo.</p>
-                    <div class="destino-price">Desde USD $3,000 / 6 meses</div>
+                    <div class="destino-price">Desde USD $2,900 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>Inglés como idioma oficial</li>
                         <li>Clima mediterráneo todo el año</li>
@@ -1677,7 +2644,7 @@
                     <h3>Dubai</h3>
                     <p class="destino-tagline">"Lujo, innovación, Oriente Medio"</p>
                     <p>Ciudad del futuro. Sin impuestos, máximo lujo y oportunidades únicas en el mundo.</p>
-                    <div class="destino-price">Desde USD $4,000 / 6 meses</div>
+                    <div class="destino-price">Desde USD $3,700 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>0% impuestos sobre ingresos</li>
                         <li>Ciudad ultra moderna</li>
@@ -1699,7 +2666,7 @@
                     <h3>Estados Unidos</h3>
                     <p class="destino-tagline">"El sueño americano, innovación"</p>
                     <p>Las mejores universidades del mundo. Silicon Valley, Wall Street, el epicentro global.</p>
-                    <div class="destino-price">Desde USD $20,000 / Año</div>
+                    <div class="destino-price">Desde USD $8,600 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>Top universidades del mundo</li>
                         <li>Oportunidades ilimitadas</li>
@@ -1721,7 +2688,7 @@
                     <h3>Nueva Zelanda</h3>
                     <p class="destino-tagline">"Naturaleza + calidad educativa"</p>
                     <p>Paisajes de película, sociedad amigable y sistema educativo de primer nivel.</p>
-                    <div class="destino-price">Desde USD $5,000 / 6 meses</div>
+                    <div class="destino-price">Desde USD $4,300 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>Paisajes impresionantes</li>
                         <li>Educación personalizada</li>
@@ -1743,7 +2710,7 @@
                     <h3>Reino Unido</h3>
                     <p class="destino-tagline">"Tradición, prestigio, historia"</p>
                     <p>Oxford, Cambridge, Londres. Educación centenaria de élite mundial en el corazón de Europa.</p>
-                    <div class="destino-price">Desde USD $16,000 / Año</div>
+                    <div class="destino-price">Desde USD $7,400 / 6 meses (24 semanas)</div>
                     <ul class="destino-features">
                         <li>Universidades históricas de élite</li>
                         <li>Títulos reconocidos globalmente</li>
@@ -1845,6 +2812,431 @@
             <div class="stat-item">
                 <div class="stat-number">95%</div>
                 <div class="stat-label">Tasa de Aprobación</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY BANNER -->
+    <div class="urgency-banner">
+        ¡Atención! Solo quedan 5 cupos para asesorías gratuitas esta semana | Reserva la tuya ahora
+    </div>
+
+    <!-- INSTITUCIONES CON CARRUSEL ANIMADO -->
+    <section class="instituciones-section">
+        <h3>✨ Convenios con +40 Instituciones Reconocidas Mundialmente</h3>
+        <div class="logos-carousel-container">
+            <div class="logos-carousel">
+                <!-- Primera vuelta de logos -->
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Clubclass" alt="Clubclass Malta"></a></div>
+                <div class="logo-item"><a href="https://headin.pro/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Headin" alt="Headin"></a></div>
+                <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=ISE+Ireland" alt="ISE Ireland"></a></div>
+                <div class="logo-item"><a href="https://www.bsceducation.com" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=BSC" alt="BSC Education"></a></div>
+                <div class="logo-item"><a href="https://www.talk.edu/es/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=TALK" alt="TALK English"></a></div>
+                <div class="logo-item"><a href="https://studyquest.net/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Study+Quest" alt="Study Quest"></a></div>
+                <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Native" alt="Native English"></a></div>
+                <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Worldwide" alt="Worldwide NZ"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=CCEL" alt="CCEL Canada"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Quest+Language" alt="Quest Language"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Global+Village" alt="Global Village"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=VanWest" alt="VanWest"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Kaplan" alt="Kaplan"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=EC+English" alt="EC English"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Kings" alt="Kings Education"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=St+Giles" alt="St Giles"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=OHC" alt="OHC English"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=CES" alt="CES"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Atlas" alt="Atlas"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=NZLC" alt="NZLC"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=IH+London" alt="IH London"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=IH+Bristol" alt="IH Bristol"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=City+College" alt="City College Dublin"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Rennert" alt="Rennert"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=BEET" alt="BEET Language"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=LILA" alt="LILA Liverpool"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Wimbledon" alt="Wimbledon School"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=GLS+Berlin" alt="GLS Berlin"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Anglo" alt="Anglo Continental"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Linguaviva" alt="Linguaviva"></a></div>
+                
+                <!-- Segunda vuelta (duplicado para efecto infinito) -->
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Clubclass" alt="Clubclass Malta"></a></div>
+                <div class="logo-item"><a href="https://headin.pro/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Headin" alt="Headin"></a></div>
+                <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=ISE+Ireland" alt="ISE Ireland"></a></div>
+                <div class="logo-item"><a href="https://www.bsceducation.com" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=BSC" alt="BSC Education"></a></div>
+                <div class="logo-item"><a href="https://www.talk.edu/es/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=TALK" alt="TALK English"></a></div>
+                <div class="logo-item"><a href="https://studyquest.net/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Study+Quest" alt="Study Quest"></a></div>
+                <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Native" alt="Native English"></a></div>
+                <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Worldwide" alt="Worldwide NZ"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=CCEL" alt="CCEL Canada"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Quest+Language" alt="Quest Language"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Global+Village" alt="Global Village"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=VanWest" alt="VanWest"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Kaplan" alt="Kaplan"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=EC+English" alt="EC English"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Kings" alt="Kings Education"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=St+Giles" alt="St Giles"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=OHC" alt="OHC English"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=CES" alt="CES"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Atlas" alt="Atlas"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=NZLC" alt="NZLC"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=IH+London" alt="IH London"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=IH+Bristol" alt="IH Bristol"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=City+College" alt="City College Dublin"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Rennert" alt="Rennert"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=BEET" alt="BEET Language"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=LILA" alt="LILA Liverpool"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Wimbledon" alt="Wimbledon School"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=GLS+Berlin" alt="GLS Berlin"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Anglo" alt="Anglo Continental"></a></div>
+                <div class="logo-item"><a href="#" target="_blank" rel="noopener"><img src="https://via.placeholder.com/180x70/1B4B8C/FFFFFF?text=Linguaviva" alt="Linguaviva"></a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA DE COSTOS -->
+    <section class="calculadora-section" id="calculadora">
+        <div class="calc-container">
+            <h2>Calcula el Costo de Tu Programa</h2>
+            <p class="calc-subtitle">Costos de programas de idiomas (no incluye visa, alojamiento ni vuelo)</p>
+            
+            <div class="calc-form">
+                <select id="calc-destino" required>
+                    <option value="">Selecciona tu destino</option>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canadá</option>
+                    <option value="irlanda">Irlanda</option>
+                    <option value="malta">Malta</option>
+                    <option value="dubai">Dubai</option>
+                    <option value="usa">Estados Unidos</option>
+                    <option value="nz">Nueva Zelanda</option>
+                    <option value="uk">Reino Unido</option>
+                </select>
+
+                <select id="calc-duracion" required>
+                    <option value="">Duración del programa</option>
+                    <option value="4">4 semanas</option>
+                    <option value="8">8 semanas (2 meses)</option>
+                    <option value="12">12 semanas (3 meses)</option>
+                    <option value="24">24 semanas (6 meses)</option>
+                    <option value="25">25 semanas (Irlanda - Visa estudiante)</option>
+                    <option value="36">36 semanas (9 meses)</option>
+                    <option value="48">48 semanas (1 año)</option>
+                </select>
+
+                <select id="calc-intensidad" required>
+                    <option value="">Intensidad del curso</option>
+                    <option value="part">Part-time (15 hrs/semana)</option>
+                    <option value="general">General (20 hrs/semana)</option>
+                    <option value="intensive">Intensive (25-30 hrs/semana)</option>
+                </select>
+
+                <button class="calc-button" onclick="calcularProgramaSimple()">
+                    Calcular Costo del Programa
+                </button>
+            </div>
+
+            <div class="calc-result" id="calc-result">
+                <h3>Costo Estimado del Programa:</h3>
+                <div class="precio-total" id="precio-total">$0 USD</div>
+                
+                <div class="calc-info-box">
+                    <h4>Detalles:</h4>
+                    <p id="calc-detalles"></p>
+                </div>
+
+                <!-- MENSAJE DE DESCUENTOS -->
+                <div class="calc-promo-box">
+                    <div class="promo-icon">🎁</div>
+                    <div class="promo-content">
+                        <h4>¡Excelente noticia!</h4>
+                        <p><strong>Podemos encontrar programas más económicos para ti</strong></p>
+                        <p>Obtén descuentos de <span class="highlight-discount">hasta el 50%</span> en instituciones seleccionadas</p>
+                        <p>Aprovecha promociones exclusivas disponibles solo con Navia Global</p>
+                    </div>
+                </div>
+
+                <div class="calc-disclaimer">
+                    <p><strong>Importante:</strong> Este precio incluye ÚNICAMENTE la matrícula del programa de idiomas.</p>
+                    <p><strong>NO incluye:</strong> Visa, alojamiento, vuelos, seguro médico, ni gastos personales.</p>
+                    <p><strong>Nota:</strong> Los precios son aproximados y pueden variar según la institución y temporada.</p>
+                </div>
+
+                <a href="#contacto" class="btn-primary btn-calc-cta">
+                    ¡Quiero Acceder a los Descuentos Exclusivos!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARADOR DE DESTINOS -->
+    <section class="comparador-section" id="comparador">
+        <div class="comparador-container">
+            <h2 class="section-title">Compara Destinos</h2>
+            <p class="section-subtitle">Encuentra el destino perfecto para ti comparando características clave</p>
+
+            <div class="comparador-selects">
+                <div class="comparador-select">
+                    <select id="comp-pais1">
+                        <option value="">Selecciona país 1</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canadá</option>
+                        <option value="irlanda">Irlanda</option>
+                        <option value="malta">Malta</option>
+                    </select>
+                </div>
+                
+                <div class="vs-badge">VS</div>
+                
+                <div class="comparador-select">
+                    <select id="comp-pais2">
+                        <option value="">Selecciona país 2</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canadá</option>
+                        <option value="irlanda">Irlanda</option>
+                        <option value="malta">Malta</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="comparador-button" onclick="compararPaises()">
+                Comparar Destinos
+            </button>
+
+            <div class="comparacion-resultado" id="comparacion-resultado">
+                <table class="comparacion-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th id="comp-header-1">País 1</th>
+                            <th id="comp-header-2">País 2</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comp-tbody">
+                        <!-- Se llenará dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Resolvemos tus dudas más comunes</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cuánto cuesta el servicio de asesoría? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>¡Nuestro servicio de asesoría es 100% GRATUITO! No cobramos absolutamente nada por ayudarte a encontrar el mejor programa, aplicar a instituciones educativas, o tramitar tu visa. Ganamos comisiones directamente de las instituciones con las que tenemos convenios, por lo que tú no pagas nada por nuestros servicios.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Necesito tener nivel avanzado de inglés? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>¡Para nada! Ofrecemos programas para todos los niveles, desde principiante absoluto (A1) hasta avanzado (C2). De hecho, muchos de nuestros estudiantes comienzan sin saber nada de inglés y esa es precisamente la razón por la que viajan: para aprenderlo desde cero en un ambiente inmersivo.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cuánto tiempo toma todo el proceso? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>El proceso completo generalmente toma entre 2 y 4 meses desde tu primera asesoría hasta tu llegada al destino. Esto incluye: selección de programa (1-2 semanas), aplicación a la institución (2-3 semanas), tramitación de visa (4-8 semanas), y preparativos finales. Sin embargo, en casos urgentes podemos acelerarlo significativamente.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Puedo trabajar mientras estudio? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí, en la mayoría de nuestros destinos puedes trabajar mientras estudias. Por ejemplo: en Australia puedes trabajar 48 horas quincenales durante el curso e ilimitado en vacaciones; en Canadá 20 horas semanales; en Irlanda 20 horas semanales (40 en vacaciones). Malta y Dubai tienen restricciones diferentes. Te asesoramos sobre las regulaciones específicas de cada país.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Qué documentos necesito para aplicar? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Los documentos básicos son: pasaporte vigente (mínimo 6 meses), comprobantes financieros (extractos bancarios), carta de motivación, y formularios de aplicación. Dependiendo del destino y tipo de visa, pueden requerirse documentos adicionales como exámenes médicos, antecedentes judiciales, o certificados académicos. Te guiamos paso a paso con cada documento.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cuánto dinero necesito ahorrar? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>El presupuesto varía según el destino y duración, pero como referencia: Malta desde $3,000 USD (3 meses), Australia desde $5,000 USD (6 meses), Canadá desde $7,500 USD (6 meses). Esto incluye curso, alojamiento inicial, visa, seguro y vuelo. Usa nuestra calculadora arriba para un estimado personalizado.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Qué pasa si me niegan la visa? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Tenemos una tasa de aprobación del 95%, gracias a nuestra experiencia preparando aplicaciones. En el raro caso de una negación, analizamos las razones, corregimos cualquier problema, y re-aplicamos sin costo adicional de asesoría. Además, muchas instituciones reembolsan o transfieren tu matrícula si la visa es negada por causas justificadas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Me acompañan después de llegar al destino? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>¡Por supuesto! Nuestro acompañamiento continúa hasta tu graduación. Te ayudamos con orientación al llegar, apertura de cuenta bancaria, trámite de seguro social, búsqueda de trabajo, y cualquier problema que surja durante tu estadía. Mantenemos contacto regular y estamos siempre disponibles por WhatsApp.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Cuál es el mejor destino para mí? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Depende de tus objetivos, presupuesto y preferencias personales. Australia es popular por el clima y oportunidades laborales; Canadá por su calidad educativa y camino a residencia; Irlanda por ser hub tecnológico europeo; Malta por costos accesibles y clima mediterráneo. En la asesoría gratuita analizamos tu perfil y te recomendamos las mejores opciones para ti.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    ¿Ofrecen planes de pago o financiamiento? <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Muchas de las instituciones con las que trabajamos ofrecen planes de pago flexibles que te permiten pagar el curso en cuotas. Además, te asesoramos sobre opciones de financiamiento como préstamos educativos en Colombia (ICETEX, bancos), becas disponibles, y estrategias para ahorrar. Lo importante es que comiences el proceso, juntos encontramos la manera de hacerlo realidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ NAVIA GLOBAL -->
+    <section class="por-que-section">
+        <h2 class="section-title">¿Por Qué Elegir Navia Global?</h2>
+        <p class="section-subtitle">Somos diferentes, y aquí está la prueba</p>
+        
+        <div class="por-que-container">
+            <div class="ventajas-grid">
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">🎯</div>
+                    <h4>Asesoría 100% Gratuita</h4>
+                    <p>A diferencia de otras agencias, NUNCA cobramos por nuestros servicios. Ganamos directamente de las instituciones educativas.</p>
+                </div>
+
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">🏆</div>
+                    <h4>+8 Años de Experiencia</h4>
+                    <p>Más de 500 estudiantes felices nos respaldan. Sabemos exactamente cómo hacer tu proceso exitoso.</p>
+                </div>
+
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">📞</div>
+                    <h4>Acompañamiento Total</h4>
+                    <p>Te acompañamos desde la primera asesoría hasta tu graduación. Estamos contigo en cada paso del camino.</p>
+                </div>
+
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">✅</div>
+                    <h4>95% Tasa de Aprobación</h4>
+                    <p>Nuestra experiencia preparando aplicaciones resulta en una altísima tasa de visas aprobadas.</p>
+                </div>
+
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">🌍</div>
+                    <h4>8 Destinos Top</h4>
+                    <p>Tenemos convenios con instituciones en los mejores destinos para estudiar idiomas en el mundo.</p>
+                </div>
+
+                <div class="ventaja-card">
+                    <div class="ventaja-icon">⚡</div>
+                    <h4>Respuesta Rápida</h4>
+                    <p>Te respondemos en menos de 24 horas y agilizamos todo el proceso para que viajes pronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="blog-preview-section">
+        <h2 class="section-title">Recursos y Guías Gratuitas</h2>
+        <p class="section-subtitle">Aprende todo sobre estudiar en el exterior</p>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" alt="Guía Australia" class="blog-image" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Guías</span>
+                    <h3>Cómo Estudiar en Australia desde Colombia 2025</h3>
+                    <p class="blog-excerpt">Todo lo que necesitas saber: requisitos, costos, proceso completo paso a paso y consejos de expertos.</p>
+                    <div class="blog-meta">
+                        <span>📅 Hace 1 semana</span>
+                        <span>⏱️ 8 min lectura</span>
+                    </div>
+                    <a href="#contacto" class="blog-link">Leer guía completa →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=600&q=80" alt="Visa Canadá" class="blog-image" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Visas</span>
+                    <h3>Visa de Estudiante: Proceso Paso a Paso</h3>
+                    <p class="blog-excerpt">Guía completa sobre cómo tramitar tu visa de estudiante sin errores y maximizar tu aprobación.</p>
+                    <div class="blog-meta">
+                        <span>📅 Hace 2 semanas</span>
+                        <span>⏱️ 10 min lectura</span>
+                    </div>
+                    <a href="#contacto" class="blog-link">Leer artículo →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Costos" class="blog-image" loading="lazy">
+                <div class="blog-content">
+                    <span class="blog-category">Finanzas</span>
+                    <h3>¿Cuánto Dinero Necesito para Estudiar en Canadá?</h3>
+                    <p class="blog-excerpt">Desglose completo de costos: curso, alojamiento, comida, transporte y todos los gastos mensuales.</p>
+                    <div class="blog-meta">
+                        <span>📅 Hace 1 mes</span>
+                        <span>⏱️ 6 min lectura</span>
+                    </div>
+                    <a href="#contacto" class="blog-link">Ver presupuesto →</a>
+                </div>
+            </article>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#contacto" class="btn-secondary" style="display: inline-block; padding: 18px 40px; background: transparent; color: #1B4B8C; border: 2px solid #1B4B8C; border-radius: 30px; text-decoration: none; font-weight: 700; transition: all 0.3s;">
+                📖 Contáctanos para Más Info
+            </a>
+        </div>
+    </section>
+
+    <!-- LIVE STATS -->
+    <section class="live-stats">
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-number-live">500+</div>
+                <div class="stat-label-live">Estudiantes asesorados (histórico)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-live">8+</div>
+                <div class="stat-label-live">Años de experiencia</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-live">95%</div>
+                <div class="stat-label-live">Tasa de aprobación de visas</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number-live">8</div>
+                <div class="stat-label-live">Destinos disponibles</div>
             </div>
         </div>
     </section>
@@ -2279,6 +3671,282 @@
             }
         }
     </script>
+
+    <!-- JAVASCRIPT PREMIUM FEATURES -->
+    <script>
+        // ========== FAQ TOGGLE ==========
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Cerrar todas las FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // Si no estaba activa, abrirla
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // ========== CALCULADORA DE COSTOS DE PROGRAMAS (SIMPLIFICADA) ==========
+        function calcularProgramaSimple() {
+            const destino = document.getElementById('calc-destino').value;
+            const semanas = document.getElementById('calc-duracion').value;
+            const intensidad = document.getElementById('calc-intensidad').value;
+            
+            if (!destino || !semanas || !intensidad) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+            
+            // Precios por semana en USD (basados en promedios reales de instituciones 2025)
+            const preciosPorSemana = {
+                australia: { part: 200, general: 260, intensive: 320 },
+                canada: { part: 220, general: 280, intensive: 350 },
+                irlanda: { part: 140, general: 180, intensive: 240 },
+                malta: { part: 140, general: 180, intensive: 220 },
+                dubai: { part: 180, general: 230, intensive: 300 },
+                usa: { part: 280, general: 360, intensive: 450 },
+                nz: { part: 210, general: 270, intensive: 330 },
+                uk: { part: 240, general: 310, intensive: 390 }
+            };
+            
+            const nombreDestinos = {
+                australia: 'Australia',
+                canada: 'Canadá',
+                irlanda: 'Irlanda',
+                malta: 'Malta',
+                dubai: 'Dubai',
+                usa: 'Estados Unidos',
+                nz: 'Nueva Zelanda',
+                uk: 'Reino Unido'
+            };
+            
+            const nombreIntensidad = {
+                part: 'Part-time (15 hrs/semana)',
+                general: 'General (20 hrs/semana)',
+                intensive: 'Intensive (25-30 hrs/semana)'
+            };
+            
+            const precioPorSemana = preciosPorSemana[destino][intensidad];
+            const numSemanas = parseInt(semanas);
+            let total;
+            
+            // Caso especial: Irlanda 25 semanas (programa visa estudiante)
+            if (destino === 'irlanda' && numSemanas === 25) {
+                // Precio fijo de 3500 EUR = aprox 3800 USD para programa completo 25 semanas
+                total = 3800;
+            } else {
+                total = precioPorSemana * numSemanas;
+            }
+            
+            // Calcular meses
+            const meses = numSemanas / 4;
+            const duracionTexto = numSemanas === 25 ? '25 semanas (6.25 meses)' : 
+                                  meses < 3 ? `${numSemanas} semanas` : `${meses} meses`;
+            
+            // Nota especial para Irlanda 25 semanas
+            const notaEspecial = (destino === 'irlanda' && numSemanas === 25) ? 
+                '<br><strong>✅ Programa especial para visa de estudiante con permiso de empleo</strong>' : '';
+            
+            // Mostrar resultados
+            document.getElementById('precio-total').textContent = '$' + total.toLocaleString() + ' USD';
+            
+            document.getElementById('calc-detalles').innerHTML = `
+                <strong>Destino:</strong> ${nombreDestinos[destino]}<br>
+                <strong>Duración:</strong> ${duracionTexto} (${numSemanas} semanas)<br>
+                <strong>Tipo de programa:</strong> ${nombreIntensidad[intensidad]}<br>
+                ${(destino === 'irlanda' && numSemanas === 25) ? 
+                    `<strong>Precio programa completo:</strong> $${total.toLocaleString()} USD (aprox 3,500 EUR)` :
+                    `<strong>Costo por semana:</strong> $${precioPorSemana} USD<br><strong>Total del programa:</strong> $${total.toLocaleString()} USD`
+                }
+                ${notaEspecial}
+            `;
+            
+            document.getElementById('calc-result').classList.add('active');
+            document.getElementById('calc-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Google Analytics Event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calculadora_programas', {
+                    'event_category': 'Herramientas',
+                    'event_label': destino + ' - ' + semanas + ' semanas - ' + intensidad
+                });
+            }
+        }
+
+        // ========== COMPARADOR DE DESTINOS ==========
+        function compararPaises() {
+            const pais1 = document.getElementById('comp-pais1').value;
+            const pais2 = document.getElementById('comp-pais2').value;
+            
+            if (!pais1 || !pais2) {
+                alert('Por favor selecciona dos países para comparar');
+                return;
+            }
+            
+            if (pais1 === pais2) {
+                alert('Por favor selecciona dos países diferentes');
+                return;
+            }
+            
+            // Datos de comparación
+            const dataPaises = {
+                australia: {
+                    nombre: '<img src="https://flagcdn.com/w40/au.png" width="20" style="vertical-align: middle; margin-right: 5px;"> Australia',
+                    costo: '$5,000 / 6 meses',
+                    trabajo: '48hrs quincenales',
+                    clima: 'Templado/Cálido',
+                    salario: '$24.10 AUD/hora',
+                    idioma: 'Inglés',
+                    postEstudio: 'Visa 485 (2-4 años)',
+                    ciudades: 'Sydney, Melbourne, Brisbane'
+                },
+                canada: {
+                    nombre: '<img src="https://flagcdn.com/w40/ca.png" width="20" style="vertical-align: middle; margin-right: 5px;"> Canadá',
+                    costo: '$7,500 / 6 meses',
+                    trabajo: '20hrs semanales',
+                    clima: 'Frío',
+                    salario: '$16.65 CAD/hora',
+                    idioma: 'Inglés/Francés',
+                    postEstudio: 'PGWP + PR pathway',
+                    ciudades: 'Toronto, Vancouver, Montreal'
+                },
+                irlanda: {
+                    nombre: '<img src="https://flagcdn.com/w40/ie.png" width="20" style="vertical-align: middle; margin-right: 5px;"> Irlanda',
+                    costo: '$6,500 / 6 meses',
+                    trabajo: '20hrs semanales (40 vacaciones)',
+                    clima: 'Templado/Lluvioso',
+                    salario: '€12.70/hora',
+                    idioma: 'Inglés',
+                    postEstudio: 'Limitado',
+                    ciudades: 'Dublin, Cork, Galway'
+                },
+                malta: {
+                    nombre: '<img src="https://flagcdn.com/w40/mt.png" width="20" style="vertical-align: middle; margin-right: 5px;"> Malta',
+                    costo: '$3,500 / 6 meses',
+                    trabajo: '20hrs semanales',
+                    clima: 'Mediterráneo',
+                    salario: '€5.30/hora',
+                    idioma: 'Inglés/Maltés',
+                    postEstudio: 'Limitado',
+                    ciudades: 'Valletta, Sliema, St. Julians'
+                }
+            };
+            
+            const data1 = dataPaises[pais1];
+            const data2 = dataPaises[pais2];
+            
+            // Actualizar headers
+            document.getElementById('comp-header-1').textContent = data1.nombre;
+            document.getElementById('comp-header-2').textContent = data2.nombre;
+            
+            // Crear filas de comparación
+            const tbody = document.getElementById('comp-tbody');
+            tbody.innerHTML = `
+                <tr>
+                    <td><strong>💰 Costo estimado</strong></td>
+                    <td>${data1.costo}</td>
+                    <td>${data2.costo}</td>
+                </tr>
+                <tr>
+                    <td><strong>💼 Permiso de trabajo</strong></td>
+                    <td>${data1.trabajo}</td>
+                    <td>${data2.trabajo}</td>
+                </tr>
+                <tr>
+                    <td><strong>🌡️ Clima</strong></td>
+                    <td>${data1.clima}</td>
+                    <td>${data2.clima}</td>
+                </tr>
+                <tr>
+                    <td><strong>💵 Salario mínimo</strong></td>
+                    <td>${data1.salario}</td>
+                    <td>${data2.salario}</td>
+                </tr>
+                <tr>
+                    <td><strong>🗣️ Idioma</strong></td>
+                    <td>${data1.idioma}</td>
+                    <td>${data2.idioma}</td>
+                </tr>
+                <tr>
+                    <td><strong>🎓 Post-estudio</strong></td>
+                    <td>${data1.postEstudio}</td>
+                    <td>${data2.postEstudio}</td>
+                </tr>
+                <tr>
+                    <td><strong>🏙️ Ciudades principales</strong></td>
+                    <td>${data1.ciudades}</td>
+                    <td>${data2.ciudades}</td>
+                </tr>
+            `;
+            
+            document.getElementById('comparacion-resultado').classList.add('active');
+            document.getElementById('comparacion-resultado').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Google Analytics Event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'comparador_usado', {
+                    'event_category': 'Herramientas',
+                    'event_label': pais1 + ' vs ' + pais2
+                });
+            }
+        }
+
+        // ========== NOTIFICACIONES POPUP (MÁS REALISTAS) ==========
+        const notifications = [
+            { name: 'Juan P.', ciudad: 'Bogotá', accion: 'solicitó asesoría gratuita' },
+            { name: 'Andrea M.', ciudad: 'Medellín', accion: 'preguntó sobre programas en Australia' },
+            { name: 'Carlos R.', ciudad: 'Cali', accion: 'consultó sobre costos en Canadá' },
+            { name: 'Laura S.', ciudad: 'Barranquilla', accion: 'solicitó información de Malta' },
+            { name: 'David L.', ciudad: 'Bucaramanga', accion: 'preguntó sobre requisitos de visa' }
+        ];
+
+        function showNotification() {
+            const notification = notifications[Math.floor(Math.random() * notifications.length)];
+            const popup = document.createElement('div');
+            popup.className = 'notification-popup show';
+            popup.innerHTML = `
+                <div class="notification-avatar">👤</div>
+                <div class="notification-content">
+                    <strong>${notification.name} de ${notification.ciudad}</strong>
+                    <p>${notification.accion}</p>
+                    <span class="notification-time">Hace ${Math.floor(Math.random() * 30) + 1} minutos</span>
+                </div>
+            `;
+            
+            document.body.appendChild(popup);
+            
+            setTimeout(() => {
+                popup.remove();
+            }, 8000);
+        }
+
+        // Mostrar notificación cada 20 segundos (más espaciado)
+        setInterval(showNotification, 20000);
+        // Primera notificación después de 8 segundos
+        setTimeout(showNotification, 8000);
+    </script>
+
+    <!-- TAWK.TO CHAT EN VIVO (GRATIS) -->
+    <!-- Instrucciones: Regístrate en tawk.to, copia tu ID y reemplaza TU_ID_AQUI -->
+    <!--
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/TU_ID_AQUI/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    -->
 
     <!-- BANNER DE CONSENTIMIENTO DE COOKIES -->
     <script src="/js/cookie-consent.js"></script>
