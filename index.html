@@ -635,10 +635,13 @@
             top: 15px;
             left: 15px;
             font-size: 2.5rem;
-            z-index: 2;
-            background: rgba(255,255,255,0.9);
-            padding: 5px 10px;
+            z-index: 10;
+            background: rgba(255,255,255,0.95);
+            padding: 8px 12px;
             border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: block;
+            line-height: 1;
         }
 
         .destino-badge {
@@ -1292,6 +1295,11 @@
                 font-size: 1.8rem;
             }
 
+            .destino-flag {
+                font-size: 2rem;
+                padding: 6px 10px;
+            }
+
             .servicio-card h3 {
                 font-size: 1.5rem;
             }
@@ -1384,6 +1392,13 @@
 
             .destino-header {
                 height: 180px;
+            }
+
+            .destino-flag {
+                font-size: 1.8rem;
+                padding: 5px 8px;
+                top: 10px;
+                left: 10px;
             }
 
             .servicio-icon {
@@ -2037,42 +2052,86 @@
             });
         });
 
-        // Form submission tracking
+        // Form submission con validación y redirección FORZADA
         const form = document.getElementById('contactForm');
         if (form) {
-           form.addEventListener('submit', function(e) {
-    // Validar consentimientos obligatorios
-    const consentTerms = document.getElementById('consent-terms');
-    const consentData = document.getElementById('consent-data');
-    const consentTransfer = document.getElementById('consent-transfer');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevenir envío normal
+                
+                // Validar consentimientos obligatorios
+                const consentTerms = document.getElementById('consent-terms');
+                const consentData = document.getElementById('consent-data');
+                const consentTransfer = document.getElementById('consent-transfer');
 
-    if (!consentTerms.checked || !consentData.checked || !consentTransfer.checked) {
-        e.preventDefault();
-        alert('⚠️ Por favor acepta todos los consentimientos obligatorios para continuar.');
-        return false;
-    }
+                if (!consentTerms.checked || !consentData.checked || !consentTransfer.checked) {
+                    alert('⚠️ Por favor acepta todos los consentimientos obligatorios para continuar.');
+                    
+                    // Scroll al primer checkbox no marcado
+                    if (!consentTerms.checked) {
+                        consentTerms.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (!consentData.checked) {
+                        consentData.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (!consentTransfer.checked) {
+                        consentTransfer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    
+                    return false;
+                }
 
-    // Google Analytics Event
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submission', {
-            'event_category': 'Contact',
-            'event_label': 'Homepage Contact Form'
-        });
-    }
-    
-    // Meta Pixel Event
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-    }
-    
-    // Formspree manejará la redirección automáticamente usando el campo _next
-});
+                // Si llegamos aquí, todos los consentimientos están OK
+                
+                // Deshabilitar botón para evitar doble envío
+                const submitBtn = form.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = '⏳ Enviando...';
+
+                // Google Analytics Event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'Contact',
+                        'event_label': 'Homepage Contact Form',
+                        'value': 1
+                    });
                 }
                 
                 // Meta Pixel Event
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'Lead');
                 }
+
+                // Enviar formulario con fetch
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // ✅ Éxito - Redirigir a página de gracias
+                        window.location.href = '/gracias';
+                    } else {
+                        // Error en el servidor
+                        response.json().then(data => {
+                            if (data.errors) {
+                                alert('Error: ' + data.errors.map(error => error.message).join(', '));
+                            } else {
+                                alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
+                            }
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText;
+                        });
+                    }
+                }).catch(error => {
+                    // Error de red
+                    console.error('Error:', error);
+                    alert('Hubo un error de conexión. Por favor verifica tu internet e intenta nuevamente.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                });
             });
         }
 
