@@ -3874,45 +3874,45 @@
             const data1 = dataPaises[pais1];
             const data2 = dataPaises[pais2];
             
-            // Actualizar headers
-            document.getElementById('comp-header-1').textContent = data1.nombre;
-            document.getElementById('comp-header-2').textContent = data2.nombre;
+            // Actualizar headers con innerHTML para mostrar las banderas
+            document.getElementById('comp-header-1').innerHTML = data1.nombre;
+            document.getElementById('comp-header-2').innerHTML = data2.nombre;
             
             // Crear filas de comparación
             const tbody = document.getElementById('comp-tbody');
             tbody.innerHTML = `
                 <tr>
-                    <td><strong>💰 Costo estimado</strong></td>
+                    <td><strong>Costo estimado</strong></td>
                     <td>${data1.costo}</td>
                     <td>${data2.costo}</td>
                 </tr>
                 <tr>
-                    <td><strong>💼 Permiso de trabajo</strong></td>
+                    <td><strong>Permiso de trabajo</strong></td>
                     <td>${data1.trabajo}</td>
                     <td>${data2.trabajo}</td>
                 </tr>
                 <tr>
-                    <td><strong>🌡️ Clima</strong></td>
+                    <td><strong>Clima</strong></td>
                     <td>${data1.clima}</td>
                     <td>${data2.clima}</td>
                 </tr>
                 <tr>
-                    <td><strong>💵 Salario mínimo</strong></td>
+                    <td><strong>Salario mínimo</strong></td>
                     <td>${data1.salario}</td>
                     <td>${data2.salario}</td>
                 </tr>
                 <tr>
-                    <td><strong>🗣️ Idioma</strong></td>
+                    <td><strong>Idioma</strong></td>
                     <td>${data1.idioma}</td>
                     <td>${data2.idioma}</td>
                 </tr>
                 <tr>
-                    <td><strong>🎓 Post-estudio</strong></td>
+                    <td><strong>Post-estudio</strong></td>
                     <td>${data1.postEstudio}</td>
                     <td>${data2.postEstudio}</td>
                 </tr>
                 <tr>
-                    <td><strong>🏙️ Ciudades principales</strong></td>
+                    <td><strong>Ciudades principales</strong></td>
                     <td>${data1.ciudades}</td>
                     <td>${data2.ciudades}</td>
                 </tr>
