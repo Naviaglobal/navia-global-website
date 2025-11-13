@@ -2480,7 +2480,8 @@
             <div class="nav-links">
                 <a href="#destinos">Destinos</a>
                 <a href="#servicios">Servicios</a>
-                <a href="#calculadora">Calculadora</a>
+                <a href="#calculadora">Calcular Costos</a>
+                <a href="#comparador">Comparar Destinos</a>
                 <a href="#nosotros">Quiénes Somos</a>
                 <a href="#faq">Preguntas</a>
                 <a href="#contacto" class="nav-cta">Asesoría Gratis</a>
@@ -2497,7 +2498,8 @@
     <div class="mobile-nav" id="mobileNav">
         <a href="#destinos">Destinos</a>
         <a href="#servicios">Servicios</a>
-        <a href="#calculadora">Calculadora</a>
+        <a href="#calculadora">Calcular Costos</a>
+        <a href="#comparador">Comparar Destinos</a>
         <a href="#nosotros">Quiénes Somos</a>
         <a href="#faq">Preguntas</a>
         <a href="#contacto" class="nav-cta">Asesoría Gratis</a>
@@ -3319,14 +3321,14 @@
                         <label for="destino">Destino de Interés</label>
                         <select id="destino" name="destino">
                             <option value="">Selecciona un destino</option>
-                            <option value="Australia">🇦🇺 Australia</option>
-                            <option value="Canadá">🇨🇦 Canadá</option>
-                            <option value="Irlanda">🇮🇪 Irlanda</option>
-                            <option value="Malta">🇲🇹 Malta</option>
-                            <option value="Dubai">🇦🇪 Dubai</option>
-                            <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
-                            <option value="Nueva Zelanda">🇳🇿 Nueva Zelanda</option>
-                            <option value="Reino Unido">🇬🇧 Reino Unido</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canadá">Canadá</option>
+                            <option value="Irlanda">Irlanda</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                            <option value="Nueva Zelanda">Nueva Zelanda</option>
+                            <option value="Reino Unido">Reino Unido</option>
                             <option value="No estoy seguro">No estoy seguro</option>
                         </select>
                     </div>
@@ -3338,39 +3340,37 @@
                 </div>
 
                 <!-- SECCIÓN DE CONSENTIMIENTOS OBLIGATORIOS -->
-                <div class="consent-section">
-                    <h4>🔒 Consentimientos Requeridos <span class="required-text">*</span></h4>
+                <div class="consent-section" style="padding: 20px; margin-top: 20px;">
+                    <h4 style="font-size: 1rem; margin-bottom: 15px;">Consentimientos Requeridos <span class="required-text">*</span></h4>
                     
-                    <div class="consent-checkbox">
+                    <div class="consent-checkbox" style="margin-bottom: 12px;">
                         <input type="checkbox" id="consent-terms" name="consent_terms" required>
-                        <label for="consent-terms">
-                            He leído y acepto los <a href="/terminos-y-condiciones" target="_blank">Términos y Condiciones</a> y la <a href="/politica-de-privacidad" target="_blank">Política de Privacidad</a> de Navia Global. <span class="required-text">*</span>
+                        <label for="consent-terms" style="font-size: 0.9rem; line-height: 1.4;">
+                            Acepto <a href="/terminos-y-condiciones" target="_blank">Términos</a> y <a href="/politica-de-privacidad" target="_blank">Política de Privacidad</a> <span class="required-text">*</span>
                         </label>
                     </div>
 
-                    <div class="consent-checkbox">
+                    <div class="consent-checkbox" style="margin-bottom: 12px;">
                         <input type="checkbox" id="consent-data" name="consent_data" required>
-                        <label for="consent-data">
-                            Autorizo expresamente a Navia Global para recopilar, almacenar y tratar mis datos personales con el propósito de brindarme asesoría educativa, gestionar mi proceso de aplicación y realizar seguimiento, según la Ley 1581 de 2012. <span class="required-text">*</span>
+                        <label for="consent-data" style="font-size: 0.9rem; line-height: 1.4;">
+                            Autorizo el tratamiento de mis datos personales según Ley 1581/2012 <span class="required-text">*</span>
                         </label>
                     </div>
 
-                    <div class="consent-checkbox">
+                    <div class="consent-checkbox" style="margin-bottom: 0;">
                         <input type="checkbox" id="consent-transfer" name="consent_transfer" required>
-                        <label for="consent-transfer">
-                            Autorizo la transferencia internacional de mis datos personales a instituciones educativas y autoridades migratorias en los países de destino, necesaria para la prestación del servicio. <span class="required-text">*</span>
+                        <label for="consent-transfer" style="font-size: 0.9rem; line-height: 1.4;">
+                            Autorizo transferencia internacional de datos a instituciones educativas <span class="required-text">*</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- CONSENTIMIENTO OPCIONAL -->
-                <div class="consent-section" style="background: #f0fdf4; border-color: #10b981;">
-                    <h4 style="color: #059669;">💌 Consentimiento Opcional</h4>
-                    
-                    <div class="consent-checkbox">
+                <div class="consent-section" style="background: #f0fdf4; border-color: #10b981; padding: 15px; margin-top: 15px;">
+                    <div class="consent-checkbox" style="margin-bottom: 0;">
                         <input type="checkbox" id="consent-marketing" name="consent_marketing">
-                        <label for="consent-marketing">
-                            Deseo recibir información sobre nuevos destinos, programas educativos, promociones especiales y contenido relevante de Navia Global por correo electrónico y WhatsApp.
+                        <label for="consent-marketing" style="font-size: 0.9rem; line-height: 1.4;">
+                            Deseo recibir información sobre programas, promociones y novedades
                         </label>
                     </div>
                 </div>
@@ -3379,10 +3379,10 @@
                 <input type="hidden" name="_cc" value="samuel.sanchez@naviaglobal.co">
                 <input type="hidden" name="_next" value="https://naviaglobal.co/gracias.html">
 
-                <button type="submit" class="submit-btn">✈️ Quiero Mi Asesoría Gratuita</button>
+                <button type="submit" class="submit-btn">Quiero Mi Asesoría Gratuita</button>
                 
-                <p class="form-note">
-                    <strong>Tu privacidad es importante.</strong> Tus datos serán tratados con total confidencialidad según nuestra <a href="/politica-de-privacidad">Política de Privacidad</a>. Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición en cualquier momento. Conoce más sobre el <a href="/politica-de-cookies">uso de cookies</a> en nuestro sitio.
+                <p class="form-note" style="font-size: 0.85rem; line-height: 1.4; margin-top: 15px;">
+                    Tus datos serán tratados confidencialmente según nuestra <a href="/politica-de-privacidad">Política de Privacidad</a>.
                 </p>
             </form>
         </div>
