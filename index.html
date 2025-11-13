@@ -2449,6 +2449,19 @@
                 font-size: 1rem !important;
                 padding: 16px 20px !important;
             }
+
+            #nosotros div[style*="background: rgba"] {
+                padding: 30px 20px !important;
+                border-radius: 15px !important;
+            }
+
+            #nosotros p {
+                font-size: 1rem !important;
+            }
+
+            #nosotros p:first-child {
+                font-size: 1.1rem !important;
+            }
         }
     </style>
 </head>
@@ -2801,17 +2814,17 @@
     <!-- EXPERIENCIA -->
     <section class="experiencia" id="nosotros">
         <h2>Quiénes Somos</h2>
-        <div style="max-width: 900px; margin: 0 auto 60px; text-align: center;">
-            <p style="font-size: 1.3rem; line-height: 1.8; color: #2C3E50; margin-bottom: 25px;">
+        <div style="max-width: 900px; margin: 0 auto 60px; background: rgba(255, 255, 255, 0.95); padding: 50px 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(27, 75, 140, 0.1);">
+            <p style="font-size: 1.3rem; line-height: 1.8; color: #1B4B8C; margin-bottom: 25px; font-weight: 600;">
                 <strong>Navia Global</strong> nació del sueño de un ex-estudiante que vivió la experiencia de estudiar en el exterior y decidió dedicar su vida a ayudar a otros a cumplir ese mismo sueño.
             </p>
-            <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 25px;">
+            <p style="font-size: 1.15rem; line-height: 1.8; color: #2C3E50; margin-bottom: 25px;">
                 Con <strong>más de 8 años llevando estudiantes al exterior</strong> y <strong>más de 500 sueños cumplidos</strong>, somos una <strong>agencia de ex-estudiantes para estudiantes</strong>. Entendemos tus miedos, tus dudas y tus ilusiones porque nosotros también pasamos por eso.
             </p>
-            <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 25px;">
+            <p style="font-size: 1.15rem; line-height: 1.8; color: #2C3E50; margin-bottom: 25px;">
                 Trabajamos con el corazón porque creemos que <strong>los sueños se cumplen</strong>. No somos solo una agencia, somos tu aliado en el camino hacia tu futuro internacional.
             </p>
-            <p style="font-size: 1.2rem; line-height: 1.8; color: #1ABC9C; font-weight: 600;">
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #1B4B8C; font-weight: 600; margin-bottom: 0;">
                 Cada estudiante que ayudamos no es un número, es un sueño que se hace realidad. Y eso nos motiva cada día.
             </p>
         </div>
@@ -2841,9 +2854,8 @@
         ¡Atención! Solo quedan 5 cupos para asesorías gratuitas esta semana | Reserva la tuya ahora
     </div>
 
-    <!-- INSTITUCIONES CON CARRUSEL ANIMADO - TEMPORALMENTE OCULTO -->
-    <!-- 
-    <section class="instituciones-section" style="display: none;">
+    <!-- INSTITUCIONES CON CARRUSEL ANIMADO - OCULTO -->
+    <section class="instituciones-section" style="display: none !important; visibility: hidden !important; height: 0; overflow: hidden;">
         <h3>✨ Convenios con +40 Instituciones Reconocidas Mundialmente</h3>
         <div class="logos-carousel-container">
             <div class="logos-carousel">
@@ -2913,7 +2925,6 @@
             </div>
         </div>
     </section>
-    -->
 
     <!-- CALCULADORA DE COSTOS -->
     <section class="calculadora-section" id="calculadora">
