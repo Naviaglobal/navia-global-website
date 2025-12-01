@@ -417,3 +417,464 @@
         .destino-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,188,156,0.4); }
 
         /* ========== SERVICIOS ========== */
+        .servicios { padding: 120px 40px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); }
+        .servicios-grid {
+            max-width: 1400px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 45px; margin-top: 70px;
+        }
+        .servicio-card {
+            background: white; padding: 45px 35px; border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08); transition: all 0.3s; border: 1px solid #f0f0f0;
+        }
+        .servicio-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .servicio-icon {
+            width: 80px; height: 80px; background: linear-gradient(135deg, #1ABC9C, #16A085);
+            border-radius: 18px; display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+        }
+        .servicio-card h3 { font-size: 1.6rem; color: #1B4B8C; margin-bottom: 18px; font-weight: 700; }
+        .servicio-card p { color: #555; line-height: 1.9; margin-bottom: 25px; font-size: 1rem; }
+        .servicio-list { list-style: none; }
+        .servicio-list li { padding: 10px 0; color: #555; padding-left: 30px; position: relative; line-height: 1.6; }
+        .servicio-list li::before { content: '→'; position: absolute; left: 0; color: #1ABC9C; font-weight: bold; font-size: 1.2rem; }
+
+        /* ========== EXPERIENCIA ========== */
+        .experiencia { padding: 100px 20px; background: #1B4B8C; color: white; text-align: center; }
+        .experiencia h2 { font-size: 3rem; font-weight: 800; margin-bottom: 25px; }
+        .experiencia p { font-size: 1.4rem; opacity: 0.95; max-width: 800px; margin: 0 auto 50px; line-height: 1.8; }
+        .stats {
+            max-width: 1100px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px; margin-top: 70px;
+        }
+        .stat-item { padding: 30px; }
+        .stat-number { font-size: 4rem; font-weight: 800; color: #1ABC9C; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(26,188,156,0.3); }
+        .stat-label { font-size: 1.2rem; opacity: 0.9; }
+
+        /* ========== URGENCY BANNER ========== */
+        .urgency-banner {
+            background: linear-gradient(135deg, #e74c3c, #c0392b); color: white;
+            padding: 18px 30px; text-align: center; font-weight: 700;
+            font-size: 1.1rem; position: relative; overflow: hidden;
+        }
+        .urgency-banner::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine { to { left: 100%; } }
+
+        /* ========== CONTACTO ========== */
+        .contacto { padding: 100px 20px; background: white; }
+        .form-container {
+            max-width: 800px; margin: 0 auto; background: white;
+            padding: 60px 50px; border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); border: 1px solid #f0f0f0;
+        }
+        .form-container h2 { text-align: center; color: #1B4B8C; font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        .form-container .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 40px; font-size: 1.1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; color: #2C3E50; font-weight: 600; margin-bottom: 10px; font-size: 0.95rem; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 16px; border: 2px solid #e9ecef; border-radius: 12px;
+            font-family: 'Inter', sans-serif; font-size: 1rem; transition: all 0.3s; background: #fafafa;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: #1ABC9C; background: white; box-shadow: 0 0 0 4px rgba(26,188,156,0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        
+        .consent-section { background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 12px; padding: 25px; margin: 30px 0; }
+        .consent-checkbox { display: flex; align-items: flex-start; margin-bottom: 15px; cursor: pointer; }
+        .consent-checkbox input { width: 20px; height: 20px; margin-right: 12px; margin-top: 2px; }
+        .required-text { color: #e74c3c; font-weight: 700; }
+
+        .submit-btn {
+            width: 100%; background: #1ABC9C; color: white; padding: 20px;
+            border: none; border-radius: 35px; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 20px rgba(26,188,156,0.3);
+        }
+        .submit-btn:hover { background: #16A085; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(26,188,156,0.4); }
+
+        /* ========== FOOTER ========== */
+        .footer { background: #2C3E50; color: white; padding: 70px 20px 30px; }
+        .footer-content {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px;
+        }
+        .footer-section h4 { color: #1ABC9C; margin-bottom: 25px; font-size: 1.3rem; font-weight: 700; }
+        .footer-section p, .footer-section li { color: rgba(255,255,255,0.8); line-height: 1.9; font-size: 0.95rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: #1ABC9C; }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a {
+            width: 40px; height: 40px; background: rgba(26,188,156,0.2);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s;
+        }
+        .social-links a:hover { background: #1ABC9C; transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+        /* ========== WHATSAPP FLOTANTE ========== */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25D366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4); z-index: 999;
+            text-decoration: none; transition: all 0.3s; animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.15); box-shadow: 0 12px 35px rgba(37,211,102,0.6); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .destinos-grid, .servicios-grid, .form-row { grid-template-columns: 1fr; }
+            .form-container { padding: 45px 30px; }
+            .whatsapp-float { width: 55px; height: 55px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="a-minimalist-flat-design-logo-featuring-_8PQSPkpcTkmXfgvU0lv8ZA_BYP87N9BRGyLxafgD95lJg.jpeg" alt="Navia Global">
+                <div class="logo-text">
+                    <span class="logo-name">NAVIA GLOBAL</span>
+                    <span class="logo-tagline">De Colombianos para Colombianos</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#destinos">Destinos Rentables</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#calculadora">Calcular ROI</a>
+                <a href="#contacto" class="nav-cta">Asesoría Gratis</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#destinos">Destinos Rentables</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#calculadora">Calcular ROI</a>
+        <a href="#contacto" class="nav-cta">Asesoría Gratis</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=90');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1920&q=90');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=1920&q=90');"></div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">🇨🇴 De Colombianos para Colombianos</div>
+            <h1>No solo viajes a estudiar...<br>Diseña un Futuro Rentable</h1>
+            <p>La única agencia que te enseña los <strong>Costos Reales</strong> y el <strong>Retorno de Inversión (ROI)</strong> de tu viaje.</p>
+            
+            <div class="hero-flags">
+                <img src="https://flagcdn.com/w80/au.png" width="50" height="38" alt="Australia">
+                <img src="https://flagcdn.com/w80/ie.png" width="50" height="38" alt="Irlanda">
+                <img src="https://flagcdn.com/w80/mt.png" width="50" height="38" alt="Malta">
+                <img src="https://flagcdn.com/w80/nz.png" width="50" height="38" alt="Nueva Zelanda">
+                <img src="https://flagcdn.com/w80/ae.png" width="50" height="38" alt="Dubai">
+                <img src="https://flagcdn.com/w80/ca.png" width="50" height="38" alt="Canadá">
+            </div>
+
+            <div class="hero-cta">
+                <a href="#contacto" class="btn-primary">📅 Cotizar mi Plan Rentable</a>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span>💰</span>
+                    <div>Mejores Precios<br>Garantizados</div>
+                </div>
+                <div class="trust-badge">
+                    <span>📈</span>
+                    <div>Enfoque en<br>Ganancias Reales</div>
+                </div>
+                <div class="trust-badge">
+                    <span>✅</span>
+                    <div>95% Aprobación<br>de Visas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinos" id="destinos">
+        <h2 class="section-title">Elige Tu Destino por Rentabilidad</h2>
+        <p class="section-subtitle">Opciones pensadas para tu bolsillo y tu futuro</p>
+        
+        <div class="destinos-grid">
+            
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&q=85" alt="Sydney Opera House" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/au.png" width="40" height="30" alt="Australia"></span>
+                    <span class="destino-badge" style="background: #f39c12;">🥇 Campeón en Salarios</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Australia</h3>
+                    <p class="destino-tagline">"Recupera tu inversión mientras disfrutas"</p>
+                    <div class="destino-price">Desde $4,600 AUD / 24 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>💰 GANANCIA:</strong> Hasta $7M COP/mes trabajando</li>
+                        <li><strong>Salario mínimo:</strong> $24.10 AUD/hora (El más alto)</li>
+                        <li><strong>Permiso:</strong> 48h/quincena (Ilimitado en vacaciones)</li>
+                        <li><strong>Ideales:</strong> Sydney, Melbourne, Brisbane</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Australia')">Ver Proyección de Ganancias</a>
+                </div>
+            </div>
+
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?w=800&q=85" alt="Dublin" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/ie.png" width="40" height="30" alt="Irlanda"></span>
+                    <span class="destino-badge" style="background: #27ae60;">🍀 Mejor Costo/Beneficio</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Irlanda</h3>
+                    <p class="destino-tagline">"Estudia y viaja por toda Europa"</p>
+                    <div class="destino-price">Desde €2,100 EUR / 25 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>💰 AHORRO:</strong> Cubres hasta el 90% de gastos</li>
+                        <li><strong>Salario:</strong> €12.70/hora (Alto para Europa)</li>
+                        <li><strong>Ventaja:</strong> 2 meses de vacaciones trabajando Full-Time</li>
+                        <li><strong>Plus:</strong> Viajes baratos a todo el continente</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Irlanda')">Cotizar Curso + Visa</a>
+                </div>
+            </div>
+
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=85" alt="Malta" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/mt.png" width="40" height="30" alt="Malta"></span>
+                    <span class="destino-badge" style="background: #3498db;">💎 El Más Económico</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Malta</h3>
+                    <p class="destino-tagline">"Europa al mejor precio y con sol"</p>
+                    <div class="destino-price">Desde €2,088 EUR / 24 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>💰 INVERSIÓN:</strong> La más baja para entrar a Europa</li>
+                        <li><strong>Facilidad:</strong> Visa con alta tasa de aprobación</li>
+                        <li><strong>Estilo de vida:</strong> Mediterráneo y económico</li>
+                        <li><strong>Ubicación:</strong> Conexión fácil con Italia</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Malta')">Ver Presupuesto</a>
+                </div>
+            </div>
+
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=85" alt="Dubai" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/ae.png" width="40" height="30" alt="Dubai"></span>
+                    <span class="destino-badge">✨ 0% Impuestos</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Dubai</h3>
+                    <p class="destino-tagline">"Trabaja sin límite de horas"</p>
+                    <div class="destino-price">Desde $3,700 USD / 24 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>Ingresos:</strong> Todo lo que ganas es para ti</li>
+                        <li><strong>Trabajo:</strong> Sin restricción de horas</li>
+                        <li><strong>Visa:</strong> Proceso muy sencillo</li>
+                        <li><strong>Entorno:</strong> Lujo y seguridad total</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Dubai')">Más Información</a>
+                </div>
+            </div>
+
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=800&q=85" alt="Nueva Zelanda" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/nz.png" width="40" height="30" alt="Nueva Zelanda"></span>
+                    <span class="destino-badge">🏔️ Naturaleza</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Nueva Zelanda</h3>
+                    <p class="destino-tagline">"Calidad de vida pacífica"</p>
+                    <div class="destino-price">Desde $4,300 USD / 24 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>Salario:</strong> Alto y competitivo</li>
+                        <li><strong>Permiso:</strong> 20h semanales de trabajo</li>
+                        <li><strong>Entorno:</strong> Paisajes de película</li>
+                        <li><strong>Educación:</strong> Sistema británico de calidad</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Nueva Zelanda')">Más Información</a>
+                </div>
+            </div>
+
+            <div class="destino-card">
+                <div class="destino-header">
+                    <img src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=85" alt="Canadá" loading="lazy">
+                    <span class="destino-flag"><img src="https://flagcdn.com/w80/ca.png" width="40" height="30" alt="Canadá"></span>
+                    <span class="destino-badge">🍁 Migración</span>
+                </div>
+                <div class="destino-content">
+                    <h3>Canadá</h3>
+                    <p class="destino-tagline">"Tu puerta a la residencia"</p>
+                    <div class="destino-price">Desde $6,700 USD / 24 semanas</div>
+                    <ul class="destino-features">
+                        <li><strong>Educación:</strong> Top mundial</li>
+                        <li><strong>Trabajo:</strong> Permiso en programas Co-Op</li>
+                        <li><strong>Futuro:</strong> Vías claras de migración</li>
+                        <li><strong>Sociedad:</strong> Multicultural y segura</li>
+                    </ul>
+                    <a href="#contacto" class="destino-btn" onclick="prefillForm('Canadá')">Más Información</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="urgency-banner">
+        ¡Atención! Solo quedan 5 cupos con precios de 2024 para el Intake de Enero | Reserva ahora
+    </div>
+
+    <section class="contacto" id="contacto">
+        <div class="form-container">
+            <h2>Da El Primer Paso Hacia Tu Futuro Rentable</h2>
+            <p class="subtitle">Completa este formulario y Samuel o un experto se comunicará contigo en menos de 24 horas.</p>
+            
+            <form id="contactForm" action="https://formspree.io/f/xdkpereb" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+57 300 123 4567">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" name="edad" placeholder="Ej: 25">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="destino">Destino de Interés</label>
+                    <select id="destino" name="destino">
+                        <option value="">Selecciona un destino</option>
+                        <option value="Australia">Australia (Ganancia Max)</option>
+                        <option value="Irlanda">Irlanda (Costo/Beneficio)</option>
+                        <option value="Malta">Malta (Económico)</option>
+                        <option value="Dubai">Dubai</option>
+                        <option value="Canadá">Canadá</option>
+                        <option value="Nueva Zelanda">Nueva Zelanda</option>
+                        <option value="No estoy seguro">No estoy seguro - Asesórenme</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Cuéntanos tus dudas (Opcional)</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Ej: Me interesa saber más sobre el salario en Australia..."></textarea>
+                </div>
+
+                <div class="consent-section">
+                    <div class="consent-checkbox">
+                        <input type="checkbox" id="consent-data" name="consent_data" required>
+                        <label for="consent-data">Autorizo el tratamiento de mis datos personales para ser contactado por Navia Global. <span class="required-text">*</span></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Quiero Mi Asesoría Gratuita</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Navia Global</h4>
+                <p>Tu puente al mundo. Agencia especializada de colombianos para colombianos.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/navia.global" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/naviaglobal" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@naviaglobal" target="_blank" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📧 samuel.sanchez@naviaglobal.co</p>
+                <p>📱 WhatsApp: +57 301 443 0722</p>
+                <p>📍 Bogotá, Colombia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Navia Global Education SAS | NIT: 902.003.125-8</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573014430722?text=Hola%20Samuel,%20vengo%20de%20la%20web%20y%20quiero%20conocer%20los%20Costos%20Reales%20de..." class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.069.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Navbar Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Slideshow Hero
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Script para Pre-llenar Formulario desde botones
+        function prefillForm(pais) {
+            const select = document.getElementById('destino');
+            if(select) {
+                select.value = pais;
+                document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});
+            }
+        }
+    </script>
+
+</body>
+</html>
