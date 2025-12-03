@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO OPTIMIZADO -->
+    <title>Estudiar en Nueva Zelanda desde Colombia 2026: Guía Completa con 25h de Trabajo</title>
+    <meta name="description" content="Guía completa 2026 para estudiar en Nueva Zelanda desde Colombia. NOVEDAD: ahora puedes trabajar 25h/semana. Requisitos, costos, visa y todo el proceso.">
+    <meta name="keywords" content="estudiar en nueva zelanda desde colombia, visa estudiante nueva zelanda, trabajar 25 horas nueva zelanda, cuanto cuesta estudiar nueva zelanda, requisitos nueva zelanda colombianos">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Estudiar en Nueva Zelanda desde Colombia 2026: Guía Completa">
+    <meta property="og:description" content="NOVEDAD 2026: Ahora puedes trabajar 25 horas/semana estudiando en Nueva Zelanda. Guía completa con requisitos, costos y proceso para colombianos.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://naviaglobal.co/blog/nueva-zelanda-colombia-2026.jpg">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Estudiar en Nueva Zelanda desde Colombia 2026: Guía Completa",
+      "description": "Guía completa para estudiar en Nueva Zelanda desde Colombia. Requisitos, costos, visa y todo el proceso actualizado 2026.",
+      "image": "https://naviaglobal.co/blog/nueva-zelanda-colombia-2026.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Navia Global"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Navia Global",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://naviaglobal.co/logo.png"
+        }
+      },
+      "datePublished": "2026-01-02",
+      "dateModified": "2026-01-02"
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; color: #2C3E50; background: #fff; }
+        
+        /* Header */
+        .header { background: #1B4B8C; color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: white; text-decoration: none; }
+        .cta-header { background: #1ABC9C; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1B4B8C 0%, #296AB8 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 30px; }
+        .hero .meta { display: flex; justify-content: center; gap: 30px; font-size: 0.95rem; opacity: 0.9; }
+        
+        /* Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        
+        /* Tabla de contenido */
+        .toc { background: #f8f9fa; border-left: 4px solid #1ABC9C; padding: 30px; margin: 40px 0; border-radius: 8px; }
+        .toc h2 { color: #1B4B8C; margin-bottom: 20px; font-size: 1.5rem; }
+        .toc ul { list-style: none; }
+        .toc li { padding: 8px 0; }
+        .toc a { color: #2C3E50; text-decoration: none; font-weight: 500; }
+        .toc a:hover { color: #1ABC9C; }
+        
+        /* Content */
+        .content h2 { color: #1B4B8C; font-size: 2rem; margin: 50px 0 20px; padding-bottom: 10px; border-bottom: 3px solid #1ABC9C; }
+        .content h3 { color: #2C3E50; font-size: 1.5rem; margin: 30px 0 15px; }
+        .content p { margin: 20px 0; font-size: 1.1rem; }
+        .content ul, .content ol { margin: 20px 0; padding-left: 30px; }
+        .content li { margin: 10px 0; font-size: 1.05rem; }
+        
+        /* Cajas destacadas */
+        .highlight-box { background: #FFF9E6; border-left: 5px solid #FFD700; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .highlight-box h4 { color: #1B4B8C; margin-bottom: 15px; font-size: 1.3rem; }
+        
+        .info-box { background: #E8F5F7; border-left: 5px solid #1ABC9C; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .info-box h4 { color: #1B4B8C; margin-bottom: 15px; font-size: 1.3rem; }
+        
+        .warning-box { background: #FFF3E0; border-left: 5px solid #FF9800; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .warning-box h4 { color: #E65100; margin-bottom: 15px; font-size: 1.3rem; }
+        
+        .new-box { background: #E8F5E9; border-left: 5px solid #4CAF50; padding: 25px; margin: 30px 0; border-radius: 8px; }
+        .new-box h4 { color: #2E7D32; margin-bottom: 15px; font-size: 1.3rem; }
+        
+        /* Tabla */
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        th { background: #1B4B8C; color: white; padding: 15px; text-align: left; font-weight: 600; }
+        td { padding: 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:hover { background: #f8f9fa; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #1ABC9C, #16A085); color: white; padding: 40px; margin: 50px 0; border-radius: 12px; text-align: center; }
+        .cta-box h3 { font-size: 2rem; margin-bottom: 15px; }
+        .cta-box p { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.95; }
+        .cta-button { display: inline-block; background: white; color: #1ABC9C; padding: 18px 50px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.2rem; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: all 0.3s; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        
+        /* FAQ */
+        .faq-item { margin: 30px 0; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px; }
+        .faq-item h3 { color: #1B4B8C; margin-bottom: 10px; font-size: 1.3rem; }
+        
+        /* Footer */
+        .footer { background: #2C3E50; color: white; padding: 50px 20px; text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        
+        /* Imágenes */
+        .hero-image { width: 100%; max-width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .content-image { width: 100%; max-width: 100%; height: 350px; object-fit: cover; border-radius: 10px; margin: 30px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .section-image { width: 100%; max-width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin: 25px 0; }
+        
+        /* WhatsApp flotante */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); text-decoration: none; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
+        .whatsapp-float svg { width: 35px; height: 35px; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 30px 15px; }
+            .content h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">NAVIA GLOBAL</a>
+            <a href="#contacto" class="cta-header">Asesoría Gratuita</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Estudiar en Nueva Zelanda desde Colombia 2026: Guía Completa</h1>
+        <p class="subtitle">NOVEDAD: Ahora puedes trabajar 25 horas/semana • El paraíso de Oceanía te espera</p>
+        <div class="meta">
+            <span>📅 Actualizado: Diciembre 2025</span>
+            <span>⏱️ Lectura: 14 min</span>
+            <span>👤 Por Navia Global</span>
+        </div>
+    </section>
+
+    <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=1200&h=600&fit=crop" alt="Paisaje impresionante de Nueva Zelanda montañas y lagos" class="hero-image" style="max-width: 1200px; margin: 30px auto; display: block;">
+
+    <!-- Container -->
+    <div class="container">
+        
+        <!-- Introducción -->
+        <div class="content">
+            <p><strong>¿Soñando con estudiar en Nueva Zelanda?</strong> Este país insular de Oceanía se ha convertido en uno de los destinos más populares para estudiantes colombianos, ¡y con razón! Como agencia con +500 estudiantes exitosos y 8 años de experiencia, te contamos TODO lo que necesitas saber para estudiar en Nueva Zelanda en 2026.</p>
+            
+            <div class="new-box">
+                <h4>🎉 ¡GRAN NOTICIA para 2026!</h4>
+                <p><strong>Desde noviembre de 2025, puedes trabajar 25 horas por semana</strong> (antes eran 20h). Esto significa 5 horas extras para aumentar tus ingresos mientras estudias. Nueva Zelanda acaba de volverse AÚN MÁS atractivo.</p>
+            </div>
+            
+            <p>Nueva Zelanda es el <strong>3er país más pacífico del mundo</strong>, tiene paisajes de película (literalmente - aquí se filmó El Señor de los Anillos), salarios competitivos y una calidad de vida excepcional. Es el equilibrio perfecto entre naturaleza, educación de calidad y oportunidades laborales.</p>
+            
+            <p>En esta guía completa (actualizada diciembre 2025) aprenderás:</p>
+            <ul>
+                <li>NOVEDAD: Cómo trabajar 25h/semana desde noviembre 2025</li>
+                <li>Requisitos exactos para colombianos</li>
+                <li>Costos reales actualizados 2026</li>
+                <li>Proceso de visa paso a paso</li>
+                <li>Mejores ciudades y programas</li>
+                <li>Pathways a residencia permanente</li>
+            </ul>
+        </div>
+
+        <!-- Tabla de Contenido -->
+        <div class="toc">
+            <h2>📋 Tabla de Contenido</h2>
+            <ul>
+                <li><a href="#por-que">1. ¿Por qué estudiar en Nueva Zelanda?</a></li>
+                <li><a href="#novedad-25h">2. NOVEDAD 2026: Trabajar 25h/semana</a></li>
+                <li><a href="#requisitos">3. Requisitos para colombianos</a></li>
+                <li><a href="#costos">4. Costos reales 2026</a></li>
+                <li><a href="#visa">5. Proceso de visa paso a paso</a></li>
+                <li><a href="#trabajar">6. Trabajar en Nueva Zelanda</a></li>
+                <li><a href="#ciudades">7. Mejores ciudades</a></li>
+                <li><a href="#programas">8. Programas de estudio</a></li>
+                <li><a href="#residencia">9. Pathway a residencia</a></li>
+                <li><a href="#faq">10. Preguntas frecuentes</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="content">
+            
+            <h2 id="por-que">¿Por Qué Estudiar en Nueva Zelanda desde Colombia?</h2>
+            
+            <p>Nueva Zelanda no es solo un país hermoso, es un destino estratégico para tu futuro. Aquí te explico por qué está en el top 3 de destinos para estudiantes colombianos en 2026:</p>
+            
+            <h3>1. El 3er País Más Pacífico del Mundo</h3>
+            <p>Según el Global Peace Index 2025, Nueva Zelanda es el <strong>3er país más seguro y pacífico del planeta</strong>. Esto significa:</p>
+            <ul>
+                <li>Criminalidad extremadamente baja</li>
+                <li>Sociedad multicultural y acogedora</li>
+                <li>Respeto por derechos humanos</li>
+                <li>Ambiente perfecto para estudiantes internacionales</li>
+            </ul>
+            
+            <h3>2. #1 Mundial en Balance Vida-Trabajo</h3>
+            <p>En 2024, Nueva Zelanda ocupó el <strong>primer lugar mundial en equilibrio entre vida y trabajo</strong>. No es solo estudiar, es disfrutar la vida mientras te formas profesionalmente.</p>
+            
+            <h3>3. Ahora Puedes Trabajar 25 Horas/Semana</h3>
+            <p>Desde noviembre 2025, el gobierno neozelandés aumentó las horas de trabajo permitidas para estudiantes internacionales de 20 a <strong>25 horas semanales</strong>. Esto representa:</p>
+            <ul>
+                <li><strong>+$500 NZD mensuales extra</strong> en tus ingresos</li>
+                <li>Más flexibilidad para cubrir tus gastos</li>
+                <li>Mejor oportunidad de ahorrar</li>
+            </ul>
+            
+            <h3>4. Educación de Clase Mundial</h3>
+            <ul>
+                <li>8 universidades reconocidas internacionalmente</li>
+                <li>Sistema educativo regulado y de alta calidad</li>
+                <li>Enfoque práctico en empleabilidad</li>
+                <li>Programas técnicos (Diplomas) muy valorados</li>
+            </ul>
+            
+            <h3>5. Paisajes de Película</h3>
+            <p>Literalmente. Aquí se filmó El Señor de los Anillos, El Hobbit y más. Los fines de semana puedes:</p>
+            <ul>
+                <li>Hacer hiking en montañas espectaculares</li>
+                <li>Visitar playas de arena negra volcánica</li>
+                <li>Ver glaciares, fiordos y lagos cristalinos</li>
+                <li>Disfrutar de deportes extremos (bungee jumping, skydiving)</li>
+            </ul>
+            
+            <h3>6. Pathway a Residencia Permanente</h3>
+            <p>Nueva Zelanda tiene programas claros para quedarte después de estudiar:</p>
+            <ul>
+                <li><strong>Post-Study Work Visa:</strong> 1-3 años de trabajo después de graduarte</li>
+                <li><strong>Green List:</strong> Profesiones con pathway directo a residencia</li>
+                <li><strong>Skilled Migrant Category:</strong> Sistema de puntos para residencia</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>📊 Nueva Zelanda en Números</h4>
+                <p><strong>Ranking Global Peace Index:</strong> #3 mundial</p>
+                <p><strong>Población:</strong> 5.1 millones (similar a toda Antioquia)</p>
+                <p><strong>Salario mínimo:</strong> $23.50 NZD/hora (≈$57,000 COP/hora)</p>
+                <p><strong>Estudiantes internacionales:</strong> +50,000 anuales</p>
+                <p><strong>Tasa de desempleo:</strong> ~3.3% (muy baja)</p>
+            </div>
+
+            <!-- CTA 1 -->
+            <div class="cta-box">
+                <h3>¿Listo para Nueva Zelanda?</h3>
+                <p>Agenda tu asesoría gratuita y te explicamos todo el proceso</p>
+                <a href="#contacto" class="cta-button">Agendar Asesoría Gratuita</a>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&h=600&fit=crop" alt="Auckland ciudad principal de Nueva Zelanda vista panorámica" class="content-image">
+            
+            <h2 id="novedad-25h">NOVEDAD 2026: Ahora Puedes Trabajar 25 Horas/Semana</h2>
+            
+            <p><strong>Esta es la noticia del año para estudiantes internacionales en Nueva Zelanda.</strong></p>
+            
+            <div class="new-box">
+                <h4>🎯 Cambio Oficial desde Noviembre 2025</h4>
+                <p><strong>Antes:</strong> 20 horas/semana durante clases</p>
+                <p><strong>AHORA:</strong> <span style="font-size: 1.3rem; color: #2E7D32;">25 horas/semana durante clases</span></p>
+                <p><strong>Vacaciones:</strong> 40 horas/semana (tiempo completo)</p>
+            </div>
+            
+            <h3>¿Qué Significa Esto para Tu Bolsillo?</h3>
+            <p>Hagamos las cuentas con el salario mínimo de $23.50 NZD/hora:</p>
+            
+            <div class="highlight-box">
+                <h4>💰 Ejemplo Real de Ingresos con 25h/Semana</h4>
+                <p><strong>Trabajando 25 horas/semana a $23.50 NZD/hora:</strong></p>
+                <p>25h x $23.50 = $587.50 NZD/semana</p>
+                <p>$587.50 x 4 semanas = <strong>$2,350 NZD/mes</strong> (≈$5,640,000 COP)</p>
+                <p style="margin-top: 15px;"><strong>Con 5 horas extras vs. antes (20h):</strong></p>
+                <p>5h x $23.50 = $117.50 NZD/semana extra</p>
+                <p>$117.50 x 4 = <strong>$470 NZD/mes EXTRA</strong> (≈$1,128,000 COP)</p>
+            </div>
+            
+            <p><strong>Esto es ENORME</strong> porque con estas 5 horas extras mensuales puedes:</p>
+            <ul>
+                <li>Cubrir tu comida completa del mes</li>
+                <li>Pagar tu transporte y entretenimiento</li>
+                <li>Ahorrar para viajes o emergencias</li>
+                <li>Reducir dependencia de ahorros/familia</li>
+            </ul>
+            
+            <h3>¿Quiénes Pueden Trabajar 25h/Semana?</h3>
+            <p>Todos los estudiantes internacionales con visa de estudiante en programas de:</p>
+            <ul>
+                <li>✅ Cursos de inglés (14+ semanas)</li>
+                <li>✅ Diplomas y certificados técnicos</li>
+                <li>✅ Programas universitarios (Bachelor's)</li>
+                <li>✅ Programas de posgrado (Master's, MBA)</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h4>⚠️ IMPORTANTE: Restricción de Trabajo con Cursos de Idiomas</h4>
+                <p>Aunque puedes trabajar 25h/semana estudiando inglés, <strong>SOLO si tu curso dura 14 semanas o más</strong>. Cursos más cortos no permiten trabajar.</p>
+            </div>
+            
+            <h2 id="requisitos">Requisitos para Estudiar en Nueva Zelanda desde Colombia</h2>
+            
+            <p>Como colombiano, estos son los requisitos exactos que necesitas cumplir:</p>
+            
+            <h3>1. Inscripción en Institución Neozelandesa (Offer Letter)</h3>
+            <p>Debes ser aceptado en una institución reconocida por el gobierno de Nueva Zelanda:</p>
+            <ul>
+                <li><strong>Escuelas de inglés:</strong> Programas de 14+ semanas</li>
+                <li><strong>Colleges:</strong> Diplomas técnicos y certificados</li>
+                <li><strong>Universidades:</strong> Grados universitarios y posgrados</li>
+            </ul>
+            
+            <p><strong>Nosotros te ayudamos gratis</strong> con toda la aplicación y conseguir tu carta de aceptación.</p>
+            
+            <h3>2. Pago del Curso</h3>
+            <p>Debes pagar tu curso ANTES de aplicar a la visa. El departamento de inmigración requiere comprobante de pago completo.</p>
+            
+            <h3>3. Fondos Suficientes (Prueba Financiera)</h3>
+            <p>Debes demostrar que tienes dinero para mantenerte:</p>
+            <ul>
+                <li><strong>Curso de 9-12 meses:</strong> $15,000 NZD (≈$36M COP)</li>
+                <li><strong>Cada año adicional:</strong> +$15,000 NZD</li>
+            </ul>
+            
+            <p>Puede ser:</p>
+            <ul>
+                <li>Extracto bancario a tu nombre (últimos 6 meses)</li>
+                <li>Carta de patrocinio de familiar + extractos</li>
+                <li>Préstamo educativo aprobado</li>
+                <li>Combinación de los anteriores</li>
+            </ul>
+            
+            <h3>4. Seguro Médico</h3>
+            <p>Seguro médico obligatorio que cubra toda tu estadía. Costo aproximado: $40-60 NZD/mes.</p>
+            
+            <h3>5. Pasaporte Vigente</h3>
+            <p>Pasaporte válido por al menos 3 meses después de tu fecha de retorno planeada.</p>
+            
+            <h3>6. Examen Médico (Si Aplica)</h3>
+            <p>Solo si tu curso dura <strong>más de 12 meses</strong>:</p>
+            <ul>
+                <li>Certificado médico general</li>
+                <li>Radiografía de tórax</li>
+                <li>Debe ser realizado por médicos aprobados por inmigración NZ</li>
+            </ul>
+            
+            <h3>7. Certificados Policiales (Si Aplica)</h3>
+            <p>Solo si tu estadía es <strong>mayor a 24 meses</strong>:</p>
+            <ul>
+                <li>Certificado de policía de Colombia</li>
+                <li>Certificado de cualquier país donde hayas vivido +12 meses en últimos 10 años</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>💡 Tip de Navia Global</h4>
+                <p>Nosotros te ayudamos con <strong>TODA la documentación gratis</strong>. Sabemos exactamente qué documentos necesitas, en qué formato y cómo presentarlos para maximizar aprobación de visa.</p>
+                <p>Nuestra tasa de aprobación es del <strong>95%</strong> 🎯</p>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=600&fit=crop" alt="Graduación universidad Nueva Zelanda estudiantes celebrando" class="content-image">
+            
+            <h2 id="costos">Costos Reales para Estudiar en Nueva Zelanda 2026</h2>
+            
+            <p>Aquí están los costos REALES actualizados para 2026. Sin sorpresas:</p>
+            
+            <h3>Inversión Inicial (Antes de Viajar)</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Costo NZD</th>
+                        <th>Costo COP*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Curso de inglés (24 semanas)</td>
+                        <td>$6,000 - $8,000</td>
+                        <td>$14.4M - $19.2M</td>
+                    </tr>
+                    <tr>
+                        <td>Diploma técnico (1 año)</td>
+                        <td>$20,000 - $28,000</td>
+                        <td>$48M - $67M</td>
+                    </tr>
+                    <tr>
+                        <td>Universidad Bachelor's/año</td>
+                        <td>$25,000 - $35,000</td>
+                        <td>$60M - $84M</td>
+                    </tr>
+                    <tr>
+                        <td>Visa de estudiante</td>
+                        <td>$750</td>
+                        <td>$1.8M</td>
+                    </tr>
+                    <tr>
+                        <td>Seguro médico (anual)</td>
+                        <td>$500 - $700</td>
+                        <td>$1.2M - $1.7M</td>
+                    </tr>
+                    <tr>
+                        <td>Vuelo ida y vuelta</td>
+                        <td>$1,500 - $2,500</td>
+                        <td>$3.6M - $6M</td>
+                    </tr>
+                    <tr>
+                        <td>Examen médico (si aplica)</td>
+                        <td>$200 - $400</td>
+                        <td>$480K - $960K</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">*Tasa de cambio referencial: 1 NZD = $2,400 COP</p>
+            
+            <div class="warning-box">
+                <h4>📢 Cambio Importante en Costo de Visa</h4>
+                <p>Desde octubre 2024, el costo de la visa de estudiante <strong>aumentó de $375 NZD a $750 NZD</strong>. Es importante considerarlo en tu presupuesto.</p>
+            </div>
+            
+            <h3>Gastos Mensuales en Nueva Zelanda</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Auckland</th>
+                        <th>Wellington/Christchurch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alojamiento compartido</td>
+                        <td>$800 - $1,200/mes</td>
+                        <td>$600 - $900/mes</td>
+                    </tr>
+                    <tr>
+                        <td>Comida</td>
+                        <td>$300 - $400/mes</td>
+                        <td>$250 - $350/mes</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte</td>
+                        <td>$120 - $150/mes</td>
+                        <td>$80 - $120/mes</td>
+                    </tr>
+                    <tr>
+                        <td>Internet/Celular</td>
+                        <td>$60 - $80/mes</td>
+                        <td>$60 - $80/mes</td>
+                    </tr>
+                    <tr>
+                        <td>Entretenimiento</td>
+                        <td>$150 - $250/mes</td>
+                        <td>$100 - $200/mes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL MENSUAL</strong></td>
+                        <td><strong>$1,430 - $2,080</strong></td>
+                        <td><strong>$1,090 - $1,650</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <h4>💡 ¿Puedes Autofinanciarte con 25h de Trabajo?</h4>
+                <p><strong>Respuesta: ¡SÍ, especialmente fuera de Auckland!</strong></p>
+                <p>Trabajando 25h/semana ganas: <strong>$2,350 NZD/mes</strong></p>
+                <p>Gastos en Wellington: <strong>$1,090 - $1,650 NZD/mes</strong></p>
+                <p>Ahorro potencial: <strong>$700 - $1,260 NZD/mes</strong> (≈$1.7M - $3M COP)</p>
+                <p style="margin-top: 15px;">Con el nuevo límite de 25h/semana, es <strong>más factible que nunca</strong> cubrir tus gastos trabajando.</p>
+            </div>
+            
+            <h3>Ejemplo: Presupuesto Total Curso de Inglés (6 Meses)</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Costo NZD</th>
+                        <th>Costo COP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Curso 24 semanas</td>
+                        <td>$7,000</td>
+                        <td>$16.8M</td>
+                    </tr>
+                    <tr>
+                        <td>Visa</td>
+                        <td>$750</td>
+                        <td>$1.8M</td>
+                    </tr>
+                    <tr>
+                        <td>Seguro médico 6 meses</td>
+                        <td>$300</td>
+                        <td>$720K</td>
+                    </tr>
+                    <tr>
+                        <td>Vuelo</td>
+                        <td>$2,000</td>
+                        <td>$4.8M</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos 6 meses (Wellington)</td>
+                        <td>$9,000</td>
+                        <td>$21.6M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>INVERSIÓN TOTAL</strong></td>
+                        <td><strong>$19,050</strong></td>
+                        <td><strong>$45.7M</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #16A085;"><strong>Ingresos trabajando 25h/sem (6 meses)</strong></td>
+                        <td style="color: #16A085;"><strong>-$14,100</strong></td>
+                        <td style="color: #16A085;"><strong>-$33.8M</strong></td>
+                    </tr>
+                    <tr style="background: #E8F5F7;">
+                        <td><strong>INVERSIÓN NETA REAL</strong></td>
+                        <td><strong>$4,950</strong></td>
+                        <td><strong>≈$11.9M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- CTA 2 -->
+            <div class="cta-box">
+                <h3>¿Quieres un Presupuesto Personalizado?</h3>
+                <p>Te armamos un plan financiero completo según tu perfil</p>
+                <a href="#contacto" class="cta-button">Hablar con un Asesor</a>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1568139490946-b1e1a8b7e1c2?w=1200&h=600&fit=crop" alt="Estudiante trabajando café Nueva Zelanda experiencia laboral" class="content-image">
+            
+            <h2 id="visa">Proceso de Visa Paso a Paso</h2>
+            
+            <p>El proceso de visa para Nueva Zelanda es 100% online y relativamente directo. Aquí te explico paso a paso:</p>
+            
+            <h3>Paso 1: Conseguir tu Carta de Aceptación</h3>
+            <ol>
+                <li>Elegir institución y programa (nosotros te asesoramos gratis)</li>
+                <li>Aplicar a la institución</li>
+                <li>Recibir Offer Letter (carta de aceptación)</li>
+                <li>Pagar el curso completo</li>
+                <li>Recibir comprobante de pago</li>
+            </ol>
+            <p><strong>Tiempo:</strong> 1-2 semanas</p>
+            
+            <h3>Paso 2: Reunir Documentación</h3>
+            <p>Reúne todos los documentos requeridos:</p>
+            <ul>
+                <li>✅ Pasaporte vigente (escaneado)</li>
+                <li>✅ Offer Letter de la institución</li>
+                <li>✅ Comprobante de pago del curso</li>
+                <li>✅ Prueba de fondos ($15,000+ NZD)</li>
+                <li>✅ Seguro médico contratado</li>
+                <li>✅ Certificados policiales (si aplica)</li>
+                <li>✅ Examen médico (si aplica)</li>
+            </ul>
+            <p><strong>Tiempo:</strong> 1-2 semanas</p>
+            
+            <h3>Paso 3: Aplicar Online</h3>
+            <ol>
+                <li>Crear cuenta en: www.immigration.govt.nz</li>
+                <li>Llenar formulario online</li>
+                <li>Subir todos los documentos</li>
+                <li>Pagar tarifa de visa: $750 NZD</li>
+                <li>Enviar aplicación</li>
+            </ol>
+            <p><strong>Tiempo:</strong> 2-3 horas</p>
+            
+            <div class="info-box">
+                <h4>💡 Tip: Aplicación Perfecta</h4>
+                <p>La clave está en presentar una aplicación <strong>COMPLETA y SIN ERRORES</strong> la primera vez. Nosotros revisamos cada documento antes de que apliques para asegurar máxima probabilidad de aprobación.</p>
+            </div>
+            
+            <h3>Paso 4: Esperar Respuesta</h3>
+            <p>El departamento de inmigración revisará tu aplicación:</p>
+            <ul>
+                <li><strong>Tiempo promedio:</strong> 4-8 semanas</li>
+                <li><strong>Casos rápidos:</strong> 2-3 semanas</li>
+                <li><strong>Casos complejos:</strong> 10-12 semanas</li>
+            </ul>
+            
+            <p>Puedes trackear el estado de tu visa online en todo momento.</p>
+            
+            <h3>Paso 5: Recibir Visa Aprobada</h3>
+            <p>Una vez aprobada:</p>
+            <ul>
+                <li>Recibes e-visa por email (documento PDF)</li>
+                <li>Visa electrónica vinculada a tu pasaporte</li>
+                <li>¡Lista para viajar! 🎉</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>⏱️ Timeline Total: Colombia → Nueva Zelanda</h4>
+                <p><strong>2-4 meses en total</strong></p>
+                <ul style="margin-top: 10px;">
+                    <li>Aplicación institución: 1-2 semanas</li>
+                    <li>Documentos: 1-2 semanas</li>
+                    <li>Aplicación visa: 2-3 horas</li>
+                    <li>Respuesta visa: 4-8 semanas</li>
+                    <li>Preparar viaje: 2-3 semanas</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Si empiezas hoy, podrías estar en Nueva Zelanda en marzo-abril 2026.</strong></p>
+            </div>
+            
+            <h2 id="trabajar">Trabajar en Nueva Zelanda como Estudiante</h2>
+            
+            <p>Esta es una de las mejores partes de estudiar en Nueva Zelanda. El país valora mucho la mano de obra extranjera y tiene una economía estable con bajo desempleo (3.3%).</p>
+            
+            <h3>¿Cuánto Puedo Trabajar?</h3>
+            <div class="new-box">
+                <h4>🎯 Horas Permitidas 2026</h4>
+                <ul>
+                    <li><strong>Durante clases:</strong> 25 horas/semana (desde nov 2025)</li>
+                    <li><strong>Vacaciones escolares:</strong> 40 horas/semana (tiempo completo)</li>
+                    <li><strong>Restricción:</strong> No puedes trabajar por cuenta propia (self-employed)</li>
+                </ul>
+            </div>
+            
+            <h3>¿Cuánto Puedo Ganar?</h3>
+            <p><strong>Salario mínimo 2026:</strong> $23.50 NZD/hora (≈$57,000 COP/hora)</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Trabajo</th>
+                        <th>Salario/Hora</th>
+                        <th>Ingreso Mensual (25h/sem)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Salario mínimo</td>
+                        <td>$23.50 NZD</td>
+                        <td>$2,350 NZD ($5.6M COP)</td>
+                    </tr>
+                    <tr>
+                        <td>Hospitality/Retail</td>
+                        <td>$23-27 NZD</td>
+                        <td>$2,300-2,700 NZD</td>
+                    </tr>
+                    <tr>
+                        <td>Construcción</td>
+                        <td>$25-30 NZD</td>
+                        <td>$2,500-3,000 NZD</td>
+                    </tr>
+                    <tr>
+                        <td>Agricultura/Packing</td>
+                        <td>$24-28 NZD</td>
+                        <td>$2,400-2,800 NZD</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery/Repartos</td>
+                        <td>$25-35 NZD</td>
+                        <td>$2,500-3,500 NZD</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Trabajos Más Comunes para Estudiantes</h3>
+            <p>Los sectores que más contratan estudiantes internacionales:</p>
+            
+            <ol>
+                <li><strong>Hospitality (Restaurantes, Cafés, Hoteles)</strong>
+                    <ul>
+                        <li>Mesero/a, barista, bartender</li>
+                        <li>Kitchen hand, dishwasher</li>
+                        <li>Host/hostess</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Retail (Tiendas y Supermercados)</strong>
+                    <ul>
+                        <li>Sales assistant</li>
+                        <li>Cashier/cajero</li>
+                        <li>Stock replenisher</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Construcción</strong>
+                    <ul>
+                        <li>Labourer (ayudante general)</li>
+                        <li>Carpentry assistant</li>
+                        <li>Painting assistant</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Agricultura y Packing</strong>
+                    <ul>
+                        <li>Fruit picking (temporadas)</li>
+                        <li>Packhouse worker</li>
+                        <li>Farm worker</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Otros</strong>
+                    <ul>
+                        <li>Delivery driver (Uber Eats, etc)</li>
+                        <li>Cleaning</li>
+                        <li>Babysitter</li>
+                        <li>Pet sitter</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <h3>¿Cómo Conseguir Trabajo?</h3>
+            <p>En Nueva Zelanda, la actitud y persistencia son clave:</p>
+            
+            <div class="info-box">
+                <h4>💡 Estrategia Efectiva para Conseguir Trabajo</h4>
+                <ol>
+                    <li><strong>Prepara CV neozelandés:</strong> Formato simple, 1 página, enfocado en habilidades</li>
+                    <li><strong>Busca online en:</strong>
+                        <ul>
+                            <li>Seek.co.nz (principal)</li>
+                            <li>Trade Me Jobs</li>
+                            <li>Indeed NZ</li>
+                            <li>Student Job Search</li>
+                        </ul>
+                    </li>
+                    <li><strong>¡Aplica en persona!</strong> En NZ, entregar CVs en persona funciona MUY bien</li>
+                    <li><strong>Networking:</strong> Habla con compañeros, profesores, conocidos</li>
+                    <li><strong>Grupos de Facebook:</strong> Busca "Jobs in [ciudad]"</li>
+                </ol>
+                <p style="margin-top: 15px;"><strong>Tiempo promedio:</strong> 2-4 semanas para primer trabajo</p>
+            </div>
+            
+            <h3>Derechos Laborales en Nueva Zelanda</h3>
+            <p>Nueva Zelanda tiene leyes laborales muy protectoras:</p>
+            <ul>
+                <li>✅ Salario mínimo garantizado ($23.50/hora)</li>
+                <li>✅ Holiday pay (8% extra cuando terminas un trabajo)</li>
+                <li>✅ Días festivos pagados mejor (1.5x o 2x)</li>
+                <li>✅ Breaks pagados (10 min cada 4 horas)</li>
+                <li>✅ Ambiente laboral seguro y respetuoso</li>
+                <li>✅ No discriminación por nacionalidad</li>
+            </ul>
+            
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop" alt="Montañas Nueva Zelanda paisaje naturaleza impresionante" class="content-image">
+            
+            <h2 id="ciudades">Mejores Ciudades para Estudiar en Nueva Zelanda</h2>
+            
+            <p>Nueva Zelanda tiene dos islas principales: Isla Norte (80% población) e Isla Sur (más naturaleza). Aquí las mejores ciudades para estudiantes:</p>
+            
+            <h3>1. Auckland - La Gran Ciudad (Isla Norte)</h3>
+            <p><strong>Población:</strong> 1.7 millones (1/3 del país)</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Ciudad más grande y cosmopolita</li>
+                <li>Más oportunidades de trabajo</li>
+                <li>Diversidad cultural increíble</li>
+                <li>Mejor vida nocturna y entretenimiento</li>
+                <li>Aeropuerto internacional principal</li>
+            </ul>
+            <p><strong>Contras:</strong></p>
+            <ul>
+                <li>Más cara (alojamiento $800-1,200/mes)</li>
+                <li>Tráfico más congestionado</li>
+                <li>Ritmo de vida más acelerado</li>
+            </ul>
+            <p><strong>Ideal para:</strong> Quienes buscan vida urbana, networking y máximas oportunidades</p>
+            
+            <h3>2. Wellington - La Capital Cool (Isla Norte)</h3>
+            <p><strong>Población:</strong> 420,000</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Capital política y cultural</li>
+                <li>Industria creativa y tech en auge</li>
+                <li>Excelente calidad de vida</li>
+                <li>Ambiente universitario vibrante</li>
+                <li>Costa y montañas cercanas</li>
+            </ul>
+            <p><strong>Contras:</strong></p>
+            <ul>
+                <li>Clima ventoso (apodo: "Windy Wellington")</li>
+                <li>Ciudad más pequeña que Auckland</li>
+            </ul>
+            <p><strong>Ideal para:</strong> Estudiantes universitarios, creativos, amantes del café</p>
+            
+            <h3>3. Christchurch - La Ciudad Jardín (Isla Sur)</h3>
+            <p><strong>Población:</strong> 390,000</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Ciudad más grande de la Isla Sur</li>
+                <li>Más económica que Auckland</li>
+                <li>Reconstruida post-terremoto (infraestructura moderna)</li>
+                <li>Cerca de montañas para esquiar</li>
+                <li>Ambiente relajado y amigable</li>
+            </ul>
+            <p><strong>Contras:</strong></p>
+            <ul>
+                <li>Menos oportunidades laborales vs Auckland</li>
+                <li>Clima más frío (inviernos con nieve ocasional)</li>
+            </ul>
+            <p><strong>Ideal para:</strong> Balance entre ciudad y naturaleza, costo de vida accesible</p>
+            
+            <h3>4. Queenstown - Capital de Aventura (Isla Sur)</h3>
+            <p><strong>Población:</strong> 17,000</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Capital mundial de deportes extremos</li>
+                <li>Paisajes de ensueño</li>
+                <li>Economía basada en turismo (muchos trabajos)</li>
+                <li>Ambiente internacional y joven</li>
+                <li>Esquí en invierno, aventura en verano</li>
+            </ul>
+            <p><strong>Contras:</strong></p>
+            <ul>
+                <li>Muy turística y cara</li>
+                <li>Población pequeña</li>
+                <li>Menos opciones educativas formales</li>
+            </ul>
+            <p><strong>Ideal para:</strong> Aventureros, temporadas de trabajo en turismo/ski</p>
+            
+            <h3>5. Dunedin - Ciudad Universitaria (Isla Sur)</h3>
+            <p><strong>Población:</strong> 135,000</p>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>Universidad de Otago (mejor universidad de NZ)</li>
+                <li>Ambiente 100% estudiantil</li>
+                <li>Muy económica</li>
+                <li>Arquitectura escocesa hermosa</li>
+                <li>Playa Tunnel Beach espectacular</li>
+            </ul>
+            <p><strong>Contras:</strong></p>
+            <ul>
+                <li>Clima más frío del país</li>
+                <li>Ciudad pequeña y tranquila</li>
+                <li>Menos oportunidades de trabajo part-time</li>
+            </ul>
+            <p><strong>Ideal para:</strong> Universitarios, ambiente estudiantil tradicional</p>
+            
+            <div class="highlight-box">
+                <h4>💡 Nuestra Recomendación por Perfil</h4>
+                <p><strong>Primera vez en el extranjero:</strong> Auckland (más soporte y oportunidades)</p>
+                <p><strong>Presupuesto ajustado:</strong> Christchurch o Wellington</p>
+                <p><strong>Estudios universitarios serios:</strong> Wellington o Dunedin</p>
+                <p><strong>Amante de naturaleza:</strong> Queenstown o Christchurch</p>
+                <p><strong>Balance perfecto:</strong> Wellington o Christchurch</p>
+            </div>
+            
+            <h2 id="programas">Programas de Estudio en Nueva Zelanda</h2>
+            
+            <p>Nueva Zelanda ofrece programas para todos los niveles y objetivos:</p>
+            
+            <h3>1. Cursos de Inglés</h3>
+            <p><strong>Duración:</strong> 4-52 semanas</p>
+            <p><strong>Costo:</strong> $250-350 NZD/semana</p>
+            <p><strong>Opciones:</strong></p>
+            <ul>
+                <li><strong>General English:</strong> Todos los niveles, desde principiante</li>
+                <li><strong>Intensive English:</strong> Más horas de clase diarias</li>
+                <li><strong>IELTS Preparation:</strong> Preparación para certificación</li>
+                <li><strong>Cambridge Preparation:</strong> FCE, CAE, CPE</li>
+                <li><strong>English for Academic Purposes:</strong> Para ingresar a universidad</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h4>⚠️ Requisito para Trabajar 25h/Semana</h4>
+                <p>Tu curso de inglés debe durar <strong>mínimo 14 semanas</strong> para poder trabajar. Cursos más cortos no permiten trabajo.</p>
+            </div>
+            
+            <h3>2. Diplomas y Certificados Técnicos</h3>
+            <p><strong>Duración:</strong> 1-2 años</p>
+            <p><strong>Costo:</strong> $20,000-28,000 NZD/año</p>
+            <p><strong>Sectores populares:</strong></p>
+            <ul>
+                <li><strong>Business & Management:</strong> Negocios, marketing, administración</li>
+                <li><strong>Hospitality & Tourism:</strong> Hotelería, turismo, eventos</li>
+                <li><strong>IT & Digital Media:</strong> Programación, diseño, digital marketing</li>
+                <li><strong>Health & Wellbeing:</strong> Enfermería, cuidado de ancianos, salud</li>
+                <li><strong>Construction:</strong> Carpintería, electricidad, plomería</li>
+                <li><strong>Culinary Arts:</strong> Chef, panadería, pastelería</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>💡 ¿Por Qué los Diplomas Son Tan Buenos?</h4>
+                <p>Los Diplomas en NZ son <strong>extremadamente prácticos</strong> y te preparan directamente para el mercado laboral. Muchos incluyen:</p>
+                <ul>
+                    <li>Prácticas laborales reales</li>
+                    <li>Conexiones con industria</li>
+                    <li>Post-Study Work Visa de 1-3 años</li>
+                    <li>Pathway a residencia permanente si es profesión en Green List</li>
+                </ul>
+            </div>
+            
+            <h3>3. Educación Superior Universitaria</h3>
+            <p><strong>Bachelor's Degree:</strong></p>
+            <ul>
+                <li><strong>Duración:</strong> 3 años (vs 4-5 en otros países)</li>
+                <li><strong>Costo:</strong> $25,000-35,000 NZD/año</li>
+                <li><strong>Post-Study Work Visa:</strong> 3 años</li>
+            </ul>
+            
+            <p><strong>Master's Degree:</strong></p>
+            <ul>
+                <li><strong>Duración:</strong> 1-2 años</li>
+                <li><strong>Costo:</strong> $28,000-40,000 NZD/año</li>
+                <li><strong>Post-Study Work Visa:</strong> 3 años</li>
+                <li><strong>Pareja puede trabajar full-time</strong> con Work Open Visa</li>
+            </ul>
+            
+            <p><strong>PhD:</strong></p>
+            <ul>
+                <li><strong>Duración:</strong> 3-4 años</li>
+                <li><strong>Matrícula:</strong> Similar a estudiantes locales (muy subsidiada)</li>
+                <li><strong>Puedes trabajar ilimitadamente</strong> mientras estudias</li>
+            </ul>
+            
+            <h3>Universidades Destacadas</h3>
+            <ol>
+                <li><strong>University of Auckland</strong> - Top 65 mundial (2025)</li>
+                <li><strong>University of Otago</strong> (Dunedin) - Más antigua del país</li>
+                <li><strong>Victoria University of Wellington</strong> - Excelente para investigación</li>
+                <li><strong>Auckland University of Technology (AUT)</strong> - Enfoque práctico</li>
+                <li><strong>Canterbury University</strong> (Christchurch)</li>
+            </ol>
+            
+            <!-- CTA 3 -->
+            <div class="cta-box">
+                <h3>¿Cuál Programa Es para Ti?</h3>
+                <p>Hablemos y diseñemos tu plan educativo ideal en Nueva Zelanda</p>
+                <a href="#contacto" class="cta-button">Agendar Consulta Gratuita</a>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=1200&h=600&fit=crop" alt="Milford Sound Nueva Zelanda fiordos naturaleza espectacular" class="content-image">
+            
+            <h2 id="residencia">Pathway a Residencia Permanente</h2>
+            
+            <p>Una de las grandes ventajas de estudiar en Nueva Zelanda es que tiene <strong>pathways claros para quedarte</strong> después de estudiar. Aquí te explico cómo:</p>
+            
+            <h3>1. Post-Study Work Visa</h3>
+            <p>Después de graduarte, puedes obtener una visa de trabajo:</p>
+            <ul>
+                <li><strong>Diploma/Certificate (Level 4-6):</strong> 1 año de trabajo</li>
+                <li><strong>Bachelor's Degree:</strong> 3 años de trabajo</li>
+                <li><strong>Master's Degree:</strong> 3 años de trabajo</li>
+                <li><strong>PhD:</strong> 3 años de trabajo</li>
+            </ul>
+            
+            <p>Durante este tiempo trabajas full-time y ganas experiencia neozelandesa.</p>
+            
+            <h3>2. Green List - Fast Track a Residencia</h3>
+            <p>Nueva Zelanda tiene una lista de profesiones con <strong>pathway directo o acelerado</strong> a residencia permanente.</p>
+            
+            <p><strong>Tier 1 (Residencia Inmediata):</strong></p>
+            <ul>
+                <li>Registered nurses</li>
+                <li>Specialist doctors</li>
+                <li>Engineers (varios tipos)</li>
+                <li>Secondary teachers (ciertas áreas)</li>
+            </ul>
+            
+            <p><strong>Tier 2 (Residencia después de 24 meses trabajando):</strong></p>
+            <ul>
+                <li>Chefs</li>
+                <li>Electricians</li>
+                <li>Plumbers</li>
+                <li>Carpenters</li>
+                <li>Aged care workers</li>
+                <li>Early childhood teachers</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>🎯 Ruta Estratégica: Diploma → Trabajo → Residencia</h4>
+                <p><strong>Ejemplo Real:</strong></p>
+                <ol>
+                    <li>Estudias Diploma Level 5-6 en Health & Wellbeing (2 años)</li>
+                    <li>Obtienes Post-Study Work Visa (1-2 años)</li>
+                    <li>Trabajas como healthcare assistant en centro de cuidado de adultos mayores</li>
+                    <li>Después de 24 meses de experiencia → Aplicas a residencia bajo Care Workforce pathway</li>
+                    <li>Residencia permanente aprobada ✅</li>
+                </ol>
+                <p><strong>Tiempo total: 4-5 años desde que llegas a NZ</strong></p>
+            </div>
+            
+            <h3>3. Skilled Migrant Category (SMC)</h3>
+            <p>Sistema de puntos basado en:</p>
+            <ul>
+                <li>Edad (20-39 años = máximo puntaje)</li>
+                <li>Calificación obtenida en NZ (más puntos)</li>
+                <li>Experiencia laboral en NZ</li>
+                <li>Oferta de trabajo calificado</li>
+                <li>Área de estudio (algunas dan más puntos)</li>
+            </ul>
+            
+            <p>Con <strong>160+ puntos</strong> puedes calificar para residencia.</p>
+            
+            <h3>4. Ventajas de la Residencia en Nueva Zelanda</h3>
+            <p>Obtener la residencia permanente te da:</p>
+            <ul>
+                <li>✅ Vivir y trabajar indefinidamente en NZ</li>
+                <li>✅ Acceso a sistema de salud público gratuito</li>
+                <li>✅ Educación pública gratuita para tus hijos</li>
+                <li>✅ Pathway a ciudadanía (después de 5 años de residencia)</li>
+                <li>✅ Poder viajar libremente (visa de NZ permite entrar sin visa a muchos países)</li>
+                <li>✅ Traer familiares bajo Family Category</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>💡 ¿Por Qué Nueva Zelanda Quiere Inmigrantes?</h4>
+                <p>Nueva Zelanda tiene <strong>escasez de mano de obra</strong> en muchos sectores. El gobierno <strong>activamente busca</strong> retener talento internacional educado y capacitado en el país.</p>
+                <p>Por eso existen tantos pathways claros para residencia. Si estudias, trabajas y contribuyes, NZ quiere que te quedes.</p>
+            </div>
+            
+            <h2 id="faq">Preguntas Frecuentes (FAQ)</h2>
+            
+            <div class="faq-item">
+                <h3>¿Puedo estudiar en Nueva Zelanda sin saber inglés?</h3>
+                <p><strong>Sí.</strong> Puedes empezar con curso de inglés desde nivel principiante. No necesitas IELTS ni certificado previo para cursos de inglés general.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Cuánto tiempo tarda la visa?</h3>
+                <p><strong>4-8 semanas</strong> en promedio. Casos rápidos: 2-3 semanas. Casos complejos: 10-12 semanas. Es 100% online.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Puedo trabajar 25h/semana estudiando inglés?</h3>
+                <p><strong>Sí, SI tu curso de inglés dura 14+ semanas.</strong> Cursos más cortos no permiten trabajo. Este cambio a 25h/semana aplica desde noviembre 2025.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Es difícil conseguir trabajo en Nueva Zelanda?</h3>
+                <p><strong>No.</strong> La tasa de desempleo es solo 3.3% y hay demanda de trabajadores. Promedio para primer trabajo: 2-4 semanas. La actitud y entregar CVs en persona funciona muy bien.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Puedo llevar a mi pareja?</h3>
+                <p><strong>Depende de tu programa:</strong> Si estudias Master's o PhD, tu pareja puede venir con Work Open Visa (trabajar full-time). Si estudias inglés o Diploma, tu pareja necesita su propia visa.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Nueva Zelanda es más barato que Australia?</h3>
+                <p><strong>Sí, generalmente.</strong> Costo de vida es 15-20% más bajo que Australia. Salarios también son un poco menores, pero el balance es favorable. Visa de estudiante es más accesible que Australia.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Puedo viajar a Australia con visa de NZ?</h3>
+                <p><strong>No automáticamente.</strong> Necesitas solicitar visa de turista para Australia. PERO, después de vivir 2+ años en NZ con residencia, podrías calificar para Special Category Visa para vivir en Australia.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Necesito vacunas específicas?</h3>
+                <p><strong>No.</strong> Nueva Zelanda no exige vacunas específicas para colombianos. Solo examen médico si tu curso dura más de 12 meses.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Qué tan seguro es Nueva Zelanda?</h3>
+                <p><strong>Extremadamente seguro.</strong> Es el 3er país más pacífico del mundo. Criminalidad muy baja, sociedad acogedora, y cultura de respeto. Es común que estudiantes se sientan más seguros que en Colombia.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>¿Vale la pena estudiar en Nueva Zelanda vs otros destinos?</h3>
+                <p><strong>Sí, especialmente para:</strong> (1) Quienes buscan balance vida-trabajo, (2) Amantes de naturaleza y aventura, (3) Quienes quieren pathway claro a residencia, (4) Presupuestos que prefieren algo más accesible que Australia o UK. El nuevo cambio a 25h/semana lo hace aún más atractivo.</p>
+            </div>
+            
+            <!-- CTA Final -->
+            <div class="cta-box" id="contacto">
+                <h3>¿Listo para Tu Aventura en Nueva Zelanda?</h3>
+                <p>Contáctanos y te ayudamos con todo el proceso de principio a fin</p>
+                <p style="font-size: 1.5rem; margin: 20px 0;">📱 <strong>WhatsApp: 301 4430722</strong></p>
+                <a href="https://wa.me/573014430722?text=Hola,%20quiero%20información%20sobre%20estudiar%20en%20Nueva%20Zelanda" class="cta-button" target="_blank">Escribir por WhatsApp</a>
+            </div>
+            
+            <h2>Conclusión</h2>
+            
+            <p>Estudiar en Nueva Zelanda desde Colombia en 2026 es una decisión excelente, <strong>especialmente ahora con el cambio a 25 horas de trabajo semanales</strong>. Con esta guía completa, tienes toda la información que necesitas para empezar tu proceso.</p>
+            
+            <p><strong>Recuerda los puntos clave:</strong></p>
+            <ul>
+                <li>🎉 AHORA puedes trabajar 25h/semana (desde nov 2025)</li>
+                <li>🏆 3er país más pacífico del mundo</li>
+                <li>💰 Salario mínimo $23.50 NZD/hora</li>
+                <li>🎓 Educación de clase mundial</li>
+                <li>🌄 Paisajes espectaculares</li>
+                <li>🛂 Pathways claros a residencia permanente</li>
+                <li>⚡ Visa 100% online en 4-8 semanas</li>
+            </ul>
+            
+            <p><strong>Tu próximo paso:</strong> Agenda una asesoría gratuita con Navia Global y empecemos a planear tu viaje a la tierra de los kiwis.</p>
+            
+            <p>¡Nos vemos en Nueva Zelanda! 🥝🇳🇿</p>
+            
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>NAVIA GLOBAL</h3>
+            <p>Tu puente al mundo</p>
+            <p style="margin-top: 20px;">📞 301 4430722 | 📧 info@naviaglobal.co | 🌐 naviaglobal.co</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">&copy; 2026 Navia Global. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573014430722?text=Hola,%20quiero%20información%20sobre%20estudiar%20en%20Nueva%20Zelanda" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.163 0 16c0 2.826.736 5.587 2.138 8.024L.05 31.95l8.075-2.05A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.38c-2.42 0-4.78-.656-6.853-1.897l-.492-.291-5.122 1.299 1.324-5.016-.32-.508A13.316 13.316 0 012.62 16c0-7.364 5.997-13.36 13.38-13.36 7.382 0 13.38 5.996 13.38 13.36S23.382 29.38 16 29.38z"/>
+            <path d="M23.338 19.73c-.404-.202-2.388-1.178-2.757-1.312-.37-.135-.638-.202-.908.202-.27.403-1.044 1.312-1.28 1.582-.235.27-.47.304-.874.101-.403-.202-1.703-.628-3.244-2.003-1.2-1.07-2.01-2.391-2.246-2.794-.235-.404-.025-.622.177-.823.182-.181.404-.471.606-.707.202-.236.27-.404.404-.673.135-.27.068-.505-.034-.707-.101-.202-.908-2.186-1.244-2.993-.328-.787-.66-.68-.908-.692-.235-.011-.505-.014-.774-.014s-.707.101-1.077.505c-.37.403-1.413 1.38-1.413 3.367 0 1.986 1.447 3.907 1.65 4.176.201.27 2.843 4.342 6.888 6.088.962.415 1.713.663 2.298.849.966.307 1.845.264 2.54.16.775-.115 2.388-.977 2.724-1.92.337-.944.337-1.751.236-1.92-.101-.17-.37-.27-.774-.473z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
