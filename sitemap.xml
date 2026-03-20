@@ -4,7 +4,7 @@
   <!-- Página Principal -->
   <url>
     <loc>https://naviaglobal.co/</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,17 +12,30 @@
   <!-- Página Índice del Blog -->
   <url>
     <loc>https://naviaglobal.co/blog/</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Artículos de Blog 2026 -->
-  
+
+  <!-- Páginas de destinos principales -->
+  <url>
+    <loc>https://naviaglobal.co/estudiar-alemania-colombia-2026.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://naviaglobal.co/estudiar-francia-colombia-2026.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Australia -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-australia-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,7 +43,7 @@
   <!-- Irlanda -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-irlanda-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,52 +51,52 @@
   <!-- Canadá -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-canada-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Reino Unido -->
-  <url>
-    <loc>https://naviaglobal.co/blog/estudiar-reino-unido-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Nueva Zelanda -->
-  <url>
-    <loc>https://naviaglobal.co/blog/estudiar-nueva-zelanda-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
+
   <!-- Malta -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-malta-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Dubai -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-dubai-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- Nueva Zelanda -->
+  <url>
+    <loc>https://naviaglobal.co/blog/estudiar-nueva-zelanda-colombia-2026.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Reino Unido -->
+  <url>
+    <loc>https://naviaglobal.co/blog/estudiar-reino-unido-colombia-2026.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Estados Unidos -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-estados-unidos-colombia-2026.html</loc>
-    <lastmod>2025-12-09</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Páginas Legales -->
+
+  <!-- Páginas legales -->
   <url>
     <loc>https://naviaglobal.co/terminos-y-condiciones</loc>
     <lastmod>2025-11-07</lastmod>
