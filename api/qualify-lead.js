@@ -35,12 +35,9 @@ export default async function handler(req, res) {
   try {
     const lead = extractLeadData(req.body);
     console.log('[Navia Lead]', JSON.stringify(lead));
-
     const cal = await calificarConClaude(lead);
     console.log('[Calificacion]', JSON.stringify(cal));
-
     await enviarEmail(lead, cal);
-
     return res.status(200).json({ ok: true, etapa: cal.etapa, destino: cal.destino_detectado });
   } catch (err) {
     console.error('[Error qualify-lead]', err);
@@ -71,7 +68,6 @@ async function calificarConClaude(lead) {
     headers: { 'Content-Type': 'application/json', 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
     body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 1024, messages: [{ role: 'user', content: prompt }] }),
   });
-
   if (!r.ok) throw new Error(`Claude API ${r.status}: ${await r.text()}`);
   const data = await r.json();
   const parsed = JSON.parse(data.content[0]?.text.replace(/```json|```/g, '').trim() || '{}');
@@ -94,9 +90,8 @@ async function enviarEmail(lead, cal) {
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: 'Navia Lead Agent <leads@naviaglobal.co>', to: [NAVIA_EMAIL], subject: `${prioEmoji} Lead ${(cal.prioridad||'').toUpperCase()} — ${lead.nombre} · ${destino}`, html }),
+    body: JSON.stringify({ from: 'Navia Lead Agent <onboarding@resend.dev>', to: [NAVIA_EMAIL], subject: `${prioEmoji} Lead ${(cal.prioridad||'').toUpperCase()} — ${lead.nombre} · ${destino}`, html }),
   });
-
   if (!r.ok) throw new Error(`Resend ${r.status}: ${await r.text()}`);
   return r.json();
 }
