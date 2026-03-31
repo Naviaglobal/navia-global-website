@@ -124,8 +124,14 @@
             .content h2 { font-size: 1.6rem; }
         }
     </style>
+
+    <!-- Blog Enhanced CSS -->
+    <link rel="stylesheet" href="/blog/blog-enhanced.css">
 </head>
 <body>
+    <div id="reading-progress"></div>
+    <a href="#" id="back-to-top" aria-label="Volver arriba">↑</a>
+
 
     <!-- Header -->
     <header class="header">
@@ -1116,5 +1122,12 @@
         </svg>
     </a>
 
+
+    <script>
+        const _bar=document.getElementById('reading-progress'),_top=document.getElementById('back-to-top');
+        window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;if(_bar)_bar.style.width=(s/h*100)+'%';if(_top)_top.classList.toggle('visible',s>400);});
+        if(_top)_top.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+        document.querySelectorAll('.content-image,.section-image,.hero-image').forEach(function(img){if(!img.getAttribute('loading'))img.setAttribute('loading','lazy');});
+    </script>
 </body>
 </html>
