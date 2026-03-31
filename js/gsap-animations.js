@@ -250,9 +250,29 @@ function initResponsiveAnimations() {
   );
 }
 
-// ─── INICIO ───────────────────────────────────────────────────────────────────────────
+// ─── INICIO ─────────────────────────────────────────────────────────────────────────────────
+// Script tiene defer → DOM ya está parseado cuando se ejecuta, no hay que esperar DOMContentLoaded
 
-document.addEventListener("DOMContentLoaded", () => {
+function safeInit() {
   initResponsiveAnimations();
-  window.addEventListener("load", () => ScrollTrigger.refresh());
-});
+  // Refrescar ScrollTrigger cuando las imágenes terminen de cargar (layout final)
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+    // Fallback de seguridad: si algún elemento quedó en opacity:0, lo liberamos
+    setTimeout(() => {
+      document.querySelectorAll('.hero-cta, .hero-badge, .hero-content h1, .hero-content > p, .hero-flags img, .trust-badge, .stat-item, .section-title, .section-subtitle').forEach(el => {
+        if (window.getComputedStyle(el).opacity === '0') {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      });
+    }, 2500);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInit);
+} else {
+  // DOM ya listo (defer ejecutó después de parseo)
+  safeInit();
+}
