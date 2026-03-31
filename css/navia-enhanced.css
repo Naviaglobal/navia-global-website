@@ -284,3 +284,204 @@ footer, .footer { background: linear-gradient(160deg, var(--navy-dark) 0%, var(-
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
+
+
+/* ═══════════════════════════════════════════════════
+   PROCESO — Pasos del servicio
+   ═══════════════════════════════════════════════════ */
+.proceso-section {
+  padding: 80px 0;
+  background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 60%, #f0fdf8 100%);
+}
+.proceso-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+.proceso-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+.proceso-step {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(27,58,107,0.08);
+  border: 1.5px solid #e8f0fe;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.proceso-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(27,58,107,0.14);
+  border-color: var(--green);
+}
+.step-number {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--navy), var(--green));
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+.step-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-top: 12px;
+}
+.proceso-step h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+.proceso-step p {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.55;
+  margin: 0;
+}
+.proceso-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--green);
+  font-weight: 700;
+  padding: 0 8px;
+  margin-top: 60px;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .proceso-steps { flex-direction: column; align-items: center; }
+  .proceso-connector { transform: rotate(90deg); margin: -4px 0; }
+  .proceso-step { max-width: 320px; width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════
+   TESTIMONIOS
+   ═══════════════════════════════════════════════════ */
+.testimonios-section {
+  padding: 80px 0;
+  background: var(--navy);
+}
+.testimonios-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+.testimonios-section .section-title {
+  color: white !important;
+}
+.testimonios-section .section-subtitle {
+  color: rgba(255,255,255,0.75) !important;
+}
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+.testimonio-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 32px 28px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.testimonio-card::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-size: 5rem;
+  color: var(--green);
+  font-family: Georgia, serif;
+  line-height: 0.8;
+  opacity: 0.5;
+}
+.testimonio-card:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--green);
+  transform: translateY(-4px);
+}
+.testimonio-stars {
+  color: #F59E0B;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.testimonio-texto {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonio-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--navy-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: white;
+  flex-shrink: 0;
+}
+.testimonio-autor strong {
+  display: block;
+  color: white;
+  font-size: 0.9rem;
+}
+.testimonio-autor span {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+.testimonios-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+.testimonios-trust span:first-child { color: #F59E0B; }
+@media (max-width: 768px) {
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .testimonios-container { padding: 0 20px; }
+  .proceso-container { padding: 0 20px; }
+}
