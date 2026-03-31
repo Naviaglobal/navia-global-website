@@ -6,24 +6,7 @@
     <!-- Cambios: Enlaces del blog corregidos, URLs alineadas con sitemap -->
     <meta charset="UTF-8">
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1941742975996934');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1941742975996934&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code — cargado después del render para no bloquear -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags OPTIMIZADO -->
@@ -48,8 +31,21 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preconnect hints para recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://flagcdn.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+
+    <!-- Google Fonts con display=swap para no bloquear render -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Preload imagen hero crítica -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=70&fm=webp&auto=format" fetchpriority="high">
+
+    <!-- CSS de mejoras visuales Navia Enhanced -->
+    <link rel="stylesheet" href="/css/navia-enhanced.css">
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script>
@@ -2572,10 +2568,12 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=90');"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&q=90');"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1920&q=90');"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90');"></div>
+            <!-- Slide 1: carga inmediata, WebP q=70 -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&q=70&fm=webp&auto=format');"></div>
+            <!-- Slides 2-4: lazy-loaded por JS al activarse por primera vez -->
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&q=65&fm=webp&auto=format"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1549918864-48ac978761a4?w=1920&q=65&fm=webp&auto=format"></div>
+            <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=65&fm=webp&auto=format"></div>
         </div>
         
         <div class="hero-nav hero-nav-prev" onclick="changeSlide(-1)">‹</div>
@@ -4082,7 +4080,40 @@
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document -->
-<script src="/js/lead-agent.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="/js/gsap-animations.js"></script>
+<script src="/js/lead-agent.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="/js/gsap-animations.js" defer></script>
+
+<!-- Lazy-load slides hero 2-4 + Facebook Pixel diferido -->
+<script>
+(function() {
+  function loadSlide(slide) {
+    if (slide && slide.dataset.bg && !slide.style.backgroundImage) {
+      slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+    }
+  }
+  var lazySlides = document.querySelectorAll('.hero-slide[data-bg]');
+  if (window.MutationObserver && lazySlides.length) {
+    var obs = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.target.classList.contains('active')) loadSlide(m.target);
+      });
+    });
+    lazySlides.forEach(function(s) { obs.observe(s, { attributes: true, attributeFilter: ['class'] }); });
+  }
+  function loadFBPixel() {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1941742975996934');fbq('track','PageView');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(loadFBPixel, 3000); });
+  } else {
+    setTimeout(loadFBPixel, 3000);
+  }
+})();
+</script>
