@@ -244,3 +244,43 @@ footer, .footer { background: linear-gradient(160deg, var(--navy-dark) 0%, var(-
 .logo-item a {
   text-decoration: none !important;
 }
+
+
+/* ═══════════════════════════════════════════════════
+   WHATSAPP FLOAT — Tooltip
+   ═══════════════════════════════════════════════════ */
+.whatsapp-float[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: #1B3A6B;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(27,58,107,0.25);
+}
+.whatsapp-float[data-tooltip]::after {
+  content: '';
+  position: absolute;
+  right: calc(100% + 4px);
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1B3A6B;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.whatsapp-float[data-tooltip]:hover::before,
+.whatsapp-float[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
