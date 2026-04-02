@@ -185,9 +185,10 @@ function initNavbarAnimation() {
   const navbar = document.querySelector(".navbar");
   if (!navbar) return;
 
-  // Entrada suave al cargar (complementa el CSS existente)
+  // Entrada suave al cargar: solo deslizar desde arriba, sin fade de opacidad
+  // (opacity:0 causaba que el navbar quedara invisible si el tween no progresaba)
   gsap.from(navbar, {
-    y: -80, opacity: 0, duration: 0.7, ease: EASE_SMOOTH, delay: 0.1
+    y: -60, duration: 0.6, ease: EASE_SMOOTH, delay: 0.05
   });
 
   // Indicador de progreso de lectura en la barra de nav
@@ -271,7 +272,7 @@ function safeInit() {
   // Refrescar ScrollTrigger cuando las imágenes terminen de cargar (layout final)
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
-    // Fallback rápido a 800ms — cubre navbar + todos los elementos animados por GSAP
+    // Fallback rápido a 900ms — mata tweens atascados y fuerza visibilidad
     setTimeout(() => {
       document.querySelectorAll(
         '.navbar, .hero-cta, .hero-badge, .hero-content h1, .hero-content > p, ' +
@@ -280,11 +281,12 @@ function safeInit() {
         '.por-que-container > *, .blog-card'
       ).forEach(el => {
         if (window.getComputedStyle(el).opacity === '0') {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
+          // Matar tweens activos para que GSAP no sobreescriba el fix
+          gsap.killTweensOf(el);
+          gsap.set(el, { opacity: 1, y: 0, x: 0, scale: 1 });
         }
       });
-    }, 800);
+    }, 900);
   });
 }
 
