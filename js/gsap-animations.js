@@ -6,14 +6,14 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ─── UTILIDADES ─────────────────────────────────────────────
+// ─── UTILIDADES ───────────────────────────────────────────────────────────────
 
 // Configuración global de easing para coherencia visual
 const EASE_SMOOTH   = "power3.out";
 const EASE_BOUNCE   = "back.out(1.4)";
 const EASE_ELEGANT  = "power2.inOut";
 
-// ─── 1. HERO — ENTRADA CINEMATOGRÁFICA ──────────────────────────────────────
+// ─── 1. HERO — ENTRADA CINEMATOGRÁFICA ────────────────────────────────────────
 // Secuencia ordenada: badge → título → subtítulo → banderas → CTA → trust badges
 
 function initHeroAnimation() {
@@ -46,12 +46,13 @@ function initHeroAnimation() {
       }, 1.5);
 }
 
-// ─── 2. SECCIÓN DE DESTINOS — CARDS CON SCROLL ──────────────────────────────
+// ─── 2. SECCIÓN DE DESTINOS — CARDS CON SCROLL ────────────────────────────────
 
 function initDestinosAnimation() {
   const cards = document.querySelectorAll(".destino-card");
   if (!cards.length) return;
 
+  // Título y subtítulo de la sección
   gsap.from(".destinos .section-title", {
     opacity: 0, y: 50, duration: 0.8, ease: EASE_SMOOTH,
     scrollTrigger: {
@@ -70,6 +71,7 @@ function initDestinosAnimation() {
     }
   });
 
+  // Cards en lote — aparecen en grupos al hacer scroll
   ScrollTrigger.batch(".destino-card", {
     onEnter: (batch) => {
       gsap.from(batch, {
@@ -81,12 +83,12 @@ function initDestinosAnimation() {
         stagger: 0.12,
       });
     },
-    start: "top 88%",
+    start: "top 110%",
     once: true,
   });
 }
 
-// ─── 3. ESTADÍSTICAS — CONTADOR ANIMADO ─────────────────────────────────────
+// ─── 3. ESTADÍSTICAS — CONTADOR ANIMADO ───────────────────────────────────────
 
 function initStatsAnimation() {
   const stats = document.querySelector(".stats");
@@ -105,9 +107,10 @@ function initStatsAnimation() {
     }
   });
 
+  // Animación de conteo para cada número
   document.querySelectorAll(".stat-number").forEach((el) => {
     const text   = el.textContent.trim();
-    const suffix = text.replace(/[\d.]/g, "");
+    const suffix = text.replace(/[\d.]/g, ""); // extrae "+", "%", etc.
     const value  = parseFloat(text);
     if (isNaN(value)) return;
 
@@ -123,6 +126,7 @@ function initStatsAnimation() {
           duration: 2,
           ease: "power1.out",
           onUpdate() {
+            // Mostrar decimales si el valor original los tiene
             const display = Number.isInteger(value)
               ? Math.round(obj.val)
               : obj.val.toFixed(1);
@@ -137,6 +141,7 @@ function initStatsAnimation() {
 // ─── 4. SECCIONES GENERALES — FADE-IN AL HACER SCROLL ─────────────────────────
 
 function initSectionAnimations() {
+  // Títulos y subtítulos globales
   gsap.utils.toArray(".section-title:not(.destinos .section-title)").forEach((el) => {
     gsap.from(el, {
       opacity: 0, y: 45, duration: 0.8, ease: EASE_SMOOTH,
@@ -151,6 +156,7 @@ function initSectionAnimations() {
     });
   });
 
+  // Sección "¿Por qué Navia Global?"
   ScrollTrigger.batch(".por-que-container > *", {
     onEnter: (batch) => {
       gsap.from(batch, {
@@ -161,6 +167,7 @@ function initSectionAnimations() {
     once: true,
   });
 
+  // Blog cards
   ScrollTrigger.batch(".blog-card", {
     onEnter: (batch) => {
       gsap.from(batch, {
@@ -172,16 +179,18 @@ function initSectionAnimations() {
   });
 }
 
-// ─── 5. NAVBAR — EFECTO AL HACER SCROLL ─────────────────────────────────────
+// ─── 5. NAVBAR — EFECTO AL HACER SCROLL ───────────────────────────────────────
 
 function initNavbarAnimation() {
   const navbar = document.querySelector(".navbar");
   if (!navbar) return;
 
+  // Entrada suave al cargar (complementa el CSS existente)
   gsap.from(navbar, {
     y: -80, opacity: 0, duration: 0.7, ease: EASE_SMOOTH, delay: 0.1
   });
 
+  // Indicador de progreso de lectura en la barra de nav
   const progressBar = document.createElement("div");
   progressBar.style.cssText = `
     position: fixed; top: 0; left: 0; height: 3px; width: 0%;
@@ -200,9 +209,10 @@ function initNavbarAnimation() {
   });
 }
 
-// ─── 6. BOTONES CTA — PULSO SUAVE ──────────────────────────────────────────
+// ─── 6. BOTONES CTA — PULSO SUAVE ─────────────────────────────────────────────
 
 function initCTAPulse() {
+  // Pulso muy sutil en el botón principal para llamar la atención
   const ctaButtons = document.querySelectorAll(".btn-primary, .nav-cta");
   ctaButtons.forEach((btn) => {
     gsap.to(btn, {
@@ -215,10 +225,11 @@ function initCTAPulse() {
   });
 }
 
-// ─── 7. SOPORTE REDUCED-MOTION (ACCESIBILIDAD) ─────────────────────────────
+// ─── 7. SOPORTE REDUCED-MOTION (ACCESIBILIDAD) ────────────────────────────────
 
 function initResponsiveAnimations() {
   gsap.matchMedia().add(
+    // Animaciones normales (usuarios sin preferencia de movimiento reducido)
     "(prefers-reduced-motion: no-preference)",
     () => {
       initHeroAnimation();
@@ -231,8 +242,10 @@ function initResponsiveAnimations() {
   );
 
   gsap.matchMedia().add(
+    // Versión mínima para usuarios que prefieren menos movimiento
     "(prefers-reduced-motion: reduce)",
     () => {
+      // Solo revelar sin mover (fade simple, sin transforms)
       gsap.utils.toArray([
         ".hero-content",
         ".destino-card",
@@ -245,12 +258,12 @@ function initResponsiveAnimations() {
           scrollTrigger: { trigger: el, start: "top 90%", once: true }
         });
       });
-      initStatsAnimation();
+      initStatsAnimation(); // contadores sí están bien para reduced-motion
     }
   );
 }
 
-// ─── INICIO ─────────────────────────────────────────────────────────────────────────────────
+// ─── INICIO ───────────────────────────────────────────────────────────────────
 // Script tiene defer → DOM ya está parseado cuando se ejecuta, no hay que esperar DOMContentLoaded
 
 function safeInit() {
@@ -258,15 +271,20 @@ function safeInit() {
   // Refrescar ScrollTrigger cuando las imágenes terminen de cargar (layout final)
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
-    // Fallback de seguridad: si algún elemento quedó en opacity:0, lo liberamos
+    // Fallback rápido a 800ms — cubre navbar + todos los elementos animados por GSAP
     setTimeout(() => {
-      document.querySelectorAll('.hero-cta, .hero-badge, .hero-content h1, .hero-content > p, .hero-flags img, .trust-badge, .stat-item, .section-title, .section-subtitle').forEach(el => {
+      document.querySelectorAll(
+        '.navbar, .hero-cta, .hero-badge, .hero-content h1, .hero-content > p, ' +
+        '.hero-flags img, .trust-badge, .stat-item, .section-title, .section-subtitle, ' +
+        '.destino-card, .proceso-step, .testimonio-card, .blog-preview-card, ' +
+        '.por-que-container > *, .blog-card'
+      ).forEach(el => {
         if (window.getComputedStyle(el).opacity === '0') {
           el.style.opacity = '1';
           el.style.transform = 'none';
         }
       });
-    }, 2500);
+    }, 800);
   });
 }
 
