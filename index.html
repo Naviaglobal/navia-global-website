@@ -2075,26 +2075,38 @@
 
         .logo-item a {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
             height: 100%;
             text-decoration: none;
+            gap: 6px;
         }
 
         .logo-item img {
-            max-width: 180px;
-            max-height: 70px;
+            max-width: 160px;
+            max-height: 60px;
             width: auto;
             height: auto;
-            filter: grayscale(100%);
-            opacity: 0.7;
+            filter: grayscale(80%);
+            opacity: 0.75;
             transition: all 0.3s ease;
+            object-fit: contain;
         }
 
         .logo-item:hover img {
             filter: grayscale(0%);
             opacity: 1;
+        }
+
+        .logo-item .badge-name {
+            display: block;
+            font-size: 0.72rem;
+            color: #555;
+            text-align: center;
+            margin-top: 4px;
+            font-weight: 600;
         }
 
         /* ========== POR QUÉ NOSOTROS ========== */
@@ -3001,29 +3013,51 @@
         <div class="logos-carousel-container">
             <div class="logos-carousel">
                 <!-- ── AUSTRALIA ── -->
-                <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">OHC</span></div></a></div>
-                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">Original Campus</span></div></a></div>
-                <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">Native English</span></div></a></div>
-                <div class="logo-item"><a href="https://ail.com.au/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">AIL Australia</span></div></a></div>
-                <div class="logo-item"><a href="https://elsis.edu.au/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">ELSIS</span></div></a></div>
-                <div class="logo-item"><a href="https://www.ilsc.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">ILSC</span></div></a></div>
+                <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ohcenglish.com" alt="OHC English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ohcenglish.com&sz=64'"><span class="badge-name">OHC</span></a></div>
+                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/originalcampus.com.au" alt="Original Campus" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=originalcampus.com.au&sz=64'"><span class="badge-name">Original Campus</span></a></div>
+                <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nativeenglish.com.au" alt="Native English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nativeenglish.com.au&sz=64'"><span class="badge-name">Native English</span></a></div>
+                <div class="logo-item"><a href="https://ail.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ail.com.au" alt="AIL Australia" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ail.com.au&sz=64'"><span class="badge-name">AIL Australia</span></a></div>
+                <div class="logo-item"><a href="https://elsis.edu.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/elsis.edu.au" alt="ELSIS" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=elsis.edu.au&sz=64'"><span class="badge-name">ELSIS</span></a></div>
+                <div class="logo-item"><a href="https://www.ilsc.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ilsc.com" alt="ILSC" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ilsc.com&sz=64'"><span class="badge-name">ILSC</span></a></div>
                 <!-- ── NUEVA ZELANDA ── -->
-                <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇳🇿</span><span class="badge-name">Worldwide</span></div></a></div>
-                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇳🇿</span><span class="badge-name">NZCL</span></div></a></div>
-                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇳🇿</span><span class="badge-name">Whitecliff</span></div></a></div>
-                <div class="logo-item"><a href="https://www.lsnz.co.nz/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇳🇿</span><span class="badge-name">LSNZ</span></div></a></div>
+                <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/worldwideschool.ac.nz" alt="Worldwide School" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=worldwideschool.ac.nz&sz=64'"><span class="badge-name">Worldwide</span></a></div>
+                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nzcl.ac.nz" alt="NZCL" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nzcl.ac.nz&sz=64'"><span class="badge-name">NZCL</span></a></div>
+                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/whitecliff.ac.nz" alt="Whitecliff" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=whitecliff.ac.nz&sz=64'"><span class="badge-name">Whitecliff</span></a></div>
+                <div class="logo-item"><a href="https://www.lsnz.co.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/lsnz.co.nz" alt="LSNZ" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=lsnz.co.nz&sz=64'"><span class="badge-name">LSNZ</span></a></div>
                 <!-- ── IRLANDA ── -->
-                <div class="logo-item"><a href="https://ohcenglish.com/ireland/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">OHC Ireland</span></div></a></div>
-                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">Babel</span></div></a></div>
-                <div class="logo-item"><a href="https://www.ces-schools.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">CES</span></div></a></div>
-                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">Galway</span></div></a></div>
-                <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">ISE Ireland</span></div></a></div>
-                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇮🇪</span><span class="badge-name">Limerick LC</span></div></a></div>
+                <div class="logo-item"><a href="https://ohcenglish.com/ireland/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ohcenglish.com" alt="OHC Ireland" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ohcenglish.com&sz=64'"><span class="badge-name">OHC Ireland</span></a></div>
+                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/babeldublin.ie" alt="Babel Dublin" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=babeldublin.ie&sz=64'"><span class="badge-name">Babel</span></a></div>
+                <div class="logo-item"><a href="https://www.ces-schools.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ces-schools.com" alt="CES" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ces-schools.com&sz=64'"><span class="badge-name">CES</span></a></div>
+                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/galwayculturalcentre.ie" alt="Galway" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=galwayculturalcentre.ie&sz=64'"><span class="badge-name">Galway</span></a></div>
+                <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/iseireland.ie" alt="ISE Ireland" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=iseireland.ie&sz=64'"><span class="badge-name">ISE Ireland</span></a></div>
+                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/limericklanguagecentre.com" alt="Limerick LC" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=limericklanguagecentre.com&sz=64'"><span class="badge-name">Limerick LC</span></a></div>
                 <!-- ── MALTA ── -->
-                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇲🇹</span><span class="badge-name">Clubclass</span></div></a></div>
-                <div class="logo-item"><a href="https://www.bsceducation.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇲🇹</span><span class="badge-name">BCS Education</span></div></a></div>
-                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇲🇹</span><span class="badge-name">IH Malta</span></div></a></div>
-                <div class="logo-item"><a href="https://nsts.org/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇲🇹</span><span class="badge-name">NSTS English</span></div></a></div>
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/clubclass.com" alt="Clubclass" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=clubclass.com&sz=64'"><span class="badge-name">Clubclass</span></a></div>
+                <div class="logo-item"><a href="https://www.bsceducation.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/bsceducation.com" alt="BCS Education" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=bsceducation.com&sz=64'"><span class="badge-name">BCS Education</span></a></div>
+                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ihmalta.com" alt="IH Malta" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ihmalta.com&sz=64'"><span class="badge-name">IH Malta</span></a></div>
+                <div class="logo-item"><a href="https://nsts.org/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nsts.org" alt="NSTS English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nsts.org&sz=64'"><span class="badge-name">NSTS English</span></a></div>
+
+                <!-- ── Segunda vuelta para scroll infinito ── -->
+                <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ohcenglish.com" alt="OHC English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ohcenglish.com&sz=64'"><span class="badge-name">OHC</span></a></div>
+                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/originalcampus.com.au" alt="Original Campus" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=originalcampus.com.au&sz=64'"><span class="badge-name">Original Campus</span></a></div>
+                <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nativeenglish.com.au" alt="Native English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nativeenglish.com.au&sz=64'"><span class="badge-name">Native English</span></a></div>
+                <div class="logo-item"><a href="https://ail.com.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ail.com.au" alt="AIL Australia" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ail.com.au&sz=64'"><span class="badge-name">AIL Australia</span></a></div>
+                <div class="logo-item"><a href="https://elsis.edu.au/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/elsis.edu.au" alt="ELSIS" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=elsis.edu.au&sz=64'"><span class="badge-name">ELSIS</span></a></div>
+                <div class="logo-item"><a href="https://www.ilsc.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ilsc.com" alt="ILSC" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ilsc.com&sz=64'"><span class="badge-name">ILSC</span></a></div>
+                <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/worldwideschool.ac.nz" alt="Worldwide School" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=worldwideschool.ac.nz&sz=64'"><span class="badge-name">Worldwide</span></a></div>
+                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nzcl.ac.nz" alt="NZCL" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nzcl.ac.nz&sz=64'"><span class="badge-name">NZCL</span></a></div>
+                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/whitecliff.ac.nz" alt="Whitecliff" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=whitecliff.ac.nz&sz=64'"><span class="badge-name">Whitecliff</span></a></div>
+                <div class="logo-item"><a href="https://www.lsnz.co.nz/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/lsnz.co.nz" alt="LSNZ" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=lsnz.co.nz&sz=64'"><span class="badge-name">LSNZ</span></a></div>
+                <div class="logo-item"><a href="https://ohcenglish.com/ireland/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ohcenglish.com" alt="OHC Ireland" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ohcenglish.com&sz=64'"><span class="badge-name">OHC Ireland</span></a></div>
+                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/babeldublin.ie" alt="Babel Dublin" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=babeldublin.ie&sz=64'"><span class="badge-name">Babel</span></a></div>
+                <div class="logo-item"><a href="https://www.ces-schools.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ces-schools.com" alt="CES" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ces-schools.com&sz=64'"><span class="badge-name">CES</span></a></div>
+                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/galwayculturalcentre.ie" alt="Galway" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=galwayculturalcentre.ie&sz=64'"><span class="badge-name">Galway</span></a></div>
+                <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/iseireland.ie" alt="ISE Ireland" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=iseireland.ie&sz=64'"><span class="badge-name">ISE Ireland</span></a></div>
+                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/limericklanguagecentre.com" alt="Limerick LC" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=limericklanguagecentre.com&sz=64'"><span class="badge-name">Limerick LC</span></a></div>
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/clubclass.com" alt="Clubclass" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=clubclass.com&sz=64'"><span class="badge-name">Clubclass</span></a></div>
+                <div class="logo-item"><a href="https://www.bsceducation.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/bsceducation.com" alt="BCS Education" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=bsceducation.com&sz=64'"><span class="badge-name">BCS Education</span></a></div>
+                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/ihmalta.com" alt="IH Malta" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=ihmalta.com&sz=64'"><span class="badge-name">IH Malta</span></a></div>
+                <div class="logo-item"><a href="https://nsts.org/" target="_blank" rel="noopener"><img src="https://logo.clearbit.com/nsts.org" alt="NSTS English" loading="lazy" onerror="this.src='https://www.google.com/s2/favicons?domain=nsts.org&sz=64'"><span class="badge-name">NSTS English</span></a></div>
                 <!-- ── Segunda vuelta scroll infinito ── -->
                 <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">OHC</span></div></a></div>
                 <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><div class="school-badge"><span class="badge-flag">🇦🇺</span><span class="badge-name">Original Campus</span></div></a></div>
