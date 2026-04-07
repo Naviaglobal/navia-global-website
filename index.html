@@ -84,12 +84,12 @@
             background: white;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             z-index: 1000;
-            padding: 20px 0;
+            padding: 10px 0;
             transition: all 0.3s ease;
         }
 
         .navbar.scrolled {
-            padding: 15px 0;
+            padding: 8px 0;
             box-shadow: 0 4px 30px rgba(0,0,0,0.12);
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
@@ -129,10 +129,11 @@
         }
 
         .logo-name {
-            font-size: 2rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: #1B4B8C;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
+            white-space: nowrap;
         }
 
         .logo-tagline {
@@ -2476,6 +2477,110 @@
                 font-size: 1.1rem !important;
             }
         }
+        /* ========== TESTIMONIOS ========== */
+        .testimonios-section {
+            background: linear-gradient(135deg, #1B4B8C 0%, #0d2d5e 100%);
+            padding: 80px 0;
+        }
+        .testimonios-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .testimonios-section .section-title {
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .testimonios-section .section-subtitle {
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 50px;
+        }
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .testimonio-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+        }
+        .testimonio-stars {
+            color: #f39c12;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        .testimonio-texto {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            font-style: italic;
+            flex: 1;
+            margin: 0;
+        }
+        .testimonio-autor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: auto;
+        }
+        .testimonio-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1ABC9C, #1B4B8C);
+            color: white;
+            font-weight: 800;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .testimonio-autor strong {
+            display: block;
+            color: #1B4B8C;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .testimonio-autor span {
+            color: #777;
+            font-size: 0.78rem;
+        }
+        .testimonios-trust {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @media (max-width: 768px) {
+            .testimonios-grid { grid-template-columns: 1fr; }
+            .testimonios-section .section-title { font-size: 1.5rem; }
+            .testimonios-container { padding: 0 20px; }
+        }
+
     </style>
 
     <!-- Schema Markup (Datos Estructurados) -->
@@ -3023,7 +3128,7 @@
 
     <!-- INSTITUCIONES CON CARRUSEL ANIMADO -->
     <section class="instituciones-section">
-        <h3>✨ Convenios con +20 Instituciones Reconocidas Mundialmente</h3>
+        <h3>✨ Convenios con +300 Instituciones Reconocidas Mundialmente</h3>
         <div class="logos-carousel-container">
             <div class="logos-carousel">
                 <!-- ── AUSTRALIA 🇦🇺 ── -->
