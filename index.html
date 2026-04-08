@@ -2059,7 +2059,7 @@
 
         .logo-item {
             flex: 0 0 175px;
-            height: 115px;
+            height: 130px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2086,7 +2086,9 @@
             width: 100%;
             height: 100%;
             text-decoration: none;
-            gap: 6px;
+            gap: 8px;
+            overflow: hidden;
+            padding-bottom: 2px;
         }
 
         /* Logo real de escuela con fallback CSS */
@@ -2109,19 +2111,20 @@
 
         /* Avatar CSS de escuela — fallback si imagen no carga */
         .school-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: white;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         /* Colores por país */
@@ -2138,16 +2141,16 @@
         /* Nombre debajo del avatar */
         .logo-item .badge-name {
             display: block;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: #333;
             text-align: center;
-            margin-top: 7px;
+            margin-top: 6px;
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.2;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 155px;
+            max-width: 160px;
         }
 
                 /* ========== POR QUÉ NOSOTROS ========== */
@@ -3159,48 +3162,48 @@
             <div class="logos-carousel">
                 <!-- ── AUSTRALIA 🇦🇺 ── -->
                 <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><img src="https://www.ohcenglish.com/themes/ohc/img/ohc_logo.png" class="school-logo-img" alt="OHC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">OHC</div><span class="badge-name">🇦🇺 OHC</span></a></div>
-                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/originalcampus.com.au.ico" class="school-logo-img" alt="OC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">OC</div><span class="badge-name">🇦🇺 Original Campus</span></a></div>
+                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><div class="school-avatar" data-country="AU">OC</div><span class="badge-name">🇦🇺 Original Campus</span></a></div>
                 <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://nativeenglish.com.au/wp-content/uploads/2020/10/Logos-Native-trasparent-2.png" class="school-logo-img" alt="NE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">NE</div><span class="badge-name">🇦🇺 Native English</span></a></div>
                 <div class="logo-item"><a href="https://ail.com.au/" target="_blank" rel="noopener"><img src="https://www.ail.com.au/wp-content/uploads/2018/06/ai-learning-logo.png" class="school-logo-img" alt="AIL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">AIL</div><span class="badge-name">🇦🇺 AIL Australia</span></a></div>
                 <div class="logo-item"><a href="https://elsis.edu.au/" target="_blank" rel="noopener"><img src="https://www.elsis.edu.au/wp-content/uploads/2025/03/logo.webp" class="school-logo-img" alt="ELSIS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">ELS</div><span class="badge-name">🇦🇺 ELSIS</span></a></div>
                 <div class="logo-item"><a href="https://www.ilsc.com/" target="_blank" rel="noopener"><img src="https://www.ilsc.com/hubfs/Language%20School-Color-Logo-Horizontal.svg" class="school-logo-img" alt="ILSC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">ILSC</div><span class="badge-name">🇦🇺 ILSC</span></a></div>
                 <!-- ── NUEVA ZELANDA 🇳🇿 ── -->
                 <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://worldwideschool.ac.nz/wp-content/uploads/2024/06/wwse.svg" class="school-logo-img" alt="Worldwide" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">WW</div><span class="badge-name">🇳🇿 Worldwide</span></a></div>
-                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/nzcl.ac.nz.ico" class="school-logo-img" alt="NZCL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">NZCL</div><span class="badge-name">🇳🇿 NZCL</span></a></div>
-                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/whitecliff.ac.nz.ico" class="school-logo-img" alt="Whitecliff" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">WC</div><span class="badge-name">🇳🇿 Whitecliff</span></a></div>
+                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><div class="school-avatar" data-country="NZ">NZCL</div><span class="badge-name">🇳🇿 NZCL</span></a></div>
+                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><div class="school-avatar" data-country="NZ">WC</div><span class="badge-name">🇳🇿 Whitecliff</span></a></div>
                 <div class="logo-item"><a href="https://www.lsnz.co.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/lsnz.co.nz.ico" class="school-logo-img" alt="LSNZ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">LSNZ</div><span class="badge-name">🇳🇿 LSNZ</span></a></div>
                 <!-- ── IRLANDA 🇮🇪 ── -->
                 <div class="logo-item"><a href="https://ohcenglish.com/ireland/" target="_blank" rel="noopener"><img src="https://www.ohcenglish.com/themes/ohc/img/ohc_logo.png" class="school-logo-img" alt="OHC Ireland" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">OHC</div><span class="badge-name">🇮🇪 OHC Ireland</span></a></div>
-                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/babeldublin.ie.ico" class="school-logo-img" alt="Babel Dublin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">BDL</div><span class="badge-name">🇮🇪 Babel Dublin</span></a></div>
+                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">BDL</div><span class="badge-name">🇮🇪 Babel Dublin</span></a></div>
                 <div class="logo-item"><a href="https://www.ces-schools.com/" target="_blank" rel="noopener"><img src="https://ces-schools.com/themes/custom/misti/logo.svg" class="school-logo-img" alt="CES" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">CES</div><span class="badge-name">🇮🇪 CES</span></a></div>
-                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/galwayculturalcentre.ie.ico" class="school-logo-img" alt="Galway" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">GCC</div><span class="badge-name">🇮🇪 Galway CC</span></a></div>
+                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">GCC</div><span class="badge-name">🇮🇪 Galway CC</span></a></div>
                 <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://iseireland.ie/assets/media/logo.png" class="school-logo-img" alt="ISE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">ISE</div><span class="badge-name">🇮🇪 ISE Ireland</span></a></div>
-                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/llc.ie.ico" class="school-logo-img" alt="LLC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">LLC</div><span class="badge-name">🇮🇪 Limerick LC</span></a></div>
+                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">LLC</div><span class="badge-name">🇮🇪 Limerick LC</span></a></div>
                 <!-- ── MALTA 🇲🇹 ── -->
-                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/clubclass.eu.ico" class="school-logo-img" alt="Clubclass" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">CLB</div><span class="badge-name">🇲🇹 Clubclass</span></a></div>
-                <div class="logo-item"><a href="https://www.bcsmalta.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/bcsmalta.com.ico" class="school-logo-img" alt="BCS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">BCS</div><span class="badge-name">🇲🇹 BCS Malta</span></a></div>
-                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/ihm.com.mt.ico" class="school-logo-img" alt="IH Malta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">IHM</div><span class="badge-name">🇲🇹 IH Malta</span></a></div>
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">CLB</div><span class="badge-name">🇲🇹 Clubclass</span></a></div>
+                <div class="logo-item"><a href="https://www.bcsmalta.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">BCS</div><span class="badge-name">🇲🇹 BCS Malta</span></a></div>
+                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">IHM</div><span class="badge-name">🇲🇹 IH Malta</span></a></div>
                 <div class="logo-item"><a href="https://nsts.org/" target="_blank" rel="noopener"><img src="https://www.nstsmalta.org/wp-content/uploads/2019/12/NSTS-Malta-Logo-2018.jpg" class="school-logo-img" alt="NSTS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">NSTS</div><span class="badge-name">🇲🇹 NSTS English</span></a></div>
                 <!-- ── Segunda vuelta ── -->
                 <div class="logo-item"><a href="https://ohcenglish.com/" target="_blank" rel="noopener"><img src="https://www.ohcenglish.com/themes/ohc/img/ohc_logo.png" class="school-logo-img" alt="OHC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">OHC</div><span class="badge-name">🇦🇺 OHC</span></a></div>
-                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/originalcampus.com.au.ico" class="school-logo-img" alt="OC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">OC</div><span class="badge-name">🇦🇺 Original Campus</span></a></div>
+                <div class="logo-item"><a href="https://www.originalcampus.com.au/" target="_blank" rel="noopener"><div class="school-avatar" data-country="AU">OC</div><span class="badge-name">🇦🇺 Original Campus</span></a></div>
                 <div class="logo-item"><a href="https://nativeenglish.com.au/" target="_blank" rel="noopener"><img src="https://nativeenglish.com.au/wp-content/uploads/2020/10/Logos-Native-trasparent-2.png" class="school-logo-img" alt="NE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">NE</div><span class="badge-name">🇦🇺 Native English</span></a></div>
                 <div class="logo-item"><a href="https://ail.com.au/" target="_blank" rel="noopener"><img src="https://www.ail.com.au/wp-content/uploads/2018/06/ai-learning-logo.png" class="school-logo-img" alt="AIL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">AIL</div><span class="badge-name">🇦🇺 AIL Australia</span></a></div>
                 <div class="logo-item"><a href="https://elsis.edu.au/" target="_blank" rel="noopener"><img src="https://www.elsis.edu.au/wp-content/uploads/2025/03/logo.webp" class="school-logo-img" alt="ELSIS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">ELS</div><span class="badge-name">🇦🇺 ELSIS</span></a></div>
                 <div class="logo-item"><a href="https://www.ilsc.com/" target="_blank" rel="noopener"><img src="https://www.ilsc.com/hubfs/Language%20School-Color-Logo-Horizontal.svg" class="school-logo-img" alt="ILSC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="AU" style="display:none">ILSC</div><span class="badge-name">🇦🇺 ILSC</span></a></div>
                 <div class="logo-item"><a href="https://worldwideschool.ac.nz/" target="_blank" rel="noopener"><img src="https://worldwideschool.ac.nz/wp-content/uploads/2024/06/wwse.svg" class="school-logo-img" alt="Worldwide" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">WW</div><span class="badge-name">🇳🇿 Worldwide</span></a></div>
-                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/nzcl.ac.nz.ico" class="school-logo-img" alt="NZCL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">NZCL</div><span class="badge-name">🇳🇿 NZCL</span></a></div>
-                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/whitecliff.ac.nz.ico" class="school-logo-img" alt="Whitecliff" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">WC</div><span class="badge-name">🇳🇿 Whitecliff</span></a></div>
+                <div class="logo-item"><a href="https://www.nzcl.ac.nz/" target="_blank" rel="noopener"><div class="school-avatar" data-country="NZ">NZCL</div><span class="badge-name">🇳🇿 NZCL</span></a></div>
+                <div class="logo-item"><a href="https://www.whitecliff.ac.nz/" target="_blank" rel="noopener"><div class="school-avatar" data-country="NZ">WC</div><span class="badge-name">🇳🇿 Whitecliff</span></a></div>
                 <div class="logo-item"><a href="https://www.lsnz.co.nz/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/lsnz.co.nz.ico" class="school-logo-img" alt="LSNZ" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="NZ" style="display:none">LSNZ</div><span class="badge-name">🇳🇿 LSNZ</span></a></div>
                 <div class="logo-item"><a href="https://ohcenglish.com/ireland/" target="_blank" rel="noopener"><img src="https://www.ohcenglish.com/themes/ohc/img/ohc_logo.png" class="school-logo-img" alt="OHC Ireland" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">OHC</div><span class="badge-name">🇮🇪 OHC Ireland</span></a></div>
-                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/babeldublin.ie.ico" class="school-logo-img" alt="Babel Dublin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">BDL</div><span class="badge-name">🇮🇪 Babel Dublin</span></a></div>
+                <div class="logo-item"><a href="https://www.babeldublin.ie/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">BDL</div><span class="badge-name">🇮🇪 Babel Dublin</span></a></div>
                 <div class="logo-item"><a href="https://www.ces-schools.com/" target="_blank" rel="noopener"><img src="https://ces-schools.com/themes/custom/misti/logo.svg" class="school-logo-img" alt="CES" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">CES</div><span class="badge-name">🇮🇪 CES</span></a></div>
-                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/galwayculturalcentre.ie.ico" class="school-logo-img" alt="Galway" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">GCC</div><span class="badge-name">🇮🇪 Galway CC</span></a></div>
+                <div class="logo-item"><a href="https://www.galwayculturalcentre.ie/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">GCC</div><span class="badge-name">🇮🇪 Galway CC</span></a></div>
                 <div class="logo-item"><a href="https://iseireland.ie/" target="_blank" rel="noopener"><img src="https://iseireland.ie/assets/media/logo.png" class="school-logo-img" alt="ISE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">ISE</div><span class="badge-name">🇮🇪 ISE Ireland</span></a></div>
-                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/llc.ie.ico" class="school-logo-img" alt="LLC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="IE" style="display:none">LLC</div><span class="badge-name">🇮🇪 Limerick LC</span></a></div>
-                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/clubclass.eu.ico" class="school-logo-img" alt="Clubclass" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">CLB</div><span class="badge-name">🇲🇹 Clubclass</span></a></div>
-                <div class="logo-item"><a href="https://www.bcsmalta.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/bcsmalta.com.ico" class="school-logo-img" alt="BCS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">BCS</div><span class="badge-name">🇲🇹 BCS Malta</span></a></div>
-                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><img src="https://icons.duckduckgo.com/ip3/ihm.com.mt.ico" class="school-logo-img" alt="IH Malta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">IHM</div><span class="badge-name">🇲🇹 IH Malta</span></a></div>
+                <div class="logo-item"><a href="https://www.limericklanguagecentre.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="IE">LLC</div><span class="badge-name">🇮🇪 Limerick LC</span></a></div>
+                <div class="logo-item"><a href="https://clubclass.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">CLB</div><span class="badge-name">🇲🇹 Clubclass</span></a></div>
+                <div class="logo-item"><a href="https://www.bcsmalta.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">BCS</div><span class="badge-name">🇲🇹 BCS Malta</span></a></div>
+                <div class="logo-item"><a href="https://ihmalta.com/" target="_blank" rel="noopener"><div class="school-avatar" data-country="MT">IHM</div><span class="badge-name">🇲🇹 IH Malta</span></a></div>
                 <div class="logo-item"><a href="https://nsts.org/" target="_blank" rel="noopener"><img src="https://www.nstsmalta.org/wp-content/uploads/2019/12/NSTS-Malta-Logo-2018.jpg" class="school-logo-img" alt="NSTS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="school-avatar" data-country="MT" style="display:none">NSTS</div><span class="badge-name">🇲🇹 NSTS English</span></a></div>
             </div>
         </div>
