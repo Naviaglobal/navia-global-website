@@ -1,0 +1,9 @@
+# Normalizar saltos de línea para evitar churn entre Windows y Vercel
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
