@@ -1,0 +1,83 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/:file.(jpg|jpeg|png|webp|ico|svg|woff2|woff|ttf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/:file.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    }
+  ],
+  "routes": [
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/australia/$", "dest": "/australia/index.html" },
+    { "src": "^/irlanda/$", "dest": "/irlanda/index.html" },
+    { "src": "^/canada/$", "dest": "/canada/index.html" },
+    { "src": "^/alemania/$", "dest": "/alemania/index.html" },
+    { "src": "^/dubai/$", "dest": "/dubai/index.html" },
+    { "src": "^/estados-unidos/$", "dest": "/estados-unidos/index.html" },
+    { "src": "^/francia/$", "dest": "/francia/index.html" },
+    { "src": "^/malta/$", "dest": "/malta/index.html" },
+    { "src": "^/nueva-zelanda/$", "dest": "/nueva-zelanda/index.html" },
+    { "src": "^/reino-unido/$", "dest": "/reino-unido/index.html" },
+    { "src": "^/blog/$", "dest": "/blog/index.html" },
+    { "src": "^/calculadora/$", "dest": "/calculadora/index.html" },
+    { "src": "^/comparador/$", "dest": "/comparador/index.html" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/estudiar-en-reino-unido-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-reino-unido-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-canada-desde-colombia-2026",
+      "destination": "/blog/estudiar-canada-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-canada-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-canada-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-estados-unidos-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-estados-unidos-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-nueva-zelanda-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-nueva-zelanda-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-australia-colombia-2025.html",
+      "destination": "/blog/estudiar-australia-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-irlanda-colombia-2025.html",
+      "destination": "/blog/estudiar-irlanda-colombia-2026.html",
+      "permanent": true
+    }
+  ]
+}

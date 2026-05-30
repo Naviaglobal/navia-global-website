@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "navia-website",
+      "runtimeExecutable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "runtimeArgs": ["-Command", "cd C:\\Users\\User\\.claude\\navia-website; $listener = [System.Net.HttpListener]::new(); $listener.Prefixes.Add('http://localhost:4200/'); $listener.Start(); Write-Host 'Server started on port 4200'; while ($listener.IsListening) { $ctx = $listener.GetContext(); $req = $ctx.Request; $res = $ctx.Response; $path = $req.Url.LocalPath.TrimStart('/'); if ($path -eq '' -or $path -eq '/') { $path = 'index.html' }; $file = Join-Path 'C:\\Users\\User\\.claude\\navia-website' $path; if (Test-Path $file) { $bytes = [System.IO.File]::ReadAllBytes($file); $res.ContentLength64 = $bytes.Length; $ext = [System.IO.Path]::GetExtension($file); $res.ContentType = if ($ext -eq '.html') { 'text/html; charset=utf-8' } elseif ($ext -eq '.css') { 'text/css' } elseif ($ext -eq '.js') { 'application/javascript' } else { 'application/octet-stream' }; $res.OutputStream.Write($bytes, 0, $bytes.Length) } else { $res.StatusCode = 404 }; $res.Close() } "],
+      "port": 4200
+    }
+  ]
+}

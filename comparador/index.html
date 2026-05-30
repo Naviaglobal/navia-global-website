@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/webp" href="/logo.webp">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="https://naviaglobal.co/comparador/">
+<title>Comparador de Destinos — ¿Dónde estudiar? 2026 | Navia Global</title>
+<meta name="description" content="Descubre qué destino es ideal para ti con nuestro quiz personalizado, y compara 2 países lado a lado: costos, visa, trabajo, clima y más. Gratis.">
+<meta property="og:title" content="¿Dónde debería estudiar? Quiz + Comparador 2026 | Navia Global">
+<meta property="og:description" content="Quiz de 5 preguntas + comparativa lado a lado de los 10 destinos. Gratis para colombianos.">
+<meta property="og:url" content="https://naviaglobal.co/comparador/">
+<meta property="og:site_name" content="Navia Global">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://naviaglobal.co/og-image.jpg">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://naviaglobal.co/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1941742975996934');fbq('track','PageView');</script>
+<style>
+:root{
+  --navy:#0B2C4A;
+  --teal:#00D9A3;
+  --red:#E8314A;
+  --bg:#F7F9FD;
+  --gray:#6B7280;
+  --border:rgba(11,44,74,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--navy);}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;transition:background .3s,box-shadow .3s;}
+.nav.solid{background:rgba(11,44,74,.97);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,0,0,.18);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{border-radius:6px;}
+.nav-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-home{color:rgba(255,255,255,.75);text-decoration:none;font-size:.85rem;font-weight:500;}
+.nav-home:hover{color:#fff;}
+.nav-cta{background:var(--teal);color:var(--navy);padding:9px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.82rem;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#061e33 0%,#0B2C4A 60%,#0d3a61 100%);padding:112px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,217,163,.12),transparent);}
+.hero-inner{position:relative;max-width:620px;margin:0 auto;}
+.hero-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7;}
+
+/* TAB SWITCHER */
+.tab-switcher{display:flex;max-width:480px;margin:32px auto 0;background:rgba(255,255,255,.08);border-radius:12px;padding:4px;}
+.tab-btn{flex:1;padding:10px;border:none;background:none;color:rgba(255,255,255,.6);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;border-radius:8px;transition:all .2s;}
+.tab-btn.active{background:#fff;color:var(--navy);}
+
+/* SECTIONS */
+.section{max-width:800px;margin:0 auto;padding:52px 24px 80px;display:none;}
+.section.active{display:block;}
+
+/* ═══════════════════════════════════
+   QUIZ
+═══════════════════════════════════ */
+.quiz-wrap{}
+.quiz-step{display:none;}
+.quiz-step.active{display:block;}
+
+.q-progress{display:flex;gap:6px;margin-bottom:36px;}
+.q-dot{height:4px;flex:1;border-radius:2px;background:#E5E7EB;transition:background .3s;}
+.q-dot.done{background:var(--teal);}
+.q-dot.current{background:rgba(0,217,163,.5);}
+
+.q-num{font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.q-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.35rem;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.q-sub{font-size:.88rem;color:var(--gray);margin-bottom:28px;}
+
+.q-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.q-opt{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .15s;text-align:left;}
+.q-opt:hover{border-color:var(--teal);background:rgba(0,217,163,.04);}
+.q-opt.selected{border-color:var(--teal);background:rgba(0,217,163,.08);}
+.q-opt-icon{font-size:1.3rem;margin-bottom:8px;}
+.q-opt-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy);}
+.q-opt-desc{font-size:.75rem;color:var(--gray);margin-top:3px;line-height:1.4;}
+
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;}
+.q-back{background:none;border:1.5px solid var(--border);color:var(--gray);padding:10px 20px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.85rem;cursor:pointer;transition:all .15s;}
+.q-back:hover{border-color:var(--navy);color:var(--navy);}
+.q-next{background:var(--navy);color:#fff;padding:10px 28px;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;transition:opacity .15s;opacity:.4;pointer-events:none;}
+.q-next.enabled{opacity:1;pointer-events:auto;}
+
+/* RESULT */
+.quiz-result{display:none;}
+.quiz-result.active{display:block;}
+.result-header{text-align:center;margin-bottom:40px;}
+.result-badge{display:inline-block;background:rgba(0,217,163,.1);border:1.5px solid rgba(0,217,163,.3);border-radius:50px;padding:8px 20px;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
+.result-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.result-sub{font-size:.9rem;color:var(--gray);}
+
+.top-dest{background:#fff;border:1.5px solid var(--teal);border-radius:20px;padding:28px;margin-bottom:20px;display:flex;align-items:flex-start;gap:20px;}
+.top-dest-flag{font-size:2.8rem;line-height:1;flex-shrink:0;}
+.top-dest-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.top-dest-why{font-size:.85rem;color:var(--gray);line-height:1.6;}
+.top-dest-badge{display:inline-block;background:rgba(0,217,163,.1);color:var(--teal);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:8px;}
+
+.other-dest{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;}
+.other-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px;}
+.other-flag{font-size:1.5rem;}
+.other-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy);}
+.other-tag{font-size:.72rem;color:var(--gray);}
+
+.result-actions{display:flex;flex-direction:column;gap:12px;}
+.btn-primary{background:var(--teal);color:var(--navy);padding:15px 28px;border-radius:10px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;text-align:center;display:block;transition:opacity .2s;}
+.btn-primary:hover{opacity:.88;}
+.btn-secondary{background:#fff;color:var(--navy);border:1.5px solid var(--border);padding:14px 28px;border-radius:10px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;text-align:center;display:block;cursor:pointer;transition:border-color .15s;}
+.btn-secondary:hover{border-color:var(--teal);}
+
+/* ═══════════════════════════════════
+   COMPARADOR
+═══════════════════════════════════ */
+.cmp-selects{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:36px;}
+.cmp-vs{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--gray);text-align:center;}
+.cmp-sel{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;border:1.5px solid var(--border);border-radius:12px;padding:14px 40px 14px 16px;font-size:.92rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);cursor:pointer;width:100%;transition:border-color .2s;}
+.cmp-sel:focus{outline:none;border-color:var(--teal);}
+
+/* TABLE */
+.cmp-table{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(11,44,74,.06);}
+.cmp-thead{display:grid;grid-template-columns:2fr 1fr 1fr;background:var(--navy);}
+.cmp-thead .ch{padding:16px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;color:rgba(255,255,255,.6);}
+.cmp-thead .ch:nth-child(2),.cmp-thead .ch:nth-child(3){text-align:center;color:#fff;}
+.cmp-row{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid var(--border);}
+.cmp-row:last-child{border-bottom:none;}
+.cmp-row:nth-child(even){background:#FAFBFD;}
+.cmp-cell{padding:14px 20px;font-size:.88rem;}
+.cmp-cell:first-child{color:var(--gray);font-weight:500;}
+.cmp-cell:nth-child(2),.cmp-cell:nth-child(3){text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--navy);}
+.cmp-cell .better{color:var(--teal);}
+.cmp-cell .worse{color:#9CA3AF;}
+.cmp-row-label{padding:14px 20px;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray);background:var(--bg);grid-column:1/-1;border-bottom:1px solid var(--border);}
+
+.cmp-cta{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cmp-cta a{background:var(--teal);color:var(--navy);text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;transition:opacity .2s;}
+.cmp-cta a:hover{opacity:.88;}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.4);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.5);text-decoration:none;}
+.footer-links a:hover{color:#fff;}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:200;transition:transform .2s;}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+
+@media(max-width:640px){
+  .q-options{grid-template-columns:1fr;}
+  .other-dest{grid-template-columns:1fr;}
+  .cmp-selects{grid-template-columns:1fr;gap:8px;}
+  .cmp-vs{display:none;}
+  .cmp-cta{grid-template-columns:1fr;}
+  .nav{padding:0 20px;}
+  .footer{flex-direction:column;align-items:flex-start;padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo">
+    <img loading="eager" src="/logo.webp" alt="Navia Global" width="32" height="32" onerror="this.style.display='none'">
+    <span class="nav-logo-name">Navia Global</span>
+  </a>
+  <div class="nav-right">
+    <a href="/#destinos" class="nav-home">← Destinos</a>
+    <a href="https://wa.me/573014430722?text=Hola,%20quiero%20asesoría%20para%20estudiar%20en%20el%20exterior" class="nav-cta" target="_blank" rel="noopener">Asesoría Gratuita</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">🎯 Herramienta gratuita</div>
+    <h1>¿A qué país deberías<br>ir a estudiar?</h1>
+    <p>Quiz de 5 preguntas + comparativa detallada de todos los destinos.</p>
+    <div class="tab-switcher">
+      <button class="tab-btn active" data-tab="quiz">🧠 Quiz: ¿cuál es para mí?</button>
+      <button class="tab-btn" data-tab="comparador">⚖️ Comparar 2 destinos</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ SECTION -->
+<div class="section active" id="sec-quiz">
+  <div class="quiz-wrap" id="quizWrap">
+
+    <!-- STEP 1 -->
+    <div class="quiz-step active" data-step="1">
+      <div class="q-progress">
+        <div class="q-dot current"></div><div class="q-dot"></div><div class="q-dot"></div><div class="q-dot"></div><div class="q-dot"></div>
+      </div>
+      <div class="q-num">Pregunta 1 de 5</div>
+      <div class="q-title">¿Cuál es tu presupuesto mensual disponible desde Colombia?</div>
+      <div class="q-sub">Incluye lo que puedes ahorrar + apoyo familiar.</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="1" data-v="bajo">
+          <div class="q-opt-icon">💰</div>
+          <div class="q-opt-label">Menos de $6M COP/mes</div>
+          <div class="q-opt-desc">Busco algo económico y sostenible</div>
+        </div>
+        <div class="q-opt" data-q="1" data-v="medio">
+          <div class="q-opt-icon">💰💰</div>
+          <div class="q-opt-label">$6M – $12M COP/mes</div>
+          <div class="q-opt-desc">Tengo un presupuesto razonable</div>
+        </div>
+        <div class="q-opt" data-q="1" data-v="alto">
+          <div class="q-opt-icon">💰💰💰</div>
+          <div class="q-opt-label">$12M – $20M COP/mes</div>
+          <div class="q-opt-desc">Puedo costear destinos más caros</div>
+        </div>
+        <div class="q-opt" data-q="1" data-v="premium">
+          <div class="q-opt-icon">💎</div>
+          <div class="q-opt-label">Más de $20M COP/mes</div>
+          <div class="q-opt-desc">Priorizo calidad sobre costo</div>
+        </div>
+      </div>
+      <div class="q-nav">
+        <span></span>
+        <button class="q-next" data-next="2">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="quiz-step" data-step="2">
+      <div class="q-progress">
+        <div class="q-dot done"></div><div class="q-dot current"></div><div class="q-dot"></div><div class="q-dot"></div><div class="q-dot"></div>
+      </div>
+      <div class="q-num">Pregunta 2 de 5</div>
+      <div class="q-title">¿Cuánto tiempo planeas quedarte?</div>
+      <div class="q-sub">Esto define qué tipo de visa y programa es más conveniente.</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="2" data-v="corto">
+          <div class="q-opt-icon">⚡</div>
+          <div class="q-opt-label">1 – 3 meses</div>
+          <div class="q-opt-desc">Intensivo de verano o vacaciones</div>
+        </div>
+        <div class="q-opt" data-q="2" data-v="medio">
+          <div class="q-opt-icon">📅</div>
+          <div class="q-opt-label">4 – 6 meses</div>
+          <div class="q-opt-desc">Programa estándar de inglés</div>
+        </div>
+        <div class="q-opt" data-q="2" data-v="largo">
+          <div class="q-opt-icon">🗓️</div>
+          <div class="q-opt-label">7 – 12 meses</div>
+          <div class="q-opt-desc">Inmersión completa</div>
+        </div>
+        <div class="q-opt" data-q="2" data-v="migracion">
+          <div class="q-opt-icon">🌍</div>
+          <div class="q-opt-label">Más de 1 año / emigrar</div>
+          <div class="q-opt-desc">Quiero quedarme a vivir</div>
+        </div>
+      </div>
+      <div class="q-nav">
+        <button class="q-back" data-prev="1">← Atrás</button>
+        <button class="q-next" data-next="3">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="quiz-step" data-step="3">
+      <div class="q-progress">
+        <div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot current"></div><div class="q-dot"></div><div class="q-dot"></div>
+      </div>
+      <div class="q-num">Pregunta 3 de 5</div>
+      <div class="q-title">¿Cuál es tu objetivo principal al estudiar en el exterior?</div>
+      <div class="q-sub">Selecciona el que más se acerca a lo que buscas.</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="3" data-v="ingles">
+          <div class="q-opt-icon">🗣️</div>
+          <div class="q-opt-label">Mejorar mi inglés rápidamente</div>
+          <div class="q-opt-desc">Nivel laboral o para estudiar afuera</div>
+        </div>
+        <div class="q-opt" data-q="3" data-v="trabajo">
+          <div class="q-opt-icon">💼</div>
+          <div class="q-opt-label">Trabajar y ahorrar mientras estudio</div>
+          <div class="q-opt-desc">Quiero que el destino se "pague solo"</div>
+        </div>
+        <div class="q-opt" data-q="3" data-v="universidad">
+          <div class="q-opt-icon">🎓</div>
+          <div class="q-opt-label">Preparación para una maestría</div>
+          <div class="q-opt-desc">Quiero entrar a una universidad top</div>
+        </div>
+        <div class="q-opt" data-q="3" data-v="experiencia">
+          <div class="q-opt-icon">🌅</div>
+          <div class="q-opt-label">Experiencia de vida y cultura</div>
+          <div class="q-opt-desc">La aventura es tan importante como el idioma</div>
+        </div>
+      </div>
+      <div class="q-nav">
+        <button class="q-back" data-prev="2">← Atrás</button>
+        <button class="q-next" data-next="4">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="quiz-step" data-step="4">
+      <div class="q-progress">
+        <div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot current"></div><div class="q-dot"></div>
+      </div>
+      <div class="q-num">Pregunta 4 de 5</div>
+      <div class="q-title">¿Qué tan importante es el clima y el estilo de vida?</div>
+      <div class="q-sub">Algunos prefieren ciudades europeas, otros el Pacífico.</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="4" data-v="sol">
+          <div class="q-opt-icon">☀️</div>
+          <div class="q-opt-label">Sol, playa y buen clima</div>
+          <div class="q-opt-desc">Prefiero calor y costa</div>
+        </div>
+        <div class="q-opt" data-q="4" data-v="naturaleza">
+          <div class="q-opt-icon">🏔️</div>
+          <div class="q-opt-label">Naturaleza y aventura</div>
+          <div class="q-opt-desc">Montañas, senderismo, paisajes</div>
+        </div>
+        <div class="q-opt" data-q="4" data-v="ciudad">
+          <div class="q-opt-icon">🏙️</div>
+          <div class="q-opt-label">Ciudad vibrante y cosmopolita</div>
+          <div class="q-opt-desc">Metrópoli con mucha actividad</div>
+        </div>
+        <div class="q-opt" data-q="4" data-v="indiferente">
+          <div class="q-opt-icon">🤷</div>
+          <div class="q-opt-label">Me es indiferente</div>
+          <div class="q-opt-desc">Lo que más importa es el costo y la calidad</div>
+        </div>
+      </div>
+      <div class="q-nav">
+        <button class="q-back" data-prev="3">← Atrás</button>
+        <button class="q-next" data-next="5">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="quiz-step" data-step="5">
+      <div class="q-progress">
+        <div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot done"></div><div class="q-dot current"></div>
+      </div>
+      <div class="q-num">Pregunta 5 de 5</div>
+      <div class="q-title">¿Tienes alguna preferencia de idioma adicional?</div>
+      <div class="q-sub">Algunos destinos te permiten aprender un segundo idioma además del inglés.</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="5" data-v="solo-ingles">
+          <div class="q-opt-icon">🇬🇧</div>
+          <div class="q-opt-label">Solo inglés, lo más rápido posible</div>
+          <div class="q-opt-desc">Inmersión total en inglés</div>
+        </div>
+        <div class="q-opt" data-q="5" data-v="frances">
+          <div class="q-opt-icon">🇫🇷</div>
+          <div class="q-opt-label">Me interesa aprender francés también</div>
+          <div class="q-opt-desc">Dos idiomas a la vez</div>
+        </div>
+        <div class="q-opt" data-q="5" data-v="aleman">
+          <div class="q-opt-icon">🇩🇪</div>
+          <div class="q-opt-label">Me interesa el alemán</div>
+          <div class="q-opt-desc">Para estudios o carrera en Europa</div>
+        </div>
+        <div class="q-opt" data-q="5" data-v="arabe">
+          <div class="q-opt-icon">🌙</div>
+          <div class="q-opt-label">Me atrae el mundo árabe / inglés global</div>
+          <div class="q-opt-desc">Hub internacional único</div>
+        </div>
+      </div>
+      <div class="q-nav">
+        <button class="q-back" data-prev="4">← Atrás</button>
+        <button class="q-next" data-next="result" id="btnFinal">Ver mi resultado →</button>
+      </div>
+    </div>
+
+  </div><!-- /quizWrap -->
+
+  <!-- RESULT -->
+  <div class="quiz-result" id="quizResult">
+    <div class="result-header">
+      <div class="result-badge">✅ Tu resultado personalizado</div>
+      <div class="result-title">Tu destino ideal es</div>
+      <div class="result-sub">Basado en tus respuestas, esto es lo que te recomendamos</div>
+    </div>
+
+    <div class="top-dest" id="topDest">
+      <div class="top-dest-flag" id="topFlag">🇦🇺</div>
+      <div>
+        <div class="top-dest-name" id="topName">Australia</div>
+        <div class="top-dest-why" id="topWhy">Descripción</div>
+        <div class="top-dest-badge" id="topBadge">⭐ Mejor opción para tu perfil</div>
+      </div>
+    </div>
+
+    <div class="other-dest" id="otherDest"></div>
+
+    <div class="result-actions">
+      <a href="#" class="btn-primary" id="resultCTA" target="_blank" rel="noopener">💬 Hablar con Samuel sobre este destino</a>
+      <a href="#" class="btn-secondary" id="resultDestBtn">📋 Ver guía completa de este destino</a>
+      <button class="btn-secondary" onclick="resetQuiz()">🔄 Repetir el quiz</button>
+    </div>
+  </div>
+
+</div><!-- /sec-quiz -->
+
+<!-- COMPARADOR SECTION -->
+<div class="section" id="sec-comparador">
+
+  <div class="cmp-selects">
+    <select class="cmp-sel" id="dest1">
+      <option value="australia">🇦🇺 Australia</option>
+      <option value="irlanda">🇮🇪 Irlanda</option>
+      <option value="canada">🇨🇦 Canadá</option>
+      <option value="reino">🇬🇧 Reino Unido</option>
+      <option value="malta">🇲🇹 Malta</option>
+      <option value="nz">🇳🇿 Nueva Zelanda</option>
+      <option value="usa">🇺🇸 Estados Unidos</option>
+      <option value="alemania">🇩🇪 Alemania</option>
+      <option value="dubai">🇦🇪 Dubai</option>
+      <option value="francia">🇫🇷 Francia</option>
+    </select>
+    <div class="cmp-vs">VS</div>
+    <select class="cmp-sel" id="dest2">
+      <option value="irlanda">🇮🇪 Irlanda</option>
+      <option value="australia">🇦🇺 Australia</option>
+      <option value="canada">🇨🇦 Canadá</option>
+      <option value="reino">🇬🇧 Reino Unido</option>
+      <option value="malta">🇲🇹 Malta</option>
+      <option value="nz">🇳🇿 Nueva Zelanda</option>
+      <option value="usa">🇺🇸 Estados Unidos</option>
+      <option value="alemania">🇩🇪 Alemania</option>
+      <option value="dubai">🇦🇪 Dubai</option>
+      <option value="francia">🇫🇷 Francia</option>
+    </select>
+  </div>
+
+  <div class="cmp-table" id="cmpTable"></div>
+
+  <div class="cmp-cta" id="cmpCta">
+    <a href="#" id="cmpCta1" target="_blank" rel="noopener">Ver guía completa →</a>
+    <a href="#" id="cmpCta2" target="_blank" rel="noopener">Ver guía completa →</a>
+  </div>
+
+</div><!-- /sec-comparador -->
+
+<footer class="footer">
+  <span class="footer-copy">© 2026 Navia Global — Agencia colombiana de estudios en el exterior</span>
+  <nav class="footer-links">
+    <a href="/">Inicio</a><a href="/blog/">Blog</a><a href="/calculadora/">Calculadora</a><a href="/contacto.html">Contacto</a>
+  </nav>
+</footer>
+
+<a href="https://wa.me/573014430722?text=Hola,%20quiero%20información%20para%20estudiar%20en%20el%20exterior" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.826.736 5.587 2.138 8.024L.05 31.95l8.075-2.05A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.38c-2.42 0-4.78-.656-6.853-1.897l-.492-.291-5.122 1.299 1.324-5.016-.32-.508A13.316 13.316 0 012.62 16c0-7.364 5.997-13.36 13.38-13.36 7.382 0 13.38 5.996 13.38 13.36S23.382 29.38 16 29.38z"/><path d="M23.338 19.73c-.404-.202-2.388-1.178-2.757-1.312-.37-.135-.638-.202-.908.202-.27.403-1.044 1.312-1.28 1.582-.235.27-.47.304-.874.101-.403-.202-1.703-.628-3.244-2.003-1.2-1.07-2.01-2.391-2.246-2.794-.235-.404-.025-.622.177-.823.182-.181.404-.471.606-.707.202-.236.27-.404.404-.673.135-.27.068-.505-.034-.707-.101-.202-.908-2.186-1.244-2.993-.328-.787-.66-.68-.908-.692-.235-.011-.505-.014-.774-.014s-.707.101-1.077.505c-.37.403-1.413 1.38-1.413 3.367 0 1.986 1.447 3.907 1.65 4.176.201.27 2.843 4.342 6.888 6.088.962.415 1.713.663 2.298.849.966.307 1.845.264 2.54.16.775-.115 2.388-.977 2.724-1.92.337-.944.337-1.751.236-1.92-.101-.17-.37-.27-.774-.473z"/></svg>
+</a>
+
+<script>
+(function(){
+
+// NAV
+var nav=document.getElementById('mainNav');
+function updNav(){nav.classList.toggle('solid',window.scrollY>60);}
+window.addEventListener('scroll',updNav,{passive:true});
+updNav();
+
+// ─── TAB SWITCHER ────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+    this.classList.add('active');
+    document.getElementById('sec-'+this.dataset.tab).classList.add('active');
+  });
+});
+
+// ═══════════════════════════════════════════════════════
+// QUIZ
+// ═══════════════════════════════════════════════════════
+// Load saved answers from localStorage
+var answers = (function(){try{return JSON.parse(localStorage.getItem('navia_quiz_answers')||'{}');}catch(e){return {};}}());
+
+function saveAnswers(){try{localStorage.setItem('navia_quiz_answers',JSON.stringify(answers));}catch(e){}}
+
+// Restore selected options from saved answers
+document.querySelectorAll('.q-opt').forEach(function(opt){
+  var q=opt.dataset.q, v=opt.dataset.v;
+  if(answers[q]===v){
+    opt.classList.add('selected');
+    var step=opt.closest('.quiz-step');
+    var nextBtn=step?step.querySelector('.q-next'):null;
+    if(nextBtn) nextBtn.classList.add('enabled');
+  }
+});
+
+// If all 5 answers already saved, jump to last answered step
+(function(){
+  var keys=Object.keys(answers);
+  if(keys.length>0 && keys.length<5){
+    var lastStep=Math.max.apply(null,keys.map(Number));
+    if(lastStep>1){
+      document.querySelectorAll('.quiz-step').forEach(function(s){s.classList.remove('active');});
+      var target=document.querySelector('[data-step="'+lastStep+'"]');
+      if(target) target.classList.add('active');
+    }
+  } else if(keys.length===5){
+    showResult();
+  }
+}());
+
+// Render options
+document.querySelectorAll('.q-opt').forEach(function(opt){
+  opt.addEventListener('click',function(){
+    var q=this.dataset.q;
+    document.querySelectorAll('[data-q="'+q+'"]').forEach(function(o){o.classList.remove('selected');});
+    this.classList.add('selected');
+    answers[q]=this.dataset.v;
+    saveAnswers();
+    // Enable next btn in same step
+    var step=this.closest('.quiz-step');
+    var nextBtn=step.querySelector('.q-next');
+    if(nextBtn){nextBtn.classList.add('enabled');}
+  });
+});
+
+// Navigation
+document.querySelectorAll('.q-next').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    if(!this.classList.contains('enabled'))return;
+    var next=this.dataset.next;
+    if(next==='result'){
+      showResult();
+      return;
+    }
+    document.querySelectorAll('.quiz-step').forEach(function(s){s.classList.remove('active');});
+    document.querySelector('[data-step="'+next+'"]').classList.add('active');
+  });
+});
+document.querySelectorAll('.q-back').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var prev=this.dataset.prev;
+    document.querySelectorAll('.quiz-step').forEach(function(s){s.classList.remove('active');});
+    document.querySelector('[data-step="'+prev+'"]').classList.add('active');
+  });
+});
+
+// ─── SCORING ─────────────────────────────────────────────
+var DEST_DATA = {
+  australia:    {flag:'🇦🇺',name:'Australia',     url:'/australia/',     scores:{bajo:1,medio:3,alto:5,premium:4, corto:2,medio:4,largo:5,migracion:4, ingles:5,trabajo:5,universidad:3,experiencia:4, sol:3,naturaleza:5,ciudad:3,indiferente:4, 'solo-ingles':5,frances:1,aleman:1,arabe:1}},
+  irlanda:      {flag:'🇮🇪',name:'Irlanda',       url:'/irlanda/',       scores:{bajo:2,medio:4,alto:4,premium:3, corto:3,medio:5,largo:5,migracion:4, ingles:5,trabajo:4,universidad:3,experiencia:5, sol:1,naturaleza:4,ciudad:4,indiferente:4, 'solo-ingles':5,frances:1,aleman:1,arabe:1}},
+  canada:       {flag:'🇨🇦',name:'Canadá',        url:'/canada/',        scores:{bajo:2,medio:3,alto:4,premium:3, corto:2,medio:4,largo:5,migracion:5, ingles:4,trabajo:4,universidad:5,experiencia:3, sol:2,naturaleza:5,ciudad:4,indiferente:4, 'solo-ingles':4,frances:2,aleman:1,arabe:1}},
+  reino:        {flag:'🇬🇧',name:'Reino Unido',   url:'/reino-unido/',   scores:{bajo:1,medio:2,alto:4,premium:5, corto:2,medio:4,largo:4,migracion:3, ingles:5,trabajo:3,universidad:5,experiencia:4, sol:1,naturaleza:2,ciudad:5,indiferente:3, 'solo-ingles':5,frances:1,aleman:1,arabe:1}},
+  malta:        {flag:'🇲🇹',name:'Malta',         url:'/malta/',         scores:{bajo:5,medio:4,alto:2,premium:1, corto:5,medio:4,largo:3,migracion:2, ingles:4,trabajo:2,universidad:2,experiencia:4, sol:5,naturaleza:3,ciudad:3,indiferente:4, 'solo-ingles':4,frances:1,aleman:1,arabe:1}},
+  nz:           {flag:'🇳🇿',name:'Nueva Zelanda', url:'/nueva-zelanda/', scores:{bajo:1,medio:3,alto:4,premium:4, corto:2,medio:3,largo:5,migracion:4, ingles:4,trabajo:4,universidad:3,experiencia:5, sol:3,naturaleza:5,ciudad:3,indiferente:4, 'solo-ingles':4,frances:1,aleman:1,arabe:1}},
+  usa:          {flag:'🇺🇸',name:'EE.UU.',        url:'/estados-unidos/',scores:{bajo:1,medio:2,alto:4,premium:5, corto:3,medio:4,largo:4,migracion:3, ingles:5,trabajo:2,universidad:5,experiencia:4, sol:3,naturaleza:3,ciudad:5,indiferente:3, 'solo-ingles':5,frances:1,aleman:1,arabe:1}},
+  alemania:     {flag:'🇩🇪',name:'Alemania',      url:'/alemania/',      scores:{bajo:4,medio:4,alto:3,premium:2, corto:2,medio:3,largo:4,migracion:5, ingles:2,trabajo:3,universidad:5,experiencia:3, sol:1,naturaleza:3,ciudad:4,indiferente:4, 'solo-ingles':1,frances:1,aleman:5,arabe:1}},
+  dubai:        {flag:'🇦🇪',name:'Dubai',         url:'/dubai/',         scores:{bajo:1,medio:2,alto:4,premium:5, corto:4,medio:4,largo:3,migracion:2, ingles:4,trabajo:1,universidad:3,experiencia:5, sol:5,naturaleza:1,ciudad:5,indiferente:3, 'solo-ingles':3,frances:1,aleman:1,arabe:5}},
+  francia:      {flag:'🇫🇷',name:'Francia',       url:'/francia/',       scores:{bajo:2,medio:3,alto:4,premium:5, corto:3,medio:4,largo:4,migracion:3, ingles:3,trabajo:3,universidad:4,experiencia:5, sol:3,naturaleza:3,ciudad:5,indiferente:3, 'solo-ingles':2,frances:5,aleman:1,arabe:1}},
+};
+
+var WHY = {
+  australia: 'Tu presupuesto y tiempo se ajustan perfecto. Australia permite trabajar 24h/sem con el salario mínimo más alto del mundo anglófono, ideal para quien quiere que el viaje se pague solo.',
+  irlanda: 'La puerta de entrada a Europa con el inglés más fácil de aprender. Excelente balance costo-calidad, visa relativamente sencilla y comunidad latina enorme en Dublín.',
+  canada: 'Si piensas en el largo plazo o en emigrar, Canadá tiene el mejor camino hacia residencia permanente. Express Entry + inglés top = combo imbatible.',
+  reino: 'El inglés más prestigioso del mundo para CVs y universidades top. Londres o Manchester te dan una experiencia de ciudad sin igual, ideal si buscas preparación académica.',
+  malta: 'El destino más económico de Europa con el plus de la visa Schengen. Perfecto para presupuesto ajustado o un primer viaje corto al exterior.',
+  nz: 'Si la calidad de vida y la naturaleza son importantes para ti, Nueva Zelanda es insuperable. Sociedad abierta, segura y con excelente salario mínimo.',
+  usa: 'El inglés americano — el estándar del cine, los negocios y el entretenimiento global. Para quien sueña grande o quiere entrar a una universidad americana.',
+  alemania: 'La opción más inteligente si piensas en una maestría en Europa. Universidades casi gratuitas + aprender alemán = una de las mejores inversiones educativas.',
+  dubai: 'Un hub global único. Sin impuestos, vida cosmopolita y conexiones con el mundo árabe y asiático. Para perfiles con presupuesto alto que quieren algo diferente.',
+  francia: 'Aprender inglés y francés simultáneamente en París o Lyon. La cultura, gastronomía y estilo de vida europeo hacen de este destino algo verdaderamente especial.',
+};
+
+function showResult(){
+  // Score each destination
+  var scores={};
+  Object.keys(DEST_DATA).forEach(function(k){
+    scores[k]=0;
+    var d=DEST_DATA[k].scores;
+    Object.keys(answers).forEach(function(q){
+      scores[k]+=(d[answers[q]]||0);
+    });
+  });
+
+  // Sort
+  var sorted=Object.keys(scores).sort(function(a,b){return scores[b]-scores[a];});
+  var top=sorted[0];
+  var others=sorted.slice(1,5);
+
+  // Show top
+  document.getElementById('topFlag').textContent=DEST_DATA[top].flag;
+  document.getElementById('topName').textContent=DEST_DATA[top].name;
+  document.getElementById('topWhy').textContent=WHY[top];
+
+  // CTA
+  var waMsg='Hola%20Samuel%2C%20hice%20el%20quiz%20de%20Navia%20Global%20y%20me%20recomend%C3%B3%20'+encodeURIComponent(DEST_DATA[top].name)+'.%20Quiero%20saber%20m%C3%A1s.';
+  document.getElementById('resultCTA').href='https://wa.me/573014430722?text='+waMsg;
+  document.getElementById('resultDestBtn').href=DEST_DATA[top].url;
+  document.getElementById('resultDestBtn').textContent='📋 Ver guía completa de '+DEST_DATA[top].name;
+
+  // Others
+  var html='';
+  others.forEach(function(k){
+    html+='<div class="other-card"><div class="other-flag">'+DEST_DATA[k].flag+'</div><div><div class="other-name"><a href="'+DEST_DATA[k].url+'" style="color:inherit;text-decoration:none;">'+DEST_DATA[k].name+'</a></div><div class="other-tag">'+scores[k]+' puntos de compatibilidad</div></div></div>';
+  });
+  document.getElementById('otherDest').innerHTML=html;
+
+  // Hide quiz steps, show result
+  document.getElementById('quizWrap').style.display='none';
+  document.getElementById('quizResult').classList.add('active');
+
+  // Track
+  if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'Quiz Completado - '+DEST_DATA[top].name});
+}
+
+window.resetQuiz=function(){
+  answers={};
+  try{localStorage.removeItem('navia_quiz_answers');}catch(e){}
+  document.querySelectorAll('.q-opt').forEach(function(o){o.classList.remove('selected');});
+  document.querySelectorAll('.q-next').forEach(function(b){b.classList.remove('enabled');});
+  document.querySelectorAll('.quiz-step').forEach(function(s){s.classList.remove('active');});
+  document.querySelector('[data-step="1"]').classList.add('active');
+  document.getElementById('quizResult').classList.remove('active');
+  document.getElementById('quizWrap').style.display='';
+};
+
+// ═══════════════════════════════════════════════════════
+// COMPARADOR
+// ═══════════════════════════════════════════════════════
+var CMP_DATA = {
+  australia:  {flag:'🇦🇺',name:'Australia',     curso:'AUD $450–600/sem',aloj:'AUD $220–350/sem',trabajo:'24 h/semana',salario:'AUD $24.95/h',visa:'Subclase 500',tramVisa:'4–6 semanas',idioma:'Inglés',clima:'Templado/cálido',postvisa:'Hasta 4 años',url:'/australia/'},
+  irlanda:    {flag:'🇮🇪',name:'Irlanda',       curso:'€200–350/sem',   aloj:'€150–260/sem',    trabajo:'20 h/semana',salario:'€14.15/h',   visa:'Stamp 2',     tramVisa:'4–8 semanas',idioma:'Inglés',clima:'Templado/lluvioso',postvisa:'Stamp 4 posible',url:'/irlanda/'},
+  canada:     {flag:'🇨🇦',name:'Canadá',        curso:'CAD $300–500/sem',aloj:'CAD $180–300/sem',trabajo:'24 h/semana',salario:'CAD $17.40/h',visa:'Study Permit', tramVisa:'4–8 semanas',idioma:'Inglés/Francés',clima:'Frío/templado',postvisa:'Express Entry',url:'/canada/'},
+  reino:      {flag:'🇬🇧',name:'Reino Unido',   curso:'£250–450/sem',   aloj:'£180–310/sem',    trabajo:'20 h/semana',salario:'£11.44/h',   visa:'Student Route',tramVisa:'3 semanas',  idioma:'Inglés',clima:'Templado/nublado',postvisa:'Graduate Route',url:'/reino-unido/'},
+  malta:      {flag:'🇲🇹',name:'Malta',         curso:'€150–250/sem',   aloj:'€100–180/sem',    trabajo:'20 h/semana',salario:'€9.90/h',    visa:'Schengen D',  tramVisa:'3–4 semanas',idioma:'Inglés/Maltés',clima:'Mediterráneo',postvisa:'Schengen libre',url:'/malta/'},
+  nz:         {flag:'🇳🇿',name:'Nueva Zelanda', curso:'NZD $300–480/sem',aloj:'NZD $200–320/sem',trabajo:'20 h/semana',salario:'NZD $23.95/h',visa:'Student Visa',tramVisa:'3–4 semanas',idioma:'Inglés',clima:'Templado',      postvisa:'Post-study Work',url:'/nueva-zelanda/'},
+  usa:        {flag:'🇺🇸',name:'EE.UU.',        curso:'USD $300–600/sem',aloj:'USD $200–350/sem',trabajo:'20 h/sem campus',salario:'USD $15/h',visa:'Visa F-1',   tramVisa:'4–8 semanas',idioma:'Inglés',clima:'Varía por ciudad', postvisa:'OPT / CPT',url:'/estados-unidos/'},
+  alemania:   {flag:'🇩🇪',name:'Alemania',      curso:'€150–350/sem',   aloj:'€130–220/sem',    trabajo:'17 h/semana',salario:'€12.82/h',   visa:'Visum D',     tramVisa:'4–6 semanas',idioma:'Alemán + inglés',clima:'Frío/templado',postvisa:'Job-seeker Visa',url:'/alemania/'},
+  dubai:      {flag:'🇦🇪',name:'Dubai',         curso:'USD $250–450/sem',aloj:'USD $160–280/sem',trabajo:'No permitido',salario:'—',          visa:'Student Visa',tramVisa:'2–3 semanas',idioma:'Inglés/Árabe',clima:'Muy caluroso',postvisa:'—',url:'/dubai/'},
+  francia:    {flag:'🇫🇷',name:'Francia',       curso:'€200–400/sem',   aloj:'€140–250/sem',    trabajo:'18 h/semana',salario:'€11.88/h',   visa:'Visa estudiantil',tramVisa:'4–6 semanas',idioma:'Francés + inglés',clima:'Templado',postvisa:'Talent Passport',url:'/francia/'},
+};
+
+var ROWS = [
+  {label:'💰 Costos',type:'section'},
+  {key:'curso',     label:'Curso por semana'},
+  {key:'aloj',      label:'Alojamiento por semana'},
+  {label:'📋 Visa',type:'section'},
+  {key:'visa',      label:'Tipo de visa'},
+  {key:'tramVisa',  label:'Tiempo tramitación'},
+  {label:'💼 Trabajo',type:'section'},
+  {key:'trabajo',   label:'Horas permitidas'},
+  {key:'salario',   label:'Salario mínimo'},
+  {label:'🌍 Destino',type:'section'},
+  {key:'idioma',    label:'Idioma principal'},
+  {key:'clima',     label:'Clima'},
+  {key:'postvisa',  label:'Opciones post-estudio'},
+];
+
+function renderCmp(){
+  var d1=CMP_DATA[document.getElementById('dest1').value];
+  var d2=CMP_DATA[document.getElementById('dest2').value];
+
+  var html='<div class="cmp-thead"><div class="ch">Categoría</div><div class="ch">'+d1.flag+' '+d1.name+'</div><div class="ch">'+d2.flag+' '+d2.name+'</div></div>';
+
+  ROWS.forEach(function(row){
+    if(row.type==='section'){
+      html+='<div class="cmp-row-label">'+row.label+'</div>';
+      return;
+    }
+    html+='<div class="cmp-row"><div class="cmp-cell">'+row.label+'</div><div class="cmp-cell">'+d1[row.key]+'</div><div class="cmp-cell">'+d2[row.key]+'</div></div>';
+  });
+
+  document.getElementById('cmpTable').innerHTML=html;
+
+  // Update CTAs
+  document.getElementById('cmpCta1').textContent=d1.flag+' Ver guía '+d1.name+' →';
+  document.getElementById('cmpCta1').href=d1.url;
+  document.getElementById('cmpCta2').textContent=d2.flag+' Ver guía '+d2.name+' →';
+  document.getElementById('cmpCta2').href=d2.url;
+}
+
+document.getElementById('dest1').addEventListener('change',renderCmp);
+document.getElementById('dest2').addEventListener('change',renderCmp);
+renderCmp();
+
+})();
+</script>
+<script src="/js/wa-tracker.js" defer></script>
+</body>
+</html>
