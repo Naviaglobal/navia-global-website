@@ -1578,6 +1578,7 @@ function heroFormSubmit(e){
   const wa=f.whatsapp.value.trim();
   const email=f.email.value.trim();
   const destino=f.destino.value;
+  try{fetch('https://primary-production-1264d.up.railway.app/webhook/lead-web',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:nombre,whatsapp:wa,email:email,destino:destino,origen:'hero-home'})}).catch(function(){});}catch(_){}
   const msg=`Hola Navia Global 👋 Me interesa estudiar en el exterior.\n\n👤 Nombre: ${nombre}\n📱 WhatsApp: ${wa}\n📧 Email: ${email}\n🌍 Destino de interés: ${destino}\n\nQuisiera recibir mi cotización gratuita.`;
   window.open('https://wa.me/573014430722?text='+encodeURIComponent(msg),'_blank');
   // Visual feedback

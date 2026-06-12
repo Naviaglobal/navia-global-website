@@ -1,4 +1,4 @@
-// Lead capture widget (WhatsApp) — Navia Global
+﻿// Lead capture widget (WhatsApp) — Navia Global
 // Usage: include this script and add <div class="navia-email-capture" data-topic="Australia"></div>
 (function(){
   var style = document.createElement('style');
@@ -45,6 +45,7 @@
       // Track
       if(typeof fbq === 'function') fbq('track','Lead',{content_name:'Blog Lead',content_category:topic});
       if(typeof gtag === 'function') gtag('event','generate_lead',{event_category:'Blog',event_label:topic});
+      try{fetch('https://primary-production-1264d.up.railway.app/webhook/lead-web',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:nombre,whatsapp:whatsapp,destino:topic,origen:'blog-capture'})}).catch(function(){});}catch(_){}
       // Guardar lead en Formspree
       fetch('https://formspree.io/f/xdkpereb',{
         method:'POST',
