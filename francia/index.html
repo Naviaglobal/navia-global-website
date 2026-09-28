@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RNV31B1EM');</script>
 <meta charset="UTF-8">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -207,6 +207,14 @@
 .testi-avatar{width:38px;height:38px;border-radius:50%;background:#0B2C4A;color:#00D9A3;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex-shrink:0}
 .testi-name{font-weight:700;font-size:.88rem;color:#0B2C4A}
 .testi-meta{font-size:.78rem;color:#7a8a9a;margin-top:2px}
+
+#stickyCta{position:fixed;left:0;right:0;bottom:0;z-index:997;background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.12);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(120%);transition:transform .35s ease;border-top:1px solid #eef2f7}
+#stickyCta.show{transform:translateY(0)}
+#stickyCta .sc-txt{font-size:.9rem;font-weight:700;color:#1B4B8C;line-height:1.25}
+#stickyCta .sc-txt small{display:block;font-size:.72rem;font-weight:600;color:#1ABC9C}
+#stickyCta .sc-btn{flex-shrink:0;background:linear-gradient(135deg,#1ABC9C,#16A085);color:#fff;padding:12px 20px;border-radius:50px;text-decoration:none;font-weight:800;font-size:.92rem;white-space:nowrap;box-shadow:0 3px 10px rgba(26,188,156,.35)}
+@media(min-width:900px){#stickyCta{left:auto;right:24px;bottom:24px;max-width:420px;border-radius:16px;border:1px solid #eef2f7}}
+body.has-sticky-cta .wa-float,body.has-sticky-cta .whatsapp-float{bottom:88px}
 </style>
 <!-- TESTIMONIOS -->
 <section class="testimonios-section">
@@ -265,9 +273,9 @@
 </a>
 <script>
 (function(){var nav=document.getElementById('mainNav');function upd(){nav.classList.toggle('solid',window.scrollY>60)}window.addEventListener('scroll',upd,{passive:true});upd();})();
-(function(){var form=document.getElementById('leadFormLanding');var btn=document.getElementById('leadFormBtn');var ok=document.getElementById('leadFormSuccess');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();btn.textContent='Enviando...';btn.disabled=true;try{var _fd=new FormData(form);fetch('https://primary-production-1264d.up.railway.app/webhook/lead-web',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:_fd.get('nombre'),whatsapp:_fd.get('whatsapp'),email:_fd.get('email'),destino:_fd.get('destino')||'destino',origen:'landing-destino'})}).catch(function(){});}catch(_){}fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';ok.style.display='block';if(typeof fbq==='function')fbq('track','Lead',{content_name:'Francia'});}else{btn.textContent='Quiero mi asesoría gratuita';btn.disabled=false;}}).catch(function(){btn.textContent='Quiero mi asesoría gratuita';btn.disabled=false;window.open('https://wa.me/573014430722','_blank');});});})();
+(function(){var form=document.getElementById('leadFormLanding');var btn=document.getElementById('leadFormBtn');var ok=document.getElementById('leadFormSuccess');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();btn.textContent='Enviando...';btn.disabled=true;try{var _fd=new FormData(form);fetch('https://primary-production-1264d.up.railway.app/webhook/lead-web',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:_fd.get('nombre'),whatsapp:_fd.get('whatsapp'),email:_fd.get('email'),destino:_fd.get('destino')||'destino',origen:'landing-destino'})}).catch(function(){});}catch(_){}fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){if(r.ok){form.style.display='none';ok.style.display='block';if(typeof fbq==='function')fbq('track','Lead',{content_name:'Francia'});if(typeof gtag==='function')gtag('event','generate_lead',{value:1,currency:'COP',destino:'Francia'});}else{btn.textContent='Quiero mi asesoría gratuita';btn.disabled=false;}}).catch(function(){btn.textContent='Quiero mi asesoría gratuita';btn.disabled=false;window.open('https://wa.me/573014430722','_blank');});});})();
 </script>
 <script src="/js/wa-tracker.js" defer></script>
 <script src="/js/email-capture.js" defer></script>
-</body>
+<div id="stickyCta"><div class="sc-txt">Estudia en Francia<small>Asesoría 100% gratis · sin costo</small></div><a href="#formulario" class="sc-btn" id="stickyCtaBtn">Quiero info &rarr;</a></div><script>(function(){var bar=document.getElementById('stickyCta');if(!bar)return;document.body.classList.add('has-sticky-cta');var hero=document.querySelector('.dest-hero');var form=document.getElementById('formulario');function upd(){var past=hero?(window.scrollY>hero.offsetHeight*0.6):(window.scrollY>350);var atForm=false;if(form){var r=form.getBoundingClientRect();atForm=r.top<window.innerHeight&&r.bottom>0;}if(past&&!atForm){bar.classList.add('show');}else{bar.classList.remove('show');}}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();var b=document.getElementById('stickyCtaBtn');if(b)b.addEventListener('click',function(){if(typeof fbq==='function')fbq('trackCustom','StickyCtaClick');});})();</script></body>
 </html>

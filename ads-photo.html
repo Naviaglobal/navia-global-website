@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Photo Ads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --green:#36b398; --red:#36b398; --gold:#3b97d3; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .ad{ width:1080px; height:1350px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff; }
+  .ad .photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+  /* top scrim */
+  .topscrim{ position:absolute; top:0; left:0; right:0; height:300px; z-index:2;
+    background:linear-gradient(to bottom, rgba(6,20,35,.75), transparent); }
+  /* bottom scrim */
+  .botscrim{ position:absolute; left:0; right:0; bottom:0; height:760px; z-index:2;
+    background:linear-gradient(to top, rgba(5,17,30,.97) 26%, rgba(6,20,35,.82) 52%, rgba(6,20,35,.35) 78%, transparent); }
+
+  .logo{ position:absolute; top:42px; right:50px; width:118px; z-index:6; filter:drop-shadow(0 3px 10px rgba(0,0,0,.6)); }
+  .pill{ position:absolute; top:52px; left:50px; z-index:6; border:1.5px solid rgba(255,255,255,.55);
+    border-radius:40px; padding:12px 24px; font-size:22px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+    background:rgba(6,20,35,.25); backdrop-filter:blur(3px); }
+
+  .content{ position:absolute; left:56px; right:56px; bottom:52px; z-index:6; }
+  .kicker{ color:var(--green); font-weight:700; font-size:26px; letter-spacing:4px; text-transform:uppercase; margin-bottom:10px;
+    text-shadow:0 2px 10px rgba(0,0,0,.6); }
+  .country{ font-family:'Big Shoulders Display'; font-weight:900; font-size:118px; line-height:.84; letter-spacing:-2px;
+    text-shadow:0 4px 24px rgba(0,0,0,.55); }
+  .priceline{ margin-top:22px; font-size:32px; font-weight:600; color:#eaf1f4; }
+  .priceline b{ font-family:'Big Shoulders Display'; font-weight:900; font-size:58px; color:var(--green); vertical-align:-4px; margin:0 4px;
+    text-shadow:0 3px 18px rgba(54,179,152,.5); }
+  .inc{ margin-top:8px; font-size:24px; color:var(--gray); font-weight:500; }
+  .cta{ margin-top:30px; background:var(--red); border-radius:18px; padding:26px 36px; display:flex; align-items:center; justify-content:space-between;
+    box-shadow:0 16px 40px rgba(54,179,152,.45); }
+  .cta .t{ font-family:'Big Shoulders Display'; font-weight:800; font-size:40px; letter-spacing:.5px; }
+  .cta .n{ font-family:'Big Shoulders Display'; font-weight:900; font-size:46px; }
+  .proof{ margin-top:18px; font-size:22px; color:var(--gray); font-weight:500; text-align:center; }
+  .proof b{ color:var(--gold); font-weight:700; }
+</style>
+</head>
+<body>
+<div class="ad" id="ad">
+  <img class="photo" id="photo" src="./g2.png" alt="">
+  <div class="topscrim"></div>
+  <div class="botscrim"></div>
+  <img class="logo" src="./logo.webp" alt="">
+  <div class="pill">Estudia + Trabaja</div>
+  <div class="content">
+    <div class="kicker">Estudia inglés en el exterior</div>
+    <div class="country" id="country">AUSTRALIA</div>
+    <div class="priceline" id="priceline">Curso de <span id="weeks">24 semanas</span>, todo incluido</div>
+    <div class="inc" id="inc">Curso + materiales + registro</div>
+    <div class="cta"><div class="t">Escríbenos por WhatsApp</div><div class="n">301 4430722</div></div>
+    <div class="proof"><b>+8 años</b> de experiencia &nbsp;·&nbsp; <b>Asesoría gratis</b> &nbsp;·&nbsp; <b>3 países</b></div>
+  </div>
+</div>
+<script>
+  const data = {
+    irlanda:   { img:"./g3.png", name:"IRLANDA",       weeks:"25 semanas", price:"$10.000.000", inc:"Incluye curso + materiales + registro + seguro + examen de certificación internacional", pos:"center 22%", accent:"#36b398" },
+    australia: { img:"./img/dinamico/au-sydney-bridge.jpg", name:"AUSTRALIA",     weeks:"24 semanas", price:"$13.000.000", inc:"Incluye curso + materiales + registro", pos:"center 30%", accent:"#3b97d3" },
+    nz:        { img:"./g1.png", name:"NUEVA ZELANDA", weeks:"24 semanas", price:"$13.000.000", inc:"Incluye curso + materiales + registro", pos:"center 20%", accent:"#3b97d3" },
+  };
+  const p = new URLSearchParams(location.search).get('c') || 'australia';
+  const d = data[p] || data.australia;
+  photo.src = d.img;
+  photo.style.objectPosition = d.pos;
+  country.textContent = d.name;
+  weeks.textContent = d.weeks;
+  price.textContent = d.price;
+  inc.textContent = d.inc;
+  document.querySelector('.kicker').style.color = d.accent;
+  price.style.color = d.accent;
+  if (d.name.length > 8) country.style.fontSize = '92px';
+</script>
+</body>
+</html>

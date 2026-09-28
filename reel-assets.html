@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Reel Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --blue:#1b4b8d; --green:#36b398; --red:#36b398; --gold:#3b97d3; --gray:#B0B8C1; }
+  html,body{ background:transparent; }
+  .frame{ width:1080px; height:1920px; position:relative; overflow:hidden;
+    font-family:'Instrument Sans',sans-serif; color:#fff; }
+  .opaque{
+    background:
+      radial-gradient(90% 40% at 82% 6%, rgba(54,179,152,.20), transparent 55%),
+      radial-gradient(80% 40% at 15% 96%, rgba(59,151,211,.55), transparent 60%),
+      linear-gradient(165deg,#1b4b8d 0%, var(--navy) 45%, #1a2530 100%);
+  }
+  .opaque::before{ content:""; position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1.5px, transparent 1.5px);
+    background-size:30px 30px; opacity:.5; }
+  .logo{ position:absolute; top:232px; right:64px; width:120px; z-index:9;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.5)); }
+  .scrim{ position:absolute; left:0; right:0; bottom:0; height:1000px; z-index:2;
+    background:linear-gradient(to top, rgba(5,18,32,.94) 8%, rgba(5,18,32,.55) 42%, transparent 78%); }
+
+  /* ===== OVERLAYS (sobre video) ===== */
+  .ov{ position:absolute; left:70px; right:70px; bottom:330px; z-index:5; }
+  .ov .kick{ color:var(--green); font-weight:700; font-size:30px; letter-spacing:5px; text-transform:uppercase; margin-bottom:16px; }
+  .ov .big{ font-family:'Big Shoulders Display'; font-weight:900; font-size:100px; line-height:.92; letter-spacing:-1px; text-shadow:0 4px 24px rgba(0,0,0,.5); }
+  .ov .big .g{ color:var(--green); }
+  .ov .sm{ font-size:40px; font-weight:600; color:#e8eef2; margin-top:18px; line-height:1.2; }
+
+  /* price mini card (S3) */
+  .pcard{ position:absolute; left:70px; right:70px; bottom:300px; z-index:5;
+    background:linear-gradient(150deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+    border:1px solid rgba(255,255,255,.2); border-radius:32px; padding:48px 52px;
+    backdrop-filter:blur(10px); box-shadow:0 24px 60px rgba(0,0,0,.5); }
+  .pcard .l{ font-size:30px; color:var(--gray); font-weight:600; text-transform:uppercase; letter-spacing:2px; }
+  .pcard .price{ font-family:'Big Shoulders Display'; font-weight:900; font-size:126px; line-height:.9; color:var(--green); margin:6px 0; text-shadow:0 6px 30px rgba(54,179,152,.4); }
+  .pcard .inc{ font-size:34px; color:#eaf1f4; font-weight:600; }
+
+  /* ===== PROOF (escena 4) ===== */
+  .proof{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 90px; z-index:5; }
+  .proof .kick{ color:var(--green); font-weight:700; font-size:34px; letter-spacing:6px; text-transform:uppercase; margin-bottom:30px; }
+  .proof .num{ font-family:'Big Shoulders Display'; font-weight:900; font-size:340px; line-height:.82; color:#fff; }
+  .proof .num small{ color:var(--green); }
+  .proof .cap{ font-size:44px; font-weight:700; margin-top:4px; }
+  .proof .row{ display:flex; gap:60px; margin-top:70px; }
+  .proof .row div{ font-family:'Big Shoulders Display'; font-weight:800; font-size:80px; color:var(--gold); line-height:.9; }
+  .proof .row div span{ display:block; font-family:'Instrument Sans'; font-weight:600; font-size:28px; color:#e8eef2; letter-spacing:1px; }
+  .proof .tag{ font-size:38px; color:#dfe7ec; font-weight:500; margin-top:80px; font-style:italic; }
+
+  /* ===== CTA / END (escena 5) ===== */
+  .end{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; z-index:5; }
+  .end img{ width:300px; margin-bottom:34px; filter:drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
+  .end .wm{ font-family:'Big Shoulders Display'; font-weight:900; font-size:96px; letter-spacing:2px; line-height:.9; }
+  .end .tl{ font-size:40px; color:var(--green); font-weight:500; letter-spacing:6px; margin-top:10px; text-transform:uppercase; }
+  .end .cta{ background:var(--red); border-radius:26px; padding:38px 70px; margin-top:80px;
+    box-shadow:0 20px 50px rgba(54,179,152,.45); }
+  .end .cta .t{ font-family:'Big Shoulders Display'; font-weight:800; font-size:56px; }
+  .end .cta .n{ font-family:'Big Shoulders Display'; font-weight:900; font-size:88px; margin-top:6px; letter-spacing:1px; }
+  .end .free{ font-size:36px; color:var(--gray); margin-top:44px; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<div class="frame" id="frame">
+  <svg style="position:absolute;inset:0;z-index:1" width="1080" height="1920" viewBox="0 0 1080 1920" fill="none" id="arc">
+    <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#36b398" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#36b398" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#36b398" stop-opacity="0"/></linearGradient></defs>
+    <path d="M -40 470 Q 540 300 1120 520" stroke="url(#rg)" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round"/>
+  </svg>
+  <img class="logo" src="./logo.webp" alt="" id="logo">
+  <div id="slot"></div>
+</div>
+
+<script>
+  const s = new URLSearchParams(location.search).get('s') || 's1';
+  const cparam = new URLSearchParams(location.search).get('c') || 'australia';
+  const C = ({
+    australia: { name:'AUSTRALIA',     weeks:'24 semanas', price:'$13.000.000', inc:'Curso + materiales + registro incluidos' },
+    irlanda:   { name:'IRLANDA',       weeks:'25 semanas', price:'$10.000.000', inc:'Curso + materiales + registro + seguro + examen internacional' },
+    nz:        { name:'NUEVA ZELANDA', weeks:'24 semanas', price:'$13.000.000', inc:'Curso + materiales + registro incluidos' },
+  })[cparam] || {};
+  const frame = document.getElementById('frame');
+  const slot = document.getElementById('slot');
+  const logo = document.getElementById('logo');
+  const arc = document.getElementById('arc');
+  const scrim = '<div class="scrim"></div>';
+
+  const scenes = {
+    s1: { type:'ov', html: scrim + `<div class="ov">
+        <div class="kick">Estudia inglés en el exterior</div>
+        <div class="big">Esto podrías<br>ser tú en <span class="g">${C.name}</span></div>
+      </div>` },
+    s2: { type:'ov', html: scrim + `<div class="ov">
+        <div class="big">Estudiar inglés afuera<br>parece imposible…</div>
+        <div class="sm">…hasta que ves lo accesible que es.</div>
+      </div>` },
+    s3: { type:'ov', html: scrim + `<div class="pcard">
+        <div class="l">Curso de inglés · ${C.weeks} — desde</div>
+        <div class="price">${C.price} <span style="font-size:52px;color:#fff;">COP</span></div>
+        <div class="inc">${C.inc}</div>
+      </div>` },
+    proof: { type:'opaque', html:`<div class="proof">
+        <div class="kick">Por qué con Navia</div>
+        <div class="num"><small>+8</small></div>
+        <div class="cap">años de experiencia asesorando estudiantes</div>
+        <div class="row">
+          <div>100%<span>asesoría gratis</span></div>
+          <div>3<span>países work & study</span></div>
+        </div>
+        <div class="tag">Una agencia de ex-estudiantes, para estudiantes.</div>
+      </div>` },
+    cta: { type:'opaque', html:`<div class="end">
+        <img src="./logo.webp" alt="">
+        <div class="wm">NAVIA GLOBAL</div>
+        <div class="tl">Tu puente al mundo</div>
+        <div class="cta"><div class="t">Escríbenos por WhatsApp</div><div class="n">301 4430722</div></div>
+        <div class="free">TU ASESORÍA ES 100% GRATIS</div>
+      </div>` },
+  };
+
+  const sc = scenes[s] || scenes.s1;
+  slot.innerHTML = sc.html;
+  if (sc.type === 'opaque') { frame.classList.add('opaque'); }
+  else { arc.remove(); logo.remove(); /* keep video clean; logo baked only via scrim scenes optionally */ }
+  // for overlays we DO want a small logo, re-add for s1/s3
+  if (s === 's1' || s === 's3') {
+    const l = document.createElement('img'); l.className='logo'; l.src='./logo.webp';
+    frame.appendChild(l);
+  }
+</script>
+</body>
+</html>

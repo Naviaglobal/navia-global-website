@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Stories Septiembre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --blue:#1b4b8d; --sky:#3b97d3; --teal:#36b398; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .st{ width:1080px; height:1920px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff;
+    background: radial-gradient(90% 40% at 82% 8%, rgba(54,179,152,.20), transparent 55%),
+      radial-gradient(80% 40% at 15% 95%, rgba(59,151,211,.5), transparent 60%),
+      linear-gradient(165deg,var(--blue) 0%, var(--navy) 45%, #1a2530 100%); }
+  .st::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.05) 1.5px, transparent 1.5px); background-size:30px 30px; opacity:.5; }
+  .photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; z-index:0; }
+  .scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(5,17,30,.95) 12%, rgba(6,20,35,.5) 45%, rgba(6,20,35,.5) 62%, transparent 88%); }
+  .logo{ position:absolute; top:250px; left:50%; transform:translateX(-50%); width:120px; z-index:9; filter:drop-shadow(0 4px 12px rgba(0,0,0,.5)); }
+  .box{ position:absolute; left:80px; right:80px; top:640px; z-index:6; text-align:center; }
+  .kick{ color:var(--teal); font-weight:700; font-size:30px; letter-spacing:5px; text-transform:uppercase; margin-bottom:22px; }
+  .head{ font-family:'Big Shoulders Display'; font-weight:900; font-size:104px; line-height:.9; letter-spacing:-2px; text-shadow:0 4px 24px rgba(0,0,0,.5); }
+  .head .g{ color:var(--teal); }
+  .sub{ font-size:36px; color:#e8eef2; font-weight:500; margin-top:32px; line-height:1.35; }
+  .hint{ position:absolute; left:80px; right:80px; bottom:250px; z-index:6; text-align:center; }
+  .cta{ display:inline-block; background:var(--teal); color:var(--navy); border-radius:20px; padding:26px 54px; box-shadow:0 16px 40px rgba(54,179,152,.4);
+    font-family:'Big Shoulders Display'; font-weight:800; font-size:42px; }
+  .wa{ position:absolute; left:0; right:0; bottom:150px; z-index:6; text-align:center; font-size:30px; color:var(--gray); font-weight:600; letter-spacing:1px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const week = new URLSearchParams(location.search).get('week') || 'w2';
+  const s = new URLSearchParams(location.search).get('s') || '1';
+  const LOGO='./logo.webp';
+  function shell(inner, photo){
+    const bg = photo ? `<img class="photo" src="${photo}"><div class="scrim"></div>` : '';
+    return `<div class="st">${bg}<img class="logo" src="${LOGO}">${inner}</div>`;
+  }
+
+  // Semana 2 (9-14 sep, resto de esta semana) — foco AUSTRALIA
+  const W2 = {
+    mie: shell(`<div class="box"><div class="kick">Hoy</div>
+        <div class="head">¿Qué te<br>frena para<br><span class="g">irte?</span></div>
+        <div class="sub">Cuéntanos honestamente 👇<br>Te respondemos sin rodeos.</div></div>`),
+    jue: shell(`<div class="box"><div class="kick">Australia</div>
+        <div class="head">4 requisitos<br>reales</div>
+        <div class="sub">Mira el carrusel completo en el feed 📌</div></div>
+        <div class="hint"><span class="cta">Ver el post</span></div>`, './g2.png'),
+    vie: shell(`<div class="box"><div class="kick">Viernes</div>
+        <div class="head">Estudia inglés<br>en <span class="g">Australia</span></div>
+        <div class="sub">Trabaja legal mientras estudias 🇦🇺</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · Asesoría 100% gratis</div>`, './g2.png'),
+    sab: shell(`<div class="box"><div class="kick">Sábado</div>
+        <div class="head">¿Sabes cuánto<br>puedes <span class="g">ahorrar</span>?</div>
+        <div class="sub">Adivina el costo del curso 👇<br>y sorpréndete.</div></div>`, './g2.png'),
+    dom: shell(`<div class="box"><div class="kick">Domingo</div>
+        <div class="head">Empieza tu<br><span class="g">semana</span> distinto</div>
+        <div class="sub">Agenda tu asesoría gratis para mañana.</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · @navia.global</div>`),
+  };
+
+  // Semana 3 (15-21 sep) — foco IRLANDA
+  const W3 = {
+    lun: shell(`<div class="box"><div class="kick">Lunes</div>
+        <div class="head">Mitos vs.<br><span class="g">realidad</span></div>
+        <div class="sub">5 mitos sobre estudiar en Irlanda — carrusel en el feed 📌</div></div>`, './g3.png'),
+    mar: shell(`<div class="box"><div class="kick">Martes</div>
+        <div class="head">Historias<br><span class="g">reales</span></div>
+        <div class="sub">Jenny fue "Student of the Week" en su curso 🎓</div></div>
+        <div class="wa">WhatsApp 301 4430722 · @navia.global</div>`, './g3.png'),
+    mie: shell(`<div class="box"><div class="kick">Miércoles</div>
+        <div class="head">¿Cuánto<br>cuesta <span class="g">de verdad</span>?</div>
+        <div class="sub">Todo incluido y sin letra pequeña. Te damos el valor exacto por WhatsApp.</div></div>
+        <div class="hint"><span class="cta">Pregúntanos</span></div>`),
+    jue: shell(`<div class="box"><div class="kick">Jueves</div>
+        <div class="head">¿Te gusta<br>la <span class="g">aventura</span>?</div>
+        <div class="sub">Cuéntanos qué destino te llama más 👇</div></div>`, './g3.png'),
+    vie: shell(`<div class="box"><div class="kick">Viernes</div>
+        <div class="head">Estudia inglés<br>en <span class="g">Irlanda</span></div>
+        <div class="sub">Europa + inglés + trabajo legal 🍀</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · Asesoría 100% gratis</div>`, './g3.png'),
+    sab: shell(`<div class="box"><div class="kick">Sábado</div>
+        <div class="head">Imagina<br>tu <span class="g">sábado</span> ahí</div>
+        <div class="sub">Dublín te está esperando 🇮🇪</div></div>`, './g3.png'),
+    dom: shell(`<div class="box"><div class="kick">Domingo</div>
+        <div class="head">Última<br>semana de <span class="g">septiembre</span></div>
+        <div class="sub">Empieza tu proceso mientras aún hay tiempo.</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · @navia.global</div>`),
+  };
+
+  // Semana 4 (22-28 sep) — foco NUEVA ZELANDA
+  const W4 = {
+    lun: shell(`<div class="box"><div class="kick">Lunes</div>
+        <div class="head">¿Por qué<br><span class="g">Nueva Zelanda</span>?</div>
+        <div class="sub">3 razones que casi nadie te cuenta — carrusel en el feed 📌</div></div>`, './g1.png'),
+    mar: shell(`<div class="box"><div class="kick">Martes</div>
+        <div class="head">Menos<br><span class="g">competido</span></div>
+        <div class="sub">Misma calidad, menos saturación de cupos.</div></div>`, './g1.png'),
+    mie: shell(`<div class="box"><div class="kick">Miércoles</div>
+        <div class="head">¿Qué destino<br>te <span class="g">late más</span>?</div>
+        <div class="sub">Vota en la encuesta 👇</div></div>`),
+    jue: shell(`<div class="box"><div class="kick">Jueves</div>
+        <div class="head">Todo<br><span class="g">incluido</span></div>
+        <div class="sub">24 semanas, todo incluido. Sin sorpresas.</div></div>
+        <div class="hint"><span class="cta">Pregúntanos</span></div>`, './g1.png'),
+    vie: shell(`<div class="box"><div class="kick">Viernes</div>
+        <div class="head">Estudia inglés<br>en <span class="g">Nueva Zelanda</span></div>
+        <div class="sub">Naturaleza + calidad de vida 🇳🇿</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · Asesoría 100% gratis</div>`, './g1.png'),
+    sab: shell(`<div class="box"><div class="kick">Sábado</div>
+        <div class="head">Imagina<br>despertar <span class="g">ahí</span></div>
+        <div class="sub">Auckland te está esperando 🌊</div></div>`, './g1.png'),
+    dom: shell(`<div class="box"><div class="kick">Domingo</div>
+        <div class="head">Octubre<br>empieza <span class="g">mañana</span></div>
+        <div class="sub">Asegura tu cupo antes de que se llenen.</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · @navia.global</div>`),
+  };
+
+  // Cierre (29-30 sep) — enero 2027
+  const CIERRE = {
+    lun: shell(`<div class="box"><div class="kick">Lunes</div>
+        <div class="head">Últimos<br>días de <span class="g">septiembre</span></div>
+        <div class="sub">Si querías empezar este mes, es ahora.</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722</div>`),
+    mar: shell(`<div class="box"><div class="kick">Martes</div>
+        <div class="head">Tu <span class="g">2027</span><br>empieza hoy</div>
+        <div class="sub">Asegura tu cupo para el intake de enero.<br>Asesoría 100% gratis.</div></div>
+        <div class="hint"><span class="cta">Escríbenos por WhatsApp</span></div>
+        <div class="wa">301 4430722 · @navia.global</div>`),
+  };
+
+  const SETS = {w2:W2, w3:W3, w4:W4, cierre:CIERRE};
+  const set = SETS[week] || W2;
+  document.getElementById('root').innerHTML = set[s] || Object.values(set)[0];
+</script>
+</body>
+</html>

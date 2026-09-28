@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RNV31B1EM');</script>
 <meta charset="UTF-8">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -691,5 +691,22 @@ renderCmp();
 })();
 </script>
 <script src="/js/wa-tracker.js" defer></script>
-</body>
+<script>(function(){
+function ctx(){
+  var d=document.getElementById('dest'), r=document.getElementById('resultTitle');
+  if(d&&d.options&&d.selectedIndex>=0) return d.options[d.selectedIndex].text.replace(/^[^\s]+\s/,'');
+  if(r&&r.textContent) return r.textContent.trim().substring(0,60);
+  return '(sin seleccionar)';
+}
+document.addEventListener('click',function(e){
+  var a=e.target.closest && e.target.closest('a[href*="wa.me/573014430722"]');
+  if(!a) return;
+  var destino=ctx();
+  var zona = a.classList.contains('wa-float') ? 'boton_flotante'
+           : a.classList.contains('nav-cta')  ? 'nav'
+           : 'resultado';
+  try{ if(typeof gtag==='function') gtag('event','contacto_whatsapp',{origen:'comparador',zona:zona,destino:destino}); }catch(_){}
+  try{ if(typeof fbq==='function') fbq('trackCustom','WhatsAppClick',{origen:'comparador',zona:zona,destino:destino}); }catch(_){}
+},true);
+})();</script></body>
 </html>

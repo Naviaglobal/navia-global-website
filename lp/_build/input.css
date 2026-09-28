@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Refuerzo de marca: los CTA son teal, nunca rojo (NAVIA_SISTEMA.md §7) */
+@layer components {
+  .btn-wa {
+    @apply btn btn-accent btn-lg text-white font-semibold normal-case shadow-md;
+  }
+}

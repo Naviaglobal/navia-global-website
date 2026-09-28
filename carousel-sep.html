@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Carrusel Septiembre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --blue:#1b4b8d; --sky:#3b97d3; --teal:#36b398; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .s{ width:1080px; height:1080px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff; }
+  .logo{ position:absolute; top:40px; right:48px; width:100px; z-index:9; filter:drop-shadow(0 3px 10px rgba(0,0,0,.5)); }
+  .count{ position:absolute; bottom:36px; right:48px; z-index:9; font-size:20px; font-weight:700; color:rgba(255,255,255,.55); letter-spacing:2px; }
+  .swipe{ position:absolute; bottom:36px; left:52px; z-index:9; font-size:22px; font-weight:700; letter-spacing:1px; }
+
+  /* ===== estilo A: bloques apilados (semana Australia - "requisitos") ===== */
+  .bgA{ background: linear-gradient(150deg, var(--blue) 0%, var(--navy) 60%, #1a2530 100%); }
+  .bgA::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.04) 1.5px, transparent 1.5px); background-size:28px 28px; }
+  .stepnum{ position:absolute; top:64px; left:56px; font-family:'Big Shoulders Display'; font-weight:900; font-size:150px; color:rgba(255,255,255,.08); line-height:1; z-index:1; }
+  .stepbody{ position:absolute; left:56px; right:56px; bottom:120px; z-index:5; }
+  .stepkick{ color:var(--teal); font-weight:700; font-size:24px; letter-spacing:4px; text-transform:uppercase; margin-bottom:14px; }
+  .steph{ font-family:'Big Shoulders Display'; font-weight:900; font-size:76px; line-height:.95; letter-spacing:-1px; margin-bottom:20px; }
+  .stepp{ font-size:28px; color:#e8eef2; line-height:1.4; font-weight:500; }
+  .checklist{ margin-top:24px; display:flex; flex-direction:column; gap:14px; }
+  .checkitem{ display:flex; gap:14px; align-items:flex-start; font-size:26px; font-weight:600; }
+  .checkitem .dot{ width:30px; height:30px; border-radius:50%; background:var(--teal); flex:0 0 auto; display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--navy); font-weight:900; }
+
+  /* ===== estilo B: split card lateral (semana Irlanda - "mitos") ===== */
+  .bgB{ background:#f4f1ea; color:var(--navy); }
+  .mytop{ position:absolute; top:0; left:0; right:0; height:46%; background:linear-gradient(135deg,var(--blue),var(--navy)); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 70px; }
+  .mytag{ color:var(--teal); font-weight:700; font-size:24px; letter-spacing:5px; text-transform:uppercase; margin-bottom:16px; }
+  .mytitle{ font-family:'Big Shoulders Display'; font-weight:900; font-size:64px; line-height:.95; color:#fff; }
+  .mybot{ position:absolute; top:46%; left:0; right:0; bottom:0; padding:56px 64px; display:flex; flex-direction:column; justify-content:center; }
+  .mitlabel{ display:inline-block; background:var(--navy); color:#fff; font-weight:800; font-size:22px; letter-spacing:2px; padding:8px 20px; border-radius:30px; margin-bottom:18px; align-self:flex-start; }
+  .mitreal{ font-family:'Big Shoulders Display'; font-weight:800; font-size:42px; line-height:1.15; color:var(--navy); }
+  .mitreal b{ color:var(--teal); }
+  .bgB .logo{ filter: none; }
+  .bgB .count{ color: rgba(44,62,80,.5); }
+  .bgB .swipe{ color: var(--teal); }
+
+  /* ===== estilo C: pregunta grande centrada (semana NZ - "por qué NZ") ===== */
+  .bgC{ background: radial-gradient(120% 90% at 30% 0%, var(--sky) 0%, var(--blue) 45%, var(--navy) 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 80px; }
+  .cbig{ font-family:'Big Shoulders Display'; font-weight:900; font-size:96px; line-height:.9; letter-spacing:-1px; }
+  .cbig .g{ color:#fff; -webkit-text-stroke: 3px var(--teal); }
+  .csub{ font-size:32px; color:#eaf3f6; font-weight:600; margin-top:28px; line-height:1.4; }
+  .cchip{ margin-top:36px; display:inline-flex; gap:14px; }
+  .cchip div{ background:rgba(255,255,255,.14); border:1.5px solid rgba(255,255,255,.35); border-radius:40px; padding:14px 30px; font-size:26px; font-weight:700; }
+
+  /* ===== fondo con foto real (dinámico) ===== */
+  .photoBg{ position:relative; }
+  .photoBg .ph{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .photoBg .scrimTop{ position:absolute; top:0; left:0; right:0; height:260px; z-index:1; background:linear-gradient(to bottom, rgba(6,20,35,.65), transparent); }
+  .photoBg .scrimBot{ position:absolute; left:0; right:0; bottom:0; height:640px; z-index:1; background:linear-gradient(to top, rgba(6,20,35,.96) 26%, rgba(6,20,35,.6) 60%, transparent); }
+  .photoBody{ position:absolute; left:56px; right:56px; bottom:110px; z-index:5; }
+  .photoKick{ color:var(--teal); font-weight:700; font-size:24px; letter-spacing:4px; text-transform:uppercase; margin-bottom:14px; text-shadow:0 2px 10px rgba(0,0,0,.5); }
+  .photoH{ font-family:'Big Shoulders Display'; font-weight:900; font-size:68px; line-height:.95; letter-spacing:-1px; text-shadow:0 4px 20px rgba(0,0,0,.5); }
+  .photoP{ font-size:26px; color:#e8eef2; line-height:1.4; font-weight:500; margin-top:16px; text-shadow:0 2px 10px rgba(0,0,0,.4); }
+
+  /* ===== cierre / CTA (todas las semanas) ===== */
+  .bgCTA{ background:linear-gradient(160deg,var(--navy) 0%,#1a2530 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .ctalogo{ width:180px; margin-bottom:22px; filter:drop-shadow(0 8px 24px rgba(0,0,0,.5)); }
+  .ctah{ font-family:'Big Shoulders Display'; font-weight:900; font-size:70px; line-height:.95; }
+  .ctasub{ color:var(--teal); font-weight:700; letter-spacing:3px; margin-top:12px; font-size:26px; text-transform:uppercase; }
+  .ctabtn{ margin-top:44px; background:var(--teal); color:var(--navy); border-radius:22px; padding:30px 58px; font-family:'Big Shoulders Display'; font-weight:800; font-size:42px; box-shadow:0 16px 40px rgba(54,179,152,.4); }
+  .ctanum{ font-size:52px; margin-top:4px; }
+  .ctafoot{ margin-top:30px; font-size:24px; color:#cfd8de; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const week = new URLSearchParams(location.search).get('week') || 'au';
+  const s = parseInt(new URLSearchParams(location.search).get('s') || '1');
+  const LOGO = './logo.webp';
+
+  function count(n,total){ return `<div class="count">${n} / ${total}</div>`; }
+  function logo(){ return `<img class="logo" src="${LOGO}">`; }
+
+  // ============ SEMANA AUSTRALIA (estilo A — pasos/checklist) — "Requisitos de visa" ============
+  const AU = {
+    1: `<div class="s photoBg"><img class="ph" src="./img/dinamico/au-aeropuerto.jpg" style="object-position:center 25%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Guía rápida</div>
+        <div class="photoH">¿Qué necesitas<br>para estudiar en<br><span style="color:#3b97d3">Australia</span>?</div>
+        <div class="photoP">4 requisitos reales, sin rodeos. Desliza →</div>
+      </div>${count(1,6)}</div>`,
+    2: `<div class="s photoBg"><img class="ph" src="./img/dinamico/au-aeropuerto.jpg" style="object-position:center 30%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Requisito 1</div>
+        <div class="photoH">Pasaporte<br>vigente</div>
+        <div class="photoP">Con al menos 6 meses de vigencia al momento del viaje. Si el tuyo está por vencer, es el primer paso.</div>
+      </div>${count(2,6)}</div>`,
+    3: `<div class="s photoBg"><img class="ph" src="./img/dinamico/estudiante-biblioteca.jpg" style="object-position:center 30%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Requisito 2</div>
+        <div class="photoH">Carta de<br>aceptación (CoE)</div>
+        <div class="photoP">No necesitas tener inglés previo — el curso te lleva desde cero. La escuela emite este documento una vez confirmas tu matrícula; nosotros gestionamos el trámite contigo.</div>
+      </div>${count(3,6)}</div>`,
+    4: `<div class="s photoBg"><img class="ph" src="./img/dinamico/au-sydney-bridge.jpg" style="object-position:center 35%">
+      <div class="scrimTop"></div>
+      <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(6,20,35,.97) 40%, rgba(6,20,35,.8) 65%, rgba(6,20,35,.4) 85%, transparent)"></div>
+      ${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Requisito 3</div>
+        <div class="photoH">Solvencia<br>económica</div>
+        <div class="photoP">El gobierno australiano exige demostrar fondos de manutención: <b style="color:#36b398">AUD $29.710 al año</b> + visa AUD $2.500. Te ayudamos a organizar los soportes.</div>
+      </div>${count(4,6)}</div>`,
+    5: `<div class="s bgA">${logo()}<div class="stepnum">04</div>
+      <div class="stepbody">
+        <div class="stepkick">Requisito 4</div>
+        <div class="steph">Motivos<br>de regreso</div>
+        <div class="stepp">Debes demostrar arraigo en Colombia: trabajo, familia o planes concretos de regreso. Te asesoramos en cómo sustentarlo ante migración.</div>
+      </div>${count(5,6)}</div>`,
+    6: `<div class="s bgCTA">${logo()}
+        <img class="ctalogo" src="${LOGO}">
+        <div class="ctah">¿Cumples estos<br>requisitos?</div>
+        <div class="ctasub">Confírmalo con nosotros</div>
+        <div class="ctabtn">Escríbenos<div class="ctanum">301 4430722</div></div>
+        <div class="ctafoot">Asesoría 100% gratis · +8 años de experiencia</div>
+      ${count(6,6)}</div>`,
+  };
+
+  // ============ SEMANA IRLANDA (estilo B — mito vs realidad) ============
+  const IE = {
+    1: `<div class="s photoBg"><img class="ph" src="./img/dinamico/ie-hapenny-bridge.jpg" style="object-position:center 40%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Desmintiendo mitos</div>
+        <div class="photoH">Estudiar en Irlanda<br>NO es imposible</div>
+        <div class="photoP">5 mitos sobre estudiar en Irlanda que te están frenando. Desliza →</div>
+      </div>${count(1,6)}</div>`,
+    2: `<div class="s photoBg"><img class="ph" src="./img/dinamico/ie-cafe-documentos.jpg" style="object-position:center 20%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Mito #1 · "Es carísimo"</div>
+        <div class="photoH">La realidad</div>
+        <div class="photoP">Curso de 25 semanas con <b style="color:#36b398">todo incluido</b>: materiales, registro, seguro y examen de certificación. Te damos el valor exacto por WhatsApp.</div>
+      </div>${count(2,6)}</div>`,
+    3: `<div class="s photoBg"><img class="ph" src="./img/dinamico/estudiante-biblioteca.jpg" style="object-position:center 30%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Mito #2 · "Necesito inglés avanzado"</div>
+        <div class="photoH">La realidad</div>
+        <div class="photoP">El curso <b style="color:#36b398">te lleva desde cero</b> hasta el nivel que necesitas. No es un requisito de entrada, es el objetivo del programa.</div>
+      </div>${count(3,6)}</div>`,
+    4: `<div class="s bgB">${logo()}
+      <div class="mytop"><div class="mytag">Mito #3</div><div class="mytitle">"El proceso es eterno"</div></div>
+      <div class="mybot"><div class="mitlabel">La realidad</div><div class="mitreal">Con acompañamiento correcto, el proceso <b>se organiza en semanas</b>, no en meses de trámites sueltos.</div></div>
+      ${count(4,6)}</div>`,
+    5: `<div class="s bgB">${logo()}
+      <div class="mytop"><div class="mytag">Mito #4</div><div class="mytitle">"Estaré solo allá"</div></div>
+      <div class="mybot"><div class="mitlabel">La realidad</div><div class="mitreal">Acompañamiento de <b>+8 años de experiencia</b> antes, durante y después de viajar. No armas esto solo.</div></div>
+      ${count(5,6)}</div>`,
+    6: `<div class="s bgCTA">${logo()}
+        <img class="ctalogo" src="${LOGO}">
+        <div class="ctah">¿Cuál mito<br>te frenaba?</div>
+        <div class="ctasub">Cuéntanos y resolvemos tus dudas</div>
+        <div class="ctabtn">Escríbenos<div class="ctanum">301 4430722</div></div>
+        <div class="ctafoot">Asesoría 100% gratis</div>
+      ${count(6,6)}</div>`,
+  };
+
+  // ============ SEMANA NUEVA ZELANDA (estilo C — pregunta grande) ============
+  const NZ = {
+    1: `<div class="s photoBg"><img class="ph" src="./img/dinamico/nz-hiking-costa.jpg" style="object-position:center 30%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">3 razones que casi nadie te cuenta</div>
+        <div class="photoH">¿Por qué<br><span style="color:#36b398">Nueva Zelanda</span>?</div>
+        <div class="photoP">Desliza →</div>
+      </div>${count(1,5)}</div>`,
+    2: `<div class="s photoBg"><img class="ph" src="./img/dinamico/nz-auckland-ferry.jpg" style="object-position:center 45%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Razón #1</div>
+        <div class="photoH">Menos<br>competido</div>
+        <div class="photoP">Mientras todos miran Australia o Canadá, Nueva Zelanda tiene la misma calidad con menos saturación de cupos.</div>
+      </div>${count(2,5)}</div>`,
+    3: `<div class="s photoBg"><img class="ph" src="./img/dinamico/nz-hiking-costa.jpg" style="object-position:center 45%">
+      <div class="scrimTop"></div><div class="scrimBot"></div>${logo()}
+      <div class="photoBody">
+        <div class="photoKick">Razón #2</div>
+        <div class="photoH">Calidad<br>de vida</div>
+        <div class="photoP">Naturaleza, seguridad y un ritmo de vida distinto — sin sacrificar la calidad académica del programa.</div>
+      </div>${count(3,5)}</div>`,
+    4: `<div class="s bgC">${logo()}
+        <div class="cbig">Todo<br>incluido</div>
+        <div class="csub">Curso de 24 semanas: curso, materiales y registro. Sin letra pequeña.</div>
+        <div class="cchip"><div>24 semanas</div><div>Todo incluido</div></div>
+        ${count(4,5)}</div>`,
+    5: `<div class="s bgCTA">${logo()}
+        <img class="ctalogo" src="${LOGO}">
+        <div class="ctah">¿Nueva Zelanda<br>es para ti?</div>
+        <div class="ctasub">Descúbrelo en una llamada gratis</div>
+        <div class="ctabtn">Escríbenos<div class="ctanum">301 4430722</div></div>
+        <div class="ctafoot">Asesoría 100% gratis · +8 años de experiencia</div>
+      ${count(5,5)}</div>`,
+  };
+
+  const SETS = {au: AU, ie: IE, nz: NZ};
+  const set = SETS[week] || AU;
+  document.getElementById('root').innerHTML = set[s] || set[1];
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Testimonio Diego</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --blue:#1b4b8d; --teal:#36b398; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .s{ width:1080px; height:1350px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff; }
+  .photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 55%; }
+  .topscrim{ position:absolute; top:0; left:0; right:0; height:280px; z-index:2; background:linear-gradient(to bottom, rgba(6,20,35,.75), transparent); }
+  .botscrim{ position:absolute; left:0; right:0; bottom:0; height:680px; z-index:2; background:linear-gradient(to top, rgba(5,17,30,.97) 24%, rgba(6,20,35,.72) 55%, transparent); }
+  .logo{ position:absolute; top:44px; right:50px; width:104px; z-index:6; filter:drop-shadow(0 3px 10px rgba(0,0,0,.6)); }
+  .badge{ position:absolute; top:52px; left:50px; z-index:6; background:var(--teal); color:var(--navy); font-weight:800; font-size:22px; letter-spacing:1px; text-transform:uppercase; padding:12px 24px; border-radius:40px; }
+  .content{ position:absolute; left:56px; right:56px; bottom:56px; z-index:6; }
+  .kick{ color:var(--teal); font-weight:700; font-size:24px; letter-spacing:3px; text-transform:uppercase; margin-bottom:12px; }
+  .name{ font-family:'Big Shoulders Display'; font-weight:900; font-size:72px; line-height:.92; text-shadow:0 4px 20px rgba(0,0,0,.5); }
+  .quote{ margin-top:18px; font-size:27px; color:#eaf1f4; font-weight:500; line-height:1.4; font-style:italic; }
+  .meta{ margin-top:14px; font-size:20px; color:var(--gray); font-weight:600; letter-spacing:.5px; }
+  .cta{ margin-top:26px; background:var(--teal); color:var(--navy); border-radius:18px; padding:22px 32px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 14px 34px rgba(54,179,152,.35); }
+  .cta .t{ font-family:'Big Shoulders Display'; font-weight:800; font-size:30px; }
+  .cta .n{ font-family:'Big Shoulders Display'; font-weight:900; font-size:36px; }
+</style>
+</head>
+<body>
+<div class="s">
+  <img class="photo" src="./img/testimonios/diego-portrait.jpg">
+  <div class="topscrim"></div>
+  <div class="botscrim"></div>
+  <img class="logo" src="./logo.webp">
+  <div class="badge">🇨🇦 Calgary, Canadá</div>
+  <div class="content">
+    <div class="kick">Historias reales</div>
+    <div class="name">Diego ya lleva<br>un mes en Calgary</div>
+    <div class="quote">"Le ha encantado la ciudad y el paisaje" — estudiando en OHC Calgary, programa de 4 meses.</div>
+    <div class="meta">Mes 1 de 4 · OHC Calgary</div>
+    <div class="cta"><div class="t">Tu historia puede ser la próxima</div><div class="n">301 4430722</div></div>
+  </div>
+</div>
+</body>
+</html>

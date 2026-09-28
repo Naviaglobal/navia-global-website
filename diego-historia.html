@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Historia Diego</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --blue:#1b4b8d; --teal:#36b398; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .s{ width:1080px; height:1920px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff; }
+  .photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 25%; }
+  .topscrim{ position:absolute; top:0; left:0; right:0; height:500px; z-index:2; background:linear-gradient(to bottom, rgba(6,20,35,.8), transparent); }
+  .botscrim{ position:absolute; left:0; right:0; bottom:0; height:900px; z-index:2; background:linear-gradient(to top, rgba(5,17,30,.97) 30%, rgba(6,20,35,.6) 60%, transparent); }
+  .logo{ position:absolute; top:90px; right:64px; width:120px; z-index:6; filter:drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+  .badge{ position:absolute; top:100px; left:64px; z-index:6; background:var(--teal); color:var(--navy); font-weight:800; font-size:28px; letter-spacing:1px; text-transform:uppercase; padding:14px 30px; border-radius:40px; }
+  .content{ position:absolute; left:70px; right:70px; bottom:420px; z-index:6; }
+  .kick{ color:var(--teal); font-weight:700; font-size:32px; letter-spacing:4px; text-transform:uppercase; margin-bottom:16px; }
+  .name{ font-family:'Big Shoulders Display'; font-weight:900; font-size:88px; line-height:.92; text-shadow:0 4px 24px rgba(0,0,0,.5); }
+  .quote{ margin-top:24px; font-size:36px; color:#eaf1f4; font-weight:500; line-height:1.35; }
+  .sticker{ position:absolute; left:50%; transform:translateX(-50%); bottom:160px; z-index:6;
+    background:rgba(255,255,255,.97); color:var(--navy); border-radius:60px; padding:26px 56px;
+    display:flex; align-items:center; gap:16px; box-shadow:0 20px 50px rgba(0,0,0,.4); }
+  .sticker .t{ font-family:'Big Shoulders Display'; font-weight:800; font-size:38px; }
+  .arrow{ position:absolute; left:50%; transform:translateX(-50%); bottom:280px; z-index:6; font-size:56px; }
+</style>
+</head>
+<body>
+<div class="s">
+  <img class="photo" src="./img/testimonios/diego-portrait.jpg">
+  <div class="topscrim"></div>
+  <div class="botscrim"></div>
+  <img class="logo" src="./logo.webp">
+  <div class="badge">🇨🇦 Calgary</div>
+  <div class="content">
+    <div class="kick">Historias reales</div>
+    <div class="name">La historia<br>de Diego</div>
+    <div class="quote">Ya lleva 1 mes estudiando en Calgary. Míralo completo en el post</div>
+  </div>
+  <div class="arrow">👇</div>
+  <div class="sticker"><div class="t">Ver publicación</div></div>
+</div>
+</body>
+</html>

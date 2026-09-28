@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navia Pauta v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{ --navy:#2c3e50; --green:#36b398; --red:#36b398; --gold:#3b97d3; --gray:#cfd8de; }
+  html,body{background:#000;}
+  .ad{ width:1080px; height:1350px; position:relative; overflow:hidden; font-family:'Instrument Sans',sans-serif; color:#fff;
+    background:
+      radial-gradient(90% 45% at 82% 6%, rgba(54,179,152,.18), transparent 55%),
+      radial-gradient(80% 45% at 12% 96%, rgba(59,151,211,.30), transparent 60%),
+      linear-gradient(160deg,#1b4b8d 0%, #24384d 55%, #1a2530 100%); }
+  .ad::before{ content:""; position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1.5px, transparent 1.5px); background-size:30px 30px; opacity:.5; }
+
+  /* ============ CHAT ============ */
+  .chatcard{ position:absolute; left:70px; right:70px; top:120px; bottom:260px; z-index:5;
+    background:#243646; border:1px solid rgba(255,255,255,.14); border-radius:36px; overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.5); display:flex; flex-direction:column; }
+  .chathead{ background:rgba(255,255,255,.06); padding:28px 36px; display:flex; align-items:center; gap:22px;
+    border-bottom:1px solid rgba(255,255,255,.1); }
+  .chathead img{ width:84px; height:84px; border-radius:50%; background:#fff; object-fit:contain; padding:10px; }
+  .chathead .n{ font-weight:700; font-size:34px; }
+  .chathead .o{ font-size:24px; color:var(--green); }
+  .msgs{ flex:1; padding:44px 36px; display:flex; flex-direction:column; gap:26px; }
+  .b{ max-width:78%; padding:26px 32px; border-radius:26px; font-size:33px; line-height:1.35; font-weight:500; }
+  .me{ align-self:flex-end; background:var(--green); color:#12313e; border-bottom-right-radius:8px; font-weight:600; }
+  .nv{ align-self:flex-start; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.12); border-bottom-left-radius:8px; }
+  .nv b{ color:var(--green); font-weight:700; }
+  .typing{ align-self:flex-start; background:rgba(255,255,255,.08); border-radius:26px; padding:22px 34px; font-size:34px; letter-spacing:6px; color:var(--gray); }
+  .chatfoot{ padding:0 36px 34px; }
+  .fakein{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:60px; padding:24px 36px;
+    font-size:28px; color:var(--gray); display:flex; justify-content:space-between; align-items:center; }
+  .fakein .send{ width:56px; height:56px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; color:#12313e; font-size:30px; font-weight:900; }
+  .ctabar{ position:absolute; left:70px; right:70px; bottom:70px; z-index:6; background:var(--red); border-radius:22px; padding:30px 44px;
+    display:flex; align-items:center; justify-content:space-between; box-shadow:0 16px 44px rgba(54,179,152,.45); }
+  .ctabar .t{ font-family:'Big Shoulders Display'; font-weight:800; font-size:42px; }
+  .ctabar .n{ font-family:'Big Shoulders Display'; font-weight:900; font-size:48px; }
+  .toplbl{ position:absolute; top:44px; left:0; right:0; text-align:center; z-index:6; font-size:27px; font-weight:700;
+    letter-spacing:3px; text-transform:uppercase; color:var(--green); }
+
+  /* ============ HOOK ============ */
+  .hookwrap{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 80px; z-index:5; }
+  .hlogo{ width:150px; margin-bottom:40px; filter:drop-shadow(0 6px 18px rgba(0,0,0,.5)); }
+  .h1{ font-family:'Big Shoulders Display'; font-weight:900; font-size:122px; line-height:.88; letter-spacing:-2px; }
+  .h1 .g{ color:var(--green); }
+  .yes{ font-family:'Big Shoulders Display'; font-weight:900; font-size:150px; color:var(--green); line-height:1; margin-top:36px;
+    text-shadow:0 8px 40px rgba(54,179,152,.5); }
+  .sub{ font-size:36px; color:#e8eef2; font-weight:500; margin-top:30px; line-height:1.35; }
+  .sub b{ color:#fff; font-weight:700; }
+  .countries{ display:flex; gap:22px; margin-top:44px; }
+  .countries div{ border:1.5px solid rgba(255,255,255,.3); border-radius:44px; padding:16px 34px; font-size:30px; font-weight:700; background:rgba(255,255,255,.05); }
+  .hcta{ margin-top:56px; background:var(--red); border-radius:22px; padding:30px 64px; font-family:'Big Shoulders Display';
+    font-weight:800; font-size:46px; box-shadow:0 16px 44px rgba(54,179,152,.45); }
+  .hwa{ margin-top:26px; font-size:27px; color:var(--gray); font-weight:600; letter-spacing:1px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const v = new URLSearchParams(location.search).get('v') || 'chat';
+  let html = '';
+  if (v === 'chat'){
+    html = `<div class="ad">
+      <div class="toplbl">Así de fácil empieza tu proceso</div>
+      <div class="chatcard">
+        <div class="chathead"><img src="./logo.webp"><div><div class="n">Navia Global</div><div class="o">● en línea</div></div></div>
+        <div class="msgs">
+          <div class="b me">Hola! Quiero estudiar inglés en el exterior… ¿y poder trabajar? 🙋</div>
+          <div class="b nv">¡Claro que sí! En <b>Irlanda</b> estudias 25 semanas y tu visa te permite <b>trabajar legalmente</b> 💼</div>
+          <div class="b nv">El curso va <b>desde $10.000.000 COP</b> con todo incluido: materiales, seguro y examen de certificación internacional ✅</div>
+          <div class="b me">¿En serio? ¿Y qué necesito? 😍</div>
+          <div class="typing">● ● ●</div>
+        </div>
+        <div class="chatfoot"><div class="fakein"><span>Escribe un mensaje…</span><span class="send">➤</span></div></div>
+      </div>
+      <div class="ctabar"><div class="t">Recibe tu asesoría gratis</div><div class="n">→ WhatsApp</div></div>
+    </div>`;
+  } else {
+    html = `<div class="ad">
+      <div class="hookwrap">
+        <img class="hlogo" src="./logo.webp">
+        <div class="h1">¿Estudiar inglés afuera<br><span class="g">y trabajar</span>?</div>
+        <div class="yes">SÍ, ES LEGAL.</div>
+        <div class="sub">Con visa de estudiante, en estos 3 países.<br>Cursos <b>desde $10.000.000 COP</b> todo incluido.</div>
+        <div class="countries"><div>Irlanda</div><div>Australia</div><div>N. Zelanda</div></div>
+        <div class="hcta">Escríbenos por WhatsApp</div>
+        <div class="hwa">301 4430722 · Asesoría 100% gratis · +8 años de experiencia</div>
+      </div>
+    </div>`;
+  }
+  document.getElementById('root').innerHTML = html;
+</script>
+</body>
+</html>

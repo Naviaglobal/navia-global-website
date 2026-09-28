@@ -156,6 +156,7 @@ function getIcon(slug){
 }
 
 function render(){
+  if(document.getElementById('related-static'))return;
   var slug=getSlug();
   if(!slug||!MAP[slug])return;
   var related=MAP[slug].slice(0,4);

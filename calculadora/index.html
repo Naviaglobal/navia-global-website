@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
+<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RNV31B1EM');</script>
 <meta charset="UTF-8">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -177,7 +177,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--navy);}
     <div class="field">
       <label class="field-label">Duración del programa</label>
       <div class="range-wrap">
-        <input type="range" id="duracion" min="1" max="52" value="12" step="1">
+        <input type="range" id="duracion" min="1" max="52" value="24" step="1">
         <span class="range-val" id="duracion-val">12 <span class="unit">semanas</span></span>
       </div>
     </div>
@@ -202,7 +202,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--navy);}
     <div class="field">
       <label class="field-label">Tasa de cambio (COP por 1 USD)</label>
       <div class="range-wrap">
-        <input type="range" id="tasa" min="3800" max="5200" value="4300" step="50">
+        <input type="range" id="tasa" min="2800" max="4200" value="3185" step="25">
         <span class="range-val" id="tasa-val">$4.300 <span class="unit">COP / USD</span></span>
       </div>
     </div>
@@ -280,28 +280,28 @@ updNav();
 // ─── DATA ───────────────────────────────────────────────
 // All monetary values in LOCAL CURRENCY per week
 var DATA = {
-  'australia':  {cur:'AUD',rate:0.64, curso:{min:450,max:600}, aloj:{homestay:280,shared:220,studio:350}, manu:200, visa:2000,  vuelo:1800, workRate:26.44, maxHours:24},
-  'irlanda':    {cur:'EUR',rate:1.09, curso:{min:200,max:350}, aloj:{homestay:180,shared:150,studio:260}, manu:160, visa:300,  vuelo:900,  workRate:14.15, maxHours:20},
-  'canada':     {cur:'CAD',rate:0.73, curso:{min:300,max:500}, aloj:{homestay:220,shared:180,studio:300}, manu:180, visa:235,  vuelo:700,  workRate:17.60, maxHours:24},
-  'reino':      {cur:'GBP',rate:1.27, curso:{min:250,max:450}, aloj:{homestay:220,shared:180,studio:310}, manu:180, visa:490,  vuelo:900,  workRate:12.71, maxHours:20},
-  'malta':      {cur:'EUR',rate:1.09, curso:{min:150,max:250}, aloj:{homestay:130,shared:100,studio:180}, manu:120, visa:100,  vuelo:900,  workRate:5.74,  maxHours:20},
-  'nueva-zelanda':{cur:'NZD',rate:0.60,curso:{min:300,max:480},aloj:{homestay:250,shared:200,studio:320},manu:180, visa:330,  vuelo:1800, workRate:23.95, maxHours:20},
-  'usa':        {cur:'USD',rate:1.00, curso:{min:300,max:600}, aloj:{homestay:250,shared:200,studio:350}, manu:200, visa:510,  vuelo:400,  workRate:15.00, maxHours:20},
-  'alemania':   {cur:'EUR',rate:1.09, curso:{min:150,max:350}, aloj:{homestay:160,shared:130,studio:220}, manu:140, visa:80,   vuelo:900,  workRate:13.90, maxHours:17},
-  'dubai':      {cur:'USD',rate:1.00, curso:{min:250,max:450}, aloj:{homestay:200,shared:160,studio:280}, manu:180, visa:550,  vuelo:700,  workRate:0,     maxHours:0},
-  'francia':    {cur:'EUR',rate:1.09, curso:{min:200,max:400}, aloj:{homestay:180,shared:140,studio:250}, manu:160, visa:99,   vuelo:900,  workRate:12.02, maxHours:18},
+  'australia':  {cur:'AUD',rate:0.64, curso:{min:241,max:241}, aloj:{homestay:280,shared:220,studio:350}, manu:200, visa:2500,  vuelo:1800, workRate:26.44, maxHours:24},
+  'irlanda':    {cur:'EUR',rate:1.09, curso:{min:109,max:109}, aloj:{homestay:180,shared:150,studio:260}, manu:160, visa:300,  vuelo:900,  workRate:14.15, maxHours:20},
+  'canada':     {cur:'CAD',rate:0.73, curso:{min:294,max:294}, aloj:{homestay:220,shared:180,studio:300}, manu:180, visa:235,  vuelo:700,  workRate:17.60, maxHours:24},
+  'reino':      {cur:'GBP',rate:1.27, curso:{min:156,max:156}, aloj:{homestay:220,shared:180,studio:310}, manu:180, visa:490,  vuelo:900,  workRate:12.71, maxHours:20},
+  'malta':      {cur:'EUR',rate:1.09, curso:{min:148,max:148}, aloj:{homestay:130,shared:100,studio:180}, manu:120, visa:100,  vuelo:900,  workRate:5.74,  maxHours:20},
+  'nueva-zelanda':{cur:'NZD',rate:0.60,curso:{min:290,max:290},aloj:{homestay:250,shared:200,studio:320},manu:180, visa:330,  vuelo:1800, workRate:23.95, maxHours:25},
+  'usa':        {cur:'USD',rate:1.00, curso:{min:235,max:235}, aloj:{homestay:250,shared:200,studio:350}, manu:200, visa:510,  vuelo:400,  workRate:15.00, maxHours:20},
+  'alemania':   {cur:'EUR',rate:1.09, curso:{min:171,max:171}, aloj:{homestay:160,shared:130,studio:220}, manu:140, visa:80,   vuelo:900,  workRate:13.90, maxHours:17},
+  'dubai':      {cur:'USD',rate:1.00, curso:{min:196,max:196}, aloj:{homestay:200,shared:160,studio:280}, manu:180, visa:550,  vuelo:700,  workRate:0,     maxHours:0},
+  'francia':    {cur:'EUR',rate:1.09, curso:{min:182,max:182}, aloj:{homestay:180,shared:140,studio:250}, manu:160, visa:99,   vuelo:900,  workRate:12.02, maxHours:18},
 };
 
 // USD rate by currency (approximate 2026)
-var USD_RATE = {AUD:0.64,EUR:1.09,CAD:0.73,GBP:1.27,NZD:0.60,USD:1.00};
+var USD_RATE = {AUD:0.7064,CAD:0.7127,NZD:0.5871,EUR:1.1491,USD:1,GBP:1.3422};
 
 // ─── STATE ───────────────────────────────────────────────
 var state = {
   dest: 'australia',
-  duracion: 12,
+  duracion: 24,
   aloj: 'homestay',
   horas: 20,
-  tasa: 4300
+  tasa: 3185
 };
 
 // ─── HELPERS ─────────────────────────────────────────────
@@ -449,5 +449,22 @@ calc();
 })();
 </script>
 <script src="/js/wa-tracker.js" defer></script>
-</body>
+<script>(function(){
+function ctx(){
+  var d=document.getElementById('dest'), r=document.getElementById('resultTitle');
+  if(d&&d.options&&d.selectedIndex>=0) return d.options[d.selectedIndex].text.replace(/^[^\s]+\s/,'');
+  if(r&&r.textContent) return r.textContent.trim().substring(0,60);
+  return '(sin seleccionar)';
+}
+document.addEventListener('click',function(e){
+  var a=e.target.closest && e.target.closest('a[href*="wa.me/573014430722"]');
+  if(!a) return;
+  var destino=ctx();
+  var zona = a.classList.contains('wa-float') ? 'boton_flotante'
+           : a.classList.contains('nav-cta')  ? 'nav'
+           : 'resultado';
+  try{ if(typeof gtag==='function') gtag('event','contacto_whatsapp',{origen:'calculadora',zona:zona,destino:destino}); }catch(_){}
+  try{ if(typeof fbq==='function') fbq('trackCustom','WhatsAppClick',{origen:'calculadora',zona:zona,destino:destino}); }catch(_){}
+},true);
+})();</script></body>
 </html>

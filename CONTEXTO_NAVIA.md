@@ -121,12 +121,44 @@ navia-website/
 | **CTA principal** | "Asesoría 100% gratuita" → WhatsApp |
 | **Datos clave** | +500 estudiantes, +8 años experiencia, desde 2017 |
 
+
+
+### Tasas de cambio usadas en el blog (actualizado 7-ago-2026)
+> El peso se aprecio ~18% en 2026. TRM USD ~3.157-3.185. Todas las conversiones COP del blog usan estas tasas.
+
+| Moneda | COP |
+|--------|-----|
+| AUD | **2.250** |
+| CAD | **2.270** |
+| NZD | **1.870** |
+| EUR | **3.660** |
+| USD | **3.185** |
+| GBP | **4.275** |
+
+Script de re-calculo masivo: `scratchpad/fix-cop3.js` (detecta moneda+monto y recalcula el parentesis COP).
+
+### Fondos de visa exigidos (verificado ago 2026 — fuentes oficiales)
+| País | Fondos manutención | Costo visa |
+|------|-------------------|-----------|
+| Australia | **AUD $29.710/año** | **AUD $2.500** (ELICOS: $2.050) |
+| Canadá | **CAD $22.895/año** (fuera de Quebec) | CAD $150 |
+| Irlanda | **€10.000/año** (€6.665 si <=8 meses) | €60-100 |
+| Nueva Zelanda | **NZD $20.000/año** (NZD $1.667/mes) | NZD $850 |
+
+### Impuestos Australia (desde 1-jul-2026)
+- Libre de impuestos hasta AUD $18.200/año
+- $18.201-$45.000: **15%** (bajo de 19% -> 16% -> 15%)
+- Sin TFN: retencion 47%
+- **Superannuation: 12%** (subio de 11.5%)
+- Salario minimo: AUD $26.44/h base | **casual AUD $33.05/h** (+25% loading)
+
 ### Datos correctos (verificados Mayo 2026)
 | Dato | Valor correcto |
 |------|---------------|
 | Número de guías | **67 guías** |
-| Salario Australia | **AUD $24.95/hora** |
-| Salario Irlanda | **EUR €13.50/hora** |
+| Salario Australia | **AUD $26.44/hora** (24h/sem) |
+| Salario Irlanda | **EUR €14.15/hora** (20h/sem) |
+| Salario Nueva Zelanda | **NZD $23.95/hora** (25h/sem) |
 | Años experiencia | **+8 años** (desde 2017) |
 
 ---

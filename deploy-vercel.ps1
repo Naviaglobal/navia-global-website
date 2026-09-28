@@ -1,5 +1,5 @@
 $enc = New-Object System.Text.UTF8Encoding($false)
-$TOKEN = "vcp_1IB4w0E4SHS9iIkNztXKFmih2EVBR6gGSaBzU7mg3JIKU2NXmr29ShvJ"
+$TOKEN = [Environment]::GetEnvironmentVariable('VERCEL_TOKEN','User'); if (-not $TOKEN) { throw "Falta la variable de entorno VERCEL_TOKEN" }
 $TEAM  = "team_XYsFDYqhJk3U1rmm9ejyhvnY"
 $PROJ  = "prj_TEPIShAf5oL9DXIkNEv7bhxsO8aC"
 $BASE  = "C:\Users\User\.claude\navia-website"

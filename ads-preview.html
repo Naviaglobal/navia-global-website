@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navia Ads Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --navy:#2c3e50; --blue:#1b4b8d; --green:#36b398; --sky:#3b97d3;
+    --white:#fff; --gray:#B0B8C1;
+  }
+  body { background:#0a0a0a; display:flex; justify-content:center; align-items:center; min-height:100vh; }
+
+  .ad{
+    width:1080px; height:1350px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(90% 60% at 82% 8%, rgba(54,179,152,.22), transparent 55%),
+      radial-gradient(80% 55% at 15% 95%, rgba(27,75,141,.55), transparent 60%),
+      linear-gradient(160deg, #1b4b8d 0%, var(--navy) 45%, #1a252f 100%);
+    font-family:'Instrument Sans', sans-serif; color:var(--white);
+  }
+  /* dotted world texture */
+  .ad::before{
+    content:""; position:absolute; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1.5px, transparent 1.5px);
+    background-size:26px 26px; opacity:.5;
+  }
+
+  /* route arc */
+  .route{ position:absolute; top:0; left:0; width:1080px; height:1350px; z-index:1; }
+
+  /* ghost country name */
+  .ghost{
+    position:absolute; top:328px; left:-20px; width:1120px; text-align:center;
+    font-family:'Big Shoulders Display'; font-weight:900; font-size:340px; line-height:.8;
+    color:rgba(255,255,255,.045); letter-spacing:-6px; white-space:nowrap; z-index:1;
+    transform:scale(1.02);
+  }
+
+  /* top bar */
+  .top{ position:absolute; top:52px; left:60px; right:60px; display:flex; justify-content:space-between; align-items:center; z-index:5; }
+  .brand{ display:flex; align-items:center; gap:16px; }
+  .brand img{ width:92px; height:auto; filter:drop-shadow(0 4px 10px rgba(0,0,0,.4)); }
+  .brand .wm{ font-family:'Big Shoulders Display'; font-weight:800; font-size:30px; letter-spacing:1px; line-height:.9; }
+  .brand .wm small{ display:block; font-family:'Instrument Sans'; font-weight:500; font-size:12px; letter-spacing:4px; color:var(--green); }
+  .pill{ border:1.5px solid rgba(255,255,255,.28); border-radius:40px; padding:11px 22px; font-size:15px; font-weight:600; letter-spacing:1px; text-transform:uppercase; backdrop-filter:blur(4px); }
+
+  /* hero label */
+  .hero{ position:absolute; top:210px; left:60px; right:60px; z-index:5; }
+  .kicker{ color:var(--green); font-weight:700; font-size:22px; letter-spacing:5px; text-transform:uppercase; margin-bottom:14px; }
+  .country{ font-family:'Big Shoulders Display'; font-weight:900; font-size:132px; line-height:.86; letter-spacing:-2px; }
+  .country .flag{ font-size:74px; vertical-align:middle; margin-left:14px; }
+
+  /* glass card */
+  .card{
+    position:absolute; left:60px; right:60px; top:470px; z-index:5;
+    background:linear-gradient(150deg, rgba(255,255,255,.11), rgba(255,255,255,.03));
+    border:1px solid rgba(255,255,255,.16); border-radius:34px;
+    padding:52px 56px; backdrop-filter:blur(14px);
+    box-shadow:0 30px 70px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.2);
+  }
+  .card .lead{ font-size:26px; color:var(--gray); font-weight:500; }
+  .salary{ display:flex; align-items:baseline; gap:14px; margin:6px 0 2px; }
+  .salary .num{ font-family:'Big Shoulders Display'; font-weight:900; font-size:112px; line-height:.9; color:var(--green);
+    text-shadow:0 6px 30px rgba(0,217,163,.35); }
+  .salary .per{ font-size:30px; font-weight:700; color:#fff; }
+  .rate{ font-size:23px; color:#dfe7ec; font-weight:500; }
+  .rate b{ color:#fff; font-weight:700; }
+  .cardline{ height:1px; background:linear-gradient(90deg,transparent,rgba(0,217,163,.7),transparent); margin:34px 0; }
+  .feats{ display:flex; gap:16px; }
+  .feat{ flex:1; text-align:center; }
+  .feat .ic{ font-size:34px; }
+  .feat .tx{ font-size:17px; color:#e7edf1; font-weight:600; margin-top:8px; line-height:1.2; }
+
+  /* proof strip */
+  .proof{ position:absolute; left:60px; right:60px; top:1108px; z-index:5; display:flex; justify-content:center; gap:34px; }
+  .proof span{ font-size:19px; color:var(--gray); font-weight:500; }
+  .proof b{ color:var(--sky); font-weight:700; }
+
+  /* CTA */
+  .cta{ position:absolute; left:60px; right:60px; bottom:56px; z-index:5;
+    background:var(--green); border-radius:22px; padding:30px 40px;
+    display:flex; align-items:center; justify-content:space-between;
+    box-shadow:0 18px 44px rgba(54,179,152,.42); }
+  .cta .l{ font-family:'Big Shoulders Display'; font-weight:800; font-size:38px; letter-spacing:.5px; }
+  .cta .r{ text-align:right; }
+  .cta .r .wa{ font-size:16px; opacity:.85; letter-spacing:1px; }
+  .cta .r .num{ font-family:'Big Shoulders Display'; font-weight:800; font-size:40px; }
+</style>
+</head>
+<body>
+  <div class="ad" id="ad">
+    <svg class="route" viewBox="0 0 1080 1350" fill="none">
+      <defs>
+        <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#36b398" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#36b398" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#36b398" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M -40 250 Q 540 40 1120 300" stroke="url(#rg)" stroke-width="2.5" stroke-dasharray="3 12" stroke-linecap="round"/>
+      <circle cx="150" cy="196" r="7" fill="#36b398"/>
+      <circle cx="150" cy="196" r="16" fill="#36b398" opacity=".25"/>
+      <circle cx="945" cy="214" r="7" fill="#3b97d3"/>
+      <circle cx="945" cy="214" r="16" fill="#3b97d3" opacity=".25"/>
+    </svg>
+
+    <div class="ghost" id="ghost">EUROPA</div>
+
+    <div class="top">
+      <div class="brand">
+        <img src="./logo.webp" alt="Navia">
+        <div class="wm">NAVIA GLOBAL<small>TU PUENTE AL MUNDO</small></div>
+      </div>
+      <div class="pill">Estudia + Trabaja</div>
+    </div>
+
+    <div class="hero">
+      <div class="kicker" id="kicker">Estudia inglés en el exterior</div>
+      <div class="country"><span id="cname">IRLANDA</span></div>
+    </div>
+
+    <div class="card">
+      <div class="lead" id="lead">Curso de inglés · 24 semanas — desde</div>
+      <div class="salary"><span class="num" id="num">$13.000.000</span><span class="per">COP</span></div>
+      <div class="rate" id="rate">Incluye curso + materiales + registro</div>
+      <div class="cardline"></div>
+      <div class="feats">
+        <div class="feat"><div class="ic">🎓</div><div class="tx">Estudias<br>en inglés</div></div>
+        <div class="feat"><div class="ic">💼</div><div class="tx">Puedes trabajar<br>mientras estudias</div></div>
+        <div class="feat"><div class="ic">🤝</div><div class="tx">Acompañamiento<br>total</div></div>
+      </div>
+    </div>
+
+    <div class="proof">
+      <span><b>10</b> destinos</span>
+      <span><b>Asesoría</b> 100% gratis</span>
+      <span><b>+8 años</b> de experiencia</span>
+    </div>
+
+    <div class="cta">
+      <div class="l">Escríbenos por WhatsApp</div>
+      <div class="r"><div class="wa">ASESORÍA 100% GRATIS</div><div class="num">301 4430722</div></div>
+    </div>
+  </div>
+
+<script>
+  const data = {
+    irlanda:    { name:"IRLANDA",       ghost:"IRELAND",  weeks:"25 semanas", num:"$10.000.000", inc:"Incluye curso + materiales + registro + seguro + examen de certificación internacional" },
+    nz:         { name:"NUEVA ZELANDA", ghost:"NZ",       weeks:"24 semanas", num:"$13.000.000", inc:"Incluye curso + materiales + registro" },
+    australia:  { name:"AUSTRALIA",     ghost:"AUS",      weeks:"24 semanas", num:"$13.000.000", inc:"Incluye curso + materiales + registro" },
+  };
+  const p = new URLSearchParams(location.search).get('c') || 'irlanda';
+  const d = data[p] || data.irlanda;
+  cname.textContent = d.name;
+  ghost.textContent = d.ghost;
+  num.textContent = d.num;
+  lead.textContent = "Curso de inglés · " + d.weeks + " — desde";
+  rate.innerHTML = d.inc;
+  if (d.name.length > 8) document.querySelector('.country').style.fontSize = '104px';
+</script>
+</body>
+</html>
