@@ -3,7 +3,7 @@
 (function(){
   var style = document.createElement('style');
   style.textContent = [
-    '.navia-ec{background:linear-gradient(135deg,#0B2C4A,#1B4B8C);border-radius:16px;padding:36px 32px;margin:40px 0;color:#fff;text-align:center}',
+    '.navia-ec{background:linear-gradient(135deg,#2c3e50,#1B4B8C);border-radius:16px;padding:36px 32px;margin:40px 0;color:#fff;text-align:center}',
     '.navia-ec-tag{display:inline-block;background:rgba(0,217,163,.15);border:1px solid rgba(0,217,163,.3);color:#00D9A3;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:14px}',
     '.navia-ec h3{font-size:1.25rem;font-weight:800;margin-bottom:8px}',
     '.navia-ec p{opacity:.85;font-size:.92rem;max-width:480px;margin:0 auto 20px;line-height:1.65}',

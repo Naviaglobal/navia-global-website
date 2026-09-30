@@ -32,7 +32,7 @@
     '.navia-dest-banner a strong{color:#fff}',
     '.navia-dest-arr{font-size:.8rem;opacity:.7;white-space:nowrap;color:rgba(255,255,255,.5)}',
 
-    '.navia-mid-cta{margin:40px 0;border-radius:14px;border:1.5px solid rgba(0,217,163,.35);overflow:hidden;background:linear-gradient(135deg,#071d30 0%,#0b2c4a 100%)}',
+    '.navia-mid-cta{margin:40px 0;border-radius:14px;border:1.5px solid rgba(0,217,163,.35);overflow:hidden;background:linear-gradient(135deg,#071d30 0%,#2c3e50 100%)}',
     '.navia-mid-cta-inner{padding:26px 30px}',
     '@media(max-width:620px){.navia-mid-cta-inner{padding:20px 18px}}',
     '.navia-mid-label{font-size:.62rem;font-weight:800;letter-spacing:.14em;color:#00D9A3;text-transform:uppercase;margin-bottom:7px}',
