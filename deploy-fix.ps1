@@ -107,8 +107,10 @@ do {
 
 # Aliasing SIEMPRE (Vercel sirve el alias en cuanto el deployment queda READY)
 Write-Host ("LIVE: https://" + $dep.url)
-$aliasBody = @{ alias = "naviaglobal.co" } | ConvertTo-Json
-try {
-    $a = Invoke-RestMethod -Uri ("https://api.vercel.com/v2/deployments/" + $id + "/aliases?teamId=" + $TEAM) -Method POST -Headers $headers -Body $aliasBody
-    Write-Host ("Alias: " + $a.alias)
-} catch { Write-Host ("Alias ERROR: " + $_.Exception.Message) }
+foreach ($dom in @("naviaglobal.co", "www.naviaglobal.co")) {
+    $aliasBody = @{ alias = $dom } | ConvertTo-Json
+    try {
+        $a = Invoke-RestMethod -Uri ("https://api.vercel.com/v2/deployments/" + $id + "/aliases?teamId=" + $TEAM) -Method POST -Headers $headers -Body $aliasBody
+        Write-Host ("Alias: " + $a.alias)
+    } catch { Write-Host ("Alias ERROR " + $dom + ": " + $_.Exception.Message) }
+}
