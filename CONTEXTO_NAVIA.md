@@ -6,7 +6,7 @@
 ## 🏢 El Negocio
 
 **Navia Global Education SAS** — Agencia colombiana de estudios en el exterior fundada en 2017.
-- **Fundador**: Samuel Sánchez — ex-estudiante internacional, +8 años de experiencia
+- **Fundador**: Samuel Sánchez — ex-estudiante internacional, +9 años de experiencia
 - **WhatsApp**: 301 4430722
 - **Email**: info@naviaglobal.co / samuel.sanchez@naviaglobal.co
 - **Web**: https://naviaglobal.co
@@ -119,7 +119,7 @@ navia-website/
 | **Color acento** | Verde teal `#1ABC9C` |
 | **Tono de voz** | Cercano, experto, sin tecnicismos. Como un amigo que ya estudió afuera. |
 | **CTA principal** | "Asesoría 100% gratuita" → WhatsApp |
-| **Datos clave** | +500 estudiantes, +8 años experiencia, desde 2017 |
+| **Datos clave** | +500 estudiantes, +9 años experiencia, desde 2017 |
 
 
 
@@ -159,7 +159,7 @@ Script de re-calculo masivo: `scratchpad/fix-cop3.js` (detecta moneda+monto y re
 | Salario Australia | **AUD $26.44/hora** (24h/sem) |
 | Salario Irlanda | **EUR €14.15/hora** (20h/sem) |
 | Salario Nueva Zelanda | **NZD $23.95/hora** (25h/sem) |
-| Años experiencia | **+8 años** (desde 2017) |
+| Años experiencia | **+9 años** (desde 2017) |
 
 ---
 
