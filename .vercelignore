@@ -34,3 +34,7 @@ cuantoafuera/reporte/
 node_modules/
 *.log
 *.tmp
+
+# Archivos de git
+.gitignore
+.gitattributes
