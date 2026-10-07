@@ -1,13 +1,13 @@
 ﻿/* =====================================================
    NAVIA GLOBAL — Blog Posts Enhanced Styles
    Versión 2.0 · 2026
-   Manual de marca: Navy #2c3e50 · Verde #00D9A3 · Rojo #36b398
+   Marca: #1b4b8d · #3b97d3 · #2c3e50 · #36b398
    ===================================================== */
 
 /* ── Variables de marca ──────────────────────── */
 :root {
   --navia-navy:   #2c3e50;
-  --navia-green:  #00D9A3;
+  --navia-green:  #36b398;
   --navia-red:    #36b398;
   --navia-light:  #F0F8FF;
   --navia-text:   #2C3E50;
@@ -85,7 +85,7 @@
   transition: background 0.2s, transform 0.2s;
 }
 .blog-nav-links .blog-nav-cta:hover {
-  background: #00c491;
+  background: #2e9a83;
   transform: translateY(-1px);
 }
 @media (max-width: 600px) {
@@ -169,8 +169,8 @@
   margin-top: 16px;
 }
 .blog-hero-highlights span {
-  background: rgba(0,217,163,0.18);
-  border: 1px solid rgba(0,217,163,0.4);
+  background: rgba(54,179,152,0.18);
+  border: 1px solid rgba(54,179,152,0.4);
   color: white;
   padding: 5px 14px;
   border-radius: 20px;
@@ -228,7 +228,7 @@
 .blog-info-box h4 { color: var(--navia-navy); margin: 0 0 0.7rem; font-size: 0.95rem; }
 .blog-tip-box {
   background: #fffbea;
-  border: 1px solid rgba(0,217,163,0.3);
+  border: 1px solid rgba(54,179,152,0.3);
   border-left: 4px solid var(--navia-green);
   border-radius: 12px;
   padding: 16px 20px;
@@ -252,11 +252,11 @@
   border-radius: 14px;
   padding: 22px 26px;
   margin: 1.8rem 0;
-  box-shadow: 0 2px 12px rgba(0,217,163,0.1);
+  box-shadow: 0 2px 12px rgba(54,179,152,0.1);
 }
 .blog-toc h3 { color: var(--navia-navy); font-size: 1rem; margin: 0 0 12px; }
 .blog-toc ul { list-style: none; padding: 0; margin: 0; }
-.blog-toc li { padding: 4px 0; border-bottom: 1px solid rgba(0,217,163,0.12); }
+.blog-toc li { padding: 4px 0; border-bottom: 1px solid rgba(54,179,152,0.12); }
 .blog-toc li:last-child { border-bottom: none; }
 .blog-toc a { color: var(--navia-navy); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
 .blog-toc a:hover { color: #0d6e5c; }
@@ -281,10 +281,10 @@
   border-radius: 28px;
   text-decoration: none;
   font-size: 1rem;
-  box-shadow: 0 4px 18px rgba(0,217,163,0.4);
+  box-shadow: 0 4px 18px rgba(54,179,152,0.4);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.blog-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0,217,163,0.5); }
+.blog-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(54,179,152,0.5); }
 
 /* ── Related articles ───────────────────────── */
 .blog-related {
@@ -381,13 +381,13 @@
 .header {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(27,75,140,0.95) !important;
+  background: rgba(27,75,141,0.95) !important;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 /* ── Hero improvements ───────────────────── */
 .hero {
-  background: linear-gradient(135deg, #0F2447 0%, #1B4B8C 50%, #1e6b5e 100%) !important;
+  background: linear-gradient(135deg, #0F2447 0%, #1b4b8d 50%, #1e6b5e 100%) !important;
 }
 .hero h1 { text-shadow: 0 4px 30px rgba(0,0,0,0.3); }
 .hero .meta {
@@ -410,7 +410,7 @@
   box-shadow: 0 4px 20px rgba(26,188,156,0.10);
 }
 .toc h3 {
-  color: #1B4B8C !important;
+  color: #1b4b8d !important;
   font-size: 1.1rem !important;
   margin-bottom: 16px !important;
 }
@@ -423,7 +423,7 @@
 }
 .toc ol li:last-child { border-bottom: none; }
 .toc ol li a {
-  color: #1B4B8C !important;
+  color: #1b4b8d !important;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -455,7 +455,7 @@
 .info-box {
   border-radius: 16px !important;
   padding: 28px 32px !important;
-  border: 1px solid rgba(27,75,140,0.15) !important;
+  border: 1px solid rgba(27,75,141,0.15) !important;
 }
 .warning-box {
   border-radius: 16px !important;
@@ -464,11 +464,11 @@
 
 /* ── CTA boxes (mid-article) ─────────────────── */
 .cta-box {
-  background: linear-gradient(135deg, #1B4B8C 0%, #1e6b5e 100%) !important;
+  background: linear-gradient(135deg, #1b4b8d 0%, #1e6b5e 100%) !important;
   border-radius: 20px !important;
   padding: 36px 40px !important;
   text-align: center;
-  box-shadow: 0 12px 40px rgba(27,75,140,0.25) !important;
+  box-shadow: 0 12px 40px rgba(27,75,141,0.25) !important;
   position: relative;
   overflow: hidden;
 }
@@ -504,7 +504,7 @@
 
 /* ── Headings ──────────────────────────────── */
 .content h2 {
-  color: #1B4B8C;
+  color: #1b4b8d;
   border-bottom: 3px solid #1ABC9C;
   padding-bottom: 10px;
   margin-top: 50px !important;
@@ -516,19 +516,19 @@
   position: fixed;
   bottom: 100px; right: 30px;
   width: 44px; height: 44px;
-  background: linear-gradient(135deg, #1B4B8C, #1ABC9C);
+  background: linear-gradient(135deg, #1b4b8d, #1ABC9C);
   color: white;
   border: none; border-radius: 50%;
   cursor: pointer; font-size: 1.2rem;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(27,75,140,0.3);
+  box-shadow: 0 4px 16px rgba(27,75,141,0.3);
   opacity: 0; transform: translateY(20px);
   transition: opacity 0.3s, transform 0.3s;
   z-index: 999;
   text-decoration: none;
 }
 #back-to-top.visible { opacity: 1; transform: translateY(0); }
-#back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,75,140,0.4); }
+#back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(27,75,141,0.4); }
 
 /* ── FAQ ────────────────────────────────────── */
 .faq-item {
@@ -538,14 +538,14 @@
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
-.faq-item:hover { box-shadow: 0 4px 20px rgba(27,75,140,0.10); }
+.faq-item:hover { box-shadow: 0 4px 20px rgba(27,75,141,0.10); }
 
 /* ── Share section ────────────────────────── */
 .share-section {
   background: #f0f7ff; border-radius: 16px;
   padding: 28px 32px; text-align: center; margin: 48px 0;
 }
-.share-section h4 { color: #1B4B8C; font-size: 1.1rem; margin-bottom: 16px; }
+.share-section h4 { color: #1b4b8d; font-size: 1.1rem; margin-bottom: 16px; }
 .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .share-btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -555,7 +555,7 @@
 }
 .share-btn-wa { background: #25D366; color: white; }
 .share-btn-wa:hover { background: #1da851; transform: translateY(-2px); }
-.share-btn-copy { background: #1B4B8C; color: white; }
+.share-btn-copy { background: #1b4b8d; color: white; }
 .share-btn-copy:hover { background: #0F2447; transform: translateY(-2px); }
 
 /* ── Responsive ────────────────────────────── */
