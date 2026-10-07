@@ -44,6 +44,9 @@
   --ca-azul:#5b96d8; color-scheme:dark}
 
 .ca *,.ca *::before,.ca *::after{box-sizing:border-box}
+/* Sin esto, el display:flex de .ca-f y .ca-panel le gana al atributo hidden
+   y quedan visibles bloques que deben estar ocultos. */
+[hidden]{display:none !important}
 .ca{background:var(--ca-bg);color:var(--ca-fg);font-family:var(--ca-body);font-size:15px;line-height:1.55}
 /* El nav del sitio es position:fixed y mide 68px; le dejamos el espacio. */
 .ca-wrap{max-width:1080px;margin:0 auto;padding:92px 16px 48px;display:flex;flex-direction:column;gap:22px}
