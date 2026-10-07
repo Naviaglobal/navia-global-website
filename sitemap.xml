@@ -11,6 +11,12 @@
 
   <!-- Herramientas interactivas -->
   <url>
+    <loc>https://naviaglobal.co/cuantoafuera/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://naviaglobal.co/calculadora/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -50,14 +56,14 @@
   <!-- Blog: Alemania y Francia (movidas de raíz a /blog/) -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-alemania-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-francia-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -65,7 +71,7 @@
   <!-- Blog: Australia -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-australia-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -79,7 +85,7 @@
   <!-- Blog: Canada -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-canada-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -93,7 +99,7 @@
   <!-- Blog: Irlanda -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-irlanda-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -101,7 +107,7 @@
   <!-- Blog: Malta -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-malta-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -109,7 +115,7 @@
   <!-- Blog: Dubai -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-dubai-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -117,7 +123,7 @@
   <!-- Blog: Nueva Zelanda -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-nueva-zelanda-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -125,7 +131,7 @@
   <!-- Blog: Reino Unido -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-reino-unido-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -133,7 +139,7 @@
   <!-- Blog: Estados Unidos -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-estados-unidos-colombia-2026.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -421,14 +427,14 @@
   <!-- Blog: Fase 7C — Comparativas de ciudades -->
   <url>
     <loc>https://naviaglobal.co/blog/sydney-vs-melbourne-colombia.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://naviaglobal.co/blog/dublin-vs-cork-colombia.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -442,7 +448,7 @@
 
   <url>
     <loc>https://naviaglobal.co/blog/londres-vs-manchester-colombia.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

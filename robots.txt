@@ -9,6 +9,9 @@ Sitemap: https://naviaglobal.co/sitemap-index.xml
 Sitemap: https://naviaglobal.co/sitemap.xml
 Sitemap: https://naviaglobal.co/image-sitemap.xml
 
+# Guia para asistentes de IA
+# https://naviaglobal.co/llms.txt
+
 # Tiempo de espera entre requests (para ser amable con el servidor)
 Crawl-delay: 1
 
