@@ -1,315 +1,777 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CO">
 <head>
 <meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RNV31B1EM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1RNV31B1EM');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Calcula cuánto cuesta estudiar en Canadá, Reino Unido, Irlanda, Australia o Nueva Zelanda desde Colombia, en pesos, con la prueba de fondos 2026.">
-<title>CuántoAfuera</title>
+<title>Cuánto cuesta estudiar afuera desde Colombia (2026) | Calculadora en pesos</title>
+<meta name="description" content="Calcula en COP el costo de estudiar en Canadá, Reino Unido, Irlanda, Australia, Nueva Zelanda y 5 destinos más, la prueba de fondos de la visa y cuánto puedes ganar trabajando.">
+<link rel="canonical" href="https://naviaglobal.co/cuantoafuera/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cuánto cuesta estudiar afuera desde Colombia (2026)">
+<meta property="og:description" content="Calculadora en pesos: costo total, prueba de fondos de la visa y cuánto puedes ganar trabajando. 10 destinos.">
+<meta property="og:url" content="https://naviaglobal.co/cuantoafuera/">
+<meta property="og:image" content="https://naviaglobal.co/og-image-2026.jpg">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/destino.css">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');if(location.hostname.indexOf('naviaglobal.co')>-1){fbq('init','1941742975996934');fbq('track','PageView');}</script>
+<noscript><img loading="lazy" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1941742975996934&ev=PageView&noscript=1"/></noscript>
 <style>
-/* Layout: herramienta de dos columnas (entradas | resultado), se apila en móvil. Estética de "sello de visa": tinta verde, papel claro. */
+/* CuantoAfuera. Tokens de marca Navia (NAVIA_SISTEMA.md seccion 7); sobreescriben
+   los de destino.css, que todavia tiene hex fuera de marca. */
 :root{
-  --bg:#F3F5F4; --surface:#FFFFFF; --fg:#16201E; --muted:#5B6966; --line:#D6DEDB;
-  --accent:#0E6B5C; --accent-soft:#E0EFEB; --warn:#9A5B00; --warn-soft:#FBEFD9;
-  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
-  --f-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --ca-azul:#1b4b8d; --ca-cielo:#3b97d3; --ca-charcoal:#2c3e50; --ca-teal:#36b398;
+  --ca-bg:#f4f7fa; --ca-surface:#ffffff; --ca-fg:#2c3e50; --ca-muted:#64748b;
+  --ca-line:#dde5ed; --ca-soft:#eaf4f1; --ca-warn:#8a5a00; --ca-warn-soft:#fdf3e0;
+  --ca-display:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+  --ca-body:"Inter",ui-sans-serif,system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0F1514; --surface:#18211F; --fg:#E6EEEB; --muted:#9AAAA6; --line:#2B3835;
-  --accent:#4FC2A8; --accent-soft:#16332D; --warn:#E8B45A; --warn-soft:#3A2C12; color-scheme:dark}}
+  --ca-bg:#111a24; --ca-surface:#1a2533; --ca-fg:#e8eef5; --ca-muted:#94a7bc;
+  --ca-line:#2b3a4c; --ca-soft:#15312b; --ca-warn:#e8b45a; --ca-warn-soft:#3a2c12;
+  --ca-azul:#5b96d8; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0F1514; --surface:#18211F; --fg:#E6EEEB; --muted:#9AAAA6; --line:#2B3835;
-  --accent:#4FC2A8; --accent-soft:#16332D; --warn:#E8B45A; --warn-soft:#3A2C12; color-scheme:dark}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:28px 48px;display:flex;flex-direction:column;gap:24px}
-header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.1;margin:0;text-wrap:balance}
-header p{margin:8px 0 0;color:var(--muted);max-width:62ch}
-.brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px}
-.logo{font-family:var(--f-display);font-weight:800;font-size:1.1rem;color:var(--accent)}
-.navia{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-.navia p{margin:0;max-width:60ch}
-.wa{font-family:var(--f-mono);user-select:all;font-weight:500}
-.work{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:10px}
-.workrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:480px){.workrow{grid-template-columns:1fr}}
-.big .num.sm{font-size:clamp(1.25rem,3.5vw,1.6rem)}
-#net{color:var(--accent)}
-.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
-@media (max-width:820px){.grid{grid-template-columns:1fr}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0}
-.panel h2{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:0}
-.countries{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
-.countries button{font:inherit;font-weight:500;padding:10px 8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;cursor:pointer}
-.countries button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
-.field{display:flex;flex-direction:column;gap:4px}
-.field label{font-size:.82rem;font-weight:600;color:var(--muted)}
-.field input,.field select{font:inherit;font-family:var(--f-mono);padding:9px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg);width:100%;box-sizing:border-box}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hint{font-size:.78rem;color:var(--muted)}
-button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.big{display:flex;flex-direction:column;gap:2px}
-.big .lbl{font-size:.8rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.big .num{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;font-variant-numeric:tabular-nums}
-.big .sub{font-family:var(--f-mono);font-size:.85rem;color:var(--muted)}
-.proof{border:1px dashed var(--accent);border-radius:8px;padding:14px;background:var(--accent-soft);display:flex;flex-direction:column;gap:4px}
-.proof strong{font-family:var(--f-mono);font-size:1.25rem;font-variant-numeric:tabular-nums}
-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
-td.v{text-align:right;font-family:var(--f-mono);white-space:nowrap;padding-left:12px}
-td small{display:block;color:var(--muted);font-size:.76rem}
-.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line)}
-.bar span{display:block;height:100%}
-.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted)}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
-.note{background:var(--warn-soft);color:var(--fg);border-radius:8px;padding:12px 14px;font-size:.85rem}
-.note b{color:var(--warn)}
-.cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.cta form{display:flex;gap:8px;flex-wrap:wrap}
-.cta input{flex:1 1 180px;font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg)}
-.btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:var(--surface);cursor:pointer}
-.btn.ghost{background:transparent;color:var(--accent)}
-.aff{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.aff div{border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.85rem;display:flex;flex-direction:column;gap:2px}
-.aff div span{color:var(--muted);font-size:.76rem}
-.sources{font-size:.8rem;color:var(--muted)}
-.sources a{color:var(--accent)}
-.ok{color:var(--accent);font-size:.85rem}
-@media (prefers-reduced-motion:no-preference){.big .num{transition:color .2s}}
-</style>
+  --ca-bg:#111a24; --ca-surface:#1a2533; --ca-fg:#e8eef5; --ca-muted:#94a7bc;
+  --ca-line:#2b3a4c; --ca-soft:#15312b; --ca-warn:#e8b45a; --ca-warn-soft:#3a2c12;
+  --ca-azul:#5b96d8; color-scheme:dark}
 
+.ca *,.ca *::before,.ca *::after{box-sizing:border-box}
+.ca{background:var(--ca-bg);color:var(--ca-fg);font-family:var(--ca-body);font-size:15px;line-height:1.55}
+/* El nav del sitio es position:fixed y mide 68px; le dejamos el espacio. */
+.ca-wrap{max-width:1080px;margin:0 auto;padding:92px 16px 48px;display:flex;flex-direction:column;gap:22px}
+.ca-head h1{font-family:var(--ca-display);font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:0;color:var(--ca-azul)}
+.ca-head p{margin:10px 0 0;color:var(--ca-muted);max-width:64ch}
+.ca-brandline{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px}
+.ca-logo{font-family:var(--ca-display);font-weight:800;font-size:1.05rem;color:var(--ca-teal)}
+.ca-eyebrow{font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ca-muted);font-weight:600}
+.ca-answer{background:var(--ca-soft);border-left:4px solid var(--ca-teal);border-radius:8px;padding:14px 16px;font-size:.95rem}
+.ca-answer b{color:var(--ca-azul)}
+.ca-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;align-items:start}
+@media (max-width:860px){.ca-grid{grid-template-columns:1fr}}
+.ca-panel{background:var(--ca-surface);border:1px solid var(--ca-line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:15px;min-width:0}
+.ca-panel h2{font-family:var(--ca-display);font-weight:700;font-size:1.1rem;margin:0;color:var(--ca-azul)}
+.ca-countries{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:7px}
+.ca-countries button{font:inherit;font-size:.86rem;font-weight:500;padding:9px 6px;border:1px solid var(--ca-line);background:var(--ca-bg);color:var(--ca-fg);border-radius:8px;cursor:pointer}
+.ca-countries button[aria-pressed="true"]{border-color:var(--ca-teal);background:var(--ca-soft);color:var(--ca-azul);font-weight:700}
+.ca-f{display:flex;flex-direction:column;gap:4px}
+.ca-f label{font-size:.8rem;font-weight:600;color:var(--ca-muted)}
+.ca-f input,.ca-f select{font:inherit;padding:9px 10px;border:1px solid var(--ca-line);border-radius:8px;background:var(--ca-bg);color:var(--ca-fg);width:100%}
+.ca-row2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+@media (max-width:420px){.ca-row2{grid-template-columns:1fr}}
+.ca-hint{font-size:.77rem;color:var(--ca-muted)}
+.ca button:focus-visible,.ca input:focus-visible,.ca select:focus-visible{outline:2px solid var(--ca-teal);outline-offset:2px}
+.ca-big{display:flex;flex-direction:column;gap:2px}
+.ca-big .l{font-size:.76rem;color:var(--ca-muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.ca-big .n{font-family:var(--ca-display);font-weight:800;font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.1;font-variant-numeric:tabular-nums;color:var(--ca-azul)}
+.ca-big .n.sm{font-size:clamp(1.2rem,3.4vw,1.5rem)}
+.ca-big .s{font-size:.82rem;color:var(--ca-muted)}
+.ca-proof{border:1px dashed var(--ca-teal);border-radius:10px;padding:14px;background:var(--ca-soft);display:flex;flex-direction:column;gap:3px}
+.ca-proof strong{font-size:1.2rem;font-variant-numeric:tabular-nums;color:var(--ca-azul)}
+.ca table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.ca td{padding:8px 0;border-bottom:1px solid var(--ca-line);vertical-align:top;font-size:.9rem}
+.ca td.v{text-align:right;white-space:nowrap;padding-left:12px;font-weight:600}
+.ca td small{display:block;color:var(--ca-muted);font-size:.75rem;font-weight:400}
+.ca-bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--ca-line)}
+.ca-bar span{display:block;height:100%}
+.ca-legend{display:flex;flex-wrap:wrap;gap:9px;font-size:.76rem;color:var(--ca-muted)}
+.ca-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.ca-note{background:var(--ca-warn-soft);border-radius:8px;padding:12px 14px;font-size:.84rem}
+.ca-note b{color:var(--ca-warn)}
+.ca-btn{font:inherit;font-weight:700;padding:11px 18px;border-radius:8px;border:1px solid var(--ca-teal);background:var(--ca-teal);color:#fff;cursor:pointer}
+.ca-btn:disabled{opacity:.6;cursor:default}
+.ca-btn.ghost{background:transparent;color:var(--ca-azul);border-color:var(--ca-azul)}
+.ca-wa{font-weight:700;color:var(--ca-azul);user-select:all}
+
+/* Muro: el detalle se cambia por correo + WhatsApp */
+.ca-gate{position:relative;border:1px solid var(--ca-line);border-radius:12px;background:var(--ca-surface);overflow:hidden}
+.ca-gate-blur{filter:blur(6px);opacity:.45;pointer-events:none;user-select:none;padding:20px}
+.ca-gate-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:22px;background:linear-gradient(180deg,rgba(244,247,250,.72),rgba(244,247,250,.97));text-align:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ca-gate-over{background:linear-gradient(180deg,rgba(17,26,36,.72),rgba(17,26,36,.97))}}
+.ca-gate-over h3{font-family:var(--ca-display);font-weight:800;margin:0;font-size:1.15rem;color:var(--ca-azul)}
+.ca-gate-over p{margin:0;color:var(--ca-muted);font-size:.88rem;max-width:46ch;margin-inline:auto}
+.ca-form{display:flex;flex-direction:column;gap:9px;max-width:420px;margin:4px auto 0;text-align:left}
+.ca-form .ca-hint{font-size:.74rem;line-height:1.4}
+.ca-chk{display:flex;gap:8px;align-items:flex-start;font-size:.76rem;color:var(--ca-muted)}
+.ca-chk input{width:auto;margin-top:3px;flex:none}
+.ca-ok{color:var(--ca-teal);font-weight:600;font-size:.88rem}
+.ca-err{color:#b3261e;font-weight:600;font-size:.84rem}
+.ca-plan{display:flex;flex-direction:column;gap:14px}
+.ca-plan h3{font-family:var(--ca-display);font-weight:700;font-size:1rem;margin:0;color:var(--ca-azul)}
+.ca-check{margin:0;padding-left:18px;font-size:.88rem;display:flex;flex-direction:column;gap:5px}
+.ca-compare td:first-child{font-weight:600}
+.ca-sources{font-size:.78rem;color:var(--ca-muted)}
+.ca-sources a{color:var(--ca-azul)}
+.ca-faq details{border-bottom:1px solid var(--ca-line);padding:11px 0}
+.ca-faq summary{font-weight:700;cursor:pointer;color:var(--ca-azul);font-size:.92rem}
+.ca-faq p{margin:8px 0 0;font-size:.88rem;color:var(--ca-fg)}
+.ca-eeat{display:flex;gap:12px;align-items:flex-start;font-size:.82rem;color:var(--ca-muted);border-top:1px solid var(--ca-line);padding-top:14px}
+.ca-eeat img{border-radius:50%;flex:none}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand"><span class="logo">CuántoAfuera</span><span class="eyebrow">Cifras verificadas al 7 oct 2026</span></div>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo">
+    <img loading="eager" src="/logo.webp" alt="Navia Global" width="32" height="32" onerror="this.style.display='none'">
+    <span class="nav-logo-name">Navia Global</span>
+  </a>
+  <div class="nav-right">
+    <a href="/#destinos" class="nav-home">← Todos los destinos</a>
+    <a href="https://wa.me/573014430722?text=Hola,%20quiero%20asesor%C3%ADa%20para%20estudiar%20en%20el%20exterior" class="nav-cta" target="_blank" rel="noopener">Asesoría Gratuita</a>
+  </div>
+</nav>
+
+<div class="ca">
+<div class="ca-wrap">
+
+  <header class="ca-head">
+    <div class="ca-brandline">
+      <span class="ca-logo">CuántoAfuera</span>
+      <span class="ca-eyebrow">una herramienta de Navia Global Education</span>
+      <span class="ca-eyebrow" id="caVerif">Cifras verificadas al 7 de octubre de 2026</span>
+    </div>
     <h1>¿Cuánto cuesta estudiar afuera desde Colombia?</h1>
-    <p>Calcula el costo total en pesos y el dinero que te exige la visa de estudiante. Ajusta matrícula, duración y tasas de cambio a tu caso.</p>
+    <p>Calcula el costo total en pesos y el dinero que te exige la visa de estudiante. Ajusta matrícula, duración y tasa de cambio a tu caso. Gratis, sin registro para ver el resultado.</p>
   </header>
 
-  <div class="grid">
-    <section class="panel" aria-labelledby="h-in">
-      <h2 id="h-in">Tu plan</h2>
-      <div class="countries" role="group" aria-label="Destino" id="countries"></div>
+  <div class="ca-answer" id="caAnswer">
+    Cargando las cifras verificadas…
+  </div>
 
-      <div class="field" id="ukLoc" hidden>
-        <label for="uk">Ciudad en Reino Unido</label>
-        <select id="uk"><option value="out">Fuera de Londres</option><option value="ldn">Londres</option></select>
+  <div class="ca-grid">
+    <section class="ca-panel" aria-labelledby="caHIn">
+      <h2 id="caHIn">Tu plan</h2>
+      <div class="ca-countries" role="group" aria-label="Destino" id="caCountries"></div>
+
+      <div class="ca-f" id="caUkLoc" hidden>
+        <label for="caUk">Ciudad en Reino Unido</label>
+        <select id="caUk"><option value="out">Fuera de Londres</option><option value="ldn">Londres</option></select>
       </div>
 
-      <div class="field">
-        <label for="ptype">Tipo de programa</label>
-        <select id="ptype">
+      <div class="ca-f">
+        <label for="caPtype">Tipo de programa</label>
+        <select id="caPtype">
           <option value="ingles">Curso de inglés</option>
           <option value="tecnico" selected>College / técnico / diploma</option>
           <option value="pregrado">Pregrado</option>
           <option value="maestria">Maestría / posgrado</option>
         </select>
-        <span class="hint" id="ptypeHint"></span>
+        <span class="ca-hint" id="caPtypeHint"></span>
       </div>
 
-      <div class="row2">
-        <div class="field"><label for="months">Duración (meses)</label><input id="months" type="number" min="1" max="48" value="12"></div>
-        <div class="field"><label for="tuition">Matrícula total (<span class="cur">CAD</span>)</label><input id="tuition" type="number" min="0" step="100" value="18000"></div>
+      <div class="ca-row2">
+        <div class="ca-f"><label for="caMonths">Duración (meses)</label><input id="caMonths" type="number" min="1" max="48" value="12"></div>
+        <div class="ca-f"><label for="caTuition">Matrícula total (<span class="ca-cur">CAD</span>)</label><input id="caTuition" type="number" min="0" step="100"></div>
       </div>
-      <div class="row2">
-        <div class="field"><label for="living">Vida mensual (<span class="cur">CAD</span>)</label><input id="living" type="number" min="0" step="10"></div>
-        <div class="field"><label for="fx">1 <span class="cur">CAD</span> en COP</label><input id="fx" type="number" min="0" step="1"></div>
+      <div class="ca-row2">
+        <div class="ca-f"><label for="caLiving">Vida mensual (<span class="ca-cur">CAD</span>)</label><input id="caLiving" type="number" min="0" step="10"></div>
+        <div class="ca-f"><label for="caFx">1 <span class="ca-cur">CAD</span> en COP</label><input id="caFx" type="number" min="0" step="1"></div>
       </div>
-      <div class="row2">
-        <div class="field"><label for="flight">Tiquetes ida y vuelta (COP)</label><input id="flight" type="number" min="0" step="100000" value="4500000"></div>
-        <div class="field"><label for="ins">Seguro médico (COP)</label><input id="ins" type="number" min="0" step="100000" value="3500000"></div>
+      <div class="ca-row2">
+        <div class="ca-f"><label for="caFlight">Tiquetes ida y vuelta (COP)</label><input id="caFlight" type="number" min="0" step="100000" value="4500000"></div>
+        <div class="ca-f"><label for="caIns">Seguro médico (COP)</label><input id="caIns" type="number" min="0" step="100000" value="3500000"></div>
       </div>
-      <div class="field"><label for="buffer">Colchón de imprevistos</label>
-        <select id="buffer"><option value="0">Sin colchón</option><option value="0.05">5 %</option><option value="0.1" selected>10 %</option><option value="0.15">15 %</option></select>
+      <div class="ca-f"><label for="caBuffer">Colchón de imprevistos</label>
+        <select id="caBuffer"><option value="0">Sin colchón</option><option value="0.05">5 %</option><option value="0.1" selected>10 %</option><option value="0.15">15 %</option></select>
       </div>
-      <div class="field"><label for="hours">Horas de trabajo por semana que planeas</label>
-        <input id="hours" type="number" min="0" max="40" step="1" value="15">
-        <span class="hint" id="hoursHint"></span>
+      <div class="ca-f"><label for="caHours">Horas de trabajo por semana que planeas</label>
+        <input id="caHours" type="number" min="0" max="40" step="1" value="15">
+        <span class="ca-hint" id="caHoursHint"></span>
       </div>
-      <p class="hint" id="fxHint"></p>
+      <p class="ca-hint" id="caFxHint"></p>
     </section>
 
-    <section class="panel" aria-labelledby="h-out" aria-live="polite">
-      <h2 id="h-out">Resultado</h2>
-      <div class="big">
-        <span class="lbl">Costo total estimado</span>
-        <span class="num" id="total">—</span>
-        <span class="sub" id="totalLocal"></span>
+    <section class="ca-panel" aria-labelledby="caHOut" aria-live="polite">
+      <h2 id="caHOut">Resultado</h2>
+      <div class="ca-big">
+        <span class="l">Costo total estimado</span>
+        <span class="n" id="caTotal">—</span>
+        <span class="s" id="caTotalLocal"></span>
       </div>
-      <div class="bar" id="bar" aria-hidden="true"></div>
-      <div class="legend" id="legend"></div>
-      <table><tbody id="rows"></tbody></table>
-      <div class="proof">
-        <span class="lbl" style="font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Fondos que exige la visa</span>
-        <strong id="proof">—</strong>
-        <span class="hint" id="proofRule"></span>
+      <div class="ca-bar" id="caBar" aria-hidden="true"></div>
+      <div class="ca-legend" id="caLegend"></div>
+      <table><tbody id="caRows"></tbody></table>
+      <div class="ca-proof">
+        <span class="l" style="font-size:.76rem;font-weight:700;color:var(--ca-muted);text-transform:uppercase;letter-spacing:.05em">Fondos que exige la visa</span>
+        <strong id="caProof">—</strong>
+        <span class="ca-hint" id="caProofRule"></span>
       </div>
-      <div class="work">
-        <div class="workrow">
-          <div class="big"><span class="lbl">Ingreso posible trabajando</span><span class="num sm" id="income">—</span><span class="sub" id="incomeRule"></span></div>
-          <div class="big"><span class="lbl">Costo neto de tu bolsillo</span><span class="num sm" id="net">—</span><span class="sub">costo total menos ingreso posible</span></div>
-        </div>
-        <p class="hint" style="margin:0">El ingreso por trabajo <b>no cuenta</b> para la prueba de fondos de la visa. Supuesto conservador: sin trabajo los 2 primeros meses, solo semanas de clase, salario mínimo y 15 % de descuentos.</p>
-      </div>
-      <div class="note" id="note"></div>
+      <div class="ca-note" id="caNote"></div>
     </section>
   </div>
 
-  <section class="panel cta" aria-label="Siguientes pasos">
-    <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
-      <h2>Recibe tu presupuesto por correo</h2>
-      <p class="hint" style="margin:0">Te enviamos el desglose y te avisamos si cambian los requisitos de tu destino.</p>
-      <form id="lead">
-        <input id="email" type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico">
-        <button class="btn" type="submit">Enviar</button>
+  <!-- El detalle se intercambia por correo + WhatsApp. Sin cobro. -->
+  <section class="ca-gate" id="caGate" aria-labelledby="caGateH">
+    <div class="ca-gate-blur" id="caGateBlur" aria-hidden="true">
+      <div class="ca-plan">
+        <h3>Tu plan de ahorro mes a mes</h3>
+        <table class="ca-compare"><tbody><tr><td>Si aplicas en 6 meses</td><td class="v">$0 COP/mes</td></tr><tr><td>Si aplicas en 12 meses</td><td class="v">$0 COP/mes</td></tr><tr><td>Si aplicas en 18 meses</td><td class="v">$0 COP/mes</td></tr></tbody></table>
+        <h3>Cuánto puedes ganar trabajando</h3>
+        <table class="ca-compare"><tbody><tr><td>Ingreso posible en todo el programa</td><td class="v">$0 COP</td></tr><tr><td>Costo neto de tu bolsillo</td><td class="v">$0 COP</td></tr></tbody></table>
+        <h3>Checklist de la prueba de fondos</h3>
+        <ul class="ca-check"><li>Extractos bancarios</li><li>Certificación bancaria</li><li>Carta de patrocinio</li><li>Declaración de renta</li></ul>
+        <h3>Los 10 destinos comparados</h3>
+        <table class="ca-compare"><tbody><tr><td>Destino</td><td class="v">Costo total</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <div class="ca-gate-over" id="caGateOver">
+      <h3 id="caGateH">Tu plan completo, gratis</h3>
+      <p>Déjanos tu correo y tu WhatsApp y te mostramos ahora mismo el plan de ahorro mes a mes, cuánto puedes ganar trabajando, el checklist de documentos de la prueba de fondos y los 10 destinos comparados. Sin costo.</p>
+      <form class="ca-form" id="caLead" novalidate>
+        <div class="ca-f"><label for="caName">Nombre</label><input id="caName" name="nombre" type="text" autocomplete="name" required></div>
+        <div class="ca-f"><label for="caEmail">Correo</label><input id="caEmail" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></div>
+        <div class="ca-f"><label for="caPhone">WhatsApp</label><input id="caPhone" name="whatsapp" type="tel" autocomplete="tel" value="+57 " required></div>
+        <label class="ca-chk"><input type="checkbox" id="caConsent" required>
+          <span>Autorizo a Navia Global Education S.A.S. a tratar mis datos y a contactarme por correo y WhatsApp, según la <a href="privacidad.html">política de privacidad</a> y la Ley 1581 de 2012.</span></label>
+        <button class="ca-btn" type="submit" id="caLeadBtn">Ver mi plan completo</button>
+        <span class="ca-hint">Sin costo. No compartimos tus datos con terceros.</span>
+        <span class="ca-err" id="caLeadErr" hidden></span>
       </form>
-      <label class="hint"><input type="checkbox" id="consent" form="lead" required> Autorizo a Navia Global Education S.A.S. a tratar mis datos según la Ley 1581 de 2012 y su política de privacidad.</label>
-      <span class="ok" id="leadMsg" hidden>Listo. En la versión publicada este correo se guardará en tu lista.</span>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
-      <h2>Reporte completo · $29.900 COP</h2>
-      <p class="hint" style="margin:0">Comparativo de 5 países, costo por ciudad, plan de ahorro mes a mes y checklist de documentos para la prueba de fondos.</p>
-      <div><button class="btn ghost" type="button" id="buy">Comprar reporte</button></div>
-      <span class="hint" id="buyMsg" hidden>Espacio para el botón de pago (Wompi, Mercado Pago o Hotmart).</span>
     </div>
   </section>
 
-  <section class="panel navia" aria-labelledby="h-nv">
-    <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-      <h2 id="h-nv">¿Quieres que alguien revise tu caso?</h2>
-      <p class="hint">El equipo de Navia Global Education te ayuda a elegir programa, armar la prueba de fondos y preparar la visa. Primera conversación sin costo.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:2px">
-      <span class="hint">Escríbenos por WhatsApp</span>
-      <span class="wa">+57 301 443 0722</span>
-    </div>
+  <!-- Paso 2: calificacion. Aparece una vez desbloqueado. -->
+  <section class="ca-panel" id="caStep2" hidden aria-labelledby="caH2">
+    <h2 id="caH2">¿Quieres que un asesor revise tu caso gratis?</h2>
+    <p class="ca-hint" style="margin:0">Cuatro preguntas. Con ellas Samuel puede decirte si tu plan es realista y por dónde empezar.</p>
+    <form class="ca-form" id="caQual" style="max-width:none" novalidate>
+      <div class="ca-row2">
+        <div class="ca-f"><label for="caWhen">¿Cuándo quieres empezar?</label>
+          <select id="caWhen" name="cuando">
+            <option value="">Elige una opción</option>
+            <option value="menos-6">En menos de 6 meses</option>
+            <option value="6-12">Entre 6 y 12 meses</option>
+            <option value="mas-12">En más de 12 meses</option>
+            <option value="no-se">Todavía no sé</option>
+          </select></div>
+        <div class="ca-f"><label for="caSaved">¿Cuánto tienes ahorrado o disponible?</label>
+          <select id="caSaved" name="ahorro">
+            <option value="">Elige una opción</option>
+            <option value="0-10">Menos de $10 millones COP</option>
+            <option value="10-30">Entre $10 y $30 millones</option>
+            <option value="30-60">Entre $30 y $60 millones</option>
+            <option value="60-mas">Más de $60 millones</option>
+            <option value="no-se">Prefiero no decir</option>
+          </select></div>
+      </div>
+      <div class="ca-row2">
+        <div class="ca-f"><label for="caFund">¿Quién financia?</label>
+          <select id="caFund" name="financiacion">
+            <option value="">Elige una opción</option>
+            <option value="yo">Yo mismo</option>
+            <option value="padres">Mis padres o familia</option>
+            <option value="credito">Crédito educativo</option>
+            <option value="beca">Beca</option>
+            <option value="no-se">Todavía no sé</option>
+          </select></div>
+        <div class="ca-f"><label for="caEng">Nivel de inglés</label>
+          <select id="caEng" name="ingles">
+            <option value="">Elige una opción</option>
+            <option value="basico">Básico</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+            <option value="certificado">Tengo certificado (IELTS, TOEFL)</option>
+          </select></div>
+      </div>
+      <button class="ca-btn" type="submit" id="caQualBtn">Enviar y pedir mi asesoría</button>
+      <span class="ca-err" id="caQualErr" hidden></span>
+    </form>
+    <span class="ca-ok" id="caQualOk" hidden></span>
   </section>
 
-  <section class="panel" aria-labelledby="h-aff">
-    <h2 id="h-aff">Ahorra en lo que igual vas a pagar</h2>
-    <p class="hint" style="margin:0">Espacios para enlaces de afiliado. Se marcarán como tales al publicarse.</p>
-    <div class="aff">
-      <div><b>Envío de matrícula</b><span>Cuenta multimoneda o remesas</span></div>
-      <div><b>Seguro médico</b><span>Seguro de estudiante internacional</span></div>
-      <div><b>Alojamiento</b><span>Residencias y homestay</span></div>
-      <div><b>eSIM</b><span>Datos desde que aterrizas</span></div>
-      <div><b>Traducción y apostilla</b><span>Traductor oficial en Colombia</span></div>
+  <section class="ca-panel" aria-labelledby="caHWa">
+    <h2 id="caHWa">Habla con Navia ahora</h2>
+    <p class="ca-hint" style="margin:0">Samuel te ayuda a elegir programa, armar la prueba de fondos y preparar la visa. La primera conversación no tiene costo.</p>
+    <div>
+      <a class="ca-btn" id="caWa" href="https://wa.me/573014430722" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Escribir por WhatsApp</a>
     </div>
+    <span class="ca-hint">O guarda el número: <span class="ca-wa">+57 301 443 0722</span></span>
   </section>
 
-  <p class="sources">
-    CuántoAfuera es una herramienta de Navia Global Education S.A.S. (NIT 902.003.125-8). Herramienta informativa; no es asesoría migratoria. <a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de uso</a>. Verifica siempre en la fuente oficial antes de aplicar.
-    Fuentes de los requisitos: IRCC (Canadá, vigente desde el 1 sep 2026), GOV.UK/Home Office (Reino Unido, cambio el 30 nov 2026), Immigration Service Delivery (Irlanda), Home Affairs (Australia), Immigration New Zealand. TRM USD del 2 oct 2026: $3.307,73. Las demás tasas son aproximadas y editables.
+  <section class="ca-panel ca-faq" aria-labelledby="caHFaq">
+    <h2 id="caHFaq">Preguntas frecuentes</h2>
+    <details><summary>¿La prueba de fondos incluye lo que gane trabajando?</summary>
+      <p>No. Ningún consulado acepta ingresos futuros por trabajo como prueba de fondos. El dinero tiene que estar disponible y, en varios países, demostrar su origen. Lo que ganes trabajando sirve para sostenerte allá, no para la visa.</p></details>
+    <details><summary>¿Puedo trabajar con un curso de inglés?</summary>
+      <p>Depende del país. En Irlanda sí, con un programa de la lista ILEP. En Nueva Zelanda, con cursos de 14 semanas o más con un proveedor de Categoría 1. En Canadá los cursos de inglés (ESL) no dan permiso de trabajo, y en Reino Unido un curso de inglés independiente tampoco.</p></details>
+    <details><summary>¿Las cifras de esta calculadora son oficiales?</summary>
+      <p>Las de fondos de visa, horas de trabajo y salario mínimo salen de las páginas oficiales de inmigración de cada país, con la fecha de verificación visible arriba. Las de matrícula y costo de vida son referencias editables: cámbialas por las de tu programa y tu ciudad. Siempre confirma en la fuente oficial antes de aplicar.</p></details>
+    <details><summary>¿Cuesta algo usar la herramienta o pedir la asesoría?</summary>
+      <p>No. La calculadora es gratis y la primera conversación con Navia tampoco tiene costo. Solo te pedimos tu correo y tu WhatsApp para enviarte el plan completo y poder contactarte.</p></details>
+  </section>
+
+  <div class="ca-panel">
+    <div class="ca-eeat">
+      <img src="/samuel-1.jpg" alt="Samuel Sánchez" width="56" height="56" loading="lazy">
+      <div>
+        <b style="color:var(--ca-azul)">Revisado por Samuel Sánchez</b>, fundador de Navia Global Education.
+        9 años en educación internacional. Credencial British Council a título personal.
+        <a href="/sobre-samuel-sanchez.html">Conoce su trayectoria</a>.
+      </div>
+    </div>
+  </div>
+
+  <p class="ca-sources">
+    CuántoAfuera es una herramienta de Navia Global Education S.A.S. (NIT 902.003.125-8). Herramienta informativa; <b>no es asesoría migratoria</b> y no garantiza la aprobación de ninguna visa.
+    <a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de uso</a> · <a href="/politica-de-cookies.html">Cookies</a>.
+    Fuentes oficiales:
+    <a href="https://www.canada.ca/en/immigration-refugees-citizenship.html" target="_blank" rel="noopener nofollow">IRCC</a> ·
+    <a href="https://www.gov.uk/student-visa/money" target="_blank" rel="noopener nofollow">GOV.UK</a> ·
+    <a href="https://www.irishimmigration.ie/" target="_blank" rel="noopener nofollow">Immigration Service Delivery</a> ·
+    <a href="https://immi.homeaffairs.gov.au/" target="_blank" rel="noopener nofollow">Home Affairs</a> ·
+    <a href="https://www.immigration.govt.nz/" target="_blank" rel="noopener nofollow">Immigration New Zealand</a>.
+    <span id="caFxFoot"></span>
   </p>
+
+</div>
 </div>
 
+<footer class="footer">
+  <span class="footer-copy">© 2026 Navia Global — Agencia colombiana de estudios en el exterior</span>
+  <nav class="footer-links">
+    <a href="/">Inicio</a><a href="/blog/">Blog</a><a href="/blog/agencia-estudios-exterior-colombia.html">Agencia</a><a href="/calculadora/">Calculadora</a><a href="/comparador/">Comparador</a><a href="/sobre-samuel-sanchez.html">Sobre Samuel</a><a href="/contacto.html">Contacto</a><a href="/politica-de-privacidad.html">Privacidad</a>
+  </nav>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"CuántoAfuera","url":"https://naviaglobal.co/cuantoafuera/","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"es-CO","description":"Calculadora del costo de estudiar en el exterior desde Colombia, en pesos, con la prueba de fondos de la visa de estudiante.","offers":{"@type":"Offer","price":"0","priceCurrency":"COP"},"publisher":{"@type":"Organization","name":"Navia Global Education S.A.S.","url":"https://naviaglobal.co/"}},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Inicio","item":"https://naviaglobal.co/"},
+{"@type":"ListItem","position":2,"name":"CuántoAfuera","item":"https://naviaglobal.co/cuantoafuera/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿La prueba de fondos incluye lo que gane trabajando?","acceptedAnswer":{"@type":"Answer","text":"No. Ningún consulado acepta ingresos futuros por trabajo como prueba de fondos. El dinero tiene que estar disponible y, en varios países, demostrar su origen."}},
+{"@type":"Question","name":"¿Puedo trabajar con un curso de inglés?","acceptedAnswer":{"@type":"Answer","text":"Depende del país. En Irlanda sí, con un programa de la lista ILEP. En Nueva Zelanda, con cursos de 14 semanas o más con proveedor de Categoría 1. En Canadá los cursos de inglés no dan permiso de trabajo, y en Reino Unido un curso de inglés independiente tampoco."}},
+{"@type":"Question","name":"¿Cuesta algo usar la herramienta o pedir la asesoría?","acceptedAnswer":{"@type":"Answer","text":"No. La calculadora es gratis y la primera conversación con Navia no tiene costo. Solo se pide correo y WhatsApp para enviar el plan completo."}}]}
+]}
+</script>
+
 <script>
-const C = {
-  ca:{name:"Canadá",cur:"CAD",fx:2410,tuition:18000,visa:150,
-      living:()=>1954,
-      proof:(m,t)=>({amt:t+23448,rule:"Matrícula del primer año + CAD 23.448 de vida (solicitudes desde el 1 sep 2026, fuera de Quebec) + tiquetes."}),
-      note:"<b>Canadá:</b> IRCC revisa el monto y también el origen del dinero. Quebec tiene montos propios y exige CAQ. Tarifa de visa: verifica el valor vigente en IRCC."},
-  uk:{name:"Reino Unido",cur:"GBP",fx:4430,tuition:18000,visa:558,
-      living:(loc)=>loc==="ldn"?1529:1171,
-      proof:(m,t,loc)=>{const r=loc==="ldn"?1529:1171;const n=Math.min(m,9);return{amt:t+r*n,rule:`Matrícula del primer año + £${r.toLocaleString("es-CO")} × ${n} meses (máx. 9), en la cuenta 28 días seguidos. Desde el 30 nov 2026 sube a £${loc==="ldn"?"1.570":"1.203"}/mes.`}},
-      extra:(m)=>Math.ceil(m/12)*776, extraLbl:"Recargo de salud (IHS), aprox. £776/año",
-      note:"<b>Reino Unido:</b> para aplicaciones desde el 30 de noviembre de 2026 el requisito sube a £1.570 (Londres) y £1.203 (fuera). Ajusta tu ahorro si aplicas después de esa fecha."},
-  ie:{name:"Irlanda",cur:"EUR",fx:3840,tuition:6000,visa:100,
-      living:()=>833,
-      proof:(m,t)=>m<8?{amt:t+833*m,rule:`Cursos de menos de 8 meses: €833 × ${m} meses, más la matrícula pagada.`}:{amt:t+10000,rule:"€10.000 de vida por año, más la matrícula pagada (programas ILEP)."},
-      note:"<b>Irlanda:</b> el programa debe estar en la lista ILEP. El seguro médico privado es obligatorio. Visa de una entrada €60; múltiple €100."},
-  au:{name:"Australia",cur:"AUD",fx:2180,tuition:30000,visa:2500,
-      living:()=>2476,
-      proof:(m,t)=>{const n=Math.min(m,12);return{amt:t+Math.round(29710*n/12)+2000,rule:`AUD 29.710 por 12 meses (proporcional: ${n} meses) + matrícula del primer año + viaje (≈ AUD 2.000, referencia).`}},
-      note:"<b>Australia:</b> la tarifa de visa subclass 500 pasó a AUD 2.500 desde el 1 jul 2026 según reportes; confírmala en Home Affairs. El seguro OSHC es obligatorio y aparte."},
-  nz:{name:"Nueva Zelanda",cur:"NZD",fx:1950,tuition:25000,visa:950,
-      living:()=>1667,
-      proof:(m,t)=>m<12?{amt:t+1667*m,rule:`Cursos de menos de un año: NZD 1.667 × ${m} meses, más matrícula y tiquete de regreso.`}:{amt:t+20000,rule:"NZD 20.000 por año de vida, más matrícula y tiquete de regreso."},
-      note:"<b>Nueva Zelanda:</b> la visa Fee Paying Student cuesta cerca de NZD 850 más la tasa IVL; las fuentes varían, verifícala en Immigration NZ."}
+(function(){
+"use strict";
+/* Toda cifra sale de data/requisitos.json. No escribir numeros aqui. */
+var FORMSPREE_ID = "xdkpereb"; // PENDIENTE: crear un formulario aparte para CuantoAfuera y cambiarlo aqui
+var WA = "573014430722";
+var $ = function(id){return document.getElementById(id);};
+var R = null, cur = null, orden = [], unlocked = false, lead = {}, enviados = {};
+
+var PLBL = {ingles:"curso de inglés",tecnico:"college/técnico",pregrado:"pregrado",maestria:"maestría"};
+/* Matricula anual de referencia, en moneda local. Son referencias editables, no
+   cifras oficiales; el usuario las cambia por las de su programa. */
+var TUI = {
+  canada:{ingles:16000,tecnico:18000,pregrado:36000,maestria:30000},
+  "reino-unido":{ingles:12000,tecnico:12000,pregrado:22000,maestria:22000},
+  irlanda:{ingles:5000,tecnico:9000,pregrado:16000,maestria:17000},
+  australia:{ingles:20000,tecnico:15000,pregrado:40000,maestria:42000},
+  "nueva-zelanda":{ingles:18000,tecnico:22000,pregrado:35000,maestria:35000},
+  malta:{ingles:4500,tecnico:8000,pregrado:12000,maestria:13000},
+  alemania:{ingles:6000,tecnico:9000,pregrado:3000,maestria:5000},
+  francia:{ingles:7000,tecnico:9000,pregrado:4000,maestria:8000},
+  "estados-unidos":{ingles:14000,tecnico:16000,pregrado:35000,maestria:38000},
+  dubai:{ingles:9000,tecnico:12000,pregrado:20000,maestria:22000}
 };
-const order=["ca","uk","ie","au","nz"];
-// Matrícula anual de referencia por tipo de programa (aproximada, editable)
-const TUI={ca:{ingles:16000,tecnico:18000,pregrado:36000,maestria:30000},
-           uk:{ingles:12000,tecnico:12000,pregrado:22000,maestria:22000},
-           ie:{ingles:5000,tecnico:9000,pregrado:16000,maestria:17000},
-           au:{ingles:20000,tecnico:15000,pregrado:40000,maestria:42000},
-           nz:{ingles:18000,tecnico:22000,pregrado:35000,maestria:35000}};
-// Horas legales por semana en periodo de clases y salario mínimo de referencia (verificado 7 oct 2026 salvo donde se indica)
-const WORK={
-  ca:{wage:17.95,wageLbl:"salario mínimo de Ontario (CAD 17,95 desde 1 oct 2026)",
-      h:t=>t==="ingles"?0:24, why:t=>t==="ingles"?"Los cursos de inglés (ESL) no dan permiso de trabajo en Canadá.":"Hasta 24 h/semana en clases; ilimitado en vacaciones programadas."},
-  uk:{wage:12.71,wageLbl:"salario mínimo nacional aprox. (£12,71, verificar)",
-      h:t=>t==="ingles"?0:(t==="tecnico"?10:20), why:t=>t==="ingles"?"Un curso de inglés independiente suele hacerse con visa de estudio corta, sin permiso de trabajo.":(t==="tecnico"?"Programas por debajo de grado: 10 h/semana en clases.":"Grado o superior: 20 h/semana en clases; tiempo completo en vacaciones.")},
-  ie:{wage:14.15,wageLbl:"salario mínimo de Irlanda (€14,15 desde ene 2026)",
-      h:()=>20, why:t=>t==="ingles"?"Inglés en programa ILEP de 25+ semanas: 20 h/semana; 40 h en jun–sep y 15 dic–15 ene.":"Stamp 2: 20 h/semana; 40 h en jun–sep y 15 dic–15 ene."},
-  au:{wage:26.44,wageLbl:"salario mínimo de Australia (AUD 26,44 desde 1 jul 2026)",
-      h:()=>24, why:()=>"48 h cada dos semanas en clases; ilimitado en vacaciones."},
-  nz:{wage:23.15,wageLbl:"salario mínimo aprox. (NZD 23,15, verificar)",
-      h:(t,m)=>t==="ingles"&&m<4?0:25, why:(t,m)=>t==="ingles"?(m<4?"Inglés de menos de 14 semanas: sin permiso de trabajo.":"Inglés de 14+ semanas con proveedor Categoría 1 o 24+ semanas: hasta 25 h/semana."):"Hasta 25 h/semana en clases; tiempo completo en vacaciones."}
+/* Vida mensual de referencia, en moneda local. Editable por el usuario. */
+var VIDA = {canada:1954,"reino-unido":null,irlanda:833,australia:2476,"nueva-zelanda":1667,
+            malta:900,alemania:1100,francia:1200,"estados-unidos":1800,dubai:1600};
+
+var cop = function(n){return "$"+Math.round(n).toLocaleString("es-CO")+" COP";};
+var locm = function(n,c){return Math.round(n).toLocaleString("es-CO")+" "+c;};
+var num = function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v;};
+var ev = function(name,params){
+  if(typeof gtag==="function") gtag("event",name,params||{});
 };
-const PLBL={ingles:"curso de inglés",tecnico:"college/técnico",pregrado:"pregrado",maestria:"maestría"};
-function setTuition(){const m=Math.max(1,+$("months").value||1);$("tuition").value=Math.round(TUI[cur][$("ptype").value]*m/12/100)*100;
-  $("ptypeHint").textContent="Matrícula de referencia: "+loc(TUI[cur][$("ptype").value],C[cur].cur)+" por año. Cámbiala por la de tu programa.";}
 
-const $=id=>document.getElementById(id);
-let cur="ca";
-const cop=n=>"$"+Math.round(n).toLocaleString("es-CO")+" COP";
-const loc=(n,c)=>Math.round(n).toLocaleString("es-CO")+" "+c;
+fetch("data/requisitos.json",{cache:"no-store"})
+  .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+  .then(function(j){ R=j; init(); })
+  .catch(function(){
+    $("caAnswer").innerHTML = "No pudimos cargar las cifras verificadas. Recarga la página o escríbenos por WhatsApp al <b>+57 301 443 0722</b>.";
+  });
 
-const box=$("countries");
-order.forEach(k=>{const b=document.createElement("button");b.type="button";b.textContent=C[k].name;b.dataset.k=k;b.onclick=()=>select(k);box.appendChild(b)});
+function fx(moneda){
+  var t = R.tasas_cambio.cop_por[moneda];
+  return t && t.valor ? t.valor : 0;
+}
+function fxEstado(moneda){
+  var t = R.tasas_cambio.cop_por[moneda];
+  return t ? t.estado : "por_verificar";
+}
 
-function select(k){
-  cur=k;const c=C[k];
-  box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
-  document.querySelectorAll(".cur").forEach(s=>s.textContent=c.cur);
-  $("ukLoc").hidden=k!=="uk";
-  setTuition();$("fx").value=c.fx;$("living").value=c.living($("uk").value);
+/* Resuelve los fondos de visa, que tienen forma distinta en cada pais. */
+function fondos(slug,m,tuition,ukLoc){
+  var d = R.destinos[slug], f = d.fondos_visa || {};
+  if(f.estado === "por_verificar" && f.valor == null && f.valor_oficial == null && f.valor_mensual_londres == null)
+    return {amt:null,rule:"Todavía no tenemos verificado el monto oficial de fondos para este destino. Escríbenos y te lo confirmamos."};
+  if(slug === "reino-unido"){
+    var r = ukLoc === "ldn" ? f.valor_mensual_londres : f.valor_mensual_fuera;
+    var n = Math.min(m, f.meses_maximo || 9);
+    var c = f.cambio_programado || {};
+    var sube = ukLoc === "ldn" ? c.valor_mensual_londres : c.valor_mensual_fuera;
+    return {amt: tuition + r*n,
+      rule:"Matrícula del primer año + £"+r.toLocaleString("es-CO")+" × "+n+" meses (máx. "+(f.meses_maximo||9)+"), en la cuenta 28 días seguidos."
+           + (sube ? " Desde el "+c.fecha+" sube a £"+sube.toLocaleString("es-CO")+"/mes." : "")};
+  }
+  if(slug === "irlanda"){
+    if(m <= 8) return {amt: tuition + f.valor_oficial,
+      rule:"Cifra oficial para cursos de 8 meses o menos: €"+f.valor_oficial.toLocaleString("es-CO")+", más la matrícula pagada. La escuela recomienda tener €"+f.valor_recomendado_escuela.toLocaleString("es-CO")+"."};
+    return {amt: tuition + f.valor_recomendado_escuela,
+      rule:"Para cursos de más de 8 meses, la referencia de la escuela es €"+f.valor_recomendado_escuela.toLocaleString("es-CO")+" al año, más la matrícula pagada (programas ILEP)."};
+  }
+  if(slug === "nueva-zelanda"){
+    if(m < 12) return {amt: tuition + f.valor_mensual*m,
+      rule:"Cursos de menos de un año: NZD "+f.valor_mensual.toLocaleString("es-CO")+" × "+m+" meses, más matrícula y tiquete de regreso."};
+    return {amt: tuition + f.valor,
+      rule:"NZD "+f.valor.toLocaleString("es-CO")+" por año de vida, más matrícula y tiquete de regreso."};
+  }
+  if(slug === "australia"){
+    var n2 = Math.min(m,12);
+    return {amt: tuition + Math.round(f.valor*n2/12),
+      rule:"AUD "+f.valor.toLocaleString("es-CO")+" por 12 meses (proporcional: "+n2+" meses) + matrícula del primer año. El tiquete se suma aparte, abajo."};
+  }
+  if(slug === "canada"){
+    return {amt: tuition + f.valor,
+      rule:"Matrícula del primer año + CAD "+f.valor.toLocaleString("es-CO")+" de vida + tiquetes."
+           + (f.estado==="en_conflicto" ? " IRCC publicó un ajuste a CAD "+f.valor_candidato_brief.toLocaleString("es-CO")+"; lo estamos confirmando." : "")};
+  }
+  if(f.valor != null) return {amt: tuition + f.valor, rule:"Matrícula del primer año + "+locm(f.valor,R.destinos[slug].moneda)+" de vida."};
+  return {amt:null,rule:"Monto de fondos pendiente de verificar para este destino."};
+}
+
+function horas(slug,tipo,m){
+  var h = R.destinos[slug].horas_trabajo || {};
+  if(h.sin_limite) return {max:40,why:"Sin límite de horas de trabajo."};
+  if(h.estado === "por_verificar" || h.en_clases == null)
+    return {max:0,why:"Todavía no tenemos verificadas las horas de trabajo permitidas en este destino."};
+  if(slug === "canada" && tipo === "ingles") return {max:0,why:"Los cursos de inglés (ESL) no dan permiso de trabajo en Canadá."};
+  if(slug === "canada") return {max:h.en_clases,why:"Hasta "+h.en_clases+" h/semana, y solo si estudias educación superior."};
+  if(slug === "reino-unido"){
+    if(tipo === "ingles") return {max:0,why:"Un curso de inglés independiente no da permiso de trabajo."};
+    if(tipo === "tecnico") return {max:10,why:"Programas por debajo de grado: 10 h/semana en clases."};
+    return {max:h.en_clases,why:"Grado o superior: "+h.en_clases+" h/semana en clases; tiempo completo en vacaciones."};
+  }
+  if(slug === "nueva-zelanda" && tipo === "ingles" && m < 4)
+    return {max:0,why:"Inglés de menos de 14 semanas: sin permiso de trabajo."};
+  if(slug === "irlanda")
+    return {max:h.en_clases,why:"Stamp 2: "+h.en_clases+" h/semana en clases y "+h.en_vacaciones+" h en vacaciones ("+(h.periodos_vacaciones||[]).join(" y ")+")."};
+  if(slug === "malta")
+    return {max:h.en_clases,why:h.en_clases+" h/semana, "+(h.condicion||"").toLowerCase()};
+  return {max:h.en_clases,why:"Hasta "+h.en_clases+" h/semana mientras el curso está en sesión."};
+}
+
+function salario(slug){
+  var s = R.destinos[slug].salario_minimo || {};
+  if(s.valor == null) return null;
+  return s;
+}
+
+function init(){
+  orden = Object.keys(R.destinos);
+  var box = $("caCountries");
+  orden.forEach(function(k){
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = R.destinos[k].nombre; b.dataset.k = k;
+    b.addEventListener("click", function(){ select(k, true); });
+    box.appendChild(b);
+  });
+  ["caTuition","caFx","caLiving","caFlight","caIns","caBuffer","caHours"].forEach(function(id){
+    $(id).addEventListener("input", calc);
+  });
+  $("caMonths").addEventListener("input", function(){ setTuition(); calc(); });
+  $("caPtype").addEventListener("change", function(){ setTuition(); calc(); });
+  $("caUk").addEventListener("change", function(){ setVida(); calc(); });
+  $("caLead").addEventListener("submit", onLead);
+  $("caQual").addEventListener("submit", onQual);
+  $("caVerif").textContent = "Cifras verificadas al " + fecha(R._meta.generado);
+  select("canada", false);
+}
+
+function fecha(iso){
+  var M = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  var p = (iso||"").split("-");
+  return p.length === 3 ? (+p[2]) + " de " + M[+p[1]-1] + " de " + p[0] : iso;
+}
+
+function setTuition(){
+  var m = Math.max(1, num("caMonths") || 1), t = $("caPtype").value;
+  var anual = (TUI[cur] || {})[t] || 0;
+  $("caTuition").value = Math.round(anual * m / 12 / 100) * 100;
+  var pc = R.destinos[cur].precio_curso_navia;
+  var txt = "Referencia: " + locm(anual, R.destinos[cur].moneda) + " por año. Cámbiala por la de tu programa.";
+  if(pc && pc.cop) txt += " El programa de Navia en " + R.destinos[cur].nombre + " arranca en $" + pc.cop.toLocaleString("es-CO") + " COP por " + pc.periodo + ".";
+  $("caPtypeHint").textContent = txt;
+}
+function setVida(){
+  if(cur === "reino-unido"){
+    var f = R.destinos["reino-unido"].fondos_visa;
+    $("caLiving").value = $("caUk").value === "ldn" ? f.valor_mensual_londres : f.valor_mensual_fuera;
+  } else {
+    $("caLiving").value = VIDA[cur] || 0;
+  }
+}
+
+function select(k, user){
+  cur = k;
+  var d = R.destinos[k];
+  $("caCountries").querySelectorAll("button").forEach(function(b){
+    b.setAttribute("aria-pressed", b.dataset.k === k ? "true" : "false");
+  });
+  document.querySelectorAll(".ca-cur").forEach(function(s){ s.textContent = d.moneda; });
+  $("caUkLoc").hidden = k !== "reino-unido";
+  setTuition(); setVida();
+  $("caFx").value = fx(d.moneda);
   calc();
+  if(user && !enviados["calc_"+k]){
+    enviados["calc_"+k] = true;
+    ev("calculo_realizado",{pais:d.nombre,programa:PLBL[$("caPtype").value]});
+  }
 }
-function calc(){
-  const c=C[cur],m=Math.max(1,+$("months").value||1),t=+$("tuition").value||0,fx=+$("fx").value||0,
-        lv=+$("living").value||0,fl=+$("flight").value||0,ins=+$("ins").value||0,bf=+$("buffer").value,ukl=$("uk").value;
-  const items=[
-    ["Matrícula",t*fx,loc(t,c.cur),"#0E6B5C"],
-    ["Vida ("+m+" meses)",lv*m*fx,loc(lv*m,c.cur)+" · "+loc(lv,c.cur)+"/mes","#4FA88F"],
-    ["Visa",c.visa*fx,loc(c.visa,c.cur),"#9A5B00"],
-  ];
-  if(c.extra) items.push([c.extraLbl,c.extra(m)*fx,loc(c.extra(m),c.cur),"#C98A2E"]);
-  items.push(["Tiquetes",fl,"en COP","#5B6966"],["Seguro médico",ins,"en COP","#8FA19C"]);
-  const sub=items.reduce((a,i)=>a+i[1],0),buf=sub*bf;
-  if(bf) items.push(["Colchón "+Math.round(bf*100)+" %",buf,"imprevistos","#C7D3CF"]);
-  const total=sub+buf;
-  $("total").textContent=cop(total);
-  $("totalLocal").textContent=fx?"≈ "+loc(total/fx,c.cur):"";
-  $("rows").innerHTML=items.map(i=>`<tr><td>${i[0]}<small>${i[2]}</small></td><td class="v">${cop(i[1])}</td></tr>`).join("");
-  $("bar").innerHTML=items.map(i=>`<span style="width:${(i[1]/total*100).toFixed(2)}%;background:${i[3]}"></span>`).join("");
-  $("legend").innerHTML=items.map(i=>`<span><i style="background:${i[3]}"></i>${i[0]}</span>`).join("");
-  const p=c.proof(m,t,ukl);
-  $("proof").textContent=loc(p.amt,c.cur)+" · "+cop(p.amt*fx);
-  $("proofRule").textContent=p.rule;
-  $("note").innerHTML=c.note;
-  const pt=$("ptype").value,W=WORK[cur],legal=W.h(pt,m),hrs=Math.min(+$("hours").value||0,legal);
-  const workMonths=Math.max(0,m-2), termShare=0.75;
-  const inc=hrs*W.wage*4.33*workMonths*termShare*0.85;
-  $("hoursHint").textContent=(legal?`Máximo legal en clases: ${legal} h/semana. `:"")+W.why(pt,m);
-  $("income").textContent=inc?cop(inc*fx):"$0 COP";
-  $("incomeRule").textContent=inc?`${hrs} h × ${W.wageLbl} × ${workMonths} meses`:(legal?"Indica cuántas horas planeas trabajar":"Este programa no permite trabajar");
-  $("net").textContent=cop(Math.max(0,total-inc*fx));
 
-  $("fxHint").textContent="TRM USD del 2 oct 2026: $3.307,73. La tasa de "+c.cur+" es aproximada; actualízala el día que pagues.";
+function calc(){
+  var d = R.destinos[cur], m = Math.max(1, num("caMonths") || 1), t = num("caTuition"),
+      tasa = num("caFx"), lv = num("caLiving"), fl = num("caFlight"), ins = num("caIns"),
+      bf = parseFloat($("caBuffer").value) || 0, ukl = $("caUk").value;
+
+  var items = [
+    ["Matrícula", t*tasa, locm(t,d.moneda), "#1b4b8d"],
+    ["Vida ("+m+" meses)", lv*m*tasa, locm(lv*m,d.moneda)+" · "+locm(lv,d.moneda)+"/mes", "#3b97d3"]
+  ];
+  var tv = d.tarifa_visa || {};
+  if(tv.valor != null){
+    var vlbl = "Visa" + (tv.estado === "por_verificar" ? " (por verificar)" : "");
+    items.push([vlbl, tv.valor*tasa, locm(tv.valor,d.moneda), "#8a5a00"]);
+  }
+  if(cur === "reino-unido" && tv.ihs_anual){
+    var ihs = Math.ceil(m/12) * tv.ihs_anual;
+    items.push(["Recargo de salud (IHS)", ihs*tasa, locm(ihs,d.moneda)+" · aprox. £"+tv.ihs_anual+"/año", "#c98a2e"]);
+  }
+  items.push(["Tiquetes", fl, "en COP", "#64748b"], ["Seguro médico", ins, "en COP", "#94a7bc"]);
+
+  var sub = items.reduce(function(a,i){return a+i[1];}, 0), buf = sub*bf;
+  if(bf) items.push(["Colchón "+Math.round(bf*100)+" %", buf, "imprevistos", "#c7d3cf"]);
+  var total = sub + buf;
+
+  $("caTotal").textContent = cop(total);
+  $("caTotalLocal").textContent = tasa ? "≈ " + locm(total/tasa, d.moneda) : "";
+  $("caRows").innerHTML = items.map(function(i){
+    return "<tr><td>"+i[0]+"<small>"+i[2]+"</small></td><td class=\"v\">"+cop(i[1])+"</td></tr>";
+  }).join("");
+  $("caBar").innerHTML = items.map(function(i){
+    return "<span style=\"width:"+(total?(i[1]/total*100).toFixed(2):0)+"%;background:"+i[3]+"\"></span>";
+  }).join("");
+  $("caLegend").innerHTML = items.map(function(i){
+    return "<span><i style=\"background:"+i[3]+"\"></i>"+i[0]+"</span>";
+  }).join("");
+
+  var p = fondos(cur, m, t, ukl);
+  $("caProof").textContent = p.amt == null ? "Por verificar" : locm(p.amt,d.moneda) + " · " + cop(p.amt*tasa);
+  $("caProofRule").textContent = p.rule;
+
+  var H = horas(cur, $("caPtype").value, m), S = salario(cur);
+  var hrs = Math.min(num("caHours"), H.max);
+  $("caHoursHint").textContent = (H.max ? "Máximo legal en clases: "+H.max+" h/semana. " : "") + H.why;
+
+  var inc = 0;
+  if(S && hrs){
+    var meses = Math.max(0, m-2);            // supuesto: sin trabajo los 2 primeros meses
+    inc = hrs * S.valor * 4.33 * meses * 0.75 * 0.85; // 75 % semanas de clase, 15 % descuentos
+  }
+
+  var nota = [];
+  if(p.amt != null && p.amt*tasa > total)
+    nota.push("<b>¿Por qué los fondos piden más que el costo?</b> Porque la visa exige demostrar un año completo de manutención, aunque tu curso sea más corto. No es dinero que vayas a gastar: es dinero que tienes que <i>mostrar</i> disponible al aplicar.");
+  if(d.nota_cambio_reciente) nota.push("<b>"+d.nombre+":</b> "+d.nota_cambio_reciente);
+  if((d.fondos_visa||{}).estado === "en_conflicto") nota.push("<b>Ojo:</b> hay un ajuste reciente en el monto de fondos de "+d.nombre+" que estamos confirmando en la fuente oficial. Verifica antes de aplicar.");
+  if(fxEstado(d.moneda) === "por_verificar") nota.push("<b>Tasa de cambio:</b> la de "+d.moneda+" tiene más de una semana. Actualízala con la del día que vayas a pagar.");
+  if(!nota.length) nota.push("<b>Recuerda:</b> el ingreso por trabajo <b>no cuenta</b> para la prueba de fondos. El dinero tiene que estar disponible antes de aplicar.");
+  $("caNote").innerHTML = nota.join("<br><br>");
+
+  $("caFxHint").textContent = "Tasa de " + d.moneda + ": $" + fx(d.moneda).toLocaleString("es-CO") + " COP, verificada el " + fecha(R.tasas_cambio._verificado) + ". Cámbiala por la del día que pagues.";
+  $("caFxFoot").textContent = "Tasas de cambio verificadas el " + fecha(R.tasas_cambio._verificado) + " (TRM Superfinanciera).";
+
+  var A = R.destinos[cur];
+  $("caAnswer").innerHTML = "Estudiar un <b>" + PLBL[$("caPtype").value] + "</b> de " + m +
+    " meses en <b>" + A.nombre + "</b> desde Colombia cuesta aproximadamente <b>" + cop(total) +
+    "</b>, incluyendo matrícula, vida, visa, tiquetes y seguro." +
+    (p.amt != null ? " La visa de estudiante exige demostrar <b>" + cop(p.amt*tasa) + "</b> en fondos." : "");
+
+  window.__ca = {total:total, fondos:p.amt != null ? p.amt*tasa : null, ingreso:inc*tasa,
+                 pais:A.nombre, slug:cur, programa:PLBL[$("caPtype").value], meses:m,
+                 horas:hrs, salario:S, moneda:A.moneda, tasa:tasa};
+  updateWa();
+  if(unlocked) renderPlan();
 }
-["tuition","fx","living","flight","ins","buffer","hours"].forEach(id=>$(id).addEventListener("input",calc));
-$("months").addEventListener("input",()=>{setTuition();calc()});
-$("ptype").addEventListener("change",()=>{setTuition();calc()});
-$("uk").addEventListener("change",()=>{$("living").value=C.uk.living($("uk").value);calc()});
-$("lead").addEventListener("submit",e=>{e.preventDefault();$("leadMsg").hidden=false});
-$("buy").addEventListener("click",()=>{$("buyMsg").hidden=false});
-select("ca");
+
+function updateWa(){
+  var c = window.__ca || {};
+  var msg = "Hola, usé la calculadora CuántoAfuera. Quiero estudiar un " + (c.programa||"") +
+            " de " + (c.meses||"") + " meses en " + (c.pais||"") +
+            ". Me dio " + cop(c.total||0) + " de costo total" +
+            (c.fondos ? " y " + cop(c.fondos) + " de prueba de fondos" : "") + ". ¿Me ayudas?";
+  $("caWa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+}
+$("caWa").addEventListener("click", function(){
+  var c = window.__ca || {};
+  ev("whatsapp_click",{pais:c.pais,programa:c.programa});
+  if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera WhatsApp"});
+});
+
+/* Plan completo: se arma solo despues de desbloquear. */
+function renderPlan(){
+  var c = window.__ca; if(!c) return;
+  var filas = function(rows){
+    return "<table class=\"ca-compare\"><tbody>" + rows.map(function(r){
+      return "<tr><td>"+r[0]+"</td><td class=\"v\">"+r[1]+"</td></tr>";
+    }).join("") + "</tbody></table>";
+  };
+  var ahorro = [6,12,18].map(function(n){
+    return ["Si aplicas en "+n+" meses", cop(c.total/n)+"/mes"];
+  });
+  var trabajo = [
+    ["Horas por semana que planeas", c.horas ? c.horas + " h" : "0 h"],
+    ["Salario de referencia", c.salario ? locm(c.salario.valor,c.moneda)+"/h" : "por verificar"],
+    ["Ingreso posible en todo el programa", cop(c.ingreso||0)],
+    ["Costo neto de tu bolsillo", cop(Math.max(0,c.total-(c.ingreso||0)))]
+  ];
+  var comparados = orden.map(function(k){
+    var d = R.destinos[k], pc = d.precio_curso_navia;
+    return [d.nombre, pc && pc.cop ? "desde $"+pc.cop.toLocaleString("es-CO")+" COP / "+pc.periodo : "consultar"];
+  });
+  var html =
+    "<h3>Tu plan de ahorro mes a mes</h3>" +
+    "<p class=\"ca-hint\" style=\"margin:0\">Cuánto tendrías que guardar cada mes para reunir " + cop(c.total) + ".</p>" +
+    filas(ahorro) +
+    "<h3>Cuánto puedes ganar trabajando en " + c.pais + "</h3>" +
+    "<p class=\"ca-hint\" style=\"margin:0\">Supuesto conservador: sin trabajo los 2 primeros meses, solo semanas de clase, salario mínimo y 15 % de descuentos. <b>No cuenta para la visa.</b></p>" +
+    filas(trabajo) +
+    "<h3>Checklist de la prueba de fondos</h3>" +
+    "<ul class=\"ca-check\">" +
+      "<li>Extractos bancarios de los últimos 3 a 6 meses, a tu nombre o del patrocinador.</li>" +
+      "<li>Certificación bancaria con saldo y antigüedad de la cuenta.</li>" +
+      "<li>Carta de patrocinio firmada, si financian tus padres o un familiar.</li>" +
+      "<li>Declaración de renta o certificado de ingresos de quien patrocina.</li>" +
+      "<li>Soporte del origen del dinero: nómina, venta de un bien, crédito aprobado.</li>" +
+      "<li>Comprobante de pago de la matrícula del primer período.</li>" +
+    "</ul>" +
+    "<p class=\"ca-hint\" style=\"margin:0\">Cada consulado pide variantes de esta lista. Confírmala en la fuente oficial de " + c.pais + " antes de radicar.</p>" +
+    "<h3>Los " + orden.length + " destinos de Navia</h3>" +
+    "<p class=\"ca-hint\" style=\"margin:0\">Precio del programa de Navia, para que compares.</p>" +
+    filas(comparados);
+  $("caGateBlur").innerHTML = "<div class=\"ca-plan\">" + html + "</div>";
+}
+
+function utms(){
+  var q = new URLSearchParams(location.search), o = {};
+  ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){
+    if(q.get(k)) o[k] = q.get(k);
+  });
+  return o;
+}
+
+/* lead_score: A caliente, B tibio, C frio. Reglas del brief, seccion 2.2. */
+function score(q, fondosCOP){
+  var pronto = q.cuando === "menos-6" || q.cuando === "6-12";
+  var respaldo = q.financiacion === "credito" || q.financiacion === "padres" || q.financiacion === "beca";
+  var techo = {"0-10":10000000,"10-30":30000000,"30-60":60000000,"60-mas":120000000}[q.ahorro];
+  var ratio = (techo && fondosCOP) ? techo/fondosCOP : null;
+  if(pronto && (respaldo || (ratio != null && ratio >= 0.5))) return "A";
+  if(q.cuando === "6-12" || (ratio != null && ratio >= 0.2)) return "B";
+  return "C";
+}
+
+function post(payload, okFn, errFn){
+  fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+    method:"POST", headers:{"Content-Type":"application/json",Accept:"application/json"},
+    body: JSON.stringify(payload)
+  }).then(function(r){ r.ok ? okFn() : errFn(); }).catch(errFn);
+}
+
+function onLead(e){
+  e.preventDefault();
+  var err = $("caLeadErr"); err.hidden = true;
+  var nombre = $("caName").value.trim(), correo = $("caEmail").value.trim(), tel = $("caPhone").value.trim();
+  if(!nombre || !correo.includes("@") || tel.replace(/\D/g,"").length < 10 || !$("caConsent").checked){
+    err.textContent = "Revisa tu nombre, correo, WhatsApp y la autorización de datos."; err.hidden = false; return;
+  }
+  var btn = $("caLeadBtn"); btn.disabled = true; btn.textContent = "Enviando…";
+  var c = window.__ca || {};
+  lead = {nombre:nombre, correo:correo, whatsapp:tel};
+  var payload = Object.assign({
+    _subject:"CuantoAfuera · lead paso 1 · " + (c.pais||""),
+    origen:"cuantoafuera", pagina:location.pathname,
+    nombre:nombre, correo:correo, whatsapp:tel,
+    destino:c.pais, programa:c.programa, duracion_meses:c.meses,
+    costo_total_cop:Math.round(c.total||0), fondos_requeridos_cop:Math.round(c.fondos||0),
+    autorizacion_ley_1581:"si"
+  }, utms());
+
+  post(payload, function(){
+    unlock();
+    ev("lead_paso1",{pais:c.pais,programa:c.programa});
+    if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera paso 1"});
+  }, function(){
+    btn.disabled = false; btn.textContent = "Ver mi plan completo";
+    err.textContent = "No pudimos enviarlo. Escríbenos por WhatsApp al +57 301 443 0722 y te lo pasamos.";
+    err.hidden = false;
+  });
+}
+
+function unlock(){
+  unlocked = true;
+  renderPlan();
+  $("caGateOver").remove();
+  var b = $("caGateBlur");
+  b.classList.remove("ca-gate-blur"); b.removeAttribute("aria-hidden"); b.style.padding = "20px";
+  $("caStep2").hidden = false;
+  $("caStep2").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function onQual(e){
+  e.preventDefault();
+  var err = $("caQualErr"); err.hidden = true;
+  var q = {cuando:$("caWhen").value, ahorro:$("caSaved").value,
+           financiacion:$("caFund").value, ingles:$("caEng").value};
+  if(!q.cuando || !q.ahorro || !q.financiacion || !q.ingles){
+    err.textContent = "Responde las cuatro preguntas."; err.hidden = false; return;
+  }
+  var btn = $("caQualBtn"); btn.disabled = true; btn.textContent = "Enviando…";
+  var c = window.__ca || {};
+  var s = score(q, c.fondos);
+  var payload = Object.assign({
+    _subject:"CuantoAfuera · lead " + s + " · " + (c.pais||""),
+    origen:"cuantoafuera", pagina:location.pathname, lead_score:s,
+    nombre:lead.nombre, correo:lead.correo, whatsapp:lead.whatsapp,
+    destino:c.pais, programa:c.programa, duracion_meses:c.meses,
+    cuando_empieza:q.cuando, ahorro_disponible:q.ahorro,
+    quien_financia:q.financiacion, nivel_ingles:q.ingles,
+    costo_total_cop:Math.round(c.total||0), fondos_requeridos_cop:Math.round(c.fondos||0),
+    ingreso_posible_cop:Math.round(c.ingreso||0),
+    autorizacion_ley_1581:"si"
+  }, utms());
+
+  post(payload, function(){
+    $("caQual").hidden = true;
+    var ok = $("caQualOk"); ok.hidden = false;
+    ok.textContent = s === "A"
+      ? "Listo. Tu caso entra como prioritario: Samuel te escribe hoy por WhatsApp."
+      : "Listo. Samuel revisa tu caso y te escribe esta semana. Si quieres adelantarlo, escríbele por WhatsApp.";
+    ev("lead_paso2",{lead_score:s,pais:c.pais,programa:c.programa});
+    if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera paso 2 "+s});
+  }, function(){
+    btn.disabled = false; btn.textContent = "Enviar y pedir mi asesoría";
+    err.textContent = "No pudimos enviarlo. Escríbenos por WhatsApp al +57 301 443 0722.";
+    err.hidden = false;
+  });
+}
+})();
 </script>
 
 </body>

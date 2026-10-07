@@ -31,7 +31,7 @@
 
   "destinos": {
     "canada": {
-      "nombre": "Canada",
+      "nombre": "Canadá",
       "pagina_actual": "/canada/",
       "moneda": "CAD",
       "fondos_visa": {
@@ -244,7 +244,7 @@
     },
 
     "dubai": {
-      "nombre": "Dubai",
+      "nombre": "Dubái",
       "pagina_actual": "/dubai/",
       "moneda": "USD",
       "fondos_visa": { "estado": "por_verificar", "nota": "Falta." },
