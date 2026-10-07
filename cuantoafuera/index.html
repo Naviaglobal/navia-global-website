@@ -91,10 +91,10 @@
 .ca-wa{font-weight:700;color:var(--ca-azul);user-select:all}
 
 /* Muro: el detalle se cambia por correo + WhatsApp */
-.ca-gate{position:relative;border:1px solid var(--ca-line);border-radius:12px;background:var(--ca-surface);overflow:hidden}
-.ca-gate-blur{filter:blur(6px);opacity:.45;pointer-events:none;user-select:none;padding:20px}
-.ca-gate-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:22px;background:linear-gradient(180deg,rgba(244,247,250,.72),rgba(244,247,250,.97));text-align:center}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ca-gate-over{background:linear-gradient(180deg,rgba(17,26,36,.72),rgba(17,26,36,.97))}}
+.ca-gate{position:relative;min-width:0}
+.ca-locked{filter:blur(6px);opacity:.45;pointer-events:none;user-select:none}
+.ca-gate-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:22px;background:linear-gradient(180deg,rgba(244,247,250,.80),rgba(244,247,250,.97));border-radius:12px;text-align:center;overflow:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ca-gate-over{background:linear-gradient(180deg,rgba(17,26,36,.80),rgba(17,26,36,.97))}}
 .ca-gate-over h3{font-family:var(--ca-display);font-weight:800;margin:0;font-size:1.15rem;color:var(--ca-azul)}
 .ca-gate-over p{margin:0;color:var(--ca-muted);font-size:.88rem;max-width:46ch;margin-inline:auto}
 .ca-form{display:flex;flex-direction:column;gap:9px;max-width:420px;margin:4px auto 0;text-align:left}
@@ -110,7 +110,7 @@
 /* Modo embebido: la misma herramienta dentro de un iframe en los articulos.
    Un solo archivo, una sola logica. */
 .ca-embed .nav,.ca-embed .footer,.ca-embed .ca-faq,.ca-embed #caEeat,
-.ca-embed #caGate,.ca-embed #caStep2,.ca-embed #caWaPanel,.ca-embed .ca-sources{display:none}
+.ca-embed #caWaPanel,.ca-embed .ca-sources{display:none}
 .ca-embed .ca-wrap{padding:0 0 4px;gap:14px}
 @media (min-width:620px){.ca-embed .ca-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}}
 .ca-embed .ca-head h1{font-size:clamp(1.25rem,3.2vw,1.6rem)}
@@ -131,6 +131,26 @@
 .ca-vary b{color:var(--ca-azul)}
 .ca-vary p{margin:7px 0 0;color:var(--ca-muted)}
 .ca-vary ul{margin:7px 0 0;padding-left:18px;color:var(--ca-muted)}
+
+/* Impresion: el usuario guarda su plan como PDF. Solo despues de desbloquear. */
+@media print{
+  .nav,.footer,.ca-faq,#caEmbedCta,#caStep2,#caGateOver,#caPdf,
+  .ca-countries,.ca-swap,.ca-bar,.ca-legend,#caWaPanel button{display:none !important}
+  :root{--ca-bg:#fff;--ca-surface:#fff;--ca-fg:#000;--ca-muted:#444;--ca-line:#bbb;--ca-soft:#f2f8f6}
+  body{background:#fff !important;font-size:11pt}
+  .ca-wrap{padding:0 !important;max-width:none;gap:12px}
+  .ca-grid{grid-template-columns:1fr 1fr !important}
+  .ca-panel,.ca-gate,.ca-vary{break-inside:avoid;border-color:#bbb}
+  .ca-vary{display:block}
+  .ca-vary summary{list-style:none}
+  details{display:block}
+  details > summary{display:block}
+  details:not([open]) > *:not(summary){display:revert !important}
+  #caPrintHead{display:block !important}
+  a[href^="http"]::after{content:"" }
+  @page{margin:14mm}
+}
+#caPrintHead{display:none}
 .ca-sources{font-size:.78rem;color:var(--ca-muted)}
 .ca-sources a{color:var(--ca-azul)}
 .ca-faq details{border-bottom:1px solid var(--ca-line);padding:11px 0}
@@ -156,6 +176,10 @@
 <div class="ca">
 <div class="ca-wrap">
 
+  <div id="caPrintHead" style="border-bottom:2px solid #1b4b8d;padding-bottom:8px;margin-bottom:6px">
+    <b style="color:#1b4b8d;font-size:1.1rem">Navia Global Education</b> · CuántoAfuera<br>
+    <span style="font-size:.85rem">Tu puente al mundo. · WhatsApp +57 301 443 0722 · naviaglobal.co</span>
+  </div>
   <header class="ca-head">
     <div class="ca-brandline">
       <span class="ca-logo">CuántoAfuera</span>
@@ -214,7 +238,8 @@
       <p class="ca-hint ca-adv" id="caFxHint"></p>
     </section>
 
-    <section class="ca-panel" aria-labelledby="caHOut" aria-live="polite">
+    <section class="ca-gate" id="caGate" aria-labelledby="caGateH">
+    <section class="ca-panel ca-locked" id="caResultado" aria-labelledby="caHOut" aria-live="polite">
       <h2 id="caHOut">Resultado</h2>
       <div class="ca-big">
         <span class="l">Costo total estimado</span>
@@ -236,7 +261,32 @@
       </details>
       <div class="ca-note" id="caNote"></div>
     </section>
+
+    <div class="ca-gate-over" id="caGateOver">
+      <h3 id="caGateH">Mira tu resultado, gratis</h3>
+      <p>Déjanos tus datos y te mostramos ahora mismo el costo total en pesos, los fondos que exige la visa, tu plan de ahorro mes a mes y el checklist de documentos. Sin costo.</p>
+      <form class="ca-form" id="caLead" novalidate>
+        <div class="ca-f"><label for="caName">Nombre completo</label><input id="caName" name="nombre" type="text" autocomplete="name" placeholder="Nombre y apellido" required></div>
+        <div class="ca-f"><label for="caEmail">Correo</label><input id="caEmail" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></div>
+        <div class="ca-f"><label for="caPhone">WhatsApp</label><input id="caPhone" name="whatsapp" type="tel" autocomplete="tel" value="+57 " required></div>
+        <div class="ca-f"><label for="caTrip">¿Cuándo proyectas viajar?</label><input id="caTrip" name="fecha_viaje" type="month" required>
+          <span class="ca-hint" id="caTripHint">Un estimado sirve. Con esto Samuel sabe con cuánto tiempo cuentas.</span></div>
+        <label class="ca-chk"><input type="checkbox" id="caConsent" required>
+          <span>Autorizo a Navia Global Education S.A.S. a tratar mis datos y a contactarme por correo y WhatsApp, según la <a href="privacidad.html">política de privacidad</a> y la Ley 1581 de 2012.</span></label>
+        <button class="ca-btn" type="submit" id="caLeadBtn">Ver mi resultado</button>
+        <span class="ca-hint">Sin costo. No compartimos tus datos con terceros.</span>
+        <span class="ca-err" id="caLeadErr" hidden></span>
+      </form>
+    </div>
+    </section>
   </div>
+
+  <section class="ca-panel" id="caPlan" hidden aria-labelledby="caHPlan">
+    <h2 id="caHPlan">Tu plan completo</h2>
+    <div class="ca-plan" id="caPlanBody"></div>
+    <div><button class="ca-btn ghost" type="button" id="caPdf">Descargar en PDF</button></div>
+    <span class="ca-hint">Se abre el diálogo de impresión. Elige "Guardar como PDF" para quedarte el archivo o mandárselo a tus papás.</span>
+  </section>
 
   <!-- Solo visible dentro de un articulo (modo embebido) -->
   <div id="caEmbedCta">
@@ -244,51 +294,12 @@
     <a class="ca-btn" id="caEmbedLink" href="/cuantoafuera/" target="_top" style="text-decoration:none;white-space:nowrap">Ver mi plan completo →</a>
   </div>
 
-  <!-- El detalle se intercambia por correo + WhatsApp. Sin cobro. -->
-  <section class="ca-gate" id="caGate" aria-labelledby="caGateH">
-    <div class="ca-gate-blur" id="caGateBlur" aria-hidden="true">
-      <div class="ca-plan">
-        <h3>Tu plan de ahorro mes a mes</h3>
-        <table class="ca-compare"><tbody><tr><td>Si aplicas en 6 meses</td><td class="v">$0 COP/mes</td></tr><tr><td>Si aplicas en 12 meses</td><td class="v">$0 COP/mes</td></tr><tr><td>Si aplicas en 18 meses</td><td class="v">$0 COP/mes</td></tr></tbody></table>
-        <h3>Cuánto puedes ganar trabajando</h3>
-        <table class="ca-compare"><tbody><tr><td>Ingreso posible en todo el programa</td><td class="v">$0 COP</td></tr><tr><td>Costo neto de tu bolsillo</td><td class="v">$0 COP</td></tr></tbody></table>
-        <h3>Checklist de la prueba de fondos</h3>
-        <ul class="ca-check"><li>Extractos bancarios</li><li>Certificación bancaria</li><li>Carta de patrocinio</li><li>Declaración de renta</li></ul>
-        <h3>Los 10 destinos comparados</h3>
-        <table class="ca-compare"><tbody><tr><td>Destino</td><td class="v">Costo total</td></tr></tbody></table>
-      </div>
-    </div>
-
-    <div class="ca-gate-over" id="caGateOver">
-      <h3 id="caGateH">Tu plan completo, gratis</h3>
-      <p>Déjanos tu correo y tu WhatsApp y te mostramos ahora mismo el plan de ahorro mes a mes, cuánto puedes ganar trabajando, el checklist de documentos de la prueba de fondos y los 10 destinos comparados. Sin costo.</p>
-      <form class="ca-form" id="caLead" novalidate>
-        <div class="ca-f"><label for="caName">Nombre</label><input id="caName" name="nombre" type="text" autocomplete="name" required></div>
-        <div class="ca-f"><label for="caEmail">Correo</label><input id="caEmail" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></div>
-        <div class="ca-f"><label for="caPhone">WhatsApp</label><input id="caPhone" name="whatsapp" type="tel" autocomplete="tel" value="+57 " required></div>
-        <label class="ca-chk"><input type="checkbox" id="caConsent" required>
-          <span>Autorizo a Navia Global Education S.A.S. a tratar mis datos y a contactarme por correo y WhatsApp, según la <a href="privacidad.html">política de privacidad</a> y la Ley 1581 de 2012.</span></label>
-        <button class="ca-btn" type="submit" id="caLeadBtn">Ver mi plan completo</button>
-        <span class="ca-hint">Sin costo. No compartimos tus datos con terceros.</span>
-        <span class="ca-err" id="caLeadErr" hidden></span>
-      </form>
-    </div>
-  </section>
-
   <!-- Paso 2: calificacion. Aparece una vez desbloqueado. -->
   <section class="ca-panel" id="caStep2" hidden aria-labelledby="caH2">
     <h2 id="caH2">¿Quieres que un asesor revise tu caso gratis?</h2>
     <p class="ca-hint" style="margin:0">Cuatro preguntas. Con ellas Samuel puede decirte si tu plan es realista y por dónde empezar.</p>
     <form class="ca-form" id="caQual" style="max-width:none" novalidate>
       <div class="ca-row2">
-        <div class="ca-f"><label for="caWhen">¿Cuándo quieres empezar?</label>
-          <select id="caWhen" name="cuando">
-            <option value="">Elige una opción</option>
-            <option value="menos-6">En menos de 6 meses</option>
-            <option value="6-12">Entre 6 y 12 meses</option>
-            <option value="mas-12">En más de 12 meses</option>
-            <option value="no-se">Todavía no sé</option>
-          </select></div>
         <div class="ca-f"><label for="caSaved">¿Cuánto tienes ahorrado o disponible?</label>
           <select id="caSaved" name="ahorro">
             <option value="">Elige una opción</option>
@@ -398,7 +409,7 @@
 var FORMSPREE_ID = "xdkpereb"; // PENDIENTE: crear un formulario aparte para CuantoAfuera y cambiarlo aqui
 var WA = "573014430722";
 var $ = function(id){return document.getElementById(id);};
-var R = null, cur = null, orden = [], unlocked = false, lead = {}, enviados = {};
+var R = null, cur = null, orden = [], unlocked = false, lead = {}, enviados = {}, ESTADO = null;
 
 var PLBL = {ingles:"curso de inglés",tecnico:"college/técnico",pregrado:"pregrado",maestria:"maestría"};
 /* Por que el costo varia, y en que se diferencian idiomas, pregrado y posgrado.
@@ -533,6 +544,12 @@ function init(){
   $("caPtype").addEventListener("change", function(){ setTuition(); calc(); });
   $("caUk").addEventListener("change", function(){ setVida(); calc(); });
   $("caLead").addEventListener("submit", onLead);
+  $("caPdf").addEventListener("click", function(){
+    ev("pdf_descarga", {pais:(ESTADO||{}).pais});
+    window.print();
+  });
+  var hoy = new Date();
+  $("caTrip").min = hoy.getFullYear() + "-" + String(hoy.getMonth()+1).padStart(2,"0");
   $("caQual").addEventListener("submit", onQual);
   $("caVerif").textContent = "Cifras verificadas al " + fecha(R._meta.generado);
 
@@ -578,9 +595,19 @@ function setTuition(){
   var m = Math.max(1, num("caMonths") || 1), t = $("caPtype").value;
   var anual = (TUI[cur] || {})[t] || 0;
   $("caTuition").value = Math.round(anual * m / 12 / 100) * 100;
-  var pc = R.destinos[cur].precio_curso_navia;
-  var txt = "Referencia: " + locm(anual, R.destinos[cur].moneda) + " por año. Cámbiala por la de tu programa.";
-  if(pc && pc.cop) txt += " El programa de Navia en " + R.destinos[cur].nombre + " arranca en $" + pc.cop.toLocaleString("es-CO") + " COP por " + pc.periodo + ".";
+  pistaPrograma();
+}
+/* Separado de setTuition para poder refrescarlo sin pisar lo que el usuario
+   escribio en la matricula. El precio de Navia tambien se intercambia. */
+function pistaPrograma(){
+  var d = R.destinos[cur], anual = (TUI[cur] || {})[$("caPtype").value] || 0;
+  var pc = d.precio_curso_navia;
+  var txt = "Referencia: " + locm(anual, d.moneda) + " por año. Cámbiala por la de tu programa.";
+  if(pc && pc.cop){
+    txt += unlocked
+      ? " El programa de Navia en " + d.nombre + " arranca en $" + pc.cop.toLocaleString("es-CO") + " COP por " + pc.periodo + "."
+      : " Navia tiene programa propio en " + d.nombre + "; te decimos el precio con tu resultado.";
+  }
   $("caPtypeHint").textContent = txt;
 }
 function setVida(){
@@ -633,10 +660,11 @@ function calc(){
   if(bf) items.push(["Colchón "+Math.round(bf*100)+" %", buf, "imprevistos", "#c7d3cf"]);
   var total = sub + buf;
 
-  $("caTotal").textContent = cop(total);
-  $("caTotalLocal").textContent = tasa ? "≈ " + locm(total/tasa, d.moneda) : "";
+  var oculto = function(v){ return unlocked ? v : "\u2022\u2022\u2022\u2022\u2022\u2022\u2022"; };
+  $("caTotal").textContent = oculto(cop(total));
+  $("caTotalLocal").textContent = unlocked && tasa ? "≈ " + locm(total/tasa, d.moneda) : "";
   $("caRows").innerHTML = items.map(function(i){
-    return "<tr><td>"+i[0]+"<small>"+i[2]+"</small></td><td class=\"v\">"+cop(i[1])+"</td></tr>";
+    return "<tr><td>"+i[0]+"<small>"+(unlocked ? i[2] : "")+"</small></td><td class=\"v\">"+oculto(cop(i[1]))+"</td></tr>";
   }).join("");
   $("caBar").innerHTML = items.map(function(i){
     return "<span style=\"width:"+(total?(i[1]/total*100).toFixed(2):0)+"%;background:"+i[3]+"\"></span>";
@@ -646,8 +674,9 @@ function calc(){
   }).join("");
 
   var p = fondos(cur, m, t, ukl);
-  $("caProof").textContent = p.amt == null ? "Por verificar" : locm(p.amt,d.moneda) + " · " + cop(p.amt*tasa);
-  $("caProofRule").textContent = p.rule;
+  $("caProof").textContent = !unlocked ? "\u2022\u2022\u2022\u2022\u2022\u2022\u2022"
+    : (p.amt == null ? "Por verificar" : locm(p.amt,d.moneda) + " · " + cop(p.amt*tasa));
+  $("caProofRule").textContent = unlocked ? p.rule : "";
 
   var H = horas(cur, $("caPtype").value, m), S = salario(cur);
   var hrs = Math.min(num("caHours"), H.max);
@@ -668,6 +697,7 @@ function calc(){
   if(!nota.length) nota.push("<b>Recuerda:</b> el ingreso por trabajo <b>no cuenta</b> para la prueba de fondos. El dinero tiene que estar disponible antes de aplicar.");
   $("caNote").innerHTML = nota.join("<br><br>");
 
+  pistaPrograma();
   $("caVaryWhy").innerHTML = VARIA[$("caPtype").value] +
     " La cifra de arriba usa una matrícula y un costo de vida <b>de referencia</b>: cambian según la duración, la escuela o universidad, la ciudad, la temporada y lo que incluya el paquete (materiales, seguro, registro, alojamiento). Cámbialos por los de tu caso.";
 
@@ -675,12 +705,18 @@ function calc(){
   $("caFxFoot").textContent = "Tasas de cambio verificadas el " + fecha(R.tasas_cambio._verificado) + " (TRM Superfinanciera).";
 
   var A = R.destinos[cur];
-  $("caAnswer").innerHTML = "Estudiar un <b>" + PLBL[$("caPtype").value] + "</b> de " + m +
-    " meses en <b>" + A.nombre + "</b> desde Colombia cuesta aproximadamente <b>" + cop(total) +
-    "</b>, incluyendo matrícula, vida, visa, tiquetes y seguro." +
-    (p.amt != null ? " La visa de estudiante exige demostrar <b>" + cop(p.amt*tasa) + "</b> en fondos." : "");
+  if(unlocked){
+    $("caAnswer").innerHTML = "Estudiar un <b>" + PLBL[$("caPtype").value] + "</b> de " + m +
+      " meses en <b>" + A.nombre + "</b> desde Colombia cuesta aproximadamente <b>" + cop(total) +
+      "</b>, incluyendo matrícula, vida, visa, tiquetes y seguro." +
+      (p.amt != null ? " La visa de estudiante exige demostrar <b>" + cop(p.amt*tasa) + "</b> en fondos." : "");
+  } else {
+    $("caAnswer").innerHTML = "Arma tu plan a la izquierda y te calculamos el <b>costo total en pesos</b> y " +
+      "los <b>fondos que exige la visa</b> de <b>" + A.nombre + "</b>. " +
+      "Te lo mostramos gratis a cambio de tus datos de contacto.";
+  }
 
-  window.__ca = {total:total, fondos:p.amt != null ? p.amt*tasa : null, ingreso:inc*tasa,
+  ESTADO = {total:total, fondos:p.amt != null ? p.amt*tasa : null, ingreso:inc*tasa,
                  pais:A.nombre, slug:cur, programa:PLBL[$("caPtype").value], meses:m,
                  horas:hrs, salario:S, moneda:A.moneda, tasa:tasa};
   updateWa();
@@ -689,7 +725,7 @@ function calc(){
 }
 
 function updateWa(){
-  var c = window.__ca || {};
+  var c = ESTADO || {};
   var msg = "Hola, usé la calculadora CuántoAfuera. Quiero estudiar un " + (c.programa||"") +
             " de " + (c.meses||"") + " meses en " + (c.pais||"") +
             ". Me dio " + cop(c.total||0) + " de costo total" +
@@ -697,14 +733,14 @@ function updateWa(){
   $("caWa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
 }
 $("caWa").addEventListener("click", function(){
-  var c = window.__ca || {};
+  var c = ESTADO || {};
   ev("whatsapp_click",{pais:c.pais,programa:c.programa});
   if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera WhatsApp"});
 });
 
 /* Plan completo: se arma solo despues de desbloquear. */
 function renderPlan(){
-  var c = window.__ca; if(!c) return;
+  var c = ESTADO; if(!c) return;
   var filas = function(rows){
     return "<table class=\"ca-compare\"><tbody>" + rows.map(function(r){
       return "<tr><td>"+r[0]+"</td><td class=\"v\">"+r[1]+"</td></tr>";
@@ -743,7 +779,7 @@ function renderPlan(){
     "<h3>Los " + orden.length + " destinos de Navia</h3>" +
     "<p class=\"ca-hint\" style=\"margin:0\">Precio del programa de Navia, para que compares.</p>" +
     filas(comparados);
-  $("caGateBlur").innerHTML = "<div class=\"ca-plan\">" + html + "</div>";
+  $("caPlanBody").innerHTML = html;
 }
 
 function utms(){
@@ -754,14 +790,25 @@ function utms(){
   return o;
 }
 
-/* lead_score: A caliente, B tibio, C frio. Reglas del brief, seccion 2.2. */
+/* Meses desde hoy hasta la fecha de viaje que escribio (input type=month). */
+function mesesHastaViaje(valor){
+  if(!valor) return null;
+  var p = valor.split("-"); if(p.length < 2) return null;
+  var hoy = new Date();
+  var m = (+p[0] - hoy.getFullYear())*12 + (+p[1] - 1 - hoy.getMonth());
+  return isNaN(m) ? null : Math.max(0, m);
+}
+/* lead_score: A caliente, B tibio, C frio.
+   El paso 1 ya pide la fecha de viaje, asi que TODO lead sale con score.
+   El paso 2 lo refina con capacidad y respaldo. */
 function score(q, fondosCOP){
-  var pronto = q.cuando === "menos-6" || q.cuando === "6-12";
+  var mv = q.mesesViaje;
+  var pronto = mv != null && mv <= 12;
   var respaldo = q.financiacion === "credito" || q.financiacion === "padres" || q.financiacion === "beca";
   var techo = {"0-10":10000000,"10-30":30000000,"30-60":60000000,"60-mas":120000000}[q.ahorro];
   var ratio = (techo && fondosCOP) ? techo/fondosCOP : null;
   if(pronto && (respaldo || (ratio != null && ratio >= 0.5))) return "A";
-  if(q.cuando === "6-12" || (ratio != null && ratio >= 0.2)) return "B";
+  if(pronto || (ratio != null && ratio >= 0.2)) return "B";
   return "C";
 }
 
@@ -775,17 +822,30 @@ function post(payload, okFn, errFn){
 function onLead(e){
   e.preventDefault();
   var err = $("caLeadErr"); err.hidden = true;
-  var nombre = $("caName").value.trim(), correo = $("caEmail").value.trim(), tel = $("caPhone").value.trim();
-  if(!nombre || !correo.includes("@") || tel.replace(/\D/g,"").length < 10 || !$("caConsent").checked){
-    err.textContent = "Revisa tu nombre, correo, WhatsApp y la autorización de datos."; err.hidden = false; return;
+  var nombre = $("caName").value.trim().replace(/\s+/g," "),
+      correo = $("caEmail").value.trim(), tel = $("caPhone").value.trim(),
+      viaje = $("caTrip").value;
+  if(nombre.split(" ").filter(function(x){return x.length>1;}).length < 2){
+    err.textContent = "Escribe tu nombre y tu apellido."; err.hidden = false; return;
   }
+  if(!correo.includes("@") || correo.indexOf(".") < correo.indexOf("@")){
+    err.textContent = "Revisa tu correo."; err.hidden = false; return;
+  }
+  if(tel.replace(/\D/g,"").length < 10){
+    err.textContent = "Escribe tu WhatsApp con indicativo, por ejemplo +57 300 111 2233."; err.hidden = false; return;
+  }
+  if(!viaje){ err.textContent = "Dinos cuándo proyectas viajar, aunque sea un estimado."; err.hidden = false; return; }
+  if(!$("caConsent").checked){ err.textContent = "Necesitamos tu autorización para tratar los datos."; err.hidden = false; return; }
   var btn = $("caLeadBtn"); btn.disabled = true; btn.textContent = "Enviando…";
-  var c = window.__ca || {};
-  lead = {nombre:nombre, correo:correo, whatsapp:tel};
+  var c = ESTADO || {};
+  var mv = mesesHastaViaje(viaje);
+  lead = {nombre:nombre, correo:correo, whatsapp:tel, fecha_viaje:viaje, mesesViaje:mv};
+  var prov = score({mesesViaje:mv}, c.fondos);
   var payload = Object.assign({
-    _subject:"CuantoAfuera · lead paso 1 · " + (c.pais||""),
-    origen:"cuantoafuera", pagina:location.pathname,
+    _subject:"CuantoAfuera · lead " + prov + " (paso 1) · " + (c.pais||""),
+    origen:"cuantoafuera", pagina:location.pathname, lead_score:prov, paso:"1",
     nombre:nombre, correo:correo, whatsapp:tel,
+    fecha_proyectada_viaje:viaje, meses_hasta_el_viaje:mv,
     destino:c.pais, programa:c.programa, duracion_meses:c.meses,
     costo_total_cop:Math.round(c.total||0), fondos_requeridos_cop:Math.round(c.fondos||0),
     autorizacion_ley_1581:"si"
@@ -796,7 +856,7 @@ function onLead(e){
     ev("lead_paso1",{pais:c.pais,programa:c.programa});
     if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera paso 1"});
   }, function(){
-    btn.disabled = false; btn.textContent = "Ver mi plan completo";
+    btn.disabled = false; btn.textContent = "Ver mi resultado";
     err.textContent = "No pudimos enviarlo. Escríbenos por WhatsApp al +57 301 443 0722 y te lo pasamos.";
     err.hidden = false;
   });
@@ -804,31 +864,33 @@ function onLead(e){
 
 function unlock(){
   unlocked = true;
+  $("caResultado").classList.remove("ca-locked");
+  var ov = $("caGateOver"); if(ov) ov.remove();
+  $("caPlan").hidden = false;
+  calc();          // recalcula ya sin mascara
   renderPlan();
-  $("caGateOver").remove();
-  var b = $("caGateBlur");
-  b.classList.remove("ca-gate-blur"); b.removeAttribute("aria-hidden"); b.style.padding = "20px";
   $("caStep2").hidden = false;
-  $("caStep2").scrollIntoView({behavior:"smooth",block:"center"});
+  $("caResultado").scrollIntoView({behavior:"smooth",block:"center"});
 }
 
 function onQual(e){
   e.preventDefault();
   var err = $("caQualErr"); err.hidden = true;
-  var q = {cuando:$("caWhen").value, ahorro:$("caSaved").value,
+  var q = {mesesViaje:lead.mesesViaje, ahorro:$("caSaved").value,
            financiacion:$("caFund").value, ingles:$("caEng").value};
-  if(!q.cuando || !q.ahorro || !q.financiacion || !q.ingles){
-    err.textContent = "Responde las cuatro preguntas."; err.hidden = false; return;
+  if(!q.ahorro || !q.financiacion || !q.ingles){
+    err.textContent = "Responde las tres preguntas."; err.hidden = false; return;
   }
   var btn = $("caQualBtn"); btn.disabled = true; btn.textContent = "Enviando…";
-  var c = window.__ca || {};
+  var c = ESTADO || {};
   var s = score(q, c.fondos);
   var payload = Object.assign({
-    _subject:"CuantoAfuera · lead " + s + " · " + (c.pais||""),
-    origen:"cuantoafuera", pagina:location.pathname, lead_score:s,
+    _subject:"CuantoAfuera · lead " + s + " (paso 2) · " + (c.pais||""),
+    origen:"cuantoafuera", pagina:location.pathname, lead_score:s, paso:"2",
     nombre:lead.nombre, correo:lead.correo, whatsapp:lead.whatsapp,
+    fecha_proyectada_viaje:lead.fecha_viaje, meses_hasta_el_viaje:lead.mesesViaje,
     destino:c.pais, programa:c.programa, duracion_meses:c.meses,
-    cuando_empieza:q.cuando, ahorro_disponible:q.ahorro,
+    ahorro_disponible:q.ahorro,
     quien_financia:q.financiacion, nivel_ingles:q.ingles,
     costo_total_cop:Math.round(c.total||0), fondos_requeridos_cop:Math.round(c.fondos||0),
     ingreso_posible_cop:Math.round(c.ingreso||0),
