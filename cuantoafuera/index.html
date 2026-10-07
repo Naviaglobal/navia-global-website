@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Calcula cuánto cuesta estudiar en Canadá, Reino Unido, Irlanda, Australia o Nueva Zelanda desde Colombia, en pesos, con la prueba de fondos 2026.">
+<title>CuántoAfuera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: herramienta de dos columnas (entradas | resultado), se apila en móvil. Estética de "sello de visa": tinta verde, papel claro. */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --fg:#16201E; --muted:#5B6966; --line:#D6DEDB;
+  --accent:#0E6B5C; --accent-soft:#E0EFEB; --warn:#9A5B00; --warn-soft:#FBEFD9;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1514; --surface:#18211F; --fg:#E6EEEB; --muted:#9AAAA6; --line:#2B3835;
+  --accent:#4FC2A8; --accent-soft:#16332D; --warn:#E8B45A; --warn-soft:#3A2C12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1514; --surface:#18211F; --fg:#E6EEEB; --muted:#9AAAA6; --line:#2B3835;
+  --accent:#4FC2A8; --accent-soft:#16332D; --warn:#E8B45A; --warn-soft:#3A2C12; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:28px 48px;display:flex;flex-direction:column;gap:24px}
+header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.1;margin:0;text-wrap:balance}
+header p{margin:8px 0 0;color:var(--muted);max-width:62ch}
+.brand{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px}
+.logo{font-family:var(--f-display);font-weight:800;font-size:1.1rem;color:var(--accent)}
+.navia{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.navia p{margin:0;max-width:60ch}
+.wa{font-family:var(--f-mono);user-select:all;font-weight:500}
+.work{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:10px}
+.workrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:480px){.workrow{grid-template-columns:1fr}}
+.big .num.sm{font-size:clamp(1.25rem,3.5vw,1.6rem)}
+#net{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.panel h2{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:0}
+.countries{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.countries button{font:inherit;font-weight:500;padding:10px 8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:8px;cursor:pointer}
+.countries button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:.82rem;font-weight:600;color:var(--muted)}
+.field input,.field select{font:inherit;font-family:var(--f-mono);padding:9px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg);width:100%;box-sizing:border-box}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hint{font-size:.78rem;color:var(--muted)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.big{display:flex;flex-direction:column;gap:2px}
+.big .lbl{font-size:.8rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.big .num{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.big .sub{font-family:var(--f-mono);font-size:.85rem;color:var(--muted)}
+.proof{border:1px dashed var(--accent);border-radius:8px;padding:14px;background:var(--accent-soft);display:flex;flex-direction:column;gap:4px}
+.proof strong{font-family:var(--f-mono);font-size:1.25rem;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.v{text-align:right;font-family:var(--f-mono);white-space:nowrap;padding-left:12px}
+td small{display:block;color:var(--muted);font-size:.76rem}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line)}
+.bar span{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.note{background:var(--warn-soft);color:var(--fg);border-radius:8px;padding:12px 14px;font-size:.85rem}
+.note b{color:var(--warn)}
+.cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cta form{display:flex;gap:8px;flex-wrap:wrap}
+.cta input{flex:1 1 180px;font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--fg)}
+.btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:var(--surface);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.aff{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.aff div{border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.85rem;display:flex;flex-direction:column;gap:2px}
+.aff div span{color:var(--muted);font-size:.76rem}
+.sources{font-size:.8rem;color:var(--muted)}
+.sources a{color:var(--accent)}
+.ok{color:var(--accent);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.big .num{transition:color .2s}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="logo">CuántoAfuera</span><span class="eyebrow">Cifras verificadas al 7 oct 2026</span></div>
+    <h1>¿Cuánto cuesta estudiar afuera desde Colombia?</h1>
+    <p>Calcula el costo total en pesos y el dinero que te exige la visa de estudiante. Ajusta matrícula, duración y tasas de cambio a tu caso.</p>
+  </header>
+
+  <div class="grid">
+    <section class="panel" aria-labelledby="h-in">
+      <h2 id="h-in">Tu plan</h2>
+      <div class="countries" role="group" aria-label="Destino" id="countries"></div>
+
+      <div class="field" id="ukLoc" hidden>
+        <label for="uk">Ciudad en Reino Unido</label>
+        <select id="uk"><option value="out">Fuera de Londres</option><option value="ldn">Londres</option></select>
+      </div>
+
+      <div class="field">
+        <label for="ptype">Tipo de programa</label>
+        <select id="ptype">
+          <option value="ingles">Curso de inglés</option>
+          <option value="tecnico" selected>College / técnico / diploma</option>
+          <option value="pregrado">Pregrado</option>
+          <option value="maestria">Maestría / posgrado</option>
+        </select>
+        <span class="hint" id="ptypeHint"></span>
+      </div>
+
+      <div class="row2">
+        <div class="field"><label for="months">Duración (meses)</label><input id="months" type="number" min="1" max="48" value="12"></div>
+        <div class="field"><label for="tuition">Matrícula total (<span class="cur">CAD</span>)</label><input id="tuition" type="number" min="0" step="100" value="18000"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="living">Vida mensual (<span class="cur">CAD</span>)</label><input id="living" type="number" min="0" step="10"></div>
+        <div class="field"><label for="fx">1 <span class="cur">CAD</span> en COP</label><input id="fx" type="number" min="0" step="1"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="flight">Tiquetes ida y vuelta (COP)</label><input id="flight" type="number" min="0" step="100000" value="4500000"></div>
+        <div class="field"><label for="ins">Seguro médico (COP)</label><input id="ins" type="number" min="0" step="100000" value="3500000"></div>
+      </div>
+      <div class="field"><label for="buffer">Colchón de imprevistos</label>
+        <select id="buffer"><option value="0">Sin colchón</option><option value="0.05">5 %</option><option value="0.1" selected>10 %</option><option value="0.15">15 %</option></select>
+      </div>
+      <div class="field"><label for="hours">Horas de trabajo por semana que planeas</label>
+        <input id="hours" type="number" min="0" max="40" step="1" value="15">
+        <span class="hint" id="hoursHint"></span>
+      </div>
+      <p class="hint" id="fxHint"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="h-out" aria-live="polite">
+      <h2 id="h-out">Resultado</h2>
+      <div class="big">
+        <span class="lbl">Costo total estimado</span>
+        <span class="num" id="total">—</span>
+        <span class="sub" id="totalLocal"></span>
+      </div>
+      <div class="bar" id="bar" aria-hidden="true"></div>
+      <div class="legend" id="legend"></div>
+      <table><tbody id="rows"></tbody></table>
+      <div class="proof">
+        <span class="lbl" style="font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Fondos que exige la visa</span>
+        <strong id="proof">—</strong>
+        <span class="hint" id="proofRule"></span>
+      </div>
+      <div class="work">
+        <div class="workrow">
+          <div class="big"><span class="lbl">Ingreso posible trabajando</span><span class="num sm" id="income">—</span><span class="sub" id="incomeRule"></span></div>
+          <div class="big"><span class="lbl">Costo neto de tu bolsillo</span><span class="num sm" id="net">—</span><span class="sub">costo total menos ingreso posible</span></div>
+        </div>
+        <p class="hint" style="margin:0">El ingreso por trabajo <b>no cuenta</b> para la prueba de fondos de la visa. Supuesto conservador: sin trabajo los 2 primeros meses, solo semanas de clase, salario mínimo y 15 % de descuentos.</p>
+      </div>
+      <div class="note" id="note"></div>
+    </section>
+  </div>
+
+  <section class="panel cta" aria-label="Siguientes pasos">
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+      <h2>Recibe tu presupuesto por correo</h2>
+      <p class="hint" style="margin:0">Te enviamos el desglose y te avisamos si cambian los requisitos de tu destino.</p>
+      <form id="lead">
+        <input id="email" type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico">
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+      <label class="hint"><input type="checkbox" id="consent" form="lead" required> Autorizo a Navia Global Education S.A.S. a tratar mis datos según la Ley 1581 de 2012 y su política de privacidad.</label>
+      <span class="ok" id="leadMsg" hidden>Listo. En la versión publicada este correo se guardará en tu lista.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+      <h2>Reporte completo · $29.900 COP</h2>
+      <p class="hint" style="margin:0">Comparativo de 5 países, costo por ciudad, plan de ahorro mes a mes y checklist de documentos para la prueba de fondos.</p>
+      <div><button class="btn ghost" type="button" id="buy">Comprar reporte</button></div>
+      <span class="hint" id="buyMsg" hidden>Espacio para el botón de pago (Wompi, Mercado Pago o Hotmart).</span>
+    </div>
+  </section>
+
+  <section class="panel navia" aria-labelledby="h-nv">
+    <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+      <h2 id="h-nv">¿Quieres que alguien revise tu caso?</h2>
+      <p class="hint">El equipo de Navia Global Education te ayuda a elegir programa, armar la prueba de fondos y preparar la visa. Primera conversación sin costo.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <span class="hint">Escríbenos por WhatsApp</span>
+      <span class="wa">+57 301 443 0722</span>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-aff">
+    <h2 id="h-aff">Ahorra en lo que igual vas a pagar</h2>
+    <p class="hint" style="margin:0">Espacios para enlaces de afiliado. Se marcarán como tales al publicarse.</p>
+    <div class="aff">
+      <div><b>Envío de matrícula</b><span>Cuenta multimoneda o remesas</span></div>
+      <div><b>Seguro médico</b><span>Seguro de estudiante internacional</span></div>
+      <div><b>Alojamiento</b><span>Residencias y homestay</span></div>
+      <div><b>eSIM</b><span>Datos desde que aterrizas</span></div>
+      <div><b>Traducción y apostilla</b><span>Traductor oficial en Colombia</span></div>
+    </div>
+  </section>
+
+  <p class="sources">
+    CuántoAfuera es una herramienta de Navia Global Education S.A.S. (NIT 902.003.125-8). Herramienta informativa; no es asesoría migratoria. <a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de uso</a>. Verifica siempre en la fuente oficial antes de aplicar.
+    Fuentes de los requisitos: IRCC (Canadá, vigente desde el 1 sep 2026), GOV.UK/Home Office (Reino Unido, cambio el 30 nov 2026), Immigration Service Delivery (Irlanda), Home Affairs (Australia), Immigration New Zealand. TRM USD del 2 oct 2026: $3.307,73. Las demás tasas son aproximadas y editables.
+  </p>
+</div>
+
+<script>
+const C = {
+  ca:{name:"Canadá",cur:"CAD",fx:2410,tuition:18000,visa:150,
+      living:()=>1954,
+      proof:(m,t)=>({amt:t+23448,rule:"Matrícula del primer año + CAD 23.448 de vida (solicitudes desde el 1 sep 2026, fuera de Quebec) + tiquetes."}),
+      note:"<b>Canadá:</b> IRCC revisa el monto y también el origen del dinero. Quebec tiene montos propios y exige CAQ. Tarifa de visa: verifica el valor vigente en IRCC."},
+  uk:{name:"Reino Unido",cur:"GBP",fx:4430,tuition:18000,visa:558,
+      living:(loc)=>loc==="ldn"?1529:1171,
+      proof:(m,t,loc)=>{const r=loc==="ldn"?1529:1171;const n=Math.min(m,9);return{amt:t+r*n,rule:`Matrícula del primer año + £${r.toLocaleString("es-CO")} × ${n} meses (máx. 9), en la cuenta 28 días seguidos. Desde el 30 nov 2026 sube a £${loc==="ldn"?"1.570":"1.203"}/mes.`}},
+      extra:(m)=>Math.ceil(m/12)*776, extraLbl:"Recargo de salud (IHS), aprox. £776/año",
+      note:"<b>Reino Unido:</b> para aplicaciones desde el 30 de noviembre de 2026 el requisito sube a £1.570 (Londres) y £1.203 (fuera). Ajusta tu ahorro si aplicas después de esa fecha."},
+  ie:{name:"Irlanda",cur:"EUR",fx:3840,tuition:6000,visa:100,
+      living:()=>833,
+      proof:(m,t)=>m<8?{amt:t+833*m,rule:`Cursos de menos de 8 meses: €833 × ${m} meses, más la matrícula pagada.`}:{amt:t+10000,rule:"€10.000 de vida por año, más la matrícula pagada (programas ILEP)."},
+      note:"<b>Irlanda:</b> el programa debe estar en la lista ILEP. El seguro médico privado es obligatorio. Visa de una entrada €60; múltiple €100."},
+  au:{name:"Australia",cur:"AUD",fx:2180,tuition:30000,visa:2500,
+      living:()=>2476,
+      proof:(m,t)=>{const n=Math.min(m,12);return{amt:t+Math.round(29710*n/12)+2000,rule:`AUD 29.710 por 12 meses (proporcional: ${n} meses) + matrícula del primer año + viaje (≈ AUD 2.000, referencia).`}},
+      note:"<b>Australia:</b> la tarifa de visa subclass 500 pasó a AUD 2.500 desde el 1 jul 2026 según reportes; confírmala en Home Affairs. El seguro OSHC es obligatorio y aparte."},
+  nz:{name:"Nueva Zelanda",cur:"NZD",fx:1950,tuition:25000,visa:950,
+      living:()=>1667,
+      proof:(m,t)=>m<12?{amt:t+1667*m,rule:`Cursos de menos de un año: NZD 1.667 × ${m} meses, más matrícula y tiquete de regreso.`}:{amt:t+20000,rule:"NZD 20.000 por año de vida, más matrícula y tiquete de regreso."},
+      note:"<b>Nueva Zelanda:</b> la visa Fee Paying Student cuesta cerca de NZD 850 más la tasa IVL; las fuentes varían, verifícala en Immigration NZ."}
+};
+const order=["ca","uk","ie","au","nz"];
+// Matrícula anual de referencia por tipo de programa (aproximada, editable)
+const TUI={ca:{ingles:16000,tecnico:18000,pregrado:36000,maestria:30000},
+           uk:{ingles:12000,tecnico:12000,pregrado:22000,maestria:22000},
+           ie:{ingles:5000,tecnico:9000,pregrado:16000,maestria:17000},
+           au:{ingles:20000,tecnico:15000,pregrado:40000,maestria:42000},
+           nz:{ingles:18000,tecnico:22000,pregrado:35000,maestria:35000}};
+// Horas legales por semana en periodo de clases y salario mínimo de referencia (verificado 7 oct 2026 salvo donde se indica)
+const WORK={
+  ca:{wage:17.95,wageLbl:"salario mínimo de Ontario (CAD 17,95 desde 1 oct 2026)",
+      h:t=>t==="ingles"?0:24, why:t=>t==="ingles"?"Los cursos de inglés (ESL) no dan permiso de trabajo en Canadá.":"Hasta 24 h/semana en clases; ilimitado en vacaciones programadas."},
+  uk:{wage:12.71,wageLbl:"salario mínimo nacional aprox. (£12,71, verificar)",
+      h:t=>t==="ingles"?0:(t==="tecnico"?10:20), why:t=>t==="ingles"?"Un curso de inglés independiente suele hacerse con visa de estudio corta, sin permiso de trabajo.":(t==="tecnico"?"Programas por debajo de grado: 10 h/semana en clases.":"Grado o superior: 20 h/semana en clases; tiempo completo en vacaciones.")},
+  ie:{wage:14.15,wageLbl:"salario mínimo de Irlanda (€14,15 desde ene 2026)",
+      h:()=>20, why:t=>t==="ingles"?"Inglés en programa ILEP de 25+ semanas: 20 h/semana; 40 h en jun–sep y 15 dic–15 ene.":"Stamp 2: 20 h/semana; 40 h en jun–sep y 15 dic–15 ene."},
+  au:{wage:26.44,wageLbl:"salario mínimo de Australia (AUD 26,44 desde 1 jul 2026)",
+      h:()=>24, why:()=>"48 h cada dos semanas en clases; ilimitado en vacaciones."},
+  nz:{wage:23.15,wageLbl:"salario mínimo aprox. (NZD 23,15, verificar)",
+      h:(t,m)=>t==="ingles"&&m<4?0:25, why:(t,m)=>t==="ingles"?(m<4?"Inglés de menos de 14 semanas: sin permiso de trabajo.":"Inglés de 14+ semanas con proveedor Categoría 1 o 24+ semanas: hasta 25 h/semana."):"Hasta 25 h/semana en clases; tiempo completo en vacaciones."}
+};
+const PLBL={ingles:"curso de inglés",tecnico:"college/técnico",pregrado:"pregrado",maestria:"maestría"};
+function setTuition(){const m=Math.max(1,+$("months").value||1);$("tuition").value=Math.round(TUI[cur][$("ptype").value]*m/12/100)*100;
+  $("ptypeHint").textContent="Matrícula de referencia: "+loc(TUI[cur][$("ptype").value],C[cur].cur)+" por año. Cámbiala por la de tu programa.";}
+
+const $=id=>document.getElementById(id);
+let cur="ca";
+const cop=n=>"$"+Math.round(n).toLocaleString("es-CO")+" COP";
+const loc=(n,c)=>Math.round(n).toLocaleString("es-CO")+" "+c;
+
+const box=$("countries");
+order.forEach(k=>{const b=document.createElement("button");b.type="button";b.textContent=C[k].name;b.dataset.k=k;b.onclick=()=>select(k);box.appendChild(b)});
+
+function select(k){
+  cur=k;const c=C[k];
+  box.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
+  document.querySelectorAll(".cur").forEach(s=>s.textContent=c.cur);
+  $("ukLoc").hidden=k!=="uk";
+  setTuition();$("fx").value=c.fx;$("living").value=c.living($("uk").value);
+  calc();
+}
+function calc(){
+  const c=C[cur],m=Math.max(1,+$("months").value||1),t=+$("tuition").value||0,fx=+$("fx").value||0,
+        lv=+$("living").value||0,fl=+$("flight").value||0,ins=+$("ins").value||0,bf=+$("buffer").value,ukl=$("uk").value;
+  const items=[
+    ["Matrícula",t*fx,loc(t,c.cur),"#0E6B5C"],
+    ["Vida ("+m+" meses)",lv*m*fx,loc(lv*m,c.cur)+" · "+loc(lv,c.cur)+"/mes","#4FA88F"],
+    ["Visa",c.visa*fx,loc(c.visa,c.cur),"#9A5B00"],
+  ];
+  if(c.extra) items.push([c.extraLbl,c.extra(m)*fx,loc(c.extra(m),c.cur),"#C98A2E"]);
+  items.push(["Tiquetes",fl,"en COP","#5B6966"],["Seguro médico",ins,"en COP","#8FA19C"]);
+  const sub=items.reduce((a,i)=>a+i[1],0),buf=sub*bf;
+  if(bf) items.push(["Colchón "+Math.round(bf*100)+" %",buf,"imprevistos","#C7D3CF"]);
+  const total=sub+buf;
+  $("total").textContent=cop(total);
+  $("totalLocal").textContent=fx?"≈ "+loc(total/fx,c.cur):"";
+  $("rows").innerHTML=items.map(i=>`<tr><td>${i[0]}<small>${i[2]}</small></td><td class="v">${cop(i[1])}</td></tr>`).join("");
+  $("bar").innerHTML=items.map(i=>`<span style="width:${(i[1]/total*100).toFixed(2)}%;background:${i[3]}"></span>`).join("");
+  $("legend").innerHTML=items.map(i=>`<span><i style="background:${i[3]}"></i>${i[0]}</span>`).join("");
+  const p=c.proof(m,t,ukl);
+  $("proof").textContent=loc(p.amt,c.cur)+" · "+cop(p.amt*fx);
+  $("proofRule").textContent=p.rule;
+  $("note").innerHTML=c.note;
+  const pt=$("ptype").value,W=WORK[cur],legal=W.h(pt,m),hrs=Math.min(+$("hours").value||0,legal);
+  const workMonths=Math.max(0,m-2), termShare=0.75;
+  const inc=hrs*W.wage*4.33*workMonths*termShare*0.85;
+  $("hoursHint").textContent=(legal?`Máximo legal en clases: ${legal} h/semana. `:"")+W.why(pt,m);
+  $("income").textContent=inc?cop(inc*fx):"$0 COP";
+  $("incomeRule").textContent=inc?`${hrs} h × ${W.wageLbl} × ${workMonths} meses`:(legal?"Indica cuántas horas planeas trabajar":"Este programa no permite trabajar");
+  $("net").textContent=cop(Math.max(0,total-inc*fx));
+
+  $("fxHint").textContent="TRM USD del 2 oct 2026: $3.307,73. La tasa de "+c.cur+" es aproximada; actualízala el día que pagues.";
+}
+["tuition","fx","living","flight","ins","buffer","hours"].forEach(id=>$(id).addEventListener("input",calc));
+$("months").addEventListener("input",()=>{setTuition();calc()});
+$("ptype").addEventListener("change",()=>{setTuition();calc()});
+$("uk").addEventListener("change",()=>{$("living").value=C.uk.living($("uk").value);calc()});
+$("lead").addEventListener("submit",e=>{e.preventDefault();$("leadMsg").hidden=false});
+$("buy").addEventListener("click",()=>{$("buyMsg").hidden=false});
+select("ca");
+</script>
+
+</body>
+</html>
