@@ -8,19 +8,46 @@
       "por_verificar": "hay un valor candidato pero falta confirmarlo en la fuente oficial antes de publicarlo",
       "en_conflicto": "el brief y NAVIA_SISTEMA.md dan valores distintos; manda la seccion 7 hasta que se resuelva"
     },
-    "regla_tasas": "Si una tasa de cambio tiene mas de 7 dias, recalcularla con la TRM del dia antes de usarla."
+    "regla_tasas": "Si una tasa de cambio tiene mas de 7 dias, recalcularla con la TRM del dia antes de usarla.",
+    "verificaciones": {
+      "2026-10-07": "Canadá (fondos, horas y salario de Ontario) y Nueva Zelanda (salario) confirmados en las páginas oficiales."
+    }
   },
-
   "tasas_cambio": {
     "_fuente": "TRM Superfinanciera, cruzadas con el BCE. NAVIA_SISTEMA.md seccion 7.",
     "_verificado": "2026-10-06",
     "cop_por": {
-      "USD": { "valor": 3209.78, "estado": "verificado", "verificado": "2026-10-06" },
-      "EUR": { "valor": 3617.10, "estado": "verificado", "verificado": "2026-10-06" },
-      "AUD": { "valor": 2241.08, "estado": "verificado", "verificado": "2026-10-06" },
-      "NZD": { "valor": 1803.05, "estado": "verificado", "verificado": "2026-10-06" },
-      "GBP": { "valor": 4261.43, "estado": "verificado", "verificado": "2026-10-06" },
-      "CAD": { "valor": 2270.00, "estado": "por_verificar", "verificado": "2026-08-07", "nota": "Desactualizada: tiene mas de 7 dias. Recalcular con la TRM del dia antes de publicar cualquier cifra en COP de Canada." }
+      "USD": {
+        "valor": 3209.78,
+        "estado": "verificado",
+        "verificado": "2026-10-06"
+      },
+      "EUR": {
+        "valor": 3617.1,
+        "estado": "verificado",
+        "verificado": "2026-10-06"
+      },
+      "AUD": {
+        "valor": 2241.08,
+        "estado": "verificado",
+        "verificado": "2026-10-06"
+      },
+      "NZD": {
+        "valor": 1803.05,
+        "estado": "verificado",
+        "verificado": "2026-10-06"
+      },
+      "GBP": {
+        "valor": 4261.43,
+        "estado": "verificado",
+        "verificado": "2026-10-06"
+      },
+      "CAD": {
+        "valor": 2270.0,
+        "estado": "por_verificar",
+        "verificado": "2026-08-07",
+        "nota": "Desactualizada: tiene mas de 7 dias. Recalcular con la TRM del dia antes de publicar cualquier cifra en COP de Canada."
+      }
     },
     "_conflicto_brief": {
       "USD": 3307.73,
@@ -28,21 +55,21 @@
       "resolucion": "Se usa 3209.78 (6-oct, TRM oficial) porque es mas reciente que la del brief (2-oct)."
     }
   },
-
   "destinos": {
     "canada": {
       "nombre": "Canadá",
       "pagina_actual": "/canada/",
       "moneda": "CAD",
       "fondos_visa": {
-        "valor": 22895,
+        "valor": 23448,
         "unidad": "anual",
-        "estado": "en_conflicto",
-        "verificado": "2026-08",
+        "estado": "verificado",
+        "verificado": "2026-10-07",
         "fuente": "IRCC",
-        "fuente_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
-        "valor_candidato_brief": 23448,
-        "nota": "El brief dice CAD 23.448/ano para solicitudes desde el 1-sep-2026 (fuera de Quebec). La seccion 7 tiene CAD 22.895 de ago-2026. El valor del brief es mas reciente y plausible, pero NO esta verificado en IRCC. Confirmar antes de publicar. Se suma matricula del primer ano y tiquetes."
+        "fuente_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+        "vigencia": "solicitudes radicadas desde el 1-sep-2026",
+        "valor_anterior": 22895,
+        "nota": "Para 1 solicitante, sin acompañantes, fuera de Quebec. No incluye matrícula ni tiquetes, que se suman aparte. El tramo anterior (CAD 22.895) aplica solo a solicitudes radicadas entre el 1-ene-2025 y el 31-ago-2026. Quebec exige CAQ y tiene montos propios. Verificado en IRCC el 7-oct-2026; la página oficial se actualizó el 28-ago-2026."
       },
       "tarifa_visa": {
         "valor": 150,
@@ -50,25 +77,31 @@
         "nota": "El brief lo marca el mismo como 'verificar'. La calculadora actual tiene 235. Confirmar en IRCC."
       },
       "horas_trabajo": {
-        "en_clases": 20,
-        "estado": "en_conflicto",
-        "condicion": "Solo si estudia educacion superior. Cursos de ingles (ESL) no permiten trabajar.",
-        "verificado": "2026-09-21",
-        "valor_candidato_brief": 24,
-        "nota": "El brief dice 24 h/sem. La seccion 7 dice 20 h y solo para educacion superior. Manda la seccion 7. Confirmar en IRCC antes de cambiarlo: es una cifra que un estudiante usa para planear sus ingresos."
+        "en_clases": 24,
+        "estado": "verificado",
+        "verificado": "2026-10-07",
+        "condicion": "Solo si estudias un programa postsecundario académico, vocacional o profesional en una institución designada (DLI), de tiempo completo. Los cursos de idioma (ESL o FSL) no dan permiso de trabajo. Tiempo completo en las vacaciones programadas.",
+        "fuente": "IRCC",
+        "fuente_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html",
+        "nota": "IRCC indica que, aunque el permiso impreso diga 20 h, se permite trabajar hasta 24 h mientras se cumplan los requisitos. Página oficial actualizada el 15-abr-2026."
       },
       "salario_minimo": {
-        "valor": 17.60,
+        "valor": 17.95,
         "jurisdiccion": "Ontario",
-        "estado": "en_conflicto",
-        "verificado": "2026",
-        "valor_candidato_brief": 17.95,
-        "vigencia_candidato": "2026-10-01",
-        "nota": "El brief dice CAD 17,95 desde el 1-oct-2026, lo que ya estaria vigente. Confirmar en el sitio de Ontario."
+        "estado": "verificado",
+        "verificado": "2026-10-07",
+        "vigencia": "del 1-oct-2026 al 30-sep-2027",
+        "valor_anterior": 17.6,
+        "fuente": "Gobierno de Ontario",
+        "fuente_url": "https://www.ontario.ca/document/your-guide-employment-standards-act-0/minimum-wage"
       },
-      "precio_curso_navia": { "cop": 16000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "precio_curso_navia": {
+        "cop": 16000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "reino-unido": {
       "nombre": "Reino Unido",
       "pagina_actual": "/reino-unido/",
@@ -101,10 +134,18 @@
         "verificado": "2026-09-21",
         "condicion": "Solo si estudia educacion superior. 10 h por debajo de ese nivel. Cursos de ingles independientes no permiten trabajar."
       },
-      "salario_minimo": { "valor": 12.71, "estado": "verificado", "verificado": "2026" },
-      "precio_curso_navia": { "cop": 16000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "salario_minimo": {
+        "valor": 12.71,
+        "estado": "verificado",
+        "verificado": "2026"
+      },
+      "precio_curso_navia": {
+        "cop": 16000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "irlanda": {
       "nombre": "Irlanda",
       "pagina_actual": "/irlanda/",
@@ -130,15 +171,27 @@
       "horas_trabajo": {
         "en_clases": 20,
         "en_vacaciones": 40,
-        "periodos_vacaciones": ["1 jun a 30 sep", "15 dic a 15 ene"],
+        "periodos_vacaciones": [
+          "1 jun a 30 sep",
+          "15 dic a 15 ene"
+        ],
         "estado": "verificado",
         "verificado": "2026-10-06",
         "fuente_url": "https://www.irishimmigration.ie/"
       },
-      "salario_minimo": { "valor": 14.15, "estado": "verificado", "verificado": "2026-10-06", "vigencia": "2026-01" },
-      "precio_curso_navia": { "cop": 10000000, "periodo": "25 semanas", "estado": "verificado", "incluye": "curso + seguro + examen de certificacion" }
+      "salario_minimo": {
+        "valor": 14.15,
+        "estado": "verificado",
+        "verificado": "2026-10-06",
+        "vigencia": "2026-01"
+      },
+      "precio_curso_navia": {
+        "cop": 10000000,
+        "periodo": "25 semanas",
+        "estado": "verificado",
+        "incluye": "curso + seguro + examen de certificacion"
+      }
     },
-
     "australia": {
       "nombre": "Australia",
       "pagina_actual": "/australia/",
@@ -151,18 +204,34 @@
         "fuente": "Department of Home Affairs",
         "fuente_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
       },
-      "tarifa_visa": { "valor": 2500, "estado": "verificado", "verificado": "2026-08", "vigencia": "2026-07-01" },
+      "tarifa_visa": {
+        "valor": 2500,
+        "estado": "verificado",
+        "verificado": "2026-08",
+        "vigencia": "2026-07-01"
+      },
       "horas_trabajo": {
         "en_clases": 24,
         "estado": "verificado",
         "verificado": "2026-09-21",
         "condicion": "Oficialmente 48 h por quincena mientras el curso esta en sesion."
       },
-      "salario_minimo": { "valor": 26.44, "casual": 33.05, "estado": "verificado", "verificado": "2026-10-06", "vigencia": "2026-07-01", "fuente": "Fair Work Commission" },
-      "precio_curso_navia": { "cop": 13000000, "periodo": "24 semanas", "estado": "verificado", "incluye": "curso + materiales + registro" },
+      "salario_minimo": {
+        "valor": 26.44,
+        "casual": 33.05,
+        "estado": "verificado",
+        "verificado": "2026-10-06",
+        "vigencia": "2026-07-01",
+        "fuente": "Fair Work Commission"
+      },
+      "precio_curso_navia": {
+        "cop": 13000000,
+        "periodo": "24 semanas",
+        "estado": "verificado",
+        "incluye": "curso + materiales + registro"
+      },
       "nota_cambio_reciente": "Desde el 2-oct-2026 cambian las solicitudes hechas desde dentro de Australia y la inclusion de familiares. NO cambian horas ni fondos."
     },
-
     "nueva-zelanda": {
       "nombre": "Nueva Zelanda",
       "pagina_actual": "/nueva-zelanda/",
@@ -186,83 +255,180 @@
         "en_clases": 25,
         "estado": "verificado",
         "verificado": "2026-09-21",
-        "condicion": "Cursos de ingles de 14 semanas o mas con proveedor de Categoria 1."
+        "condicion": "Cursos de inglés de 14 semanas o más con proveedor de Categoría 1."
       },
       "salario_minimo": {
         "valor": 23.95,
-        "estado": "en_conflicto",
-        "verificado": "2026-10-06",
-        "vigencia": "2026-04-01",
-        "valor_candidato_brief": 23.15,
-        "nota": "El brief dice NZD 23,15. La seccion 7 tiene 23,95 verificado en fuente oficial el 6-oct-2026. Manda la seccion 7."
+        "estado": "verificado",
+        "verificado": "2026-10-07",
+        "vigencia": "desde el 1-abr-2026",
+        "fuente": "Employment New Zealand",
+        "fuente_url": "https://www.employment.govt.nz/pay-and-hours/pay-and-wages/minimum-wage/minimum-wage-rates-and-types",
+        "nota": "Tarifa adulta. El brief traia NZD 23,15, que no corresponde a ninguna tarifa vigente."
       },
-      "precio_curso_navia": { "cop": 13000000, "periodo": "24 semanas", "estado": "verificado", "incluye": "curso + materiales + registro" }
+      "precio_curso_navia": {
+        "cop": 13000000,
+        "periodo": "24 semanas",
+        "estado": "verificado",
+        "incluye": "curso + materiales + registro"
+      }
     },
-
     "malta": {
       "nombre": "Malta",
       "pagina_actual": "/malta/",
       "moneda": "EUR",
-      "fondos_visa": { "estado": "por_verificar", "nota": "No esta en la seccion 7 ni en el brief. Falta." },
-      "tarifa_visa": { "valor": 100, "estado": "por_verificar", "nota": "Valor que trae la calculadora actual. Sin fuente." },
-      "horas_trabajo": { "en_clases": 20, "estado": "verificado", "verificado": "2026-09-21", "condicion": "Desde el dia 91." },
-      "salario_minimo": { "valor": 5.74, "estado": "verificado", "verificado": "2026", "nota": "Rango realista reportado: 6 a 10 EUR/h." },
-      "precio_curso_navia": { "cop": 13000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "fondos_visa": {
+        "estado": "por_verificar",
+        "nota": "No esta en la seccion 7 ni en el brief. Falta."
+      },
+      "tarifa_visa": {
+        "valor": 100,
+        "estado": "por_verificar",
+        "nota": "Valor que trae la calculadora actual. Sin fuente."
+      },
+      "horas_trabajo": {
+        "en_clases": 20,
+        "estado": "verificado",
+        "verificado": "2026-09-21",
+        "condicion": "Desde el dia 91."
+      },
+      "salario_minimo": {
+        "valor": 5.74,
+        "estado": "verificado",
+        "verificado": "2026",
+        "nota": "Rango realista reportado: 6 a 10 EUR/h."
+      },
+      "precio_curso_navia": {
+        "cop": 13000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "alemania": {
       "nombre": "Alemania",
       "pagina_actual": "/alemania/",
       "moneda": "EUR",
-      "fondos_visa": { "estado": "por_verificar", "nota": "Falta. Revisar el Sperrkonto en la fuente oficial." },
-      "tarifa_visa": { "estado": "por_verificar" },
-      "horas_trabajo": { "estado": "por_verificar", "nota": "Pendiente de dar por Samuel (seccion 7)." },
-      "salario_minimo": { "valor": 13.90, "estado": "verificado", "verificado": "2026-10-06", "fuente": "bmas.de", "cambio_programado": { "fecha": "2027-01-01", "valor": 14.60 } },
-      "precio_curso_navia": { "cop": 15000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "fondos_visa": {
+        "estado": "por_verificar",
+        "nota": "Falta. Revisar el Sperrkonto en la fuente oficial."
+      },
+      "tarifa_visa": {
+        "estado": "por_verificar"
+      },
+      "horas_trabajo": {
+        "estado": "por_verificar",
+        "nota": "Pendiente de dar por Samuel (seccion 7)."
+      },
+      "salario_minimo": {
+        "valor": 13.9,
+        "estado": "verificado",
+        "verificado": "2026-10-06",
+        "fuente": "bmas.de",
+        "cambio_programado": {
+          "fecha": "2027-01-01",
+          "valor": 14.6
+        }
+      },
+      "precio_curso_navia": {
+        "cop": 15000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "francia": {
       "nombre": "Francia",
       "pagina_actual": "/francia/",
       "moneda": "EUR",
-      "fondos_visa": { "estado": "por_verificar", "nota": "Falta." },
-      "tarifa_visa": { "estado": "por_verificar" },
-      "horas_trabajo": { "estado": "por_verificar", "nota": "Pendiente de dar por Samuel (seccion 7)." },
-      "salario_minimo": { "valor": 12.02, "estado": "verificado", "verificado": "2026" },
-      "precio_curso_navia": { "cop": 16000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "fondos_visa": {
+        "estado": "por_verificar",
+        "nota": "Falta."
+      },
+      "tarifa_visa": {
+        "estado": "por_verificar"
+      },
+      "horas_trabajo": {
+        "estado": "por_verificar",
+        "nota": "Pendiente de dar por Samuel (seccion 7)."
+      },
+      "salario_minimo": {
+        "valor": 12.02,
+        "estado": "verificado",
+        "verificado": "2026"
+      },
+      "precio_curso_navia": {
+        "cop": 16000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "estados-unidos": {
       "nombre": "Estados Unidos",
       "pagina_actual": "/estados-unidos/",
       "moneda": "USD",
-      "fondos_visa": { "estado": "por_verificar", "nota": "Falta." },
-      "tarifa_visa": { "valor": 510, "estado": "por_verificar", "nota": "Valor de la calculadora actual. Sin fuente." },
-      "horas_trabajo": { "estado": "por_verificar", "nota": "Pendiente de dar por Samuel (seccion 7)." },
-      "salario_minimo": { "estado": "por_verificar", "nota": "La calculadora actual usa 15.00 sin fuente. Varia por estado." },
-      "precio_curso_navia": { "cop": 18000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "fondos_visa": {
+        "estado": "por_verificar",
+        "nota": "Falta."
+      },
+      "tarifa_visa": {
+        "valor": 510,
+        "estado": "por_verificar",
+        "nota": "Valor de la calculadora actual. Sin fuente."
+      },
+      "horas_trabajo": {
+        "estado": "por_verificar",
+        "nota": "Pendiente de dar por Samuel (seccion 7)."
+      },
+      "salario_minimo": {
+        "estado": "por_verificar",
+        "nota": "La calculadora actual usa 15.00 sin fuente. Varia por estado."
+      },
+      "precio_curso_navia": {
+        "cop": 18000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     },
-
     "dubai": {
       "nombre": "Dubái",
       "pagina_actual": "/dubai/",
       "moneda": "USD",
-      "fondos_visa": { "estado": "por_verificar", "nota": "Falta." },
-      "tarifa_visa": { "estado": "por_verificar" },
-      "horas_trabajo": { "en_clases": null, "sin_limite": true, "estado": "verificado", "verificado": "2026-09-28", "nota": "Sin limite de horas, reconfirmado por Samuel." },
-      "salario_minimo": { "estado": "por_verificar", "nota": "Emiratos no tiene salario minimo legal general." },
-      "precio_curso_navia": { "cop": 15000000, "periodo": "6 meses", "estado": "verificado", "verificado": "2026-09-09" }
+      "fondos_visa": {
+        "estado": "por_verificar",
+        "nota": "Falta."
+      },
+      "tarifa_visa": {
+        "estado": "por_verificar"
+      },
+      "horas_trabajo": {
+        "en_clases": null,
+        "sin_limite": true,
+        "estado": "verificado",
+        "verificado": "2026-09-28",
+        "nota": "Sin limite de horas, reconfirmado por Samuel."
+      },
+      "salario_minimo": {
+        "estado": "por_verificar",
+        "nota": "Emiratos no tiene salario minimo legal general."
+      },
+      "precio_curso_navia": {
+        "cop": 15000000,
+        "periodo": "6 meses",
+        "estado": "verificado",
+        "verificado": "2026-09-09"
+      }
     }
   },
-
   "_pendientes": [
-    "Canada: confirmar en IRCC los fondos (22.895 vs 23.448), la tarifa de visa (150 vs 235) y las horas (20 vs 24).",
-    "Canada: la tasa CAD->COP tiene 2 meses. Recalcular con la TRM del dia.",
-    "Reino Unido: confirmar fondos y tarifa en GOV.UK. Actualizar el 30-nov-2026.",
-    "Irlanda: confirmar la tarifa de visa (60/100 vs los 300 de la calculadora actual).",
-    "Nueva Zelanda: confirmar tarifa de visa e IVL.",
-    "Nueva Zelanda: resolver el salario minimo (23,95 de seccion 7 vs 23,15 del brief).",
-    "Malta, Alemania, Francia, Estados Unidos, Dubai: faltan fondos de visa y tarifas.",
-    "Alemania, Francia, Estados Unidos: faltan horas de trabajo permitidas."
+    "Canada: confirmar la tarifa de visa en IRCC. requisitos.json tiene 150 (del brief, sin verificar) y la calculadora vieja tenía 235.",
+    "Canada: la tasa CAD->COP es del 7-ago-2026. Recalcularla antes de publicar cualquier cifra en pesos de Canada; la herramienta ya lo avisa en pantalla.",
+    "Reino Unido: confirmar fondos y tarifa en GOV.UK. Actualizar los montos el 30-nov-2026.",
+    "Irlanda: confirmar la tarifa de visa (60/100).",
+    "Nueva Zelanda: confirmar la tarifa de visa y el IVL en Immigration New Zealand.",
+    "Malta, Alemania, Francia, Estados Unidos y Dubái: faltan fondos de visa y tarifas.",
+    "Alemania, Francia y Estados Unidos: faltan las horas de trabajo permitidas."
   ]
 }
