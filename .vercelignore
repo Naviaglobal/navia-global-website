@@ -1,0 +1,36 @@
+# Que NO se publica en naviaglobal.co.
+#
+# Vercel, al desplegar desde GitHub, sube todo el repositorio. Sin este
+# archivo quedan publicos el brief de negocio, los scripts y la
+# documentacion interna. Comprobado el 7-oct-2026 en una vista previa:
+# /cuantoafuera/BRIEF-....md y /deploy-vercel.ps1 respondian HTTP 200.
+
+# Documentacion interna y de negocio
+*.md
+
+# Scripts: generadores, despliegue, utilidades
+*.ps1
+*.py
+*.sh
+
+# Material de trabajo de creativos (pesado y no se sirve)
+*.mp4
+_carru/
+_reelfix/
+_reel_src/
+_sep/
+_sep2/
+
+# Plantillas sueltas, no son paginas
+tpl-*.html
+
+# Landing sin revisar y artefactos de build
+lp/
+
+# Ejemplo del reporte y codigo del generador
+cuantoafuera/reporte/
+
+# Dependencias y temporales
+node_modules/
+*.log
+*.tmp
