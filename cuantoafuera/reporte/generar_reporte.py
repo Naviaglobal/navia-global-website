@@ -19,11 +19,11 @@ from reportlab.lib.fonts import addMapping
 pdfmetrics.registerFontFamily("Body", normal="Body", bold="Bold", italic="Body", boldItalic="Bold")
 pdfmetrics.registerFont(TTFont("Mono", FONT_DIR + "DejaVuSansMono.ttf"))
 
-ACCENT = colors.HexColor("#0E6B5C")
-SOFT = colors.HexColor("#E0EFEB")
-INK = colors.HexColor("#16201E")
-MUTED = colors.HexColor("#5B6966")
-LINE = colors.HexColor("#D6DEDB")
+ACCENT = colors.HexColor("#1b4b8d")
+SOFT = colors.HexColor("#eaf4f1")
+INK = colors.HexColor("#2c3e50")
+MUTED = colors.HexColor("#64748b")
+LINE = colors.HexColor("#dde5ed")
 WARN = colors.HexColor("#FBEFD9")
 
 FECHA_VERIFICACION = "7 de octubre de 2026"
@@ -309,7 +309,7 @@ def construir(perfil, salida):
         ("Traducciones oficiales", "De todo documento que no esté en inglés o francés."),
         ("Carta de aceptación y PAL/TAL", "Verifica si tu programa requiere la carta de la provincia."),
     ]
-    chk = [[Paragraph("☐", S["cellb"]), Paragraph(f"<b>{a}</b><br/><font color='#5B6966'>{b}</font>", S["cell"])]
+    chk = [[Paragraph("☐", S["cellb"]), Paragraph(f"<b>{a}</b><br/><font color='#64748b'>{b}</font>", S["cell"])]
            for a, b in items]
     t = Table(chk, colWidths=[8 * mm, 162 * mm], hAlign="LEFT")
     t.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, -1), 0.4, LINE), ("VALIGN", (0, 0), (-1, -1), "TOP"),
