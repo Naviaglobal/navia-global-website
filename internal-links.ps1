@@ -1,4 +1,4 @@
-$enc = New-Object System.Text.UTF8Encoding($false)
+﻿$enc = New-Object System.Text.UTF8Encoding($false)
 $blogDir = "C:\Users\User\.claude\navia-website\blog"
 
 # Keyword -> URL mapping (keyword as it appears in text -> relative URL)
@@ -52,13 +52,18 @@ function Add-ContextualLink($html, $keyword, $url) {
         $lastClose = $before.LastIndexOf('</a>')
         if ($lastOpen -gt $lastClose) { return $html }  # inside <a>, skip
 
+        # Nunca dentro de una etiqueta: si el ultimo '<' es mas reciente que
+        # el ultimo '>', estamos dentro de un atributo (content=, href=, ...).
+        # Sin esta guarda el script rompio canonicals y metas del <head>.
+        if ($before.LastIndexOf('<') -gt $before.LastIndexOf('>')) { return $html }
+
         # Check we're inside a <p> (not in heading, script, style)
         $tagsBefore = [regex]::Matches($before, '<(p|h[1-6]|script|style|title)[^/]')
         $lastTag = if ($tagsBefore.Count -gt 0) { $tagsBefore[$tagsBefore.Count-1].Value } else { "" }
         if ($lastTag -match '<(script|style|title|h[1-6])') { return $html }
 
         # Replace only this specific occurrence
-        $linkHtml = '<a href="' + $url + '" style="color:#1B4B8C;font-weight:600;">' + $m.Value + '</a>'
+        $linkHtml = '<a href="' + $url + '" style="color:#1b4b8d;font-weight:600;">' + $m.Value + '</a>'
         $html = $html.Substring(0, $pos) + $linkHtml + $html.Substring($pos + $m.Length)
         return $html  # only first occurrence
     }
@@ -69,7 +74,11 @@ $articles = Get-ChildItem $blogDir -Filter "*.html" | Where-Object { $_.Name -ne
 $totalLinks = 0
 
 foreach ($file in $articles) {
-    $html = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)
+    $full = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)
+    # El <head> no se toca nunca. Enlazar ahi corrompe canonicals y metas.
+    $corte = $full.IndexOf('</head>')
+    if ($corte -ge 0) { $head = $full.Substring(0, $corte); $html = $full.Substring($corte) }
+    else              { $head = ''; $html = $full }
     $linksAdded = 0
 
     foreach ($kv in $linkMap.GetEnumerator()) {
@@ -80,7 +89,7 @@ foreach ($file in $articles) {
         # Don't link article to itself
         if ($fname -eq $url) { continue }
         # Don't add if URL already linked in this article
-        if ($html -like ("*href=`"" + $url + "`"*")) { continue }
+        if ($full -like ("*href=`"" + $url + "`"*")) { continue }
 
         $newHtml = Add-ContextualLink $html $keyword $url
         if ($newHtml -ne $html) {
@@ -90,7 +99,7 @@ foreach ($file in $articles) {
     }
 
     if ($linksAdded -gt 0) {
-        [System.IO.File]::WriteAllText($file.FullName, $html, $enc)
+        [System.IO.File]::WriteAllText($file.FullName, ($head + $html), $enc)
         $totalLinks += $linksAdded
         Write-Host ("[+$linksAdded] " + $file.Name)
     }
