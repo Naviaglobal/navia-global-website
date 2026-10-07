@@ -107,6 +107,30 @@
 .ca-plan h3{font-family:var(--ca-display);font-weight:700;font-size:1rem;margin:0;color:var(--ca-azul)}
 .ca-check{margin:0;padding-left:18px;font-size:.88rem;display:flex;flex-direction:column;gap:5px}
 .ca-compare td:first-child{font-weight:600}
+/* Modo embebido: la misma herramienta dentro de un iframe en los articulos.
+   Un solo archivo, una sola logica. */
+.ca-embed .nav,.ca-embed .footer,.ca-embed .ca-faq,.ca-embed #caEeat,
+.ca-embed #caGate,.ca-embed #caStep2,.ca-embed #caWaPanel,.ca-embed .ca-sources{display:none}
+.ca-embed .ca-wrap{padding:0 0 4px;gap:14px}
+@media (min-width:620px){.ca-embed .ca-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}}
+.ca-embed .ca-head h1{font-size:clamp(1.25rem,3.2vw,1.6rem)}
+.ca-embed .ca-head p,.ca-embed #caVerif,.ca-embed .ca-adv{display:none}
+.ca-embed .ca-countries{display:none}
+.ca-embed.ca-ver-paises .ca-countries{display:grid}
+.ca-swap{font:inherit;font-size:.84rem;font-weight:600;background:none;border:0;padding:0;
+  color:var(--ca-azul);text-decoration:underline;cursor:pointer;text-align:left}
+.ca-vary summary{cursor:pointer;list-style:none}
+.ca-vary summary::-webkit-details-marker{display:none}
+.ca-vary[open] summary{margin-bottom:2px}
+.ca-embed body{background:transparent}
+#caEmbedCta{display:none}
+.ca-embed #caEmbedCta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  border:1px solid var(--ca-teal);background:var(--ca-soft);border-radius:10px;padding:14px 16px}
+.ca-embed #caEmbedCta p{margin:0;font-size:.88rem;max-width:46ch}
+.ca-vary{border:1px solid var(--ca-line);border-left:4px solid var(--ca-cielo);border-radius:8px;padding:12px 14px;font-size:.84rem;background:var(--ca-bg)}
+.ca-vary b{color:var(--ca-azul)}
+.ca-vary p{margin:7px 0 0;color:var(--ca-muted)}
+.ca-vary ul{margin:7px 0 0;padding-left:18px;color:var(--ca-muted)}
 .ca-sources{font-size:.78rem;color:var(--ca-muted)}
 .ca-sources a{color:var(--ca-azul)}
 .ca-faq details{border-bottom:1px solid var(--ca-line);padding:11px 0}
@@ -149,6 +173,7 @@
   <div class="ca-grid">
     <section class="ca-panel" aria-labelledby="caHIn">
       <h2 id="caHIn">Tu plan</h2>
+      <button type="button" class="ca-swap" id="caSwap" hidden aria-expanded="false" aria-controls="caCountries">Comparar con otro destino</button>
       <div class="ca-countries" role="group" aria-label="Destino" id="caCountries"></div>
 
       <div class="ca-f" id="caUkLoc" hidden>
@@ -171,22 +196,22 @@
         <div class="ca-f"><label for="caMonths">Duración (meses)</label><input id="caMonths" type="number" min="1" max="48" value="12"></div>
         <div class="ca-f"><label for="caTuition">Matrícula total (<span class="ca-cur">CAD</span>)</label><input id="caTuition" type="number" min="0" step="100"></div>
       </div>
-      <div class="ca-row2">
+      <div class="ca-row2 ca-adv">
         <div class="ca-f"><label for="caLiving">Vida mensual (<span class="ca-cur">CAD</span>)</label><input id="caLiving" type="number" min="0" step="10"></div>
         <div class="ca-f"><label for="caFx">1 <span class="ca-cur">CAD</span> en COP</label><input id="caFx" type="number" min="0" step="1"></div>
       </div>
-      <div class="ca-row2">
+      <div class="ca-row2 ca-adv">
         <div class="ca-f"><label for="caFlight">Tiquetes ida y vuelta (COP)</label><input id="caFlight" type="number" min="0" step="100000" value="4500000"></div>
         <div class="ca-f"><label for="caIns">Seguro médico (COP)</label><input id="caIns" type="number" min="0" step="100000" value="3500000"></div>
       </div>
-      <div class="ca-f"><label for="caBuffer">Colchón de imprevistos</label>
+      <div class="ca-f ca-adv"><label for="caBuffer">Colchón de imprevistos</label>
         <select id="caBuffer"><option value="0">Sin colchón</option><option value="0.05">5 %</option><option value="0.1" selected>10 %</option><option value="0.15">15 %</option></select>
       </div>
-      <div class="ca-f"><label for="caHours">Horas de trabajo por semana que planeas</label>
+      <div class="ca-f ca-adv"><label for="caHours">Horas de trabajo por semana que planeas</label>
         <input id="caHours" type="number" min="0" max="40" step="1" value="15">
         <span class="ca-hint" id="caHoursHint"></span>
       </div>
-      <p class="ca-hint" id="caFxHint"></p>
+      <p class="ca-hint ca-adv" id="caFxHint"></p>
     </section>
 
     <section class="ca-panel" aria-labelledby="caHOut" aria-live="polite">
@@ -196,16 +221,27 @@
         <span class="n" id="caTotal">—</span>
         <span class="s" id="caTotalLocal"></span>
       </div>
-      <div class="ca-bar" id="caBar" aria-hidden="true"></div>
-      <div class="ca-legend" id="caLegend"></div>
+      <div class="ca-bar ca-adv" id="caBar" aria-hidden="true"></div>
+      <div class="ca-legend ca-adv" id="caLegend"></div>
       <table><tbody id="caRows"></tbody></table>
       <div class="ca-proof">
         <span class="l" style="font-size:.76rem;font-weight:700;color:var(--ca-muted);text-transform:uppercase;letter-spacing:.05em">Fondos que exige la visa</span>
         <strong id="caProof">—</strong>
         <span class="ca-hint" id="caProofRule"></span>
       </div>
+      <details class="ca-vary" id="caVary">
+        <summary><b>Esto es una estimación, no una cotización.</b> Toca para ver por qué.</summary>
+        <p id="caVaryWhy"></p>
+        <p>Lo que <b>sí</b> es firme son los montos de fondos de visa, las horas de trabajo permitidas y los salarios mínimos: esos salen de las páginas oficiales de inmigración, con la fecha de verificación arriba. Lo que varía es la matrícula y el costo de vida.</p>
+      </details>
       <div class="ca-note" id="caNote"></div>
     </section>
+  </div>
+
+  <!-- Solo visible dentro de un articulo (modo embebido) -->
+  <div id="caEmbedCta">
+    <p><b>Esto es el resumen.</b> En la calculadora completa recibes gratis tu plan de ahorro mes a mes, el checklist de la prueba de fondos y los 10 destinos comparados.</p>
+    <a class="ca-btn" id="caEmbedLink" href="/cuantoafuera/" target="_top" style="text-decoration:none;white-space:nowrap">Ver mi plan completo →</a>
   </div>
 
   <!-- El detalle se intercambia por correo + WhatsApp. Sin cobro. -->
@@ -288,7 +324,7 @@
     <span class="ca-ok" id="caQualOk" hidden></span>
   </section>
 
-  <section class="ca-panel" aria-labelledby="caHWa">
+  <section class="ca-panel" id="caWaPanel" aria-labelledby="caHWa">
     <h2 id="caHWa">Habla con Navia ahora</h2>
     <p class="ca-hint" style="margin:0">Samuel te ayuda a elegir programa, armar la prueba de fondos y preparar la visa. La primera conversación no tiene costo.</p>
     <div>
@@ -309,7 +345,7 @@
       <p>No. La calculadora es gratis y la primera conversación con Navia tampoco tiene costo. Solo te pedimos tu correo y tu WhatsApp para enviarte el plan completo y poder contactarte.</p></details>
   </section>
 
-  <div class="ca-panel">
+  <div class="ca-panel" id="caEeat">
     <div class="ca-eeat">
       <img src="/samuel-1.jpg" alt="Samuel Sánchez" width="56" height="56" loading="lazy">
       <div>
@@ -365,6 +401,14 @@ var $ = function(id){return document.getElementById(id);};
 var R = null, cur = null, orden = [], unlocked = false, lead = {}, enviados = {};
 
 var PLBL = {ingles:"curso de inglés",tecnico:"college/técnico",pregrado:"pregrado",maestria:"maestría"};
+/* Por que el costo varia, y en que se diferencian idiomas, pregrado y posgrado.
+   Es el aviso que evita que alguien tome la estimacion como cotizacion. */
+var VARIA = {
+  ingles:"Un <b>curso de idioma</b> se cobra <b>por semana</b>, y el precio cambia mucho entre escuelas de la misma ciudad, entre ciudades del mismo país y según la temporada. Además, a más semanas, menor precio semanal. No es un título académico: no pide homologación ni examen de inglés para entrar, pero el permiso de trabajo que da es distinto al de una carrera y en algunos países no da ninguno.",
+  tecnico:"Un <b>college, técnico o diploma</b> se cobra por programa o por período, dura normalmente entre 1 y 2 años y cambia según la institución y la provincia o estado. Suele pedir examen de inglés y bachillerato apostillado. Da más derechos de trabajo que un curso de idioma, y en varios países abre permiso de trabajo al graduarse.",
+  pregrado:"Un <b>pregrado</b> dura de 3 a 4 años y la matrícula internacional es muy superior a la local; varía fuerte entre universidades y entre carreras (medicina e ingeniería cuestan más que humanidades). Exige bachillerato homologado y apostillado, y examen de inglés con puntaje mínimo.",
+  maestria:"Una <b>maestría o posgrado</b> dura de 1 a 2 años y el precio cambia por universidad, por programa y por si incluye práctica o tesis. Exige título profesional homologado y apostillado, examen de inglés con puntaje mínimo y, en varios casos, experiencia laboral o cartas de recomendación."
+};
 /* Matricula anual de referencia, en moneda local. Son referencias editables, no
    cifras oficiales; el usuario las cambia por las de su programa. */
 var TUI = {
@@ -491,7 +535,37 @@ function init(){
   $("caLead").addEventListener("submit", onLead);
   $("caQual").addEventListener("submit", onQual);
   $("caVerif").textContent = "Cifras verificadas al " + fecha(R._meta.generado);
-  select("canada", false);
+
+  var qs = new URLSearchParams(location.search);
+  if(qs.get("embed") === "1"){
+    document.documentElement.classList.add("ca-embed");
+    document.body.classList.add("ca-embed");
+    $("caSwap").hidden = false;
+    $("caSwap").addEventListener("click", function(){
+      var ver = document.body.classList.toggle("ca-ver-paises");
+      document.documentElement.classList.toggle("ca-ver-paises", ver);
+      this.setAttribute("aria-expanded", ver ? "true" : "false");
+      this.textContent = ver ? "Ocultar destinos" : "Comparar con otro destino";
+    });
+  } else {
+    $("caVary").open = true;
+  }
+  var pedido = qs.get("pais");
+  select(R.destinos[pedido] ? pedido : "canada", false);
+
+  // El iframe le dice al articulo cuanto mide, para no dejar hueco ni cortar.
+  if(window.parent !== window){
+    // Hay que medir el contenido, no el documento: scrollHeight nunca baja
+    // de la altura del propio iframe, y la medida se queda pegada.
+    var avisar = function(){
+      var w = document.querySelector(".ca-wrap");
+      if(!w) return;
+      parent.postMessage({ca:"alto", alto: Math.ceil(w.getBoundingClientRect().height) + 8}, "*");
+    };
+    avisar();
+    if(window.ResizeObserver) new ResizeObserver(avisar).observe(document.body);
+    window.addEventListener("load", avisar);
+  }
 }
 
 function fecha(iso){
@@ -594,6 +668,9 @@ function calc(){
   if(!nota.length) nota.push("<b>Recuerda:</b> el ingreso por trabajo <b>no cuenta</b> para la prueba de fondos. El dinero tiene que estar disponible antes de aplicar.");
   $("caNote").innerHTML = nota.join("<br><br>");
 
+  $("caVaryWhy").innerHTML = VARIA[$("caPtype").value] +
+    " La cifra de arriba usa una matrícula y un costo de vida <b>de referencia</b>: cambian según la duración, la escuela o universidad, la ciudad, la temporada y lo que incluya el paquete (materiales, seguro, registro, alojamiento). Cámbialos por los de tu caso.";
+
   $("caFxHint").textContent = "Tasa de " + d.moneda + ": $" + fx(d.moneda).toLocaleString("es-CO") + " COP, verificada el " + fecha(R.tasas_cambio._verificado) + ". Cámbiala por la del día que pagues.";
   $("caFxFoot").textContent = "Tasas de cambio verificadas el " + fecha(R.tasas_cambio._verificado) + " (TRM Superfinanciera).";
 
@@ -607,6 +684,7 @@ function calc(){
                  pais:A.nombre, slug:cur, programa:PLBL[$("caPtype").value], meses:m,
                  horas:hrs, salario:S, moneda:A.moneda, tasa:tasa};
   updateWa();
+  $("caEmbedLink").href = "/cuantoafuera/?pais=" + cur;
   if(unlocked) renderPlan();
 }
 
