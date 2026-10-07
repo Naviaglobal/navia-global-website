@@ -485,9 +485,59 @@ var ev = function(name,params){
   if(typeof gtag==="function") gtag("event",name,params||{});
 };
 
+/* Tasas del dia, en vivo.
+   - USD/COP: TRM oficial de la Superfinanciera, via datos.gov.co
+   - Las demas: tasas de referencia del Banco Central Europeo, via frankfurter
+   Si algo falla, se queda con las de requisitos.json y el aviso de "tasa
+   vieja" sigue funcionando. Nunca deja la herramienta sin tasas. */
+function tasasEnVivo(){
+  var hoy = new Date().toISOString().slice(0,10);
+  var trmUrl = "https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=5&$order=vigenciadesde%20DESC";
+  var fxUrl  = "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR,GBP,AUD,NZD,CAD";
+  var pedir = function(u){
+    return fetch(u, {cache:"no-store"}).then(function(r){
+      if(!r.ok) throw new Error(r.status); return r.json();
+    });
+  };
+  return Promise.all([pedir(trmUrl), pedir(fxUrl)]).then(function(res){
+    var filas = res[0] || [], fx = res[1] || {};
+    // La TRM se publica con un dia de anticipacion: tomamos la vigente hoy.
+    var vig = null;
+    for(var i=0;i<filas.length;i++){
+      var d = (filas[i].vigenciadesde||"").slice(0,10);
+      if(d && d <= hoy){ vig = filas[i]; break; }
+    }
+    if(!vig) vig = filas[0];
+    var trm = parseFloat(vig && vig.valor);
+    if(!trm || !fx.rates) throw new Error("respuesta incompleta");
+
+    var cop = R.tasas_cambio.cop_por;
+    var fecha = (vig.vigenciadesde||"").slice(0,10);
+    var poner = function(mon, valor){
+      if(!cop[mon]) cop[mon] = {};
+      cop[mon].valor = Math.round(valor*100)/100;
+      cop[mon].estado = "verificado";
+      cop[mon].verificado = fecha;
+      cop[mon].fuente_viva = true;
+    };
+    poner("USD", trm);
+    ["EUR","GBP","AUD","NZD","CAD"].forEach(function(m){
+      var porUsd = fx.rates[m];           // cuantos <m> vale 1 USD
+      if(porUsd) poner(m, trm/porUsd);
+    });
+    R.tasas_cambio._verificado = fecha;
+    R.tasas_cambio._enVivo = true;
+    R.tasas_cambio._fuenteFx = fx.date || fecha;
+  });
+}
+
 fetch("data/requisitos.json",{cache:"no-store"})
   .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
-  .then(function(j){ R=j; init(); })
+  .then(function(j){
+    R = j;
+    return tasasEnVivo().catch(function(){ /* nos quedamos con las del archivo */ });
+  })
+  .then(function(){ init(); })
   .catch(function(){
     $("caAnswer").innerHTML = "No pudimos cargar las cifras verificadas. Recarga la página o escríbenos por WhatsApp al <b>+57 301 443 0722</b>.";
   });
@@ -741,8 +791,14 @@ function calc(){
   $("caVaryWhy").innerHTML = VARIA[$("caPtype").value] +
     " La cifra de arriba usa una matrícula y un costo de vida <b>de referencia</b>: cambian según la duración, la escuela o universidad, la ciudad, la temporada y lo que incluya el paquete (materiales, seguro, registro, alojamiento). Cámbialos por los de tu caso.";
 
-  $("caFxHint").textContent = "Tasa de " + d.moneda + ": $" + fx(d.moneda).toLocaleString("es-CO") + " COP, verificada el " + fecha(R.tasas_cambio._verificado) + ". Cámbiala por la del día que pagues.";
-  $("caFxFoot").textContent = "Tasas de cambio verificadas el " + fecha(R.tasas_cambio._verificado) + " (TRM Superfinanciera).";
+  var tv = R.tasas_cambio._enVivo;
+  $("caFxHint").textContent = "Tasa de " + d.moneda + ": $" + fx(d.moneda).toLocaleString("es-CO") + " COP, "
+    + (tv ? "tasa del día tomada de la TRM oficial y del Banco Central Europeo (" + fecha(R.tasas_cambio._verificado) + ")."
+          : "verificada el " + fecha(R.tasas_cambio._verificado) + ".")
+    + " Puedes cambiarla por la de tu banco.";
+  $("caFxFoot").textContent = R.tasas_cambio._enVivo
+    ? "Tasas de cambio del " + fecha(R.tasas_cambio._verificado) + ", tomadas automáticamente de la TRM de la Superintendencia Financiera (datos.gov.co) y de las tasas de referencia del Banco Central Europeo."
+    : "Tasas de cambio verificadas el " + fecha(R.tasas_cambio._verificado) + " (TRM Superfinanciera).";
 
   var A = R.destinos[cur];
   if(unlocked){
