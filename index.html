@@ -1653,6 +1653,24 @@ function heroFormSubmit(e){
       gtag('event', 'conversion', {send_to: 'G-1RNV31B1EM/form_submit'});
     }
   });
+
+  /* El lead va a la hoja de Drive. Si falla, se deja el envio nativo a
+     Formspree, que ya redirige solo a gracias.html. */
+  form.addEventListener('submit', function(e){
+    if(form.dataset.naviaEnviado) return;
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    if(btn){ btn.disabled = true; btn.textContent = 'Enviando...'; }
+    var fd = new FormData(form), d = {};
+    fd.forEach(function(v,k){ d[k] = v; });
+    d.origen = 'home';
+    var destino = d._redirect || 'https://naviaglobal.co/gracias.html';
+    var alRespaldo = function(){ form.dataset.naviaEnviado = '1'; form.submit(); };
+    fetch('https://script.google.com/macros/s/AKfycbyPM2VJVVt58RXpYwr5DHY6m62wrVMTal4FTPsxRhv09ATIGjyMjvTb89tCsEHk_eOQ0w/exec', {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(k){ if(!k || k.ok !== true) throw 0; window.location.href = destino; })
+      .catch(alRespaldo);
+  });
 })();
 </script>
 <script src="/js/wa-tracker.js" defer></script>
