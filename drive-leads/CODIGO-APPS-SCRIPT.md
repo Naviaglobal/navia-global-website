@@ -49,7 +49,12 @@ Este archivo queda fuera del sitio publicado: el despliegue excluye los `.md`.
  * (o editar la existente y subir la versión), o la URL sigue sirviendo lo viejo.
  */
 
-// A dónde llegan los avisos. Déjalo vacío para usar el correo de la cuenta.
+// A dónde llegan los avisos.
+//
+// OJO: si pones una dirección de ESTA MISMA cuenta (incluidos sus alias, como
+// info@naviaglobal.co), Gmail no te la entrega en Recibidos: la archiva solo en
+// Enviados. Para que te llegue a la bandeja, usa un correo distinto —uno
+// personal de Gmail, por ejemplo— o revisa Enviados.
 var AVISAR_A = 'info@naviaglobal.co';
 
 // Responderle al lead confirmando que recibimos sus datos.
@@ -142,10 +147,21 @@ function guardar(nombre, datos) {
   var fila = [];
   for (var i = 0; i < cabeceras.length; i++) {
     var c = cabeceras[i];
-    fila.push(c === 'fecha' ? new Date() : (datos[c] !== undefined ? datos[c] : ''));
+    fila.push(c === 'fecha' ? new Date() : texto(datos[c]));
   }
   h.appendRow(fila);
   h.autoResizeColumns(1, Math.min(cabeceras.length, 12));
+}
+
+/**
+ * Sheets interpreta como formula cualquier celda que empiece por + = - @, y un
+ * WhatsApp "+57 300..." se guardaba como #ERROR!, perdiendo el dato mas
+ * importante del lead. El apostrofe fuerza texto y no se ve en la celda.
+ */
+function texto(v) {
+  if (v === undefined || v === null) return '';
+  var s = String(v);
+  return /^[=+\-@]/.test(s) ? "'" + s : s;
 }
 
 
