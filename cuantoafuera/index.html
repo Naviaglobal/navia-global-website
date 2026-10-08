@@ -911,8 +911,18 @@ function score(q, fondosCOP){
   return "C";
 }
 
+/* Sheets lee como formula lo que empiece por + = - @. Un WhatsApp
+   "+57 300..." entraba como #ERROR!. El apostrofe fuerza texto y no se ve. */
+function naviaSanear(d){
+  var o = {};
+  for(var k in d){
+    var v = d[k];
+    o[k] = (typeof v === "string" && /^[=+\-@]/.test(v)) ? "'" + v : v;
+  }
+  return o;
+}
 function post(payload, okFn, errFn){
-  var cuerpo = JSON.stringify(payload);
+  var cuerpo = JSON.stringify(naviaSanear(payload));
   var aFormspree = function(){
     fetch("https://formspree.io/f/" + FORMSPREE_ID, {
       method:"POST", headers:{"Content-Type":"application/json",Accept:"application/json"},
