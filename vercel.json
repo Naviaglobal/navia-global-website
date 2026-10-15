@@ -5,37 +5,118 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|ico|svg|woff2|woff|ttf)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(css|js)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.naviaglobal.co" }], "destination": "https://naviaglobal.co/:path*", "permanent": true },
-    { "source": "/estudiar-francia-colombia-2026.html", "destination": "/blog/estudiar-francia-colombia-2026.html", "permanent": true },
-    { "source": "/estudiar-alemania-colombia-2026.html", "destination": "/blog/estudiar-alemania-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-reino-unido-desde-colombia-2026.html", "destination": "/blog/estudiar-reino-unido-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-canada-desde-colombia-2026", "destination": "/blog/estudiar-canada-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-canada-desde-colombia-2026.html", "destination": "/blog/estudiar-canada-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-estados-unidos-desde-colombia-2026.html", "destination": "/blog/estudiar-estados-unidos-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-nueva-zelanda-desde-colombia-2026.html", "destination": "/blog/estudiar-nueva-zelanda-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-australia-colombia-2025.html", "destination": "/blog/estudiar-australia-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-irlanda-colombia-2025.html", "destination": "/blog/estudiar-irlanda-colombia-2026.html", "permanent": true },
-    { "source": "/blog/estudiar-en-malta-desde-colombia-2026.html", "destination": "/blog/estudiar-malta-colombia-2026.html", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.naviaglobal.co"
+        }
+      ],
+      "destination": "https://naviaglobal.co/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/calculadora",
+      "destination": "/cuantoafuera/",
+      "permanent": true
+    },
+    {
+      "source": "/calculadora/:path*",
+      "destination": "/cuantoafuera/",
+      "permanent": true
+    },
+    {
+      "source": "/estudiar-francia-colombia-2026.html",
+      "destination": "/blog/estudiar-francia-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/estudiar-alemania-colombia-2026.html",
+      "destination": "/blog/estudiar-alemania-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-reino-unido-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-reino-unido-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-canada-desde-colombia-2026",
+      "destination": "/blog/estudiar-canada-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-canada-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-canada-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-estados-unidos-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-estados-unidos-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-nueva-zelanda-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-nueva-zelanda-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-australia-colombia-2025.html",
+      "destination": "/blog/estudiar-australia-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-irlanda-colombia-2025.html",
+      "destination": "/blog/estudiar-irlanda-colombia-2026.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/estudiar-en-malta-desde-colombia-2026.html",
+      "destination": "/blog/estudiar-malta-colombia-2026.html",
+      "permanent": true
+    }
   ]
 }
