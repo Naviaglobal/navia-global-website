@@ -835,6 +835,7 @@ $("caWa").addEventListener("click", function(){
   var c = ESTADO || {};
   ev("whatsapp_click",{pais:c.pais,programa:c.programa});
   if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera WhatsApp"});
+    if(typeof gtag === "function") gtag("event","generate_lead",{value:1,currency:"COP",destino:c.pais,paso:"whatsapp"});
 });
 
 /* Plan completo: se arma solo despues de desbloquear. */
@@ -972,6 +973,7 @@ function onLead(e){
     unlock();
     ev("lead_paso1",{pais:c.pais,programa:c.programa});
     if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera paso 1"});
+    if(typeof gtag === "function") gtag("event","generate_lead",{value:1,currency:"COP",destino:c.pais,paso:"paso1"});
   }, function(){
     btn.disabled = false; btn.textContent = "Ver mi resultado";
     err.textContent = "No pudimos enviarlo. Escríbenos por WhatsApp al +57 301 443 0722 y te lo pasamos.";
@@ -1022,6 +1024,7 @@ function onQual(e){
       : "Listo. Samuel revisa tu caso y te escribe esta semana. Si quieres adelantarlo, escríbele por WhatsApp.";
     ev("lead_paso2",{lead_score:s,pais:c.pais,programa:c.programa});
     if(typeof fbq === "function") fbq("track","Lead",{content_name:c.pais,content_category:"CuantoAfuera paso 2 "+s});
+    if(typeof gtag === "function") gtag("event","generate_lead",{value:1,currency:"COP",destino:c.pais,paso:"paso2",lead_score:s});
   }, function(){
     btn.disabled = false; btn.textContent = "Enviar y pedir mi asesoría";
     err.textContent = "No pudimos enviarlo. Escríbenos por WhatsApp al +57 301 443 0722.";
