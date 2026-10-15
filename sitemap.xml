@@ -4,7 +4,7 @@
   <!-- Pagina Principal -->
   <url>
     <loc>https://naviaglobal.co/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Herramientas interactivas -->
   <url>
     <loc>https://naviaglobal.co/cuantoafuera/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,7 +50,7 @@
   <!-- Blog Index -->
   <url>
     <loc>https://naviaglobal.co/blog/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -73,7 +73,7 @@
   <!-- Blog: Australia -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-australia-colombia-2026.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -87,13 +87,13 @@
   <!-- Blog: Canada -->
   <url>
     <loc>https://naviaglobal.co/blog/estudiar-canada-colombia-2026.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://naviaglobal.co/blog/becas-canada-colombia-2026.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -349,7 +349,7 @@
 
   <url>
     <loc>https://naviaglobal.co/blog/como-conseguir-trabajo-extranjero-colombia.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -545,7 +545,7 @@
   </url>
   <url>
     <loc>https://naviaglobal.co/blog/costo-estudiar-ingles-irlanda-mensualmente.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
