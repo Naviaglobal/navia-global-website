@@ -59,12 +59,17 @@
       "permanent": true
     },
     {
+      "source": "/calculadora/",
+      "destination": "/cuantoafuera/",
+      "permanent": true
+    },
+    {
       "source": "/calculadora",
       "destination": "/cuantoafuera/",
       "permanent": true
     },
     {
-      "source": "/calculadora/:path*",
+      "source": "/calculadora/index.html",
       "destination": "/cuantoafuera/",
       "permanent": true
     },
