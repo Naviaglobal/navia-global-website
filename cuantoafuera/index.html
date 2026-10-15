@@ -277,8 +277,13 @@ table.ca-req a{color:var(--ca-azul)}
     </section>
 
     <div class="ca-gate-over" id="caGateOver">
-      <h3 id="caGateH">Mira tu resultado, gratis</h3>
-      <p>Déjanos tus datos y te mostramos ahora mismo el costo total en pesos, los fondos que exige la visa, tu plan de ahorro mes a mes y el checklist de documentos. Sin costo.</p>
+      <div class="ca-big" id="caRango" hidden style="margin-bottom:4px">
+        <span class="l" id="caRangoL">Costo total estimado</span>
+        <span class="n" id="caRangoN">—</span>
+        <span class="s">Varía según la escuela y la ciudad que elijas</span>
+      </div>
+      <h3 id="caGateH">Tu desglose completo, gratis</h3>
+      <p>Ese es el estimado. Déjanos tus datos y te mostramos el costo exacto línea por línea, los fondos que exige la visa, tu plan de ahorro mes a mes y el checklist de documentos. Sin costo.</p>
       <form class="ca-form" id="caLead" novalidate>
         <div class="ca-f"><label for="caName">Nombre completo</label><input id="caName" name="nombre" type="text" autocomplete="name" placeholder="Nombre y apellido" required></div>
         <div class="ca-f"><label for="caEmail">Correo</label><input id="caEmail" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required></div>
@@ -287,7 +292,7 @@ table.ca-req a{color:var(--ca-azul)}
           <span class="ca-hint" id="caTripHint">Un estimado sirve. Con esto Samuel sabe con cuánto tiempo cuentas.</span></div>
         <label class="ca-chk"><input type="checkbox" id="caConsent" required>
           <span>Autorizo a Navia Global Education S.A.S. a tratar mis datos y a contactarme por correo y WhatsApp, según la <a href="privacidad.html">política de privacidad</a> y la Ley 1581 de 2012.</span></label>
-        <button class="ca-btn" type="submit" id="caLeadBtn">Ver mi resultado</button>
+        <button class="ca-btn" type="submit" id="caLeadBtn">Ver mi desglose completo</button>
         <span class="ca-hint">Sin costo. No compartimos tus datos con terceros.</span>
         <span class="ca-err" id="caLeadErr" hidden></span>
       </form>
@@ -755,6 +760,21 @@ function calc(){
 
   var oculto = function(v){ return unlocked ? v : "\u2022\u2022\u2022\u2022\u2022\u2022\u2022"; };
   $("caTotal").textContent = oculto(cop(total));
+
+  /* El rango sale gratis: es lo que compite contra el resumen de Google y lo
+     que le da al visitante una razon para dejar sus datos. El desglose exacto
+     sigue detras del gate. +-10 % es la variacion real por escuela y ciudad. */
+  var cajaR = $("caRango");
+  if(cajaR){
+    if(!unlocked && total > 2000000){
+      var mill = function(v){ return Math.round(v/1e6).toLocaleString("es-CO"); };
+      $("caRangoN").textContent = "$" + mill(total*0.90) + " a $" + mill(total*1.10) + " millones";
+      $("caRangoL").textContent = d.nombre + " · " + m + (m === 1 ? " mes" : " meses");
+      cajaR.hidden = false;
+    } else {
+      cajaR.hidden = true;
+    }
+  }
   $("caTotalLocal").textContent = unlocked && tasa ? "≈ " + locm(total/tasa, d.moneda) : "";
   $("caRows").innerHTML = items.map(function(i){
     return "<tr><td>"+i[0]+"<small>"+(unlocked ? i[2] : "")+"</small></td><td class=\"v\">"+oculto(cop(i[1]))+"</td></tr>";
